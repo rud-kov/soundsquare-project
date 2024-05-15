@@ -1,2 +1,0 @@
-document.querySelector("html"),document.querySelector("body");const e={ui:{init:function(){e.ui.events(),e.ui.forms()},events:function(){console.log("Events are running")},forms:function(){console.log("Forms are running")}},helpers:{offset:function(e){var n=e.getBoundingClientRect(),t=document.documentElement;return{left:n.left+(window.pageXOffset||t.scrollLeft||0),top:n.top+(window.pageYOffset||t.scrollTop||0)}}}};"loading"===document.readyState?document.addEventListener("DOMContentLoaded",e.ui.init):e.ui.init();
-//# sourceMappingURL=index.4031a591.js.map
