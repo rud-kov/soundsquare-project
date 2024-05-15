@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+@import "base/fonts";
+@import "base/typography";
+@import "base/global";
+
+@import "layout/main";
+@import "layout/header";
+@import "layout/footer";
+
+@import "common/animations";
+
+@import "components/buttons";
+@import "components/forms";
+@import "components/blocks";
+@import "components/shared";
+@import "components/partials";
+
+@import "pages/pages";
+
+@import "vendors/plugins";

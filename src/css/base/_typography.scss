@@ -1,0 +1,54 @@
+p,
+ul {
+	margin: 1em 0;
+	&.mb-0 {
+		margin-bottom: 0;
+	}
+}
+
+p,
+li {
+	@apply text-16;
+}
+
+strong,
+b {
+	@apply font-bold;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5 {
+	br {
+		display: none;
+		@screen md {
+			display: block;
+		}
+	}
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+	@apply font-serif;
+}
+
+h1,
+.h1 {
+	@apply text-16 leading-none;
+	@screen lg {
+		@apply text-32;
+	}
+}
