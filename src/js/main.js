@@ -6,10 +6,15 @@ const Engine = {
 		init: function () {
 			// list of all functions to run on init
 			Engine.ui.events();
+			Engine.ui.forms();
 		},
 		events: function () {
 			// Add your events here
 			console.log("Events are running");
+		},
+		forms: function () {
+			// Add your form functions here
+			console.log("Forms are running");
 		},
 	},
 	helpers: {
