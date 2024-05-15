@@ -22,20 +22,28 @@
 
 	<body>
 		<main
-			class="flex flex-col items-center justify-center h-screen text-white bg-blue dark:bg-neutral-900 dark:text-gray-200"
+			class="l-header flex flex-col border-3px items-center p-4 justify-center text-bl h-screen text-white bg-blue dark:bg-neutral-900 dark:text-gray-200"
 		>
-			<h1 class="text-6xl">Soundsquare</h1>
-			<p class="font-serif text-32">Client app</p>
+			<h1 class="text-6xl l-header__logo">Soundsquare</h1>
+			<p class="font-serif text-32 lg:text-32">Client app</p>
+			<a href="#" class="btn">Button</a>
 		</main>
-
+		<!-- HEADER -->
 		<div
 			class="flex flex-col items-center justify-center h-screen bg-black b-test"
 		>
 			<h1>Sass Test</h1>
 		</div>
 
-		<script src="js/plugins.js"></script>
-		<script src="js/main.js"></script>
+		<div class="b-grid grid gap-2">
+			<div class="b-grid__item b-grid__item--gray">
+				<p>text</p>
+				<input type="checkbox" />
+			</div>
+		</div>
+
+		<!-- <script src="js/plugins.js"></script> -->
+		<script src="js/main.js" type="module"></script>
 
 		<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
 		<!-- <script>

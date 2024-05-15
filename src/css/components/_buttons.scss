@@ -2,8 +2,16 @@
 
 .btn,
 .button {
+	@apply block bg-black p-4 tracking-widest text-white;
 }
 
 .btn--white {
 	@apply bg-white;
+	@apply p-4;
+}
+
+.b-table {
+	tr {
+		@apply border-b border-black;
+	}
 }
