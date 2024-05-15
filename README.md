@@ -1,5 +1,7 @@
 # Soundsquare
 
+Built with [Parcel](https://parceljs.org/)
+
 # Installation
 
 Clone the repository and run `npm install` to install the necessary dependencies.
