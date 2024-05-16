@@ -35,6 +35,10 @@ module.exports = {
 			lineHeight: {
 				11: "3.525rem",
 			},
+			content: {
+				'soundsquare__logo': 'url("/src/img/soundsquare__logo.svg")',
+				'dolby__logo': 'url("/src/img/dolby.png")',
+			},
 		},
 	},
 	plugins: [],

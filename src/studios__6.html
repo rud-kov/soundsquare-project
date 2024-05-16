@@ -24,9 +24,29 @@
 		<main class="dark:bg-neutral-900 dark:text-gray-200 flex flex-1">
 			<div class="flex flex-1 relative">
 				<div
-					style=""
-					class="w-full h-full bg-no-repeat bg-cover bg-center"
-				></div>
+					style="
+						background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./img/studio__background.png');
+					"
+					class="w-full h-full bg-no-repeat bg-cover bg-center before:content-soundsquare__logo before:absolute before:inline-block before:top-12 before:left-8 before:w-2 before:h-2 bg-opacity-50 flex items-end"
+				>
+                    <div class="flex justify-between flex-1 mb-28">
+
+                        <div class="flex flex-col ml-8">
+                            <div class="flex flex-row items-center">
+                                <div class="bg-white w-4 h-4 mr-2"></div>
+                                <p class="my-0 font-sans text-xl font-medium">Black Studio</p>
+                            </div>
+                             
+                             <p class="my-0 text-sm font-normal">Dolby Atmos Feature Film mixing stage.<br>Our flagship mixing stage.</p>
+                        </div>
+
+                        <div class="flex items-end mr-10">
+                             <img class="block" src="/src/img/dolby.png"/>
+                        </div>
+                    </div>
+                
+                </div>
+                
 			</div>
 
 			<div class="flex flex-1 flex-col">
@@ -34,9 +54,17 @@
 					class="bg-blue flex-1 flex-wrap flex justify-center content-center"
 				>
 					<div>
+                        <div class="flex justify-center">
+                            <img class="block" src="/src/img/arrow__down--big.svg">
+                        </div>
 						<div class="text-center">
-							<p class="text-5xl font-medium leading-11">
+							<p class="text-5xl font-medium font-sans leading-11">
 								Drag and drop<br />files here
+							</p>
+						</div>
+                        <div class="text-center">
+							<p class="text-l font-medium font-sans">
+								or
 							</p>
 						</div>
 					</div>
