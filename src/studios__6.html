@@ -20,14 +20,27 @@
 		<meta name="theme-color" content="#fafafa" />
 	</head>
 
-	<body>
-		<main
-			class="l-header flex flex-col border-3px items-center p-4 justify-center text-bl h-screen text-white bg-blue dark:bg-neutral-900 dark:text-gray-200"
-		>
-			<h1 class="text-6xl l-header__logo">Soundsquare</h1>
-			<p class="font-serif text-32 lg:text-32">Client pp</p>
-			<a href="#" class="btn">Button</a>
-		</main>
+	<body class="flex">
+		<main class="dark:bg-neutral-900 dark:text-gray-200 flex flex-1">
+            
+            <div class="flex flex-1">
+                <div style="background-image: url('./img/studio__background.png');" class="w-full h-full bg-no-repeat bg-cover bg-center "></div>
+            </div>
+
+            <div class="flex flex-1 flex-col">
+
+                <div class="bg-blue flex-1  flex-wrap flex justify-center content-center">
+                    <div>
+                        <div class="text-center">
+                            <p class="text-5xl font-medium leading-11">Drag and drop<br>files here</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
 
 		<!-- <script src="js/plugins.js"></script> -->
 		<script src="js/main.js" type="module"></script>

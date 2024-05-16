@@ -32,6 +32,9 @@ module.exports = {
 				DEFAULT: "3px",
 				"3px": "3px",
 			},
+			lineHeight: {
+				11: "3.525rem",
+			},
 		},
 	},
 	plugins: [],
