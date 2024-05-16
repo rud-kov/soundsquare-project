@@ -4,6 +4,8 @@ const rem = (px) => ({ [px]: `${px / 16}rem` });
 
 let colors = {
 	blue: "#00a3ff",
+	green: "#00ff00",
+	black: "#000000",
 };
 
 module.exports = {
@@ -22,7 +24,13 @@ module.exports = {
 			},
 			fontSize: {
 				...rem(16),
+				...rem(24),
 				...rem(32),
+				...rem(48),
+			},
+			borderWidth: {
+				DEFAULT: "3px",
+				"3px": "3px",
 			},
 		},
 	},

@@ -8,3 +8,7 @@ BLOCKS
 		@apply text-amber-500 text-6xl;
 	}
 }
+
+.b-grid__item {
+	@apply bg-gray-400 p-4;
+}
