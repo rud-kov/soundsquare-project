@@ -36,8 +36,12 @@ module.exports = {
 				11: "3.525rem",
 			},
 			content: {
-				'soundsquare__logo': 'url("/src/img/soundsquare__logo.svg")',
-				'dolby__logo': 'url("/src/img/dolby.png")',
+				soundsquare__logo: 'url("/src/img/soundsquare__logo.svg")',
+				soundsquare__logo__small: 'url("/src/img/soundsquare__logo--mobile.svg")',
+				dolby__logo: 'url("/src/img/dolby.png")',
+			},
+			width: {
+				fixedBttn: "20.875rem",
 			},
 		},
 	},

@@ -21,27 +21,29 @@
 	</head>
 
 	<body class="flex">
-		<main class="dark:bg-neutral-900 dark:text-gray-200 flex flex-1">
+		<main class="dark:bg-neutral-900 dark:text-gray-200 flex flex-1 tablet:flex-col mdd:flex-col">
 			<div class="flex flex-1 relative">
 				<div
 					style="
 						background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./img/studio__background.png');
 					"
-					class="w-full h-full bg-no-repeat bg-cover bg-center before:content-soundsquare__logo before:absolute before:inline-block before:top-12 before:left-8 before:w-2 before:h-2 bg-opacity-50 flex items-end"
+					class="w-full h-full bg-no-repeat bg-cover bg-center before:content-soundsquare__logo mdd:before:content-soundsquare__logo__small before:absolute before:inline-block before:top-12 before:left-8 before:w-2 before:h-2 bg-opacity-50 flex items-end"
 				>
-                    <div class="flex justify-between flex-1 mb-28">
+                    <div class="flex justify-between flex-1 mb-28 tablet:mb-6 mdd:mb-6">
 
                         <div class="flex flex-col ml-8">
                             <div class="flex flex-row items-center mb-2">
                                 <div class="bg-white w-5 h-5 mr-2"></div>
-                                <p class="my-0 font-sans text-xl font-medium">Black Studio</p>
+                                <p class="my-0 font-sans text-xl mdd:text-sm font-medium whitespace-nowrap">Black Studio</p>
                             </div>
                              
-                             <p class="my-0 text-sm font-normal">Dolby Atmos Feature Film mixing stage.<br>Our flagship mixing stage.</p>
+                             <p class="my-0 text-sm mdd:text-xs font-normal mdd:mr-10">Dolby Atmos Feature Film mixing stage.<br class="mdd:hidden"> Our flagship mixing stage.</p>
                         </div>
 
                         <div class="flex items-end mr-10">
-                             <img class="block" src="/src/img/dolby.png"/>
+							<div>
+                             	<img class="w-full" src="/src/img/dolby.png"/>
+							 </div>
                         </div>
                     </div>
                 
@@ -65,15 +67,9 @@
 								or
 							</p>
 						</div>
-                        <div class="text-center">
-							
-							<form class="flex items-center mt-8">
-							
-								<input id="uploadBttn" class="hidden" type="file"/>
-								<label for="uploadBttn" class="inline-block bg-white text-blue text-center hover:cursor-pointer select-none">Browse file</label>
-							
-							</form>
-
+                        <div class="flex justify-center items-center mt-8 text-center">	
+							<input id="uploadBttn" type="file" hidden/>
+							<label for="uploadBttn" class="inline-block w-fixedBttn  bg-white text-blue text-center hover:cursor-pointer select-none text-2xl py-2 px-4">Browse file</label>
 						</div>
 						<div class="text-center mt-10">
 							<p class="text-xl my-0  font-medium font-sans text-white">
@@ -88,7 +84,7 @@
 					class="bg-black flex-initial max-h-60 grow flex-wrap flex justify-center content-center"
 				>
 					<div>
-                        <div class="flex flex-col justify-center text-center gap-0">
+                        <div class="flex flex-col justify-center text-center gap-0 py-8">
 							<div class="flex justify-center">
                             	<img class="block mx-0" src="/src/img/lock__icon.svg">
 							</div>
