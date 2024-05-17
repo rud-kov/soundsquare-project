@@ -31,8 +31,7 @@ module.exports = {
 				...rem(48),
 			},
 			borderWidth: {
-				DEFAULT: "3px",
-				"3px": "3px",
+				DEFAULT: "1px",
 			},
 			lineHeight: {
 				11: "3.525rem",
