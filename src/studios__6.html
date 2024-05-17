@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html class="no-js" lang="">
 	<head>
 		<meta charset="utf-8" />
@@ -18,85 +18,133 @@
 		<link rel="stylesheet" href="css/main.scss" />
 
 		<meta name="theme-color" content="#fafafa" />
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+			@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+		</style>
 	</head>
 
 	<body class="flex">
-		<main class="dark:bg-neutral-900 dark:text-gray-200 flex flex-1 tablet:flex-col mdd:flex-col">
-			<div class="flex flex-1 relative">
+		<main
+			class="flex flex-1 mdd:flex-col tablet:flex-col dark:bg-neutral-900 dark:text-gray-200"
+		>
+			<div class="relative flex flex-1">
 				<div
 					style="
-						background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./img/studio__background.png');
+						background-image: linear-gradient(
+								rgba(0, 0, 0, 0.5),
+								rgba(0, 0, 0, 0.5)
+							),
+							url(&quot;./img/studio__background.png&quot;);
 					"
-					class="w-full h-full bg-no-repeat bg-cover bg-center before:content-soundsquare__logo mdd:before:content-soundsquare__logo__small before:absolute before:inline-block before:top-12 before:left-8 before:w-2 before:h-2 bg-opacity-50 flex items-end"
+					class="flex h-full w-full items-end bg-opacity-50 bg-cover bg-center bg-no-repeat before:absolute before:left-8 before:top-12 before:inline-block before:h-2 before:w-2 before:content-soundsquare__logo mdd:before:left-4 mdd:before:right-4 mdd:before:content-soundsquare__logo__small tablet:before:left-4 tablet:before:right-4"
 				>
-                    <div class="flex justify-between flex-1 mb-28 tablet:mb-6 mdd:mb-6">
+					<div
+						class="mb-28 flex flex-1 justify-between mdd:mb-6 tablet:mb-6"
+					>
+						<div class="ml-8 flex flex-col mdd:ml-4 tablet:ml-4">
+							<div class="mb-2 flex flex-row items-center">
+								<div
+									class="mr-2 h-5 w-5 bg-white mdd:h-4 mdd:w-4 tablet:h-4 tablet:w-4"
+								></div>
+								<p
+									class="font-public my-0 whitespace-nowrap text-xl font-medium mdd:text-sm"
+								>
+									Black Studio
+								</p>
+							</div>
 
-                        <div class="flex flex-col ml-8">
-                            <div class="flex flex-row items-center mb-2">
-                                <div class="bg-white w-5 h-5 mr-2"></div>
-                                <p class="my-0 font-sans text-xl mdd:text-sm font-medium whitespace-nowrap">Black Studio</p>
-                            </div>
-                             
-                             <p class="my-0 text-sm mdd:text-xs font-normal mdd:mr-10">Dolby Atmos Feature Film mixing stage.<br class="mdd:hidden"> Our flagship mixing stage.</p>
-                        </div>
+							<p
+								class="font-public my-0 text-sm font-normal mdd:mr-10 mdd:text-xs"
+							>
+								Dolby Atmos Feature Film mixing stage.<br
+									class="mdd:hidden"
+								/>
+								Our flagship mixing stage.
+							</p>
+						</div>
 
-                        <div class="flex items-end mr-10">
+						<div class="mr-10 flex items-end mdd:mr-4 tablet:mr-4">
 							<div>
-                             	<img class="w-full" src="/src/img/dolby.png"/>
-							 </div>
-                        </div>
-                    </div>
-                
-                </div>
-                
+								<img class="w-full" src="/src/img/dolby.png" />
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 
 			<div class="flex flex-1 flex-col">
 				<div
-					class="bg-blue grow flex-wrap flex justify-center content-center relative"
+					class="relative flex grow flex-wrap content-center justify-center bg-blue"
 				>
-					<div>
-                        <div class="flex justify-center">
-                            <img class="block" src="/src/img/arrow__down--big.svg">
-                        </div>
-						<div class="text-center mt-10">
-							<p class="text-5xl my-0 font-medium font-sans leading-11 text-white">
-								Drag and drop<br />files here
-							</p>
-							<p class="text-xl my-0 mt-10 font-medium font-sans text-white">
+					<div class="py-5">
+						<div class="flex justify-center">
+							<img
+								class="block"
+								src="/src/img/arrow__down--big.svg"
+							/>
+						</div>
+						<div class="mt-10 text-center mdd:mt-5 tablet:mt-5">
+							<div class="border-dashed border border-white py-2 px-2">
+								<p
+									class="font-public my-0 text-5xl font-medium leading-11 text-white mdd:text-3xl tablet:text-3xl"
+								>
+									Drag and drop<br />files here
+								</p>
+							</div>
+							<p
+								class="font-inter my-0 mt-10 text-xl font-normal text-white mdd:mt-5 mdd:text-lg tablet:mt-5 tablet:text-lg"
+							>
 								or
 							</p>
 						</div>
-                        <div class="flex justify-center items-center mt-8 text-center">	
-							<input id="uploadBttn" type="file" hidden/>
-							<label for="uploadBttn" class="inline-block w-fixedBttn  bg-white text-blue text-center hover:cursor-pointer select-none text-2xl py-2 px-4">Browse file</label>
+						<div
+							class="mt-8 flex items-center justify-center text-center mdd:mt-4 tablet:mt-4"
+						>
+							<input id="uploadBttn" type="file" hidden />
+							<label
+								for="uploadBttn"
+								class="font-public inline-block w-fixedBttn select-none whitespace-nowrap bg-white px-4 py-2 text-center text-2xl text-blue hover:cursor-pointer mdd:max-w-min"
+								>Browse file</label
+							>
 						</div>
-						<div class="text-center mt-10">
-							<p class="text-xl my-0  font-medium font-sans text-white">
+						<div class="mt-10 text-center">
+							<p
+								class="font-inter my-0 text-xl font-normal text-white mdd:text-lg tablet:text-lg"
+							>
 								No sign-in required
 							</p>
 						</div>
 					</div>
-					<hr class="absolute h-[1px] bg-white bottom-16 left-10 right-10">
+					<hr
+						class="absolute bottom-16 left-10 right-10 h-[1px] bg-white mdd:left-5 mdd:right-5 tablet:left-5 tablet:right-5"
+					/>
 				</div>
 
 				<div
-					class="bg-black flex-initial max-h-60 grow flex-wrap flex justify-center content-center"
+					class="flex max-h-60 flex-initial grow flex-wrap content-center justify-center bg-black"
 				>
 					<div>
-                        <div class="flex flex-col justify-center text-center gap-0 py-8">
+						<div
+							class="flex flex-col justify-center gap-0 py-8 text-center"
+						>
 							<div class="flex justify-center">
-                            	<img class="block mx-0" src="/src/img/lock__icon.svg">
+								<img
+									class="mx-0 block"
+									src="/src/img/lock__icon.svg"
+								/>
 							</div>
 							<div>
-								<p class="my-0 hover:cursor-pointer hover:underline">Registered users<br>sign-in to your account</p>
+								<p
+									class="font-public my-0 hover:cursor-pointer hover:underline"
+								>
+									Registered users<br />sign-in to your
+									account
+								</p>
 							</div>
-                        </div>
+						</div>
 					</div>
-						
 				</div>
-
-
 			</div>
 		</main>
 

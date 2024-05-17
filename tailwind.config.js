@@ -21,6 +21,8 @@ module.exports = {
 			fontFamily: {
 				sans: ["'Roboto'", "sans-serif"],
 				serif: ["'Apple Garamond'", "serif"],
+				inter: ["'Inter'"],
+				public: ["'Public Sans'"],
 			},
 			fontSize: {
 				...rem(16),
@@ -37,7 +39,8 @@ module.exports = {
 			},
 			content: {
 				soundsquare__logo: 'url("/src/img/soundsquare__logo.svg")',
-				soundsquare__logo__small: 'url("/src/img/soundsquare__logo--mobile.svg")',
+				soundsquare__logo__small:
+					'url("/src/img/soundsquare__logo--mobile.svg")',
 				dolby__logo: 'url("/src/img/dolby.png")',
 			},
 			width: {
