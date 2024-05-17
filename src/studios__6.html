@@ -32,8 +32,8 @@
                     <div class="flex justify-between flex-1 mb-28">
 
                         <div class="flex flex-col ml-8">
-                            <div class="flex flex-row items-center">
-                                <div class="bg-white w-4 h-4 mr-2"></div>
+                            <div class="flex flex-row items-center mb-2">
+                                <div class="bg-white w-5 h-5 mr-2"></div>
                                 <p class="my-0 font-sans text-xl font-medium">Black Studio</p>
                             </div>
                              
@@ -51,24 +51,56 @@
 
 			<div class="flex flex-1 flex-col">
 				<div
-					class="bg-blue flex-1 flex-wrap flex justify-center content-center"
+					class="bg-blue grow flex-wrap flex justify-center content-center relative"
 				>
 					<div>
                         <div class="flex justify-center">
                             <img class="block" src="/src/img/arrow__down--big.svg">
                         </div>
-						<div class="text-center">
-							<p class="text-5xl font-medium font-sans leading-11">
+						<div class="text-center mt-10">
+							<p class="text-5xl my-0 font-medium font-sans leading-11 text-white">
 								Drag and drop<br />files here
 							</p>
-						</div>
-                        <div class="text-center">
-							<p class="text-l font-medium font-sans">
+							<p class="text-xl my-0 mt-10 font-medium font-sans text-white">
 								or
 							</p>
 						</div>
+                        <div class="text-center">
+							
+							<form class="flex items-center mt-8">
+							
+								<input id="uploadBttn" class="hidden" type="file"/>
+								<label for="uploadBttn" class="inline-block bg-white text-blue text-center hover:cursor-pointer select-none">Browse file</label>
+							
+							</form>
+
+						</div>
+						<div class="text-center mt-10">
+							<p class="text-xl my-0  font-medium font-sans text-white">
+								No sign-in required
+							</p>
+						</div>
 					</div>
+					<hr class="absolute h-[1px] bg-white bottom-16 left-10 right-10">
 				</div>
+
+				<div
+					class="bg-black flex-initial max-h-60 grow flex-wrap flex justify-center content-center"
+				>
+					<div>
+                        <div class="flex flex-col justify-center text-center gap-0">
+							<div class="flex justify-center">
+                            	<img class="block mx-0" src="/src/img/lock__icon.svg">
+							</div>
+							<div>
+								<p class="my-0 hover:cursor-pointer hover:underline">Registered users<br>sign-in to your account</p>
+							</div>
+                        </div>
+					</div>
+						
+				</div>
+
+
 			</div>
 		</main>
 
