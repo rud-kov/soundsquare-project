@@ -122,7 +122,7 @@ select {
   @apply block w-full;
 }
 input[type=email]::-moz-placeholder, input[type=text]::-moz-placeholder, input[type=number]::-moz-placeholder, input[type=tel]::-moz-placeholder, input[type=password]::-moz-placeholder, textarea::-moz-placeholder, select::-moz-placeholder {
-  @apply text-white/100;
+  @apply text-black/50;
 }
 input[type=email]::placeholder,
 input[type=text]::placeholder,
@@ -131,7 +131,7 @@ input[type=tel]::placeholder,
 input[type=password]::placeholder,
 textarea::placeholder,
 select::placeholder {
-  @apply text-white/100;
+  @apply text-black/50;
 }
 
 textarea {
