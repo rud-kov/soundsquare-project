@@ -45,6 +45,10 @@ module.exports = {
 			width: {
 				fixedBttn: "20.875rem",
 			},
+			backgroundImage: {
+				"login-lock": "url('/src/img/lock__icon--login.svg')",
+				"mail-icon": "url('/src/img/mail__icon.svg')",
+			},
 		},
 	},
 	plugins: [],
