@@ -77,7 +77,7 @@
 				<div
 					class="relative flex grow flex-wrap content-center justify-center bg-blue"
 				>
-					<div class="pt-14 pb-[5.5rem]">
+					<div class="pt-14 pb-[5.5rem] mx-4">
 						<div class="flex justify-center">
 							<img
 								class="block"
@@ -106,7 +106,7 @@
 							<input id="uploadBttn" type="file" hidden />
 							<label
 								for="uploadBttn"
-								class="inline-block w-fixedBttn select-none whitespace-nowrap bg-white px-4 py-2 text-center font-public text-2xl text-blue hover:cursor-pointer mdd:max-w-min"
+								class="inline-block w-fixedBttn select-none whitespace-nowrap flex-grow bg-white px-4 py-2 text-center font-public text-2xl text-blue hover:cursor-pointer mdd:w-auto tablet:w-auto"
 								>Browse file</label
 							>
 						</div>
@@ -196,8 +196,10 @@
 									<label class="ml-3 font-normal text-1 font-public"  for="remember">Remember me</label>
 								</div>
 
-								<div class="flex flex-col justify-center">
-									<button class="flex-1 select-none whitespace-nowrap bg-blue px-4 py-2 text-center font-public text-2xl text-white hover:cursor-pointer mdd:max-w-min hover:text-blue hover:bg-white mx-0" type="submit">Sign in</button>
+								<div class="flex flex-col justify-center text-center">
+									<div class="flex">
+										<button class="flex-grow select-none whitespace-nowrap bg-blue px-4 py-2 text-center font-public text-2xl text-white hover:cursor-pointer  hover:text-blue hover:bg-white mx-0" type="submit">Sign in</button>
+									</div>
 
 									<div class="text-center pt-3">
 										<a class="hover:cursor-pointer hover:underline" href="#">Forgot password?</a>
