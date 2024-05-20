@@ -21,6 +21,8 @@ module.exports = {
 			fontFamily: {
 				sans: ["'Roboto'", "sans-serif"],
 				serif: ["'Apple Garamond'", "serif"],
+				inter: ["'Inter'"],
+				public: ["'Public Sans'"],
 			},
 			fontSize: {
 				...rem(16),
@@ -29,8 +31,22 @@ module.exports = {
 				...rem(48),
 			},
 			borderWidth: {
-				DEFAULT: "3px",
-				"3px": "3px",
+				DEFAULT: "1px",
+			},
+			lineHeight: {
+				11: "3.525rem",
+			},
+			content: {
+				soundsquare__logo: 'url("/src/img/soundsquare__logo.svg")',
+				soundsquare__logo__small: 'url("/src/img/soundsquare__logo--mobile.svg")',
+				dolby__logo: 'url("/src/img/dolby.png")',
+			},
+			width: {
+				fixedBttn: "20.875rem",
+			},
+			backgroundImage: {
+				"login-lock": "url('/src/img/lock__icon--login.svg')",
+				"mail-icon": "url('/src/img/mail__icon.svg')",
 			},
 		},
 	},

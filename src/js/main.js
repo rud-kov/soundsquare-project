@@ -1,6 +1,6 @@
 // import _ from "lodash";
 
-import { debounce } from "lodash";
+//import { debounce } from "lodash";
 
 const html = document.querySelector("html");
 const body = document.querySelector("body");
@@ -17,10 +17,23 @@ const Engine = {
 			// Add your events here
 			console.log("Events are running");
 
-			const el = document.querySelector(".b-test h1");
-			const offsetTop = Engine.helpers.offset(el);
+			const signBttn = document.getElementById("signBttn");
 
-			console.log(offsetTop.top);
+			const prelogin = document.getElementById("prelogin");
+
+			const divider = document.getElementById("divider");
+
+			const login = document.getElementById("login");
+
+			const loginWrapper = document.getElementById("login__wrapper");
+
+			signBttn.addEventListener("click", () => {
+				prelogin.classList.replace("flex", "hidden");
+				login.classList.replace("hidden", "flex");
+				divider.classList.add("hidden");
+				loginWrapper.classList.remove("max-h-60");
+			})
+
 		},
 		forms: function () {
 			// Add your form functions here
@@ -30,17 +43,17 @@ const Engine = {
 			// Add your responsive functions here
 			console.log("Responsive functions are running");
 
-			window.addEventListener(
-				"resize",
-				debounce(() => {
-					Engine.ui.recalculateGrid();
-				}, 1000)
-			);
+			//window.addEventListener(  ------ DEBOUNCE HAZE ERROR, ZAKOMENTOVANO
+			//	"resize",
+			//	debounce(() => {
+			//		Engine.ui.recalculateGrid();
+			//	}, 1000)
+			//);
 		},
-		recalculateGrid: debounce(function () {
-			// Add your grid functions here
-			console.log("Grid functions are running");
-		}, 100),
+		//recalculateGrid: debounce(function () { ---- DEBOUNCE HAZE ERROR, ZAKOMENTOVANO
+		//	// Add your grid functions here
+		//	console.log("Grid functions are running");
+		//}, 100),
 	},
 	helpers: {
 		offset: function (el) {
