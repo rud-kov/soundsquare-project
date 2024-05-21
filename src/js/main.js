@@ -38,6 +38,31 @@ const Engine = {
 		forms: function () {
 			// Add your form functions here
 			console.log("Forms are running");
+
+			/// LOGIN FORM START
+
+			const email = document.getElementById("email");
+			const password = document.getElementById("password");
+			const form = document.getElementById("login__form");
+
+			form.addEventListener("submit", (event) => {
+				event.preventDefault();
+				validateInputs();
+			});
+
+			function validateInputs() {
+				const emailValue = email.value;
+				const passwordValue = password.value;
+			}
+
+			/// LOGIN FORM END
+
+			//const upploadBttn = document.getElementById("upload__bttn");
+			//
+			//upploadBttn.addEventListener("click", (event) => {
+			//	document.getElementById("file").click();
+			//	console.log("lalala");
+			//});
 		},
 		responsive: function () {
 			// Add your responsive functions here

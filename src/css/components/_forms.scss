@@ -8,10 +8,7 @@ select {
 	@apply block w-full;
 	&:hover,
 	&:focus {
-	}
-	&::placeholder {
-		@apply text-black/50;
-	}
+	}	
 }
 
 textarea {
