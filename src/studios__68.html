@@ -111,20 +111,36 @@
 								action="https://httpbin.org/post"
 								method="post"
 								enctype="multipart/form-data"
-								id="form"
+								id="upload__form"
+								class="flex flex-col gap-5"
 							>
-								<input
-									id="file"
-									name="file"
-									type="file"
-									class="hidden"
-								/>
-								<button
-									for="file"
-									class="inline-block w-fixedBttn flex-grow select-none whitespace-nowrap bg-white px-4 py-2 text-center font-public text-2xl text-blue hover:cursor-pointer hover:bg-black hover:text-white mdd:w-auto tablet:w-auto"
+								<label
+									class="w-fixedBttn flex-grow select-none whitespace-nowrap bg-white px-4 py-2 text-center font-public text-2xl text-blue hover:cursor-pointer hover:bg-black hover:text-white mdd:w-auto tablet:w-auto"
 								>
 									Browse files
+									<input
+										id="file__input"
+										name="file"
+										type="file"
+										class="hidden"
+										multiple
+										accept="" 
+									/> <!-- Do input parametru accept doplnit, na jaky typ files (jpeg. mp4, avi...) pripadne chceme upload omezit -->
+								</label>
+								<p
+									id="upload__and"
+									class="my-0 hidden font-inter text-xl font-normal text-white mdd:text-lg tablet:text-lg"
+								>
+									and
+								</p>
+								<button
+									type="submit"
+									id="upload__button"
+									class="hidden w-fixedBttn flex-grow select-none whitespace-nowrap bg-white px-4 py-2 text-center font-public text-2xl text-blue hover:cursor-pointer hover:bg-black hover:text-white mdd:w-auto tablet:w-auto"
+								>
+									Upload files
 								</button>
+								<span id="status__message" class="text-red-600 hidden">No file selected for upload.</span>
 							</form>
 						</div>
 						<div class="mt-10 text-center">
@@ -182,7 +198,9 @@
 							<div>
 								<form
 									class="mt-12 flex flex-col gap-9 text-left"
-									id="login__form" action="" method="post"
+									id="login__form"
+									action=""
+									method="post"
 								>
 									<div>
 										<label

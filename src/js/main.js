@@ -1,5 +1,7 @@
 // import _ from "lodash";
 
+//const { method } = require("lodash"); ---- LODASH HAZI ERROR
+
 //import { debounce } from "lodash";
 
 const html = document.querySelector("html");
@@ -36,7 +38,7 @@ const Engine = {
 
 		},
 		forms: function () {
-			// Add your form functions here
+		
 			console.log("Forms are running");
 
 			/// LOGIN FORM START
@@ -55,14 +57,48 @@ const Engine = {
 				const passwordValue = password.value;
 			}
 
-			/// LOGIN FORM END
+			/// BROWSE FILES STYLING
 
-			//const upploadBttn = document.getElementById("upload__bttn");
-			//
-			//upploadBttn.addEventListener("click", (event) => {
-			//	document.getElementById("file").click();
-			//	console.log("lalala");
-			//});
+			const fileInput = document.getElementById("file__input");
+
+			const uploadAnd = document.getElementById("upload__and");
+
+			const uploadBttn = document.getElementById("upload__button");
+
+			browseBttn.addEventListener("click", () => {
+				uploadBttn.classList.replace("hidden", "inline-block");
+				uploadBttn.classList.remove("w-fixedBttn");
+				uploadAnd.classList.remove("hidden");
+			});
+
+			/// BROWSE FILES & TRACK PROGRESS UPLOAD MECHANICS
+
+			const uploadForm = document.getElementById("upload__form");
+
+			const statusMessage = document.getElementById("status__message")
+
+			uploadForm.addEventListener("submit", handleSubmit);
+
+			function handleSubmit(event) {
+				event.preventDefault();
+				uploadFiles();
+			}
+
+			function uploadFiles() {
+				const url = "https://httpbin.org/post"; // VYMENIT TESTOVACI URL ZA SKUTECNOU ADRESU
+				const method = 'post';
+
+				const xhr = new XMLHttpRequest();
+
+				const data = new FormData(form);
+
+				xhr.open(method, url);
+				xhr.send(data);
+			};
+
+			
+
+
 		},
 		responsive: function () {
 			// Add your responsive functions here
