@@ -38,7 +38,6 @@ const Engine = {
 
 		},
 		forms: function () {
-		
 			console.log("Forms are running");
 
 			/// LOGIN FORM START
@@ -65,7 +64,7 @@ const Engine = {
 
 			const uploadBttn = document.getElementById("upload__button");
 
-			browseBttn.addEventListener("click", () => {
+			fileInput.addEventListener("click", () => {
 				uploadBttn.classList.replace("hidden", "inline-block");
 				uploadBttn.classList.remove("w-fixedBttn");
 				uploadAnd.classList.remove("hidden");
@@ -75,7 +74,7 @@ const Engine = {
 
 			const uploadForm = document.getElementById("upload__form");
 
-			const statusMessage = document.getElementById("status__message")
+			const statusMessage = document.getElementById("status__message");
 
 			uploadForm.addEventListener("submit", handleSubmit);
 
@@ -86,7 +85,7 @@ const Engine = {
 
 			function uploadFiles() {
 				const url = "https://httpbin.org/post"; // VYMENIT TESTOVACI URL ZA SKUTECNOU ADRESU
-				const method = 'post';
+				const method = "post";
 
 				const xhr = new XMLHttpRequest();
 
@@ -94,11 +93,26 @@ const Engine = {
 
 				xhr.open(method, url);
 				xhr.send(data);
-			};
 
-			
+				if (fileInput.files.length == 0) {
+					statusMessage.classList.replace("hidden", "flex");
+					throw new Error(`No file selected for upload.`);
+				}
+			}
+
+			function assertFilesValid() {
+				
+			}
 
 
+			//if (fileInput.files.length == 0) {
+			//	console.log("No file was selected for upload");
+			//	uploadForm.append(
+			//		'<span id="status__message" class="text-red-600">No file selected for upload.</span>'
+			//	);
+			//} else {
+			//	uploadForm.remove(statusMessage);
+			//}
 		},
 		responsive: function () {
 			// Add your responsive functions here
