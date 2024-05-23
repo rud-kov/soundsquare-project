@@ -34,8 +34,7 @@ const Engine = {
 				login.classList.replace("hidden", "flex");
 				divider.classList.add("hidden");
 				loginWrapper.classList.remove("max-h-60");
-			})
-
+			});
 		},
 		forms: function () {
 			console.log("Forms are running");
@@ -74,13 +73,18 @@ const Engine = {
 
 			const uploadForm = document.getElementById("upload__form");
 
-			const statusMessage = document.getElementById("status__message");
-
 			uploadForm.addEventListener("submit", handleSubmit);
 
 			function handleSubmit(event) {
 				event.preventDefault();
+
+				showPendingState();
+
 				uploadFiles();
+			}
+
+			function showPendingState() {
+				uploadBttn.disabled = true;
 			}
 
 			function uploadFiles() {
@@ -91,28 +95,76 @@ const Engine = {
 
 				const data = new FormData(form);
 
+				function updateStatusMessage(message) {
+
+					const status = document.createElement("div");
+
+					switch (message) {
+						case "missingFiles":
+							status.innerHTML = `<p class="text-red-600 my-0 ">No file selected for upload.</p>`;
+							break;
+						case "somethingWrong":
+							status.innerHTML = `<p class="text-red-600 my-0 ">Something went wrong. Please try again.</p>`;
+							break;
+						case "success":
+							status.innerHTML = `<span class="text-green my-0 ">Success!</span>`;
+							break;
+						//case "uploading":
+						//	status.innerHTML = `<p class="text-white my-0 ">Uploaded ${event.loaded} bytes of ${event.total}</p>`;
+						default:
+							break;
+					}
+
+					uploadForm.appendChild(status);	
+				};
+
+
+				xhr.addEventListener("loadend", () => {
+					if (xhr.status === 200) {
+						updateStatusMessage("success");
+					} else if (fileInput.files.length == 0) {
+						updateStatusMessage("missingFiles");
+					} else {
+						updateStatusMessage("somethingWrong");
+					}
+					//updateProgressBar(0);
+				});
+
+				xhr.upload.addEventListener('progress', event => {
+					//updateStatusMessage("uploading");
+
+					const uploadProgress = document.createElement("div");
+
+					uploadProgress.innerHTML = (
+						`<p class="my-0 text-white">
+							Uploaded ${event.loaded} bytes of ${event.total}
+						</p>`
+					);
+
+					function updateProgressBar(value) {
+						const uploadBarContainer =
+							document.createElement("div");
+						uploadBarContainer.innerHTML = `<progress id="progress__bar" value="0" max="100"></progress>`;
+
+						const progressBar =
+							document.getElementById("progress__bar");
+
+						uploadForm.appendChild(uploadBarContainer);
+
+						const percent = value * 100;
+
+						progressBar.value = Math.round(percent);
+					}
+					
+					updateProgressBar(event.loaded / event.total)
+
+					uploadForm.appendChild(uploadProgress);
+
+				})
+
 				xhr.open(method, url);
 				xhr.send(data);
-
-				if (fileInput.files.length == 0) {
-					statusMessage.classList.replace("hidden", "flex");
-					throw new Error(`No file selected for upload.`);
-				}
 			}
-
-			function assertFilesValid() {
-				
-			}
-
-
-			//if (fileInput.files.length == 0) {
-			//	console.log("No file was selected for upload");
-			//	uploadForm.append(
-			//		'<span id="status__message" class="text-red-600">No file selected for upload.</span>'
-			//	);
-			//} else {
-			//	uploadForm.remove(statusMessage);
-			//}
 		},
 		responsive: function () {
 			// Add your responsive functions here
