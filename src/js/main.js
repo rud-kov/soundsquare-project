@@ -73,18 +73,22 @@ const Engine = {
 
 			const uploadForm = document.getElementById("upload__form");
 
+			const mainRight = document.getElementById("main__right");
+
+			const uploadScreen = document.getElementById("main__right--upload");
+
+			const progressBar = document.getElementById("progress__bar");
+
 			uploadForm.addEventListener("submit", handleSubmit);
 
 			function handleSubmit(event) {
 				event.preventDefault();
 
-				showPendingState();
+				uploadBttn.disabled = true;
 
 				uploadFiles();
-			}
 
-			function showPendingState() {
-				uploadBttn.disabled = true;
+				uploadBttn.disabled = false;
 			}
 
 			function uploadFiles() {
@@ -106,61 +110,34 @@ const Engine = {
 						case "somethingWrong":
 							status.innerHTML = `<p class="text-red-600 my-0 ">Something went wrong. Please try again.</p>`;
 							break;
-						case "success":
-							status.innerHTML = `<span class="text-green my-0 ">Success!</span>`;
-							break;
-						//case "uploading":
-						//	status.innerHTML = `<p class="text-white my-0 ">Uploaded ${event.loaded} bytes of ${event.total}</p>`;
-						default:
-							break;
 					}
-
 					uploadForm.appendChild(status);	
 				};
 
+				function updateProgressBar(value) {
+					const percent = value * 100;
+					progressBar.value = Math.round(percent);
+				}
 
+				xhr.upload.addEventListener("progress", event => {
+					 updateProgressBar(event.loaded / event.total);
+				})
+
+				function displayUploadScreen() {
+					mainRight.classList.replace("flex", "hidden");
+					uploadScreen.classList.replace("hidden", "flex");					
+				}
+				
 				xhr.addEventListener("loadend", () => {
-					if (xhr.status === 200) {
-						updateStatusMessage("success");
-					} else if (fileInput.files.length == 0) {
+					if (fileInput.files.length == 0) {
 						updateStatusMessage("missingFiles");
-					} else {
+					} else if (!(xhr.status === 200)) {
 						updateStatusMessage("somethingWrong");
+					} else {
+						displayUploadScreen();
 					}
 					//updateProgressBar(0);
 				});
-
-				xhr.upload.addEventListener('progress', event => {
-					//updateStatusMessage("uploading");
-
-					const uploadProgress = document.createElement("div");
-
-					uploadProgress.innerHTML = (
-						`<p class="my-0 text-white">
-							Uploaded ${event.loaded} bytes of ${event.total}
-						</p>`
-					);
-
-					function updateProgressBar(value) {
-						const uploadBarContainer =
-							document.createElement("div");
-						uploadBarContainer.innerHTML = `<progress id="progress__bar" value="0" max="100"></progress>`;
-
-						const progressBar =
-							document.getElementById("progress__bar");
-
-						uploadForm.appendChild(uploadBarContainer);
-
-						const percent = value * 100;
-
-						progressBar.value = Math.round(percent);
-					}
-					
-					updateProgressBar(event.loaded / event.total)
-
-					uploadForm.appendChild(uploadProgress);
-
-				})
 
 				xhr.open(method, url);
 				xhr.send(data);
