@@ -26,7 +26,8 @@
 	</head>
 
 	<body class="flex overflow-y-scroll">
-		<main id="main"
+		<main
+			id="main"
 			class="flex flex-auto mdd:flex-col tablet:flex-col dark:bg-neutral-900 dark:text-gray-200"
 		>
 			<div class="relative flex flex-1 mdd:min-h-52 tablet:min-h-60">
@@ -112,7 +113,7 @@
 								method="post"
 								enctype="multipart/form-data"
 								id="upload__form"
-								class="flex flex-col gap-5 text-center justify-center"
+								class="flex flex-col justify-center gap-5 text-center"
 							>
 								<label
 									class="w-fixedBttn flex-grow select-none whitespace-nowrap bg-white px-4 py-2 text-center font-public text-2xl text-blue hover:cursor-pointer hover:bg-black hover:text-white mdd:w-auto tablet:w-auto"
@@ -124,8 +125,9 @@
 										type="file"
 										class="hidden"
 										multiple
-										accept="" 
-									/> <!-- Do input parametru accept doplnit, na jaky typ files (jpeg. mp4, avi...) pripadne chceme upload omezit -->
+										accept=""
+									/>
+									<!-- Do input parametru accept doplnit, na jaky typ files (jpeg. mp4, avi...) pripadne chceme upload omezit -->
 								</label>
 								<p
 									id="upload__and"
@@ -272,37 +274,57 @@
 				</div>
 			</div>
 
-			<div id="main__right--upload" class="hidden flex-1 flex-col bg-white">
-
-				<div class="mt-10 mb-24 mx-11 border-blue border-dashed border flex flex-1 flex-col justify-start items-center gap-16">
-
-					<div class="text-center max-w-[27.125rem] mx-4">
-						<div><p class="font-public text-2xl text-blue">Can you make a circle from squares in the meantime?</p></div>
+			<div
+				id="main__right--upload"
+				class="hidden flex-1 flex-col bg-white"
+			>
+				<div
+					class="mx-11 mb-24 mt-10 flex flex-1 flex-col items-center justify-start gap-16 border border-dashed border-blue mdd:gap-8 tablet:gap-8"
+				>
+					<div class="mx-4 max-w-[27.125rem] text-center">
+						<div>
+							<p
+								class="my-0 pt-5 font-public text-2xl text-blue mdd:text-xl tablet:text-xl"
+							>
+								Can you make a circle from squares in the
+								meantime?
+							</p>
+						</div>
 					</div>
 
 					<div class="mx-4">
-						<img src="/src/img/minigame.svg">
+						<img src="/src/img/minigame.svg" />
 					</div>
 
-
-					<div class="text-center max-w-[27.125rem] mx-4">
-						<div><p class="font-public text-2xl text-blue">Your data is now uploading.<br>Please do not close this window.</p></div>
+					<div class="mx-4 max-w-[27.125rem] text-center">
+						<div>
+							<p
+								class="my-0 font-public text-2xl text-blue mdd:text-xl tablet:text-xl"
+							>
+								Your data is now uploading.<br />Please do not
+								close this window.
+							</p>
+						</div>
 					</div>
 
-					<div class="text-center flex flex-col max-w-[27.125rem] mx-4">
-						<progress id="progress__bar" class="h-3 flex grow w-[27.125rem]" value="0" max="100"></progress>
-						<p id="progress__percents" class="font-public text-2xl text-blue pt-5"></p>
-					</div>
+					<div
+						class="justify-start mx-4 flex grow flex-col items-stretch self-stretch text-center pb-5"
+					>
+						<progress
+							id="progress__bar"
+							class="mx-auto h-3 max-h-3 w-full max-w-[27.125rem] grow [&::-moz-progress-bar]:bg-blue [&::-webkit-progress-bar]:bg-[#D9D9D9] [&::-webkit-progress-value]:bg-blue"
+							value="0"
+							max="100"
+						></progress>
 
+						<p
+							id="progress__percents"
+							class="my-0 pt-5 font-public text-2xl text-blue mdd:text-xl tablet:text-xl"
+						></p>
+					</div>
 				</div>
-
-
 			</div>
-
 		</main>
-
-
-
 
 		<!-- <script src="js/plugins.js"></script> -->
 		<script src="js/main.js" type="module"></script>

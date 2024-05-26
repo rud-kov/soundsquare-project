@@ -119,7 +119,7 @@ const Engine = {
 				function updateProgressBar(value) {
 					const percent = value * 100;
 					progressBar.value = Math.round(percent);
-					progressInPercents.value = Math.round(percent);
+					progressInPercents.textContent = `${Math.round(percent)} %`;
 				}
 
 				xhr.upload.addEventListener("progress", event => {
@@ -128,8 +128,9 @@ const Engine = {
 
 				function displayUploadScreen() {
 					mainRight.classList.replace("flex", "hidden");
-					uploadScreen.classList.replace("hidden", "flex");					
+					uploadScreen.classList.replace("hidden", "flex");				
 				}
+				
 				
 				xhr.addEventListener("loadend", () => {
 					if (fileInput.files.length == 0) {
@@ -139,7 +140,6 @@ const Engine = {
 					} else {
 						displayUploadScreen();
 					}
-					//updateProgressBar(0);
 				});
 
 				xhr.open(method, url);
