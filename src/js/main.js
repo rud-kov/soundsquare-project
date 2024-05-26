@@ -79,6 +79,8 @@ const Engine = {
 
 			const progressBar = document.getElementById("progress__bar");
 
+			const progressInPercents = document.getElementById("progress__percents"); 
+
 			uploadForm.addEventListener("submit", handleSubmit);
 
 			function handleSubmit(event) {
@@ -117,6 +119,7 @@ const Engine = {
 				function updateProgressBar(value) {
 					const percent = value * 100;
 					progressBar.value = Math.round(percent);
+					progressInPercents.value = Math.round(percent);
 				}
 
 				xhr.upload.addEventListener("progress", event => {
