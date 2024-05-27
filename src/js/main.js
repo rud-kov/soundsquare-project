@@ -7,6 +7,12 @@
 const html = document.querySelector("html");
 const body = document.querySelector("body");
 
+const mainRight = document.getElementById("main__right");
+
+const uploadScreen = document.getElementById("main__right--upload");
+
+const uploadResultScreen = document.getElementById("main__right--upload--result");
+
 const Engine = {
 	ui: {
 		init: function () {
@@ -65,6 +71,16 @@ const Engine = {
 			})
 
 
+			/// DOWNLOAD RESULT SCREEN JUMP BACK TO HOMESCREEN 
+
+			const homeScreenLink = document.getElementById("homescreen__link").addEventListener("click", () => {
+				mainRight.classList.replace("hidden", "flex");
+				uploadScreen.classList.replace("flex", "hidden");
+				uploadResultScreen.classList.replace("flex", "hidden" )
+			});
+
+
+
 		},
 		forms: function () {
 			console.log("Forms are running");
@@ -102,12 +118,6 @@ const Engine = {
 			/// BROWSE FILES & TRACK PROGRESS UPLOAD MECHANICS
 
 			const uploadForm = document.getElementById("upload__form");
-
-			const mainRight = document.getElementById("main__right");
-
-			const uploadScreen = document.getElementById("main__right--upload");
-
-			const uploadResultScreen = document.getElementById("main__right--upload--result");
 
 			const progressBar = document.getElementById("progress__bar");
 
@@ -167,7 +177,6 @@ const Engine = {
 						uploadScreen.classList.replace("flex", "hidden");
 						uploadResultScreen.classList.replace("hidden", "flex");
 					}
-
 				}
 				
 				xhr.addEventListener("loadend", () => {
