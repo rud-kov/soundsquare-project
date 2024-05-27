@@ -78,7 +78,7 @@
 				</div>
 			</div>
 
-			<div id="main__right" class="flex flex-1 flex-col">
+			<div id="main__right" class="hidden flex-1 flex-col">
 				<div
 					class="relative flex grow flex-wrap content-center justify-center bg-blue"
 				>
@@ -274,53 +274,118 @@
 				</div>
 			</div>
 
-			<div
-				id="main__right--upload"
-				class="hidden flex-1 flex-col bg-white"
-			>
+			<div id="main__right--upload" class="hidden flex-1 bg-white">
 				<div
-					class="mx-11 mb-24 mt-10 flex flex-1 flex-col items-center justify-start gap-16 border border-dashed border-blue mdd:gap-8 tablet:gap-8"
+					class="mx-11 mb-24 mt-10 flex flex-1 justify-center border border-dashed border-blue"
 				>
-					<div class="mx-4 max-w-[27.125rem] text-center">
-						<div>
-							<p
-								class="my-0 pt-5 font-public text-2xl text-blue mdd:text-xl tablet:text-xl"
-							>
-								Can you make a circle from squares in the
-								meantime?
-							</p>
-						</div>
-					</div>
-
-					<div class="mx-4">
-						<img src="/src/img/minigame.svg" />
-					</div>
-
-					<div class="mx-4 max-w-[27.125rem] text-center">
-						<div>
-							<p
-								class="my-0 font-public text-2xl text-blue mdd:text-xl tablet:text-xl"
-							>
-								Your data is now uploading.<br />Please do not
-								close this window.
-							</p>
-						</div>
-					</div>
-
 					<div
-						class="justify-start mx-4 flex grow flex-col items-stretch self-stretch text-center pb-5"
+						class="mx-4 flex max-w-[27.125rem] grow flex-col items-center justify-start gap-16 mdd:gap-8 tablet:gap-8"
 					>
-						<progress
-							id="progress__bar"
-							class="mx-auto h-3 max-h-3 w-full max-w-[27.125rem] grow [&::-moz-progress-bar]:bg-blue [&::-webkit-progress-bar]:bg-[#D9D9D9] [&::-webkit-progress-value]:bg-blue"
-							value="0"
-							max="100"
-						></progress>
+						<div class="text-center">
+							<div>
+								<p
+									class="my-0 pt-5 font-public text-2xl text-blue mdd:text-xl tablet:text-xl"
+								>
+									Can you make a circle from squares in the
+									meantime?
+								</p>
+							</div>
+						</div>
 
-						<p
-							id="progress__percents"
-							class="my-0 pt-5 font-public text-2xl text-blue mdd:text-xl tablet:text-xl"
-						></p>
+						<div>
+							<img src="/src/img/minigame.svg" />
+						</div>
+
+						<div class="text-center">
+							<div>
+								<p
+									class="my-0 font-public text-2xl text-blue mdd:text-xl tablet:text-xl"
+								>
+									Your data is now uploading.<br />Please do
+									not close this window.
+								</p>
+							</div>
+						</div>
+
+						<div
+							class="flex grow flex-col items-stretch justify-start self-stretch pb-5 text-center"
+						>
+							<progress
+								id="progress__bar"
+								class="mx-auto h-3 max-h-3 w-full max-w-[27.125rem] grow [&::-moz-progress-bar]:bg-blue [&::-webkit-progress-bar]:bg-[#D9D9D9] [&::-webkit-progress-value]:bg-blue"
+								value="0"
+								max="100"
+							></progress>
+
+							<p
+								id="progress__percents"
+								class="my-0 pt-5 font-public text-2xl text-blue mdd:text-xl tablet:text-xl"
+							></p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="main__right--upload--result" class="flex flex-1 bg-blue">
+				<div
+					class="mx-4 mt-[15rem] mb-[8.688rem] flex grow flex-col items-center justify-start gap-[8.375rem]"
+				>
+					<div class="flex flex-col gap-8">
+						<div>
+							<img class="mx-auto" src="/src/img/upload__success.svg" />
+						</div>
+						<div class="text-center">
+							<h2
+								class="my-0 font-public text-48 text-white mdd:text-xl tablet:text-xl"
+							>
+								Everything sounds great here!
+						</h2>
+						</div>
+						<div class="text-center">
+							<p
+								class="my-0 font-public text-2xl text-white mdd:text-xl tablet:text-xl"
+							>
+								Your data has been uploaded
+							</p>
+						</div>
+					</div>
+
+					<div>
+						<div class="text-center">
+							<p
+								class="my-0 font-public text-2xl text-white mdd:text-xl tablet:text-xl"
+							>
+								Get your link here
+							</p>
+						</div>
+
+						<div class="text-center mt-7 hover:cursor-pointer relative">
+							<p id="download__link"
+								class="my-0 px-4 py-2 font-public text-24 text-blue bg-white mdd:text-xl tablet:text-xl "
+							>
+								soundsquare.cz/upload/GdX9lI2
+							</p>
+
+							<div id="copylink__tooltip" role="tooltip" class="absolute top-16 left-2/4 -translate-x-2/4 z-100 px-3 py-2 text-sm font-medium font-public text-white bg-black rounded-lg shadow-sm hidden">
+								<span id="tooltip__hover" class="flex">Click to copy link</span>
+							</div>
+
+							<div id="copylink__tooltip--success" role="tooltip" class="absolute top-16 left-2/4 -translate-x-2/4 z-100 px-3 py-2 text-sm font-medium font-public text-white bg-black rounded-lg shadow-sm hidden">
+								<span>Link copied</span>
+							</div>
+
+						</div>
+					</div>
+
+
+					<div class="text-center">
+						<div>
+							<h2
+								class="my-0 font-public text-48 hover:underline hover:cursor text-white mdd:text-xl tablet:text-xl"
+							>
+								Or, send another one? 
+						</h2>
+						</div>
 					</div>
 				</div>
 			</div>

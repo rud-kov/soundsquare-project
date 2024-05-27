@@ -19,6 +19,8 @@ const Engine = {
 			// Add your events here
 			console.log("Events are running");
 
+			/// LOGIN ROLLDOWN 
+
 			const signBttn = document.getElementById("signBttn");
 
 			const prelogin = document.getElementById("prelogin");
@@ -35,6 +37,34 @@ const Engine = {
 				divider.classList.add("hidden");
 				loginWrapper.classList.remove("max-h-60");
 			});
+
+			/// COPY TEXT TO CLIPBOARD
+
+			const downloadLink = document.getElementById("download__link");
+
+			const tooltipHover = document.getElementById("copylink__tooltip");
+
+			const tooltipSuccess = document.getElementById("copylink__tooltip--success");
+
+			downloadLink.addEventListener("mouseenter", () => {
+				tooltipHover.classList.replace("hidden", "flex");
+			})
+
+			downloadLink.addEventListener("mouseleave", () => {
+				tooltipHover.classList.replace("flex", "hidden");
+			});
+
+			downloadLink.addEventListener("click", () => {
+				navigator.clipboard.writeText(`${downloadLink.textContent}`);
+				tooltipHover.classList.toggle("hidden");
+				tooltipSuccess.classList.toggle("hidden");
+
+				setTimeout(() => {
+					tooltipSuccess.classList.toggle("hidden");
+				}, 700)
+			})
+
+
 		},
 		forms: function () {
 			console.log("Forms are running");
@@ -76,6 +106,8 @@ const Engine = {
 			const mainRight = document.getElementById("main__right");
 
 			const uploadScreen = document.getElementById("main__right--upload");
+
+			const uploadResultScreen = document.getElementById("main__right--upload--result");
 
 			const progressBar = document.getElementById("progress__bar");
 
@@ -120,17 +152,23 @@ const Engine = {
 					const percent = value * 100;
 					progressBar.value = Math.round(percent);
 					progressInPercents.textContent = `${Math.round(percent)} %`;
+					console.log(progressBar.value);
 				}
 
 				xhr.upload.addEventListener("progress", event => {
 					 updateProgressBar(event.loaded / event.total);
 				})
 
-				function displayUploadScreen() {
+				function displayUploadResult() {
 					mainRight.classList.replace("flex", "hidden");
-					uploadScreen.classList.replace("hidden", "flex");				
+					uploadScreen.classList.replace("hidden", "flex");
+					
+					if (progressBar.value === 100) {
+						uploadScreen.classList.replace("flex", "hidden");
+						uploadResultScreen.classList.replace("hidden", "flex");
+					}
+
 				}
-				
 				
 				xhr.addEventListener("loadend", () => {
 					if (fileInput.files.length == 0) {
@@ -138,7 +176,7 @@ const Engine = {
 					} else if (!(xhr.status === 200)) {
 						updateStatusMessage("somethingWrong");
 					} else {
-						displayUploadScreen();
+						displayUploadResult();
 					}
 				});
 
