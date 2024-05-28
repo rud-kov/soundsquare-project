@@ -11,10 +11,13 @@ const mainRight = document.getElementById("main__right");
 
 const uploadScreen = document.getElementById("main__right--upload");
 
-const uploadResultScreen = document.getElementById("main__right--upload--result");
+const uploadResultScreen = document.getElementById(
+	"main__right--upload--result",
+);
+
+const dragDropScreen = document.getElementById("main__right--dragdrop");
 
 const metadataContainer = document.getElementById("metadata__container");
-
 
 const Engine = {
 	ui: {
@@ -74,11 +77,6 @@ const Engine = {
 				}, 700);
 			});
 
-			// DRAG AND DROP UPLOAD BEHAVIOR
-
-
-
-
 			/// DOWNLOAD RESULT SCREEN JUMP BACK TO HOMESCREEN
 
 			const homeScreenLink = document
@@ -93,7 +91,7 @@ const Engine = {
 		forms: function () {
 			console.log("Forms are running");
 
-			/// LOGIN FORM 
+			/// LOGIN FORM
 
 			const email = document.getElementById("email");
 			const password = document.getElementById("password");
@@ -124,6 +122,10 @@ const Engine = {
 			const progressInPercents =
 				document.getElementById("progress__percents");
 
+			const dropArea = document.getElementById("dragdrop__area");
+
+			initDropArea();
+
 			/// EXPANDING PAGE ON BROWSE FILES
 
 			uploadForm.addEventListener("submit", handleSubmit);
@@ -144,6 +146,55 @@ const Engine = {
 				uploadFiles(fileInput.files);
 
 				uploadBttn.disabled = false;
+			}
+
+			/// UPLOADING FILES THROUGH DRAG AND DROP
+
+			dropArea.addEventListener("drop", handleDrop);
+
+			function initDropArea() {
+				let dragEventCounter = 0;
+
+				dropArea.addEventListener("dragenter", event => {
+					event.preventDefault();
+
+					if (dragEventCounter === 0) {
+						mainRight.classList.replace("flex", "hidden");
+						dragDropScreen.classList.replace("hidden", "flex");
+					}
+
+					dragEventCounter += 1;
+				});
+
+				dropArea.addEventListener("dragover", event => {
+					event.preventDefault();
+
+					if (dragEventCounter === 0) {
+						dragEventCounter = 1;
+					}
+				});
+
+				dropArea.addEventListener("dragleave", event => {
+					event.preventDefault();
+
+					dragEventCounter -= 1;
+
+					if (dragEventCounter <= 0) {
+						dragEventCounter = 0;
+						dragDropScreen.classList.replace("flex", "hidden");
+						mainRight.classList.replace("hidden", "flex");
+					}
+				});
+
+				dropArea.addEventListener("drop", event => {
+					event.preventDefault();
+					dragEventCounter = 0;
+				});
+			}
+
+			function handleDrop(event) {
+				const fileList = event.dataTransfer.files;
+				uploadFiles(fileList);
 			}
 
 			/// UPLOADING FILES THROUGH XLMHTTP REQUEST
@@ -236,7 +287,7 @@ const Engine = {
 				}, 2000);
 			}
 
-			/// UPLOAD PROGRESS BAR 
+			/// UPLOAD PROGRESS BAR
 
 			function updateProgressBar(value) {
 				const percent = value * 100;
