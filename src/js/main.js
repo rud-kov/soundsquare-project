@@ -189,11 +189,16 @@ const Engine = {
 				dropArea.addEventListener("drop", event => {
 					event.preventDefault();
 					dragEventCounter = 0;
+					dragDropScreen.classList.replace("flex", "hidden");
 				});
 			}
 
 			function handleDrop(event) {
 				const fileList = event.dataTransfer.files;
+
+				displayUploadResult();
+				renderFilesMetadata(fileInput.files); // TOHLE LADIT?
+
 				uploadFiles(fileList);
 			}
 
@@ -234,6 +239,7 @@ const Engine = {
 
 			function displayUploadResult() {
 				mainRight.classList.replace("flex", "hidden");
+				dragDropScreen.classList.replace("flex", "hidden"); /// NOVĚ K DRAG AND DROP
 				uploadScreen.classList.replace("hidden", "flex");
 
 				if (progressBar.value === 100) {
