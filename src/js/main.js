@@ -123,6 +123,8 @@ const Engine = {
 
 			const progressInPercents = document.getElementById("progress__percents"); 
 
+			const uploadedFileName = document.getElementById("fileName");
+
 			uploadForm.addEventListener("submit", handleSubmit);
 
 			function handleSubmit(event) {
@@ -148,22 +150,40 @@ const Engine = {
 					const status = document.createElement("div");
 
 					switch (message) {
-						case "missingFiles":
-							status.innerHTML = `<p class="text-red-600 my-0 ">No file selected for upload.</p>`;
-							break;
 						case "somethingWrong":
-							status.innerHTML = `<p class="text-red-600 my-0 ">Something went wrong. Please try again.</p>`;
+							status.innerHTML = `<div
+								role="tooltip"
+								class="rounded-lg bg-black px-3 py-2 font-public text-sm font-medium text-white shadow-sm mdd:top-11 tablet:top-11"
+							>
+								<span>Something went wrong. Please try again.</span>
+							</div>`;;
+							break;
+						case "missingFiles":
+							status.innerHTML = `<div
+								role="tooltip"
+								class="rounded-lg bg-black px-3 py-2 font-public text-sm font-medium text-white shadow-sm mdd:top-11 tablet:top-11"
+							>
+								<span>No file selected for upload.</span>
+							</div>`;
 							break;
 					}
-					uploadForm.appendChild(status);	
+					uploadForm.appendChild(status);
+					setTimeout(() => {
+						uploadForm.removeChild(status)
+					}, 2000);
 				};
 
 				function updateProgressBar(value) {
 					const percent = value * 100;
 					progressBar.value = Math.round(percent);
 					progressInPercents.textContent = `${Math.round(percent)} %`;
-					console.log(progressBar.value);
 				}
+
+
+				function renderFilesMetadata() {
+
+				}
+
 
 				xhr.upload.addEventListener("progress", event => {
 					 updateProgressBar(event.loaded / event.total);
