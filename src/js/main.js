@@ -11,9 +11,10 @@ const mainRight = document.getElementById("main__right");
 
 const uploadScreen = document.getElementById("main__right--upload");
 
-const uploadResultScreen = document.getElementById(
-	"main__right--upload--result",
-);
+const uploadResultScreen = document.getElementById("main__right--upload--result");
+
+const metadataContainer = document.getElementById("metadata__container");
+
 
 const Engine = {
 	ui: {
@@ -24,7 +25,6 @@ const Engine = {
 			Engine.ui.responsive();
 		},
 		events: function () {
-			// Add your events here
 			console.log("Events are running");
 
 			/// LOGIN ROLLDOWN
@@ -46,7 +46,7 @@ const Engine = {
 				loginWrapper.classList.remove("max-h-60");
 			});
 
-			/// COPY TEXT TO CLIPBOARD
+			/// COPY UPLOADED LINK TEXT TO CLIPBOARD
 
 			const downloadLink = document.getElementById("download__link");
 
@@ -74,6 +74,11 @@ const Engine = {
 				}, 700);
 			});
 
+			// DRAG AND DROP UPLOAD BEHAVIOR
+
+
+
+
 			/// DOWNLOAD RESULT SCREEN JUMP BACK TO HOMESCREEN
 
 			const homeScreenLink = document
@@ -82,12 +87,13 @@ const Engine = {
 					mainRight.classList.replace("hidden", "flex");
 					uploadScreen.classList.replace("flex", "hidden");
 					uploadResultScreen.classList.replace("flex", "hidden");
+					metadataContainer.removeChild(metadataContainer.lastChild);
 				});
 		},
 		forms: function () {
 			console.log("Forms are running");
 
-			/// LOGIN FORM START
+			/// LOGIN FORM 
 
 			const email = document.getElementById("email");
 			const password = document.getElementById("password");
@@ -103,13 +109,24 @@ const Engine = {
 				const passwordValue = password.value;
 			}
 
-			/// BROWSE FILES STYLING
+			/////////////// BROWSE AND UPLOAD FILES /////////////////////////////
 
 			const fileInput = document.getElementById("file__input");
+
+			const uploadForm = document.getElementById("upload__form");
 
 			const uploadAnd = document.getElementById("upload__and");
 
 			const uploadBttn = document.getElementById("upload__button");
+
+			const progressBar = document.getElementById("progress__bar");
+
+			const progressInPercents =
+				document.getElementById("progress__percents");
+
+			/// EXPANDING PAGE ON BROWSE FILES
+
+			uploadForm.addEventListener("submit", handleSubmit);
 
 			fileInput.addEventListener("click", () => {
 				uploadBttn.classList.replace("hidden", "inline-block");
@@ -117,20 +134,7 @@ const Engine = {
 				uploadAnd.classList.remove("hidden");
 			});
 
-			/// BROWSE FILES & TRACK PROGRESS UPLOAD MECHANICS
-
-			const uploadForm = document.getElementById("upload__form");
-
-			const progressBar = document.getElementById("progress__bar");
-
-			const progressInPercents =
-				document.getElementById("progress__percents");
-
-			const metadataContainer = document.getElementById(
-				"metadata__container",
-			);
-
-			uploadForm.addEventListener("submit", handleSubmit);
+			/// HANDLE SUBMIT FORM
 
 			function handleSubmit(event) {
 				event.preventDefault();
@@ -142,8 +146,10 @@ const Engine = {
 				uploadBttn.disabled = false;
 			}
 
+			/// UPLOADING FILES THROUGH XLMHTTP REQUEST
+
 			function uploadFiles(files) {
-				const url = "https://httpbin.org/post"; // VYMENIT TESTOVACI URL ZA SKUTECNOU ADRESU
+				const url = "https://httpbin.org/post"; // TESTING ONLY, SWITCH TO REAL URL ADDRESS
 				const method = "post";
 
 				const xhr = new XMLHttpRequest();
@@ -160,7 +166,6 @@ const Engine = {
 					} else {
 						displayUploadResult();
 						renderFilesMetadata(fileInput.files);
-						console.log(fileInput.files);
 					}
 				});
 
@@ -168,12 +173,13 @@ const Engine = {
 
 				for (const file of files) {
 					data.append("file", file);
-					//console.log(file);
 				}
 
 				xhr.open(method, url);
 				xhr.send(data);
 			}
+
+			/// DISPLAYING PROGRESS AND RESULTS SCREEN
 
 			function displayUploadResult() {
 				mainRight.classList.replace("flex", "hidden");
@@ -185,22 +191,23 @@ const Engine = {
 				}
 			}
 
+			/// RENDERING FILES METADATA
+
 			function renderFilesMetadata(fileList) {
-				const uploadedFilesData = document.createElement("div");
+				const uploadedFilesData = document.createElement("ul");
 
 				for (const file of fileList) {
 					const name = file.name;
+					uploadedFilesData.insertAdjacentHTML(
+						"beforeend",
+						`<li>${name}</li>`,
+					);
 				}
-
-				uploadedFilesData.insertAdjacentHTML(
-					"beforeend",
-					`<ul>
-							<li>${name}</li>
-						</ul>`,
-				);
 
 				metadataContainer.appendChild(uploadedFilesData);
 			}
+
+			/// ERROR HANDLING
 
 			function updateStatusMessage(message) {
 				const status = document.createElement("div");
@@ -228,6 +235,8 @@ const Engine = {
 					uploadForm.removeChild(status);
 				}, 2000);
 			}
+
+			/// UPLOAD PROGRESS BAR 
 
 			function updateProgressBar(value) {
 				const percent = value * 100;
