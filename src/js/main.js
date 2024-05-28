@@ -11,7 +11,9 @@ const mainRight = document.getElementById("main__right");
 
 const uploadScreen = document.getElementById("main__right--upload");
 
-const uploadResultScreen = document.getElementById("main__right--upload--result");
+const uploadResultScreen = document.getElementById(
+	"main__right--upload--result",
+);
 
 const Engine = {
 	ui: {
@@ -25,7 +27,7 @@ const Engine = {
 			// Add your events here
 			console.log("Events are running");
 
-			/// LOGIN ROLLDOWN 
+			/// LOGIN ROLLDOWN
 
 			const signBttn = document.getElementById("signBttn");
 
@@ -50,11 +52,13 @@ const Engine = {
 
 			const tooltipHover = document.getElementById("copylink__tooltip");
 
-			const tooltipSuccess = document.getElementById("copylink__tooltip--success");
+			const tooltipSuccess = document.getElementById(
+				"copylink__tooltip--success",
+			);
 
 			downloadLink.addEventListener("mouseenter", () => {
 				tooltipHover.classList.replace("hidden", "flex");
-			})
+			});
 
 			downloadLink.addEventListener("mouseleave", () => {
 				tooltipHover.classList.replace("flex", "hidden");
@@ -67,20 +71,18 @@ const Engine = {
 
 				setTimeout(() => {
 					tooltipSuccess.classList.toggle("hidden");
-				}, 700)
-			})
-
-
-			/// DOWNLOAD RESULT SCREEN JUMP BACK TO HOMESCREEN 
-
-			const homeScreenLink = document.getElementById("homescreen__link").addEventListener("click", () => {
-				mainRight.classList.replace("hidden", "flex");
-				uploadScreen.classList.replace("flex", "hidden");
-				uploadResultScreen.classList.replace("flex", "hidden" )
+				}, 700);
 			});
 
+			/// DOWNLOAD RESULT SCREEN JUMP BACK TO HOMESCREEN
 
-
+			const homeScreenLink = document
+				.getElementById("homescreen__link")
+				.addEventListener("click", () => {
+					mainRight.classList.replace("hidden", "flex");
+					uploadScreen.classList.replace("flex", "hidden");
+					uploadResultScreen.classList.replace("flex", "hidden");
+				});
 		},
 		forms: function () {
 			console.log("Forms are running");
@@ -121,9 +123,12 @@ const Engine = {
 
 			const progressBar = document.getElementById("progress__bar");
 
-			const progressInPercents = document.getElementById("progress__percents"); 
+			const progressInPercents =
+				document.getElementById("progress__percents");
 
-			const uploadedFileName = document.getElementById("fileName");
+			const metadataContainer = document.getElementById(
+				"metadata__container",
+			);
 
 			uploadForm.addEventListener("submit", handleSubmit);
 
@@ -132,73 +137,21 @@ const Engine = {
 
 				uploadBttn.disabled = true;
 
-				uploadFiles();
+				uploadFiles(fileInput.files);
 
 				uploadBttn.disabled = false;
 			}
 
-			function uploadFiles() {
+			function uploadFiles(files) {
 				const url = "https://httpbin.org/post"; // VYMENIT TESTOVACI URL ZA SKUTECNOU ADRESU
 				const method = "post";
 
 				const xhr = new XMLHttpRequest();
 
-				const data = new FormData(form);
+				xhr.upload.addEventListener("progress", (event) => {
+					updateProgressBar(event.loaded / event.total);
+				});
 
-				function updateStatusMessage(message) {
-
-					const status = document.createElement("div");
-
-					switch (message) {
-						case "somethingWrong":
-							status.innerHTML = `<div
-								role="tooltip"
-								class="rounded-lg bg-black px-3 py-2 font-public text-sm font-medium text-white shadow-sm mdd:top-11 tablet:top-11"
-							>
-								<span>Something went wrong. Please try again.</span>
-							</div>`;;
-							break;
-						case "missingFiles":
-							status.innerHTML = `<div
-								role="tooltip"
-								class="rounded-lg bg-black px-3 py-2 font-public text-sm font-medium text-white shadow-sm mdd:top-11 tablet:top-11"
-							>
-								<span>No file selected for upload.</span>
-							</div>`;
-							break;
-					}
-					uploadForm.appendChild(status);
-					setTimeout(() => {
-						uploadForm.removeChild(status)
-					}, 2000);
-				};
-
-				function updateProgressBar(value) {
-					const percent = value * 100;
-					progressBar.value = Math.round(percent);
-					progressInPercents.textContent = `${Math.round(percent)} %`;
-				}
-
-
-				function renderFilesMetadata() {
-
-				}
-
-
-				xhr.upload.addEventListener("progress", event => {
-					 updateProgressBar(event.loaded / event.total);
-				})
-
-				function displayUploadResult() {
-					mainRight.classList.replace("flex", "hidden");
-					uploadScreen.classList.replace("hidden", "flex");
-					
-					if (progressBar.value === 100) {
-						uploadScreen.classList.replace("flex", "hidden");
-						uploadResultScreen.classList.replace("hidden", "flex");
-					}
-				}
-				
 				xhr.addEventListener("loadend", () => {
 					if (fileInput.files.length == 0) {
 						updateStatusMessage("missingFiles");
@@ -206,11 +159,80 @@ const Engine = {
 						updateStatusMessage("somethingWrong");
 					} else {
 						displayUploadResult();
+						renderFilesMetadata(fileInput.files);
+						console.log(fileInput.files);
 					}
 				});
 
+				const data = new FormData();
+
+				for (const file of files) {
+					data.append("file", file);
+					//console.log(file);
+				}
+
 				xhr.open(method, url);
 				xhr.send(data);
+			}
+
+			function displayUploadResult() {
+				mainRight.classList.replace("flex", "hidden");
+				uploadScreen.classList.replace("hidden", "flex");
+
+				if (progressBar.value === 100) {
+					uploadScreen.classList.replace("flex", "hidden");
+					uploadResultScreen.classList.replace("hidden", "flex");
+				}
+			}
+
+			function renderFilesMetadata(fileList) {
+				const uploadedFilesData = document.createElement("div");
+
+				for (const file of fileList) {
+					const name = file.name;
+				}
+
+				uploadedFilesData.insertAdjacentHTML(
+					"beforeend",
+					`<ul>
+							<li>${name}</li>
+						</ul>`,
+				);
+
+				metadataContainer.appendChild(uploadedFilesData);
+			}
+
+			function updateStatusMessage(message) {
+				const status = document.createElement("div");
+
+				switch (message) {
+					case "somethingWrong":
+						status.innerHTML = `<div
+								role="tooltip"
+								class="rounded-lg bg-black px-3 py-2 font-public text-sm font-medium text-white shadow-sm mdd:top-11 tablet:top-11"
+							>
+								<span>Something went wrong. Please try again.</span>
+							</div>`;
+						break;
+					case "missingFiles":
+						status.innerHTML = `<div
+								role="tooltip"
+								class="rounded-lg bg-black px-3 py-2 font-public text-sm font-medium text-white shadow-sm mdd:top-11 tablet:top-11"
+							>
+								<span>No file selected for upload.</span>
+							</div>`;
+						break;
+				}
+				uploadForm.appendChild(status);
+				setTimeout(() => {
+					uploadForm.removeChild(status);
+				}, 2000);
+			}
+
+			function updateProgressBar(value) {
+				const percent = value * 100;
+				progressBar.value = Math.round(percent);
+				progressInPercents.textContent = `${Math.round(percent)} %`;
 			}
 		},
 		responsive: function () {

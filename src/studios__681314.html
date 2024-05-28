@@ -125,7 +125,7 @@
 										type="file"
 										class="hidden"
 										multiple
-										accept=""
+										accept="image/webp, image/jpeg, image/png"
 									/>
 									<!-- Do input parametru accept doplnit, na jaky typ files (jpeg. mp4, avi...) pripadne chceme upload omezit -->
 								</label>
@@ -345,11 +345,20 @@
 							</h2>
 						</div>
 						<div class="text-center">
-							<p
-								class="my-0 font-public text-2xl text-white mdd:text-xl tablet:text-xl"
-							>
-								Your data <span id="fileName"></span> has been uploaded
-							</p>
+							<div id="metadata__container">
+								<p
+									class="my-0 font-public text-2xl text-white mdd:text-xl tablet:text-xl"
+								>
+									Your data
+								</p>
+							</div>
+							<div>
+								<p
+									class="my-0 font-public text-2xl text-white mdd:text-xl tablet:text-xl"
+								>
+									has been uploaded
+								</p>
+							</div>
 						</div>
 					</div>
 
@@ -394,7 +403,8 @@
 
 					<div class="text-center">
 						<div>
-							<h2 id="homescreen__link"
+							<h2
+								id="homescreen__link"
 								class="my-0 font-public text-48 text-white hover:cursor-pointer hover:underline mdd:text-xl tablet:text-xl"
 							>
 								Upload more files?
