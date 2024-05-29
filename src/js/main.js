@@ -152,6 +152,10 @@ const Engine = {
 
 			dropArea.addEventListener("drop", handleDrop);
 
+			const dragDropZoneOverlay = document.getElementById(
+				"dragdrop__dropzone__overlay",
+			);
+
 			function initDropArea() {
 				let dragEventCounter = 0;
 
@@ -159,8 +163,7 @@ const Engine = {
 					event.preventDefault();
 
 					if (dragEventCounter === 0) {
-						mainRight.classList.replace("flex", "hidden");
-						dragDropScreen.classList.replace("hidden", "flex");
+						dragDropZoneOverlay.classList.replace("hidden", "flex");
 					}
 
 					dragEventCounter += 1;
@@ -181,7 +184,7 @@ const Engine = {
 
 					if (dragEventCounter <= 0) {
 						dragEventCounter = 0;
-						dragDropScreen.classList.replace("flex", "hidden");
+						dragDropZoneOverlay.classList.replace("flex", "hidden");
 						mainRight.classList.replace("hidden", "flex");
 					}
 				});
@@ -189,7 +192,7 @@ const Engine = {
 				dropArea.addEventListener("drop", event => {
 					event.preventDefault();
 					dragEventCounter = 0;
-					dragDropScreen.classList.replace("flex", "hidden");
+					dragDropZoneOverlay.classList.replace("flex", "hidden");
 				});
 			}
 
@@ -239,7 +242,6 @@ const Engine = {
 
 			function displayUploadResult() {
 				mainRight.classList.replace("flex", "hidden");
-				dragDropScreen.classList.replace("flex", "hidden"); /// NOVĚ K DRAG AND DROP
 				uploadScreen.classList.replace("hidden", "flex");
 
 				if (progressBar.value === 100) {
