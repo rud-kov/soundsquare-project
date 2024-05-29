@@ -15,8 +15,6 @@ const uploadResultScreen = document.getElementById(
 	"main__right--upload--result",
 );
 
-const dragDropScreen = document.getElementById("main__right--dragdrop");
-
 const metadataContainer = document.getElementById("metadata__container");
 
 const Engine = {
@@ -124,7 +122,6 @@ const Engine = {
 
 			const dropArea = document.getElementById("dragdrop__area");
 
-			initDropArea();
 
 			/// EXPANDING PAGE ON BROWSE FILES
 
@@ -150,12 +147,27 @@ const Engine = {
 
 			/// UPLOADING FILES THROUGH DRAG AND DROP
 
-			dropArea.addEventListener("drop", handleDrop);
-
 			const dragDropZoneOverlay = document.getElementById(
 				"dragdrop__dropzone__overlay",
 			);
 
+			dropArea.addEventListener("drop", handleDrop);
+
+			initDropArea();
+
+			function handleDrop(event) {
+				const fileList = event.dataTransfer.files;
+
+				console.log("handleDrop");
+
+				uploadFiles(fileList);
+
+				displayUploadResult();
+				renderFilesMetadata(fileList);
+
+				console.log(fileList);
+			}
+			
 			function initDropArea() {
 				let dragEventCounter = 0;
 
@@ -196,15 +208,6 @@ const Engine = {
 				});
 			}
 
-			function handleDrop(event) {
-				const fileList = event.dataTransfer.files;
-
-				displayUploadResult();
-				renderFilesMetadata(fileInput.files); // TOHLE LADIT?
-
-				uploadFiles(fileList);
-			}
-
 			/// UPLOADING FILES THROUGH XLMHTTP REQUEST
 
 			function uploadFiles(files) {
@@ -213,18 +216,25 @@ const Engine = {
 
 				const xhr = new XMLHttpRequest();
 
-				xhr.upload.addEventListener("progress", (event) => {
+				xhr.upload.addEventListener("progress", event => {
 					updateProgressBar(event.loaded / event.total);
-				});
 
+					//console.log(event.loaded) ---- EXPERIMENT
+ //
+					//if (event.total === 100) {
+					//	uploadScreen.classList.replace("flex", "hidden");
+					//	uploadResultScreen.classList.replace("hidden", "flex");
+					//}
+				});
+				
 				xhr.addEventListener("loadend", () => {
 					if (fileInput.files.length == 0) {
 						updateStatusMessage("missingFiles");
 					} else if (!(xhr.status === 200)) {
 						updateStatusMessage("somethingWrong");
 					} else {
-						displayUploadResult();
 						renderFilesMetadata(fileInput.files);
+						displayUploadResult();
 					}
 				});
 
@@ -241,12 +251,16 @@ const Engine = {
 			/// DISPLAYING PROGRESS AND RESULTS SCREEN
 
 			function displayUploadResult() {
+				console.log("displayed upload result")
+
 				mainRight.classList.replace("flex", "hidden");
 				uploadScreen.classList.replace("hidden", "flex");
+
 
 				if (progressBar.value === 100) {
 					uploadScreen.classList.replace("flex", "hidden");
 					uploadResultScreen.classList.replace("hidden", "flex");
+					console.log("displayed final screen");
 				}
 			}
 
@@ -262,8 +276,9 @@ const Engine = {
 						`<li>${name}</li>`,
 					);
 				}
-
 				metadataContainer.appendChild(uploadedFilesData);
+
+				console.log("displayed uploaded files");
 			}
 
 			/// ERROR HANDLING
