@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html class="no-js" lang="">
 	<head>
 		<meta charset="utf-8" />
@@ -22,25 +22,72 @@
 
 	<body>
 		<main
-			class="l-header flex flex-col border-3px items-center p-4 justify-center text-bl h-screen text-white bg-blue dark:bg-neutral-900 dark:text-gray-200"
+			class="l-header border-3px text-bl flex h-screen flex-col items-center justify-center bg-blue p-4 text-white dark:bg-neutral-900 dark:text-gray-200"
 		>
-			<h1 class="text-6xl l-header__logo">Soundsquare</h1>
-			<p class="font-serif text-32 lg:text-32">Client app</p>
-			<a href="#" class="btn">Button</a>
-		</main>
-		<!-- HEADER -->
-		<div
-			class="flex flex-col items-center justify-center h-screen bg-black b-test"
-		>
-			<h1>Sass Test</h1>
-		</div>
+			<div class="border px-2 py-2">
+				<div>
+					<h1
+						class="l-header__logo text-2xl hover:cursor-pointer hover:underline"
+					>
+						<a href="/src/studios__681314.html"
+							>Studios Journey version A</a
+						>
+					</h1>
+				</div>
 
-		<div class="b-grid grid gap-2">
-			<div class="b-grid__item b-grid__item--gray">
-				<p>text</p>
-				<input type="checkbox" />
+				<div>
+					<p class="font-serif text-24 lg:text-24">
+						Description: Figma studios 6, 8, 10, 13, 14
+					</p>
+				</div>
+
+				<div>
+					<div>
+						<p class="font-serif text-24 text-green lg:text-24">
+							Changes to approve:
+						</p>
+					</div>
+
+					<div>
+						<p class="text-white">
+							1. Dash border around file drop zone (studio 6)
+						</p>
+						<p class="text-white">
+							2. Fixed background left, scroll behavior right side
+						</p>
+						<p class="text-white">
+							3. Browse files button behavior (adding upload
+							button and file name)
+						</p>
+						<p class="text-white">
+							4. Mobile and tablet version design
+						</p>
+						<p class="text-white">
+							5. Hovers, error messages etc...
+						</p>
+					</div>
+				</div>
+
+				<div>
+					<div>
+						<p class="font-serif text-24 text-red-600 lg:text-24">
+							Missing:
+						</p>
+					</div>
+
+					<div>
+						<p>
+							1. Login auth,key etc. (only html/css + skeleton
+							jscript right now)
+						</p>
+						<p>
+							2. Drag and drop behavior
+						</p>
+
+					</div>
+				</div>
 			</div>
-		</div>
+		</main>
 
 		<!-- <script src="js/plugins.js"></script> -->
 		<script src="js/main.js" type="module"></script>
