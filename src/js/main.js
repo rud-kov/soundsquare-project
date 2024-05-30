@@ -121,8 +121,7 @@ const Engine = {
 
 			const dropArea = document.getElementById("dragdrop__area");
 
-
-			/// EXPANDING PAGE ON BROWSE FILES
+			/// ADDING UPLOAD BUTTON ON CLICKING BROWSE FILES
 
 			uploadForm.addEventListener("submit", handleSubmit);
 
@@ -150,12 +149,14 @@ const Engine = {
 				displayUploadResult();
 
 				renderFilesMetadata(fileList);
+
+				fileInput.value = "";
 			}
-			
+
 			function initDropArea() {
 				let dragEventCounter = 0;
 
-				dropArea.addEventListener("dragenter", event => {
+				dropArea.addEventListener("dragenter", (event) => {
 					event.preventDefault();
 
 					if (dragEventCounter === 0) {
@@ -165,7 +166,7 @@ const Engine = {
 					dragEventCounter += 1;
 				});
 
-				dropArea.addEventListener("dragover", event => {
+				dropArea.addEventListener("dragover", (event) => {
 					event.preventDefault();
 
 					if (dragEventCounter === 0) {
@@ -173,7 +174,7 @@ const Engine = {
 					}
 				});
 
-				dropArea.addEventListener("dragleave", event => {
+				dropArea.addEventListener("dragleave", (event) => {
 					event.preventDefault();
 
 					dragEventCounter -= 1;
@@ -185,27 +186,22 @@ const Engine = {
 					}
 				});
 
-				dropArea.addEventListener("drop", event => {
+				dropArea.addEventListener("drop", (event) => {
 					event.preventDefault();
 					dragEventCounter = 0;
 					dragDropZoneOverlay.classList.replace("flex", "hidden");
 				});
 			}
 
-			/// UPLOADING FILES THROUGH XLMHTTP REQUEST
+			/// UPLOADING FILES THROUGH XMLHTTP REQUEST
 
 			function handleSubmit(event) {
 				event.preventDefault();
 
 				if (fileInput.files.length == 0) {
 					updateStatusMessage("missingFiles");
-					console.log("missing files ");
-					return
-				} else if (!(xhr.status === 200)) {
-					updateStatusMessage("somethingWrong");
-					console.log("something is wrong");
-					return
-				} 
+					return;
+				}
 
 				uploadBttn.disabled = true;
 
@@ -216,6 +212,8 @@ const Engine = {
 				renderFilesMetadata(fileInput.files);
 
 				uploadBttn.disabled = false;
+
+				fileInput.value = "";
 			}
 
 			function uploadFiles(files) {
@@ -224,28 +222,21 @@ const Engine = {
 
 				const xhr = new XMLHttpRequest();
 
-				xhr.upload.addEventListener("progress", event => {
+				xhr.upload.addEventListener("progress", (event) => {
 					updateProgressBar(event.loaded / event.total);
 				});
 
-
 				xhr.upload.addEventListener("load", () => {
-					console.log("xhr upload load event")
 					uploadScreen.classList.replace("flex", "hidden");
 					uploadResultScreen.classList.replace("hidden", "flex");
 					updateProgressBar(0);
-				})
+				});
 
-
-				//xhr.addEventListener("loadend", () => {
-				//	if (fileInput.files.length == 0) {
-				//		updateStatusMessage("missingFiles");
-				//		console.log("missing files ")
-				//	} else if (!(xhr.status === 200)) {
-				//		updateStatusMessage("somethingWrong");
-				//		console.log("something is wrong");
-				//	} 
-				//});
+				xhr.upload.addEventListener("error", () => {
+					uploadScreen.classList.replace("flex", "hidden");
+					mainRight.classList.replace("hidden", "flex");
+					updateStatusMessage("somethingWrong");
+				});
 
 				const data = new FormData();
 
@@ -260,8 +251,6 @@ const Engine = {
 			/// DISPLAYING PROGRESS AND RESULTS SCREEN
 
 			function displayUploadResult() {
-				console.log("displayed upload result")
-
 				mainRight.classList.replace("flex", "hidden");
 				uploadScreen.classList.replace("hidden", "flex");
 			}
@@ -279,8 +268,6 @@ const Engine = {
 					);
 				}
 				metadataContainer.appendChild(uploadedFilesData);
-
-				console.log("displayed uploaded files");
 			}
 
 			/// ERROR HANDLING
