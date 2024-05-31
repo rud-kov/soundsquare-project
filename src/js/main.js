@@ -80,9 +80,8 @@ const Engine = {
 			const homeScreenLink = document
 				.getElementById("homescreen__link")
 				.addEventListener("click", () => {
-					mainRight.classList.replace("hidden", "flex");
-					uploadScreen.classList.replace("flex", "hidden");
 					uploadResultScreen.classList.replace("flex", "hidden");
+					mainRight.classList.replace("hidden", "flex");
 					metadataContainer.removeChild(metadataContainer.lastChild);
 				});
 		},
@@ -122,8 +121,7 @@ const Engine = {
 
 			const dropArea = document.getElementById("dragdrop__area");
 
-
-			/// EXPANDING PAGE ON BROWSE FILES
+			/// ADDING UPLOAD BUTTON ON CLICKING BROWSE FILES
 
 			uploadForm.addEventListener("submit", handleSubmit);
 
@@ -132,18 +130,6 @@ const Engine = {
 				uploadBttn.classList.remove("w-fixedBttn");
 				uploadAnd.classList.remove("hidden");
 			});
-
-			/// HANDLE SUBMIT FORM
-
-			function handleSubmit(event) {
-				event.preventDefault();
-
-				uploadBttn.disabled = true;
-
-				uploadFiles(fileInput.files);
-
-				uploadBttn.disabled = false;
-			}
 
 			/// UPLOADING FILES THROUGH DRAG AND DROP
 
@@ -158,20 +144,19 @@ const Engine = {
 			function handleDrop(event) {
 				const fileList = event.dataTransfer.files;
 
-				console.log("handleDrop");
-
 				uploadFiles(fileList);
 
 				displayUploadResult();
+
 				renderFilesMetadata(fileList);
 
-				console.log(fileList);
+				fileInput.value = "";
 			}
-			
+
 			function initDropArea() {
 				let dragEventCounter = 0;
 
-				dropArea.addEventListener("dragenter", event => {
+				dropArea.addEventListener("dragenter", (event) => {
 					event.preventDefault();
 
 					if (dragEventCounter === 0) {
@@ -181,7 +166,7 @@ const Engine = {
 					dragEventCounter += 1;
 				});
 
-				dropArea.addEventListener("dragover", event => {
+				dropArea.addEventListener("dragover", (event) => {
 					event.preventDefault();
 
 					if (dragEventCounter === 0) {
@@ -189,7 +174,7 @@ const Engine = {
 					}
 				});
 
-				dropArea.addEventListener("dragleave", event => {
+				dropArea.addEventListener("dragleave", (event) => {
 					event.preventDefault();
 
 					dragEventCounter -= 1;
@@ -201,14 +186,35 @@ const Engine = {
 					}
 				});
 
-				dropArea.addEventListener("drop", event => {
+				dropArea.addEventListener("drop", (event) => {
 					event.preventDefault();
 					dragEventCounter = 0;
 					dragDropZoneOverlay.classList.replace("flex", "hidden");
 				});
 			}
 
-			/// UPLOADING FILES THROUGH XLMHTTP REQUEST
+			/// UPLOADING FILES THROUGH XMLHTTP REQUEST
+
+			function handleSubmit(event) {
+				event.preventDefault();
+
+				if (fileInput.files.length == 0) {
+					updateStatusMessage("missingFiles");
+					return;
+				}
+
+				uploadBttn.disabled = true;
+
+				uploadFiles(fileInput.files);
+
+				displayUploadResult();
+
+				renderFilesMetadata(fileInput.files);
+
+				uploadBttn.disabled = false;
+
+				fileInput.value = "";
+			}
 
 			function uploadFiles(files) {
 				const url = "https://httpbin.org/post"; // TESTING ONLY, SWITCH TO REAL URL ADDRESS
@@ -216,26 +222,20 @@ const Engine = {
 
 				const xhr = new XMLHttpRequest();
 
-				xhr.upload.addEventListener("progress", event => {
+				xhr.upload.addEventListener("progress", (event) => {
 					updateProgressBar(event.loaded / event.total);
-
-					//console.log(event.loaded) ---- EXPERIMENT
- //
-					//if (event.total === 100) {
-					//	uploadScreen.classList.replace("flex", "hidden");
-					//	uploadResultScreen.classList.replace("hidden", "flex");
-					//}
 				});
-				
-				xhr.addEventListener("loadend", () => {
-					if (fileInput.files.length == 0) {
-						updateStatusMessage("missingFiles");
-					} else if (!(xhr.status === 200)) {
-						updateStatusMessage("somethingWrong");
-					} else {
-						renderFilesMetadata(fileInput.files);
-						displayUploadResult();
-					}
+
+				xhr.upload.addEventListener("load", () => {
+					uploadScreen.classList.replace("flex", "hidden");
+					uploadResultScreen.classList.replace("hidden", "flex");
+					updateProgressBar(0);
+				});
+
+				xhr.upload.addEventListener("error", () => {
+					uploadScreen.classList.replace("flex", "hidden");
+					mainRight.classList.replace("hidden", "flex");
+					updateStatusMessage("somethingWrong");
 				});
 
 				const data = new FormData();
@@ -251,17 +251,8 @@ const Engine = {
 			/// DISPLAYING PROGRESS AND RESULTS SCREEN
 
 			function displayUploadResult() {
-				console.log("displayed upload result")
-
 				mainRight.classList.replace("flex", "hidden");
 				uploadScreen.classList.replace("hidden", "flex");
-
-
-				if (progressBar.value === 100) {
-					uploadScreen.classList.replace("flex", "hidden");
-					uploadResultScreen.classList.replace("hidden", "flex");
-					console.log("displayed final screen");
-				}
 			}
 
 			/// RENDERING FILES METADATA
@@ -277,8 +268,6 @@ const Engine = {
 					);
 				}
 				metadataContainer.appendChild(uploadedFilesData);
-
-				console.log("displayed uploaded files");
 			}
 
 			/// ERROR HANDLING

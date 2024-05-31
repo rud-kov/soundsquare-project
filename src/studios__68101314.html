@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<title>Soundsquare</title>
@@ -50,7 +50,7 @@
 									class="mr-2 h-5 w-5 bg-white mdd:h-4 mdd:w-4 tablet:h-4 tablet:w-4"
 								></div>
 								<p
-									class="my-0 whitespace-nowrap font-public text-xl font-medium mdd:text-sm"
+									class="my-0 whitespace-nowrap font-public text-xl font-normal mdd:text-sm"
 								>
 									Black Studio
 								</p>
@@ -72,6 +72,7 @@
 							<img
 								class="block mdd:h-4 mdd:min-h-4 mdd:w-16 mdd:min-w-16"
 								src="/src/img/dolby.png"
+								alt="dolby logo"
 							/>
 						</div>
 					</div>
@@ -98,6 +99,7 @@
 									<img
 										class="block"
 										src="/src/img/arrow__down--big.svg"
+										alt=""
 									/>
 								</div>
 								<div
@@ -107,7 +109,7 @@
 										class="border border-dashed border-white px-4 py-4"
 									>
 										<p
-											class="my-0 font-public text-5xl font-medium leading-11 text-white mdd:text-3xl tablet:text-3xl"
+											class="my-0 font-public text-5xl font-normal leading-11 text-white mdd:text-3xl tablet:text-3xl"
 										>
 											Drag and drop<br />files here
 										</p>
@@ -119,7 +121,7 @@
 									</p>
 								</div>
 								<label
-									class="mx-auto w-fixedBttn flex-grow select-none whitespace-nowrap bg-white px-4 py-2 text-center font-public text-2xl text-blue hover:cursor-pointer hover:bg-black hover:text-white mdd:w-auto tablet:w-auto"
+									class="grow select-none whitespace-nowrap bg-white py-2 text-center font-public text-2xl text-blue hover:cursor-pointer hover:bg-black hover:text-white mdd:w-auto tablet:w-auto"
 								>
 									Browse files
 									<input
@@ -141,7 +143,7 @@
 								<button
 									type="submit"
 									id="upload__button"
-									class="hidden w-fixedBttn flex-grow select-none whitespace-nowrap bg-white px-4 py-2 text-center font-public text-2xl text-blue hover:cursor-pointer hover:bg-black hover:text-white mdd:w-auto tablet:w-auto"
+									class="hidden flex-grow select-none whitespace-nowrap bg-white px-4 py-2 text-center font-public text-2xl text-blue hover:cursor-pointer hover:bg-black hover:text-white mdd:w-auto tablet:w-auto"
 								>
 									Upload files
 								</button>
@@ -171,6 +173,7 @@
 								<img
 									class="mx-0 mb-2 block"
 									src="/src/img/lock__icon.svg"
+									alt=""
 								/>
 							</div>
 							<div>
@@ -219,6 +222,7 @@
 											name="email"
 											id="email"
 											required
+											autocomplete="email"
 										/>
 									</div>
 
@@ -242,10 +246,11 @@
 										<input
 											type="checkbox"
 											name="remember"
+											id="checkbox__remember"
 										/>
 										<label
 											class="text-1 ml-3 font-public font-normal"
-											for="remember"
+											for="checkbox__remember"
 											>Remember me</label
 										>
 									</div>
@@ -278,7 +283,7 @@
 
 				<div
 					id="dragdrop__dropzone__overlay"
-					class="absolute bottom-0 left-0 right-0 top-0 hidden flex-1 bg-white pointer-events-none"
+					class="pointer-events-none absolute bottom-0 left-0 right-0 top-0 hidden flex-1 bg-white"
 				>
 					<div
 						class="mx-11 mb-24 mt-10 flex flex-1 justify-center border border-dashed border-blue"
@@ -322,7 +327,8 @@
 						</div>
 
 						<div>
-							<img src="/src/img/minigame.svg" />
+							<img src="/src/img/minigame.svg" alt=""/>
+							
 						</div>
 
 						<div class="text-center">
@@ -360,17 +366,17 @@
 				class="hidden flex-1 justify-center bg-blue"
 			>
 				<div
-					class="mx-4 my-10 flex max-w-[33.75rem] grow flex-col items-center justify-start gap-[8.375rem] mdd:gap-10 tablet:gap-10"
+					class="mx-4 mb-28 mt-12 flex max-w-[33.75rem] grow flex-col items-center justify-between gap-[8.375rem] mdd:gap-10 tablet:gap-10"
 				>
 					<div class="flex flex-col items-center gap-8">
 						<div
-							class="h-[9.375rem] w-[9.375rem] bg-[url('/src/img/upload__success.svg')] bg-contain bg-center bg-no-repeat mdd:h-[4.68rem] mdd:w-[4.68rem]"
+							class="h-[9.813rem] w-[9.813rem] bg-[url('/src/img/upload__success.svg')] bg-contain bg-center bg-no-repeat mdd:h-[4.68rem] mdd:w-[4.68rem]"
 						></div>
 						<div class="text-center">
 							<h2
 								class="my-0 font-public text-48 leading-[3.5rem] text-white mdd:text-3xl tablet:text-3xl"
 							>
-								Everything sounds great here!
+								Sounds great!
 							</h2>
 						</div>
 						<div class="text-center">
@@ -413,7 +419,7 @@
 							<div
 								id="copylink__tooltip"
 								role="tooltip"
-								class="z-100 absolute left-2/4 top-16 hidden -translate-x-2/4 rounded-lg bg-black px-3 py-2 font-public text-sm font-medium text-white shadow-sm mdd:top-11 tablet:top-11"
+								class="absolute left-2/4 top-16 hidden -translate-x-2/4 rounded-lg bg-black px-3 py-2 font-public text-sm font-medium text-white shadow-sm mdd:top-11 tablet:top-11"
 							>
 								<span id="tooltip__hover"
 									>Click to copy link</span
@@ -423,7 +429,7 @@
 							<div
 								id="copylink__tooltip--success"
 								role="tooltip"
-								class="z-100 absolute left-2/4 top-16 hidden -translate-x-2/4 rounded-lg bg-black px-3 py-2 font-public text-sm font-medium text-white shadow-sm mdd:top-11 tablet:top-11"
+								class="absolute left-2/4 top-16 hidden -translate-x-2/4 rounded-lg bg-black px-3 py-2 font-public text-sm font-medium text-white shadow-sm mdd:top-11 tablet:top-11"
 							>
 								<span>Link copied</span>
 							</div>
@@ -431,14 +437,12 @@
 					</div>
 
 					<div class="text-center">
-						<div>
-							<h2
-								id="homescreen__link"
-								class="my-0 font-public text-48 text-white hover:cursor-pointer hover:underline mdd:text-xl tablet:text-xl"
-							>
-								Upload more files?
-							</h2>
-						</div>
+						<h2
+							id="homescreen__link"
+							class="my-0 font-public text-48 text-white hover:cursor-pointer hover:underline mdd:text-xl tablet:text-xl"
+						>
+							Upload more files?
+						</h2>
 					</div>
 				</div>
 			</div>
