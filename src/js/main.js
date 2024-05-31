@@ -4,6 +4,9 @@
 
 //import { debounce } from "lodash";
 
+
+/// GLOBAL VARIABLES USED IN MULTIPLE FUNCTIONS
+
 const html = document.querySelector("html");
 const body = document.querySelector("body");
 
@@ -16,6 +19,12 @@ const uploadResultScreen = document.getElementById(
 );
 
 const metadataContainer = document.getElementById("metadata__container");
+
+const login = document.getElementById("login");
+
+const prelogin = document.getElementById("prelogin");
+
+
 
 const Engine = {
 	ui: {
@@ -32,11 +41,11 @@ const Engine = {
 
 			const signBttn = document.getElementById("signBttn");
 
-			const prelogin = document.getElementById("prelogin");
+			//const prelogin = document.getElementById("prelogin");
 
 			const divider = document.getElementById("divider");
 
-			const login = document.getElementById("login");
+			
 
 			const loginWrapper = document.getElementById("login__wrapper");
 
@@ -161,6 +170,8 @@ const Engine = {
 
 					if (dragEventCounter === 0) {
 						dragDropZoneOverlay.classList.replace("hidden", "flex");
+						login.classList.replace("flex", "hidden");
+						prelogin.classList.replace("hidden", "flex");
 					}
 
 					dragEventCounter += 1;
@@ -216,6 +227,8 @@ const Engine = {
 				fileInput.value = "";
 			}
 
+			/// MAIN UPLOADING FUNCTION (XLMHTTP REQUEST)
+
 			function uploadFiles(files) {
 				const url = "https://httpbin.org/post"; // TESTING ONLY, SWITCH TO REAL URL ADDRESS
 				const method = "post";
@@ -255,7 +268,7 @@ const Engine = {
 				uploadScreen.classList.replace("hidden", "flex");
 			}
 
-			/// RENDERING FILES METADATA
+			/// RENDERING UPLOADED FILES METADATA
 
 			function renderFilesMetadata(fileList) {
 				const uploadedFilesData = document.createElement("ul");
