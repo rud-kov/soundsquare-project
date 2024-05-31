@@ -193,7 +193,7 @@ const Engine = {
 				});
 			}
 
-			/// UPLOADING FILES THROUGH XMLHTTP REQUEST
+			/// UPLOADING FILES THROUGH BUTTON
 
 			function handleSubmit(event) {
 				event.preventDefault();
