@@ -45,8 +45,6 @@ const Engine = {
 
 			const divider = document.getElementById("divider");
 
-			
-
 			const loginWrapper = document.getElementById("login__wrapper");
 
 			signBttn.addEventListener("click", () => {
@@ -250,6 +248,7 @@ const Engine = {
 					mainRight.classList.replace("hidden", "flex");
 					updateStatusMessage("somethingWrong");
 				});
+				
 
 				const data = new FormData();
 
@@ -267,6 +266,25 @@ const Engine = {
 				mainRight.classList.replace("flex", "hidden");
 				uploadScreen.classList.replace("hidden", "flex");
 			}
+
+			///// DISPLAYING FILES SELECTED FOR UPLOAD
+
+			fileInput.addEventListener("change", () => {
+				//const files = event.target.files;
+				const files = fileInput.files;
+
+				const filesToUpload = document.createElement("div");
+
+				for (const file of files) {
+					const name = file.name;
+					filesToUpload.insertAdjacentHTML(
+						"beforeend",
+						`<span>${name}</span>`,
+					);
+				}
+				uploadForm.appendChild(filesToUpload);
+			});
+
 
 			/// RENDERING UPLOADED FILES METADATA
 
