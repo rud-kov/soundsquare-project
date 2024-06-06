@@ -290,7 +290,7 @@ const Engine = {
 					
 					filesContainer.insertAdjacentHTML(
 						"beforeend",
-						`<li class="py-1">${name}</li>`,
+						`<li class="py-1 overflow-hidden text-ellipsis">${name}</li>`,
 					);
 				}
 			}
@@ -300,11 +300,13 @@ const Engine = {
 			function renderFilesMetadata(fileList) {
 				const uploadedFilesData = document.createElement("ul");
 
+				uploadedFilesData.classList.add("flex-col", "overflow-x-hidden", "whitespace-nowrap", "max-w-[20.813rem]", "mdd:max-w-[14.46rem]")
+
 				for (const file of fileList) {
 					const name = file.name;
 					uploadedFilesData.insertAdjacentHTML(
 						"beforeend",
-						`<li class="py-1">${name}</li>`,
+						`<li class="py-1 overflow-hidden text-ellipsis">${name}</li>`,
 					);
 				}
 				metadataContainer.appendChild(uploadedFilesData);
