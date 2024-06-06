@@ -263,18 +263,6 @@ const Engine = {
 					data.append("file", file);
 				}
 
-				//if (
-				//	fileInput.files.length >
-				//	0
-				//) {
-				//	const files =
-				//		fileInput.files;
-				//	for (let i = 0; i < files.length; i++) {
-				//		data.append("file", files[i]);
-				//	}
-				//}
-
-
 				xhr.open(method, url);
 				xhr.send(data);
 			}
@@ -287,6 +275,7 @@ const Engine = {
 			}
 
 			///// DISPLAYING FILES SELECTED FOR UPLOAD
+			
 
 			fileInput.addEventListener("change", renderFilesForUpload);
 
@@ -294,8 +283,11 @@ const Engine = {
 
 				const files = fileInput.files;
 
+				filesContainer.replaceChildren();
+
 				for (const file of files) {
 					const name = file.name;
+					
 					filesContainer.insertAdjacentHTML(
 						"beforeend",
 						`<li class="py-1">${name}</li>`,
