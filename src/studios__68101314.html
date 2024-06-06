@@ -93,7 +93,7 @@
 								method="post"
 								enctype="multipart/form-data"
 								id="upload__form"
-								class="flex flex-col justify-center gap-5 text-center"
+								class="flex flex-col justify-center gap-5 text-center relative"
 							>
 								<div class="flex justify-center">
 									<img
@@ -126,7 +126,7 @@
 									Browse files
 									<input
 										id="file__input"
-										name="file"
+										name="file" 
 										type="file"
 										class="hidden"
 										multiple
@@ -147,6 +147,8 @@
 								>
 									Upload files
 								</button>
+								<ul id="files__container" class="hidden flex-col">
+								</ul>
 							</form>
 						</div>
 						<div class="mt-10 text-center text-white">

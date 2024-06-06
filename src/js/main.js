@@ -41,7 +41,7 @@ const Engine = {
 
 			const signBttn = document.getElementById("signBttn");
 
-			//const prelogin = document.getElementById("prelogin");
+			const prelogin = document.getElementById("prelogin");
 
 			const divider = document.getElementById("divider");
 
@@ -121,6 +121,10 @@ const Engine = {
 
 			const uploadBttn = document.getElementById("upload__button");
 
+			const filesContainer = document.getElementById(
+				"files__container",
+			);
+
 			const progressBar = document.getElementById("progress__bar");
 
 			const progressInPercents =
@@ -136,6 +140,7 @@ const Engine = {
 				uploadBttn.classList.replace("hidden", "inline-block");
 				uploadBttn.classList.remove("w-fixedBttn");
 				uploadAnd.classList.remove("hidden");
+				filesContainer.classList.replace("hidden", "flex");
 			});
 
 			/// UPLOADING FILES THROUGH DRAG AND DROP
@@ -223,6 +228,8 @@ const Engine = {
 				uploadBttn.disabled = false;
 
 				fileInput.value = "";
+
+				filesContainer.replaceChildren();
 			}
 
 			/// MAIN UPLOADING FUNCTION (XLMHTTP REQUEST)
@@ -256,6 +263,18 @@ const Engine = {
 					data.append("file", file);
 				}
 
+				//if (
+				//	fileInput.files.length >
+				//	0
+				//) {
+				//	const files =
+				//		fileInput.files;
+				//	for (let i = 0; i < files.length; i++) {
+				//		data.append("file", files[i]);
+				//	}
+				//}
+
+
 				xhr.open(method, url);
 				xhr.send(data);
 			}
@@ -269,22 +288,20 @@ const Engine = {
 
 			///// DISPLAYING FILES SELECTED FOR UPLOAD
 
-			fileInput.addEventListener("change", () => {
-				//const files = event.target.files;
-				const files = fileInput.files;
+			fileInput.addEventListener("change", renderFilesForUpload);
 
-				const filesToUpload = document.createElement("div");
+			function renderFilesForUpload() {
+
+				const files = fileInput.files;
 
 				for (const file of files) {
 					const name = file.name;
-					filesToUpload.insertAdjacentHTML(
+					filesContainer.insertAdjacentHTML(
 						"beforeend",
-						`<span>${name}</span>`,
+						`<li class="py-1">${name}</li>`,
 					);
 				}
-				uploadForm.appendChild(filesToUpload);
-			});
-
+			}
 
 			/// RENDERING UPLOADED FILES METADATA
 
@@ -295,7 +312,7 @@ const Engine = {
 					const name = file.name;
 					uploadedFilesData.insertAdjacentHTML(
 						"beforeend",
-						`<li>${name}</li>`,
+						`<li class="py-1">${name}</li>`,
 					);
 				}
 				metadataContainer.appendChild(uploadedFilesData);
@@ -305,6 +322,8 @@ const Engine = {
 
 			function updateStatusMessage(message) {
 				const status = document.createElement("div");
+
+				status.classList.add("absolute", "bottom-0", "left-0", "right-0");
 
 				switch (message) {
 					case "somethingWrong":
