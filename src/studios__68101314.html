@@ -79,13 +79,13 @@
 				</div>
 			</div>
 
-			<div id="main__right" class="relative flex flex-1 flex-col">
+			<div id="main__right" class="relative hidden flex-1 flex-col"> <!--odebrat hidden pridat flex na zacatek-->
 				<div
 					class="relative flex grow flex-wrap content-center justify-center bg-blue"
 				>
 					<div class="mx-4 pb-[5.5rem] pt-14">
 						<div
-							class="mt-8 flex items-center justify-center text-center mdd:mt-4 tablet:mt-4"
+							class="mt-8 flex items-center justify-center text-center mdd:mt-4 tablet:mt-4 max-w-[20.813rem] mdd:max-w-[14.46rem]"
 							id="dragdrop__area"
 						>
 							<form
@@ -93,7 +93,7 @@
 								method="post"
 								enctype="multipart/form-data"
 								id="upload__form"
-								class="flex flex-col justify-center gap-5 text-center"
+								class="flex flex-col justify-center gap-5 text-center relative"
 							>
 								<div class="flex justify-center">
 									<img
@@ -126,13 +126,12 @@
 									Browse files
 									<input
 										id="file__input"
-										name="file"
+										name="file" 
 										type="file"
 										class="hidden"
 										multiple
 										accept=""
 									/>
-									<!-- Do input parametru "ACCEPT" doplnit, na jaky typ files (jpeg. mp4, avi...) pripadne chceme upload omezit -->
 								</label>
 								<p
 									id="upload__and"
@@ -147,6 +146,8 @@
 								>
 									Upload files
 								</button>
+								<ul id="files__container" class="hidden flex-col overflow-x-hidden whitespace-nowrap max-w-[20.813rem] mdd:max-w-[14.46rem]">
+								</ul>
 							</form>
 						</div>
 						<div class="mt-10 text-center text-white">
@@ -190,7 +191,7 @@
 
 					<div class="hidden" id="login">
 						<div
-							class="mx-3 flex flex-col gap-0 pb-12 pt-[7.313rem] text-center tablet:max-w-[14.46rem] mdd:max-w-[14.46rem]"
+							class="mx-3 flex flex-col gap-0 pb-12 pt-[7.313rem] text-center max-w-[20.813rem]  mdd:max-w-[14.46rem]"
 						>
 							<div class="text-white">
 								<p
@@ -309,7 +310,7 @@
 				</div>
 			</div>
 
-			<div id="main__right--upload" class="hidden flex-1 bg-white">
+			<div id="main__right--upload" class="flex-1 bg-white flex"> <!--odebrat flex pridat hidden na zacatek-->
 				<div
 					class="mx-11 mb-24 mt-10 flex flex-1 justify-center border border-dashed border-blue"
 				>
@@ -328,7 +329,9 @@
 						</div>
 
 						<div>
-							<img src="/src/img/minigame.svg" alt=""/>
+							<div id="puzzle__container" class="w-[11.25rem] h-[11.25rem]  relative">
+								
+							</div>
 							
 						</div>
 
@@ -380,8 +383,8 @@
 								Sounds great!
 							</h2>
 						</div>
-						<div class="text-center">
-							<div id="metadata__container" class="text-white">
+						<div class="text-center flex flex-col">
+							<div id="metadata__container" class="text-white overflow-x-clip flex flex-col">
 								<p
 									class="my-0 font-public text-2xl text-white mdd:text-xl tablet:text-xl"
 								>
@@ -392,7 +395,7 @@
 								<p
 									class="my-0 font-public text-2xl text-white mdd:text-xl tablet:text-xl"
 								>
-									has been uploaded
+									have been uploaded
 								</p>
 							</div>
 						</div>
@@ -408,7 +411,7 @@
 						</div>
 
 						<div
-							class="relative mt-3 text-center hover:cursor-pointer"
+							class="relative mt-3 text-center hover:cursor-pointer w-[26.438rem] mdd:w-auto tablet:w-auto"
 						>
 							<p
 								id="download__link"

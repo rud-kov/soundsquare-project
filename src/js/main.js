@@ -4,7 +4,6 @@
 
 //import { debounce } from "lodash";
 
-
 /// GLOBAL VARIABLES USED IN MULTIPLE FUNCTIONS
 
 const html = document.querySelector("html");
@@ -24,8 +23,6 @@ const login = document.getElementById("login");
 
 const prelogin = document.getElementById("prelogin");
 
-
-
 const Engine = {
 	ui: {
 		init: function () {
@@ -41,11 +38,9 @@ const Engine = {
 
 			const signBttn = document.getElementById("signBttn");
 
-			//const prelogin = document.getElementById("prelogin");
+			const prelogin = document.getElementById("prelogin");
 
 			const divider = document.getElementById("divider");
-
-			
 
 			const loginWrapper = document.getElementById("login__wrapper");
 
@@ -55,6 +50,116 @@ const Engine = {
 				divider.classList.add("hidden");
 				loginWrapper.classList.remove("max-h-60");
 			});
+
+			/// SLIDING PUZZLE GAME
+
+			const puzzleContainer =
+				document.getElementById("puzzle__container");
+
+			let puzzle = [];
+
+			let size = 4;
+
+			generatePuzzle();
+			randomizePuzzle();
+			renderPuzzle();
+
+			function getRow(pos) {
+				return Math.ceil(pos / size);
+			}
+			function getCol(pos) {
+				const col = pos % size;
+				if (col === 0) {
+					return size;
+				}
+				return col;
+			}
+
+			function generatePuzzle() {
+				for (let i = 1; i <= size * size; i++) {
+					puzzle.push({
+						value: i,
+						position: i,
+						x: (getCol(i) - 1) * 45,
+						y: (getRow(i) - 1) * 45,
+						disabled: false,
+					});
+				}
+			}
+
+			function randomizePuzzle() {
+				const randomValues = getRandomValues();
+				let i = 0;
+
+				for (let puzzleItem of puzzle) {
+					puzzleItem.value = randomValues[i];
+					i++;
+				}
+
+				const blankPuzzle = puzzle.find(
+					(item) => item.value === size * size,
+				);
+				blankPuzzle.disabled = true;
+			}
+
+			function getRandomValues() {
+				const values = [];
+				for (let i = 1; i <= size * size; i++) {
+					values.push(i);
+				}
+
+				const randomValues = values.sort(() => Math.random() - 0.5);
+				return randomValues;
+			}
+
+
+			function renderPuzzle() {
+				puzzleContainer.innerHTML = "";
+				for (let puzzleItem of puzzle) {
+					if (puzzleItem.disabled) continue; /// tohle nakopcit do src ${puzzleItem.value}
+					puzzleContainer.innerHTML += `
+						<aside class="flex justify-center align-center w-[2.813rem] h-[2.813rem] border-4 border-solid border-transparent absolute bg-contain bg-no-repeat bg-[url('../img/puzzlegame/8.png')]"" style="left: ${puzzleItem.x}px; top: ${puzzleItem.y}px">	</aside> 
+					`;
+				}
+			}
+
+			function getEmptyPuzzle() {
+				return puzzle.find((item) => item.disabled);
+			}
+
+			const puzzlePieces = puzzleContainer.querySelectorAll("aside");
+
+			puzzlePieces.forEach((piece) => {
+				piece.addEventListener("click", handlePieceClick);
+			});
+
+			function handlePieceClick(event) {
+				const clickedPiece = event.target;
+
+				const emptyPiece = getEmptyPuzzle();
+
+				const computedStyles = window.getComputedStyle(clickedPiece);
+				const clickedY = parseFloat(computedStyles.getPropertyValue("top"));
+				const clickedX = parseFloat(computedStyles.getPropertyValue("left"));
+
+				if (areNeighbors(emptyPiece, { x: clickedX, y: clickedY })) {
+					clickedPiece.style.top = `${emptyPiece.y}px`;
+					clickedPiece.style.left = `${emptyPiece.x}px`;
+					emptyPiece.x = clickedX;
+					emptyPiece.y = clickedY;
+				} else {
+					return
+				}
+			}
+
+			function areNeighbors(emptyPiece, clickedPiece) {
+				const xDiff = Math.abs(emptyPiece.x - clickedPiece.x);
+				const yDiff = Math.abs(emptyPiece.y - clickedPiece.y);
+				return (
+					(xDiff === 45 && yDiff === 0) ||
+					(xDiff === 0 && yDiff === 45)
+				);
+			}
 
 			/// COPY UPLOADED LINK TEXT TO CLIPBOARD
 
@@ -123,6 +228,8 @@ const Engine = {
 
 			const uploadBttn = document.getElementById("upload__button");
 
+			const filesContainer = document.getElementById("files__container");
+
 			const progressBar = document.getElementById("progress__bar");
 
 			const progressInPercents =
@@ -138,6 +245,7 @@ const Engine = {
 				uploadBttn.classList.replace("hidden", "inline-block");
 				uploadBttn.classList.remove("w-fixedBttn");
 				uploadAnd.classList.remove("hidden");
+				filesContainer.classList.replace("hidden", "flex");
 			});
 
 			/// UPLOADING FILES THROUGH DRAG AND DROP
@@ -225,6 +333,8 @@ const Engine = {
 				uploadBttn.disabled = false;
 
 				fileInput.value = "";
+
+				filesContainer.replaceChildren();
 			}
 
 			/// MAIN UPLOADING FUNCTION (XLMHTTP REQUEST)
@@ -268,16 +378,43 @@ const Engine = {
 				uploadScreen.classList.replace("hidden", "flex");
 			}
 
+			///// DISPLAYING FILES SELECTED FOR UPLOAD
+
+			fileInput.addEventListener("change", renderFilesForUpload);
+
+			function renderFilesForUpload() {
+				const files = fileInput.files;
+
+				filesContainer.replaceChildren();
+
+				for (const file of files) {
+					const name = file.name;
+
+					filesContainer.insertAdjacentHTML(
+						"beforeend",
+						`<li class="py-1 overflow-hidden text-ellipsis">${name}</li>`,
+					);
+				}
+			}
+
 			/// RENDERING UPLOADED FILES METADATA
 
 			function renderFilesMetadata(fileList) {
 				const uploadedFilesData = document.createElement("ul");
 
+				uploadedFilesData.classList.add(
+					"flex-col",
+					"overflow-x-hidden",
+					"whitespace-nowrap",
+					"max-w-[20.813rem]",
+					"mdd:max-w-[14.46rem]",
+				);
+
 				for (const file of fileList) {
 					const name = file.name;
 					uploadedFilesData.insertAdjacentHTML(
 						"beforeend",
-						`<li>${name}</li>`,
+						`<li class="py-1 overflow-hidden text-ellipsis">${name}</li>`,
 					);
 				}
 				metadataContainer.appendChild(uploadedFilesData);
@@ -287,6 +424,13 @@ const Engine = {
 
 			function updateStatusMessage(message) {
 				const status = document.createElement("div");
+
+				status.classList.add(
+					"absolute",
+					"bottom-0",
+					"left-0",
+					"right-0",
+				);
 
 				switch (message) {
 					case "somethingWrong":
