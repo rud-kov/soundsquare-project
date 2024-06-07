@@ -4,7 +4,6 @@
 
 //import { debounce } from "lodash";
 
-
 /// GLOBAL VARIABLES USED IN MULTIPLE FUNCTIONS
 
 const html = document.querySelector("html");
@@ -23,8 +22,6 @@ const metadataContainer = document.getElementById("metadata__container");
 const login = document.getElementById("login");
 
 const prelogin = document.getElementById("prelogin");
-
-
 
 const Engine = {
 	ui: {
@@ -53,6 +50,217 @@ const Engine = {
 				divider.classList.add("hidden");
 				loginWrapper.classList.remove("max-h-60");
 			});
+
+			/// SLIDING PUZZLE GAME
+
+			const puzzleContainer =
+				document.getElementById("puzzle__container");
+
+			let puzzle = [];
+
+			let size = 4;
+
+			generatePuzzle();
+			randomizePuzzle();
+			renderPuzzle();
+			handleInput();
+
+			function getRow(pos) {
+				return Math.ceil(pos / size);
+			}
+			function getCol(pos) {
+				const col = pos % size;
+				if (col === 0) {
+					return size;
+				}
+				return col;
+			}
+
+			function generatePuzzle() {
+				for (let i = 1; i <= size * size; i++) {
+					puzzle.push({
+						value: i,
+						position: i,
+						x: (getCol(i) - 1) * 45,
+						y: (getRow(i) - 1) * 45,
+						disabled: false,
+					});
+				}
+			}
+
+			function renderPuzzle() {
+				puzzleContainer.innerHTML = "";
+				for (let puzzleItem of puzzle) {
+					if (puzzleItem.disabled) continue;
+					puzzleContainer.innerHTML += `
+						<div class="flex justify-center align-center w-[2.813rem] h-[2.813rem] border-4 border-solid bg-blue  border-transparent absolute" style="left: ${puzzleItem.x}px; top: ${puzzleItem.y}px">
+								<div class="w-10 h-10 bg-[url('../img/puzzlegame/${puzzleItem.value}.png')]"></div>
+									
+						</div>
+					`;
+				}
+			} //<img class="h-full w-full" src="./img/dolby.png" />;
+
+			function randomizePuzzle() {
+				const randomValues = getRandomValues();
+				let i = 0;
+
+				for (let puzzleItem of puzzle) {
+					puzzleItem.value = randomValues[i];
+					i++;
+				}
+
+				const blankPuzzle = puzzle.find(
+					(item) => item.value === size * size,
+				);
+				blankPuzzle.disabled = true;
+			}
+
+			function getRandomValues() {
+				const values = [];
+				for (let i = 1; i <= size * size; i++) {
+					values.push(i);
+				}
+
+				const randomValues = values.sort(() => Math.random() - 0.5);
+				return randomValues;
+			}
+
+			function handleInput() {
+				document.addEventListener("keydown", handleKeyDown);
+			}
+
+			function handleKeyDown(e) {
+				switch (e.key) {
+					case "ArrowLeft":
+						moveLeft();
+						break;
+					case "ArrowRight":
+						moveRight();
+						break;
+					case "ArrowDown":
+						moveDown();
+						break;
+					case "ArrowUp":
+						moveUp();
+						break;
+				}
+				renderPuzzle();
+			}
+
+			function moveLeft() {
+				const emptyPuzzle = getEmptyPuzzle();
+				const rightPuzzle = getRightPuzzle();
+
+				if (rightPuzzle) {
+					swapPositions(emptyPuzzle, rightPuzzle, true);
+				}
+			}
+
+			function moveRight() {
+				const emptyPuzzle = getEmptyPuzzle();
+				const leftPuzzle = getLeftPuzzle();
+
+				if (leftPuzzle) {
+					swapPositions(emptyPuzzle, leftPuzzle, true);
+				}
+			}
+
+			function moveUp() {
+				const emptyPuzzle = getEmptyPuzzle();
+				const belowPuzzle = getBelowPuzzle();
+
+				if (belowPuzzle) {
+					swapPositions(emptyPuzzle, belowPuzzle, false);
+				}
+			}
+
+			function moveDown() {
+				const emptyPuzzle = getEmptyPuzzle();
+				const abovePuzzle = getAbovePuzzle();
+
+				if (abovePuzzle) {
+					swapPositions(emptyPuzzle, abovePuzzle, false);
+				}
+			}
+
+			function swapPositions(firstPuzzle, secondPuzzle, isX = false) {
+				let temp = firstPuzzle.position;
+				firstPuzzle.position = secondPuzzle.position;
+				secondPuzzle.position = temp;
+
+				if (isX) {
+					temp = firstPuzzle.x;
+					firstPuzzle.x = secondPuzzle.x;
+					secondPuzzle.x = temp;
+				} else {
+					temp = firstPuzzle.y;
+					firstPuzzle.y = secondPuzzle.y;
+					secondPuzzle.y = temp;
+				}
+			}
+
+			function getRightPuzzle() {
+				const emptyPuzzle = getEmptyPuzzle();
+
+				const isRightEdge = getCol(emptyPuzzle.position) === size;
+
+				if (isRightEdge) {
+					return null;
+				}
+
+				const puzzle = getPuzzleByPos(emptyPuzzle.position + 1);
+				return puzzle;
+			}
+
+
+			function getLeftPuzzle() {
+				const emptyPuzzle = getEmptyPuzzle();
+
+				const isLeftEdge = getCol(emptyPuzzle.position) === 1;
+
+				if (isLeftEdge) {
+					return null;
+				}
+
+				const puzzle = getPuzzleByPos(emptyPuzzle.position - 1);
+				return puzzle;
+			}
+
+
+			function getAbovePuzzle() {
+				const emptyPuzzle = getEmptyPuzzle();
+
+				const isTopEdge = getRow(emptyPuzzle.position) === 1;
+
+				if (isTopEdge) {
+					return null;
+				}
+
+				const puzzle = getPuzzleByPos(emptyPuzzle.position - size);
+				return puzzle;
+			}
+
+			function getBelowPuzzle() {
+				const emptyPuzzle = getEmptyPuzzle();
+
+				const isBottomEdge = getRow(emptyPuzzle.position) === size;
+
+				if (isBottomEdge) {
+					return null;
+				}
+
+				const puzzle = getPuzzleByPos(emptyPuzzle.position + size);
+				return puzzle;
+			}
+
+			function getEmptyPuzzle() {
+				return puzzle.find((item) => item.disabled);
+			}
+
+			function getPuzzleByPos(pos) {
+				return puzzle.find((item) => item.position === pos);
+			}
 
 			/// COPY UPLOADED LINK TEXT TO CLIPBOARD
 
@@ -121,9 +329,7 @@ const Engine = {
 
 			const uploadBttn = document.getElementById("upload__button");
 
-			const filesContainer = document.getElementById(
-				"files__container",
-			);
+			const filesContainer = document.getElementById("files__container");
 
 			const progressBar = document.getElementById("progress__bar");
 
@@ -255,7 +461,6 @@ const Engine = {
 					mainRight.classList.replace("hidden", "flex");
 					updateStatusMessage("somethingWrong");
 				});
-				
 
 				const data = new FormData();
 
@@ -275,19 +480,17 @@ const Engine = {
 			}
 
 			///// DISPLAYING FILES SELECTED FOR UPLOAD
-			
 
 			fileInput.addEventListener("change", renderFilesForUpload);
 
 			function renderFilesForUpload() {
-
 				const files = fileInput.files;
 
 				filesContainer.replaceChildren();
 
 				for (const file of files) {
 					const name = file.name;
-					
+
 					filesContainer.insertAdjacentHTML(
 						"beforeend",
 						`<li class="py-1 overflow-hidden text-ellipsis">${name}</li>`,
@@ -300,7 +503,13 @@ const Engine = {
 			function renderFilesMetadata(fileList) {
 				const uploadedFilesData = document.createElement("ul");
 
-				uploadedFilesData.classList.add("flex-col", "overflow-x-hidden", "whitespace-nowrap", "max-w-[20.813rem]", "mdd:max-w-[14.46rem]")
+				uploadedFilesData.classList.add(
+					"flex-col",
+					"overflow-x-hidden",
+					"whitespace-nowrap",
+					"max-w-[20.813rem]",
+					"mdd:max-w-[14.46rem]",
+				);
 
 				for (const file of fileList) {
 					const name = file.name;
@@ -317,7 +526,12 @@ const Engine = {
 			function updateStatusMessage(message) {
 				const status = document.createElement("div");
 
-				status.classList.add("absolute", "bottom-0", "left-0", "right-0");
+				status.classList.add(
+					"absolute",
+					"bottom-0",
+					"left-0",
+					"right-0",
+				);
 
 				switch (message) {
 					case "somethingWrong":
