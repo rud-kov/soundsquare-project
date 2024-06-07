@@ -87,16 +87,6 @@ const Engine = {
 				}
 			}
 
-			function renderPuzzle() {
-				puzzleContainer.innerHTML = "";
-				for (let puzzleItem of puzzle) {
-					if (puzzleItem.disabled) continue; /// tohle nakopcit do src ${puzzleItem.value}
-					puzzleContainer.innerHTML += `
-						<aside class="flex justify-center align-center w-[2.813rem] h-[2.813rem] border-4 border-solid border-transparent absolute bg-contain bg-no-repeat bg-[url('../img/puzzlegame/8.png')]"" style="left: ${puzzleItem.x}px; top: ${puzzleItem.y}px">	</aside> 
-					`;
-				}
-			}
-
 			function randomizePuzzle() {
 				const randomValues = getRandomValues();
 				let i = 0;
@@ -122,11 +112,22 @@ const Engine = {
 				return randomValues;
 			}
 
+
+			function renderPuzzle() {
+				puzzleContainer.innerHTML = "";
+				for (let puzzleItem of puzzle) {
+					if (puzzleItem.disabled) continue; /// tohle nakopcit do src ${puzzleItem.value}
+					puzzleContainer.innerHTML += `
+						<aside class="flex justify-center align-center w-[2.813rem] h-[2.813rem] border-4 border-solid border-transparent absolute bg-contain bg-no-repeat bg-[url('../img/puzzlegame/8.png')]"" style="left: ${puzzleItem.x}px; top: ${puzzleItem.y}px">	</aside> 
+					`;
+				}
+			}
+
 			function getEmptyPuzzle() {
 				return puzzle.find((item) => item.disabled);
 			}
 
-			const puzzlePieces = document.querySelectorAll("aside");
+			const puzzlePieces = puzzleContainer.querySelectorAll("aside");
 
 			puzzlePieces.forEach((piece) => {
 				piece.addEventListener("click", handlePieceClick);
