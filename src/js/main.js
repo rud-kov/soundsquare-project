@@ -63,7 +63,6 @@ const Engine = {
 			generatePuzzle();
 			randomizePuzzle();
 			renderPuzzle();
-			handleInput();
 
 			function getRow(pos) {
 				return Math.ceil(pos / size);
@@ -91,15 +90,12 @@ const Engine = {
 			function renderPuzzle() {
 				puzzleContainer.innerHTML = "";
 				for (let puzzleItem of puzzle) {
-					if (puzzleItem.disabled) continue;
+					if (puzzleItem.disabled) continue; /// tohle nakopcit do src ${puzzleItem.value}
 					puzzleContainer.innerHTML += `
-						<div class="flex justify-center align-center w-[2.813rem] h-[2.813rem] border-4 border-solid bg-blue  border-transparent absolute" style="left: ${puzzleItem.x}px; top: ${puzzleItem.y}px">
-								<div class="w-10 h-10 bg-[url('../img/puzzlegame/${puzzleItem.value}.png')]"></div>
-									
-						</div>
+						<aside class="flex justify-center align-center w-[2.813rem] h-[2.813rem] border-4 border-solid border-transparent absolute bg-contain bg-no-repeat bg-[url('../img/puzzlegame/8.png')]"" style="left: ${puzzleItem.x}px; top: ${puzzleItem.y}px">	</aside> 
 					`;
 				}
-			} //<img class="h-full w-full" src="./img/dolby.png" />;
+			}
 
 			function randomizePuzzle() {
 				const randomValues = getRandomValues();
@@ -126,140 +122,42 @@ const Engine = {
 				return randomValues;
 			}
 
-			function handleInput() {
-				document.addEventListener("keydown", handleKeyDown);
-			}
-
-			function handleKeyDown(e) {
-				switch (e.key) {
-					case "ArrowLeft":
-						moveLeft();
-						break;
-					case "ArrowRight":
-						moveRight();
-						break;
-					case "ArrowDown":
-						moveDown();
-						break;
-					case "ArrowUp":
-						moveUp();
-						break;
-				}
-				renderPuzzle();
-			}
-
-			function moveLeft() {
-				const emptyPuzzle = getEmptyPuzzle();
-				const rightPuzzle = getRightPuzzle();
-
-				if (rightPuzzle) {
-					swapPositions(emptyPuzzle, rightPuzzle, true);
-				}
-			}
-
-			function moveRight() {
-				const emptyPuzzle = getEmptyPuzzle();
-				const leftPuzzle = getLeftPuzzle();
-
-				if (leftPuzzle) {
-					swapPositions(emptyPuzzle, leftPuzzle, true);
-				}
-			}
-
-			function moveUp() {
-				const emptyPuzzle = getEmptyPuzzle();
-				const belowPuzzle = getBelowPuzzle();
-
-				if (belowPuzzle) {
-					swapPositions(emptyPuzzle, belowPuzzle, false);
-				}
-			}
-
-			function moveDown() {
-				const emptyPuzzle = getEmptyPuzzle();
-				const abovePuzzle = getAbovePuzzle();
-
-				if (abovePuzzle) {
-					swapPositions(emptyPuzzle, abovePuzzle, false);
-				}
-			}
-
-			function swapPositions(firstPuzzle, secondPuzzle, isX = false) {
-				let temp = firstPuzzle.position;
-				firstPuzzle.position = secondPuzzle.position;
-				secondPuzzle.position = temp;
-
-				if (isX) {
-					temp = firstPuzzle.x;
-					firstPuzzle.x = secondPuzzle.x;
-					secondPuzzle.x = temp;
-				} else {
-					temp = firstPuzzle.y;
-					firstPuzzle.y = secondPuzzle.y;
-					secondPuzzle.y = temp;
-				}
-			}
-
-			function getRightPuzzle() {
-				const emptyPuzzle = getEmptyPuzzle();
-
-				const isRightEdge = getCol(emptyPuzzle.position) === size;
-
-				if (isRightEdge) {
-					return null;
-				}
-
-				const puzzle = getPuzzleByPos(emptyPuzzle.position + 1);
-				return puzzle;
-			}
-
-
-			function getLeftPuzzle() {
-				const emptyPuzzle = getEmptyPuzzle();
-
-				const isLeftEdge = getCol(emptyPuzzle.position) === 1;
-
-				if (isLeftEdge) {
-					return null;
-				}
-
-				const puzzle = getPuzzleByPos(emptyPuzzle.position - 1);
-				return puzzle;
-			}
-
-
-			function getAbovePuzzle() {
-				const emptyPuzzle = getEmptyPuzzle();
-
-				const isTopEdge = getRow(emptyPuzzle.position) === 1;
-
-				if (isTopEdge) {
-					return null;
-				}
-
-				const puzzle = getPuzzleByPos(emptyPuzzle.position - size);
-				return puzzle;
-			}
-
-			function getBelowPuzzle() {
-				const emptyPuzzle = getEmptyPuzzle();
-
-				const isBottomEdge = getRow(emptyPuzzle.position) === size;
-
-				if (isBottomEdge) {
-					return null;
-				}
-
-				const puzzle = getPuzzleByPos(emptyPuzzle.position + size);
-				return puzzle;
-			}
-
 			function getEmptyPuzzle() {
 				return puzzle.find((item) => item.disabled);
 			}
 
-			function getPuzzleByPos(pos) {
-				return puzzle.find((item) => item.position === pos);
+			const puzzlePieces = document.querySelectorAll("aside");
+
+			puzzlePieces.forEach((piece) => {
+				piece.addEventListener("click", handlePieceClick);
+			});
+
+			function handlePieceClick(event) {
+				const clickedPiece = event.target;
+
+				const emptyPiece = getEmptyPuzzle();
+
+				const computedStyles = window.getComputedStyle(clickedPiece);
+				const clickedY = parseFloat(computedStyles.getPropertyValue("top"));
+				const clickedX = parseFloat(computedStyles.getPropertyValue("left"));
+
+				if (areNeighbors(emptyPiece, { x: clickedX, y: clickedY })) {
+					clickedPiece.style.top = `${emptyPiece.y}px`;
+					clickedPiece.style.left = `${emptyPiece.x}px`;
+					emptyPiece.x = clickedX;
+					emptyPiece.y = clickedY;
+				} else {
+					return
+				}
+			}
+
+			function areNeighbors(emptyPiece, clickedPiece) {
+				const xDiff = Math.abs(emptyPiece.x - clickedPiece.x);
+				const yDiff = Math.abs(emptyPiece.y - clickedPiece.y);
+				return (
+					(xDiff === 45 && yDiff === 0) ||
+					(xDiff === 0 && yDiff === 45)
+				);
 			}
 
 			/// COPY UPLOADED LINK TEXT TO CLIPBOARD
