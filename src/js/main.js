@@ -23,6 +23,23 @@ const login = document.getElementById("login");
 
 const prelogin = document.getElementById("prelogin");
 
+import one from "../img/puzzlegame/1.png";
+import two from "../img/puzzlegame/2.png";
+import three from "../img/puzzlegame/3.png";
+import four from "../img/puzzlegame/4.png";
+import five from "../img/puzzlegame/5.png";
+import six from "../img/puzzlegame/6.png";
+import seven from "../img/puzzlegame/7.png";
+import eight from "../img/puzzlegame/8.png";
+import nine from "../img/puzzlegame/9.png";
+import ten from "../img/puzzlegame/10.png";
+import eleven from "../img/puzzlegame/11.png";
+import twelve from "../img/puzzlegame/12.png";
+import thirteen from "../img/puzzlegame/13.png";
+import fourteen from "../img/puzzlegame/14.png";
+import fifteen from "../img/puzzlegame/15.png";
+
+
 const Engine = {
 	ui: {
 		init: function () {
@@ -51,7 +68,7 @@ const Engine = {
 				loginWrapper.classList.remove("max-h-60");
 			});
 
-			/// SLIDING PUZZLE GAME
+			//////////////// SLIDING PUZZLE GAME
 
 			const puzzleContainer =
 				document.getElementById("puzzle__container");
@@ -112,14 +129,16 @@ const Engine = {
 				return randomValues;
 			}
 
-
 			function renderPuzzle() {
 				puzzleContainer.innerHTML = "";
 				for (let puzzleItem of puzzle) {
-					if (puzzleItem.disabled) continue; /// tohle nakopcit do src ${puzzleItem.value}
+
+					if (puzzleItem.disabled) continue;
 					puzzleContainer.innerHTML += `
-						<aside class="flex justify-center align-center w-[2.813rem] h-[2.813rem] border-4 border-solid border-transparent absolute bg-contain bg-no-repeat bg-[url('../img/puzzlegame/8.png')]"" style="left: ${puzzleItem.x}px; top: ${puzzleItem.y}px">	</aside> 
-					`;
+						<img class="w-[2.813rem] h-[2.813rem] border-4 border-solid border-transparent absolute b" style="left: ${puzzleItem.x / 16}rem; top: ${puzzleItem.y / 16}rem" src="${require(
+							`../img/puzzlegame/${puzzleItem.value}.png`,
+						)}"/>
+					`;					
 				}
 			}
 
@@ -127,7 +146,7 @@ const Engine = {
 				return puzzle.find((item) => item.disabled);
 			}
 
-			const puzzlePieces = puzzleContainer.querySelectorAll("aside");
+			const puzzlePieces = puzzleContainer.querySelectorAll("img");
 
 			puzzlePieces.forEach((piece) => {
 				piece.addEventListener("click", handlePieceClick);
@@ -139,16 +158,20 @@ const Engine = {
 				const emptyPiece = getEmptyPuzzle();
 
 				const computedStyles = window.getComputedStyle(clickedPiece);
-				const clickedY = parseFloat(computedStyles.getPropertyValue("top"));
-				const clickedX = parseFloat(computedStyles.getPropertyValue("left"));
+				const clickedY = parseFloat(
+					computedStyles.getPropertyValue("top"),
+				);
+				const clickedX = parseFloat(
+					computedStyles.getPropertyValue("left"),
+				);
 
 				if (areNeighbors(emptyPiece, { x: clickedX, y: clickedY })) {
-					clickedPiece.style.top = `${emptyPiece.y}px`;
-					clickedPiece.style.left = `${emptyPiece.x}px`;
+					clickedPiece.style.top = `${emptyPiece.y / 16}rem`;
+					clickedPiece.style.left = `${emptyPiece.x / 16}rem`;
 					emptyPiece.x = clickedX;
 					emptyPiece.y = clickedY;
 				} else {
-					return
+					return;
 				}
 			}
 
