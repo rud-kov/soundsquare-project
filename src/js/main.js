@@ -118,7 +118,7 @@ const Engine = {
 
 					if (puzzleItem.disabled) continue;
 					puzzleContainer.innerHTML += `
-						<img class="w-[2.813rem] h-[2.813rem] border-4 border-solid border-transparent absolute b" style="left: ${puzzleItem.x / 16}rem; top: ${puzzleItem.y / 16}rem" src="
+						<img class="w-[2.813rem] h-[2.813rem] border-4 border-solid border-transparent absolute" style="left: ${puzzleItem.x / 16}rem; top: ${puzzleItem.y / 16}rem" src="
 							../img/puzzlegame/${puzzleItem.value}.png" />
 					`;					
 				}
@@ -345,7 +345,7 @@ const Engine = {
 			/// MAIN UPLOADING FUNCTION (XLMHTTP REQUEST)
 
 			function uploadFiles(files) {
-				const url = "https://httpbin.org/post"; // TESTING ONLY, SWITCH TO REAL URL ADDRESS
+				const url = "https://httpbin.org/post"; // SWITCH TO REAL URL ADDRESS
 				const method = "post";
 
 				const xhr = new XMLHttpRequest();
