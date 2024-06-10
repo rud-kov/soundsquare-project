@@ -23,23 +23,6 @@ const login = document.getElementById("login");
 
 const prelogin = document.getElementById("prelogin");
 
-import one from "../img/puzzlegame/1.png";
-import two from "../img/puzzlegame/2.png";
-import three from "../img/puzzlegame/3.png";
-import four from "../img/puzzlegame/4.png";
-import five from "../img/puzzlegame/5.png";
-import six from "../img/puzzlegame/6.png";
-import seven from "../img/puzzlegame/7.png";
-import eight from "../img/puzzlegame/8.png";
-import nine from "../img/puzzlegame/9.png";
-import ten from "../img/puzzlegame/10.png";
-import eleven from "../img/puzzlegame/11.png";
-import twelve from "../img/puzzlegame/12.png";
-import thirteen from "../img/puzzlegame/13.png";
-import fourteen from "../img/puzzlegame/14.png";
-import fifteen from "../img/puzzlegame/15.png";
-
-
 const Engine = {
 	ui: {
 		init: function () {
@@ -135,9 +118,8 @@ const Engine = {
 
 					if (puzzleItem.disabled) continue;
 					puzzleContainer.innerHTML += `
-						<img class="w-[2.813rem] h-[2.813rem] border-4 border-solid border-transparent absolute b" style="left: ${puzzleItem.x / 16}rem; top: ${puzzleItem.y / 16}rem" src="${require(
-							`../img/puzzlegame/${puzzleItem.value}.png`,
-						)}"/>
+						<img class="w-[2.813rem] h-[2.813rem] border-4 border-solid border-transparent absolute b" style="left: ${puzzleItem.x / 16}rem; top: ${puzzleItem.y / 16}rem" src="
+							../img/puzzlegame/${puzzleItem.value}.png" />
 					`;					
 				}
 			}

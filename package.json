@@ -5,8 +5,8 @@
 	"license": "MIT",
 	"author": "TRAU dev <matous@trau.studio>",
 	"scripts": {
-		"dev": "cross-env parcel src/*.html",
-		"build": "cross-env NODE_ENV=production parcel build src/*.html --log-level verbose --public-url ./ --no-cache --no-content-hash"
+		"dev": "cross-env parcel src/*.html src/img/puzzlegame/*.png",
+		"build": "cross-env NODE_ENV=production parcel build src/img/puzzlegame/*.png src/*.html --log-level verbose --public-url ./ --no-cache --no-content-hash"
 	},
 	"devDependencies": {
 		"@parcel/packager-raw-url": "^2.12.0",
