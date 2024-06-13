@@ -11,11 +11,9 @@ const body = document.querySelector("body");
 
 const mainRight = document.getElementById("uploadBar");
 
-const uploadScreen = document.getElementById("main__right--upload");
+const uploadScreen = document.getElementById("uploadBar--progress");
 
-const uploadResultScreen = document.getElementById(
-	"main__right--upload--result",
-);
+const uploadResultScreen = document.getElementById("uploadBar--result");
 
 const metadataContainer = document.getElementById("metadata__container");
 
@@ -33,6 +31,120 @@ const Engine = {
 		},
 		events: function () {
 			console.log("Events are running");
+
+			//////////////// SLIDING PUZZLE GAME
+
+			const puzzleContainer =
+				document.getElementById("puzzle__container");
+
+			let puzzle = [];
+
+			let size = 4;
+
+			generatePuzzle();
+			randomizePuzzle();
+			renderPuzzle();
+
+			function getRow(pos) {
+				return Math.ceil(pos / size);
+			}
+			function getCol(pos) {
+				const col = pos % size;
+				if (col === 0) {
+					return size;
+				}
+				return col;
+			}
+
+			function generatePuzzle() {
+				for (let i = 1; i <= size * size; i++) {
+					puzzle.push({
+						value: i,
+						position: i,
+						x: (getCol(i) - 1) * 45,
+						y: (getRow(i) - 1) * 45,
+						disabled: false,
+					});
+				}
+			}
+
+			function randomizePuzzle() {
+				const randomValues = getRandomValues();
+				let i = 0;
+
+				for (let puzzleItem of puzzle) {
+					puzzleItem.value = randomValues[i];
+					i++;
+				}
+
+				const blankPuzzle = puzzle.find(
+					(item) => item.value === size * size,
+				);
+				blankPuzzle.disabled = true;
+			}
+
+			function getRandomValues() {
+				const values = [];
+				for (let i = 1; i <= size * size; i++) {
+					values.push(i);
+				}
+
+				const randomValues = values.sort(() => Math.random() - 0.5);
+				return randomValues;
+			}
+
+			function renderPuzzle() {
+				puzzleContainer.innerHTML = "";
+				for (let puzzleItem of puzzle) {
+					if (puzzleItem.disabled) continue;
+					puzzleContainer.innerHTML += `
+						<img class="w-[2.813rem] h-[2.813rem] border-4 border-solid border-transparent absolute" style="left: ${puzzleItem.x / 16}rem; top: ${puzzleItem.y / 16}rem" src="
+							../img/puzzlegame/${puzzleItem.value}.png" />
+					`;
+				}
+			}
+
+			function getEmptyPuzzle() {
+				return puzzle.find((item) => item.disabled);
+			}
+
+			const puzzlePieces = puzzleContainer.querySelectorAll("img");
+
+			puzzlePieces.forEach((piece) => {
+				piece.addEventListener("click", handlePieceClick);
+			});
+
+			function handlePieceClick(event) {
+				const clickedPiece = event.target;
+
+				const emptyPiece = getEmptyPuzzle();
+
+				const computedStyles = window.getComputedStyle(clickedPiece);
+				const clickedY = parseFloat(
+					computedStyles.getPropertyValue("top"),
+				);
+				const clickedX = parseFloat(
+					computedStyles.getPropertyValue("left"),
+				);
+
+				if (areNeighbors(emptyPiece, { x: clickedX, y: clickedY })) {
+					clickedPiece.style.top = `${emptyPiece.y / 16}rem`;
+					clickedPiece.style.left = `${emptyPiece.x / 16}rem`;
+					emptyPiece.x = clickedX;
+					emptyPiece.y = clickedY;
+				} else {
+					return;
+				}
+			}
+
+			function areNeighbors(emptyPiece, clickedPiece) {
+				const xDiff = Math.abs(emptyPiece.x - clickedPiece.x);
+				const yDiff = Math.abs(emptyPiece.y - clickedPiece.y);
+				return (
+					(xDiff === 45 && yDiff === 0) ||
+					(xDiff === 0 && yDiff === 45)
+				);
+			}
 		},
 		forms: function () {
 			console.log("Forms are running");
@@ -69,10 +181,6 @@ const Engine = {
 
 			/// UPLOADING FILES THROUGH DRAG AND DROP
 
-			const dragDropZoneOverlay = document.getElementById(
-				"dragdrop__dropzone__overlay",
-			);
-
 			dropArea.addEventListener("drop", handleDrop);
 
 			initDropArea();
@@ -94,13 +202,6 @@ const Engine = {
 
 				dropArea.addEventListener("dragenter", (event) => {
 					event.preventDefault();
-
-					if (dragEventCounter === 0) {
-						dragDropZoneOverlay.classList.replace("hidden", "flex");
-						login.classList.replace("flex", "hidden");
-						prelogin.classList.replace("hidden", "flex");
-					}
-
 					dragEventCounter += 1;
 				});
 
@@ -119,15 +220,12 @@ const Engine = {
 
 					if (dragEventCounter <= 0) {
 						dragEventCounter = 0;
-						dragDropZoneOverlay.classList.replace("flex", "hidden");
-						mainRight.classList.replace("hidden", "flex");
 					}
 				});
 
 				dropArea.addEventListener("drop", (event) => {
 					event.preventDefault();
 					dragEventCounter = 0;
-					dragDropZoneOverlay.classList.replace("flex", "hidden");
 				});
 			}
 
@@ -211,7 +309,7 @@ const Engine = {
 
 					filesContainer.insertAdjacentHTML(
 						"beforeend",
-						`<li class="py-1 overflow-hidden text-ellipsis">${name}</li>`,
+						`<li class="py-1 overflow-hidden text-ellipsis font-public">${name}</li>`,
 					);
 				}
 			}
@@ -239,38 +337,70 @@ const Engine = {
 				metadataContainer.appendChild(uploadedFilesData);
 			}
 
+			/// COPY UPLOADED LINK TEXT TO CLIPBOARD
+
+			const downloadLink = document.getElementById("download__link");
+
+			const tooltipHover = document.getElementById("copylink__tooltip");
+
+			const tooltipSuccess = document.getElementById(
+				"copylink__tooltip--success",
+			);
+
+			downloadLink.addEventListener("mouseenter", () => {
+				tooltipHover.classList.replace("hidden", "flex");
+			});
+
+			downloadLink.addEventListener("mouseleave", () => {
+				tooltipHover.classList.replace("flex", "hidden");
+			});
+
+			downloadLink.addEventListener("click", () => {
+				navigator.clipboard.writeText(`${downloadLink.textContent}`);
+				tooltipHover.classList.toggle("hidden");
+				tooltipSuccess.classList.toggle("hidden");
+
+				setTimeout(() => {
+					tooltipSuccess.classList.toggle("hidden");
+				}, 700);
+			});
+
 			/// ERROR HANDLING
+
+			//const statusContainer =
+				//document.getElementById("status__container");
 
 			function updateStatusMessage(message) {
 				const status = document.createElement("div");
 
 				status.classList.add(
 					"absolute",
-					"bottom-0",
+					"top-[35%]",
 					"left-0",
-					"right-0",
+                    "right-0",
+					"z-10",
 				);
 
 				switch (message) {
 					case "somethingWrong":
 						status.innerHTML = `<div
 								role="tooltip"
-								class="rounded-lg bg-black px-3 py-2 font-public text-sm font-medium text-white shadow-sm mdd:top-11 tablet:top-11"
+								class="bg-black shadow-sm rounded-lg flex text-center justify-center"
 							>
-								<span>Something went wrong. Please try again.</span>
+								<span class="whitespace-nowrap px-3 py-2 font-public text-sm font-medium text-white">Something went wrong. Please try again.</span>
 							</div>`;
 						break;
 					case "missingFiles":
 						status.innerHTML = `<div
 								role="tooltip"
-								class="rounded-lg bg-black px-3 py-2 font-public text-sm font-medium text-white shadow-sm mdd:top-11 tablet:top-11"
+								class="bg-black shadow-sm rounded-lg flex text-center justify-center"
 							>
-								<span>No file selected for upload.</span>
+								<span class="whitespace-nowrap px-3 py-2 font-public text-[12px] font-medium text-white">No file selected for upload.</span>
 							</div>`;
 						break;
 				}
 				uploadForm.appendChild(status);
-				setTimeout(() => {
+                setTimeout(() => {
 					uploadForm.removeChild(status);
 				}, 2000);
 			}

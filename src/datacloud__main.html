@@ -36,8 +36,12 @@
 				</div>
 			</div>
 
-			<div class="flex flex-1 items-start justify-start bg-white">
-				<div class="mx-7 my-8 flex flex-col justify-center text-left">
+			<div
+				class="flex flex-1 flex-col items-start justify-start bg-white"
+			>
+				<div
+					class="mx-7 my-8 flex flex-col justify-center self-stretch text-left"
+				>
 					<div class="border-b border-black">
 						<p
 							class="m-0 pb-2 font-public text-24 font-bold tracking-tighter"
@@ -45,24 +49,27 @@
 							My drive
 						</p>
 					</div>
-					<div class="mt-3 flex flex-col">
+					<div
+						class="mt-3 flex flex-col gap-3 self-stretch"
+						id="menubar__linkwrapper"
+					>
 						<a
-							class="before-h-5 text-black before:w-5 before:content-['']"
+							class="before-h-5 text-black before:absolute before:left-0 before:hidden before:h-5 before:w-4 before:bg-black before:content-['']"
 							href="#"
 							>My files</a
 						>
 						<a
-							class="before-h-5 text-black before:w-5 before:content-['']"
+							class="before-h-5 text-black before:absolute before:left-0 before:hidden before:h-5 before:w-4 before:bg-black before:content-['']"
 							href="#"
 							>Received</a
 						>
 						<a
-							class="before-h-5 text-black before:w-5 before:content-['']"
+							class="before-h-5 text-black before:absolute before:left-0 before:hidden before:h-5 before:w-4 before:bg-black before:content-['']"
 							href="#"
 							>Sent</a
 						>
 						<a
-							class="before-h-5 text-black before:w-5 before:content-['']"
+							class="before-h-5 text-black before:absolute before:left-0 before:hidden before:h-5 before:w-4 before:bg-black before:content-['']"
 							href="#"
 							>Trash</a
 						>
@@ -85,10 +92,10 @@
 									method="post"
 									enctype="multipart/form-data"
 									id="upload__form"
-									class="relative flex grow flex-col items-center justify-center gap-14 self-stretch text-center"
+									class="relative flex grow flex-col items-center justify-center gap-5 self-stretch text-center"
 								>
 									<p
-										class="my-0 font-inter text-xl font-normal text-white"
+										class="my-0 font-public text-16 font-normal text-white"
 									>
 										Upload stuff?
 									</p>
@@ -107,17 +114,23 @@
 									</label>
 									<p
 										id="upload__and"
-										class="my-0 hidden font-inter text-xl font-normal text-white mdd:text-lg tablet:text-lg"
+										class="my-0 hidden font-public text-16 font-normal text-white mdd:text-lg tablet:text-lg"
 									>
 										and
 									</p>
-									<button
-										type="submit"
-										id="upload__button"
-										class="hidden w-36 grow select-none whitespace-nowrap bg-white py-2 text-center font-public text-16 text-blue hover:cursor-pointer hover:bg-black hover:text-white"
-									>
-										Upload files
-									</button>
+			
+										<button
+											type="submit"
+											id="upload__button"
+											class="hidden w-36 grow select-none whitespace-nowrap bg-white py-2 text-center font-public text-16 text-blue hover:cursor-pointer hover:bg-black hover:text-white"
+										>
+											Upload files
+										</button>
+									
+									<ul
+										id="files__container"
+										class="m-0 hidden max-w-[11.375rem] flex-col overflow-x-hidden whitespace-nowrap text-white"
+									></ul>
 									<div
 										class="relative flex items-center justify-center gap-2 self-stretch"
 									>
@@ -125,7 +138,7 @@
 											class="flex flex-grow border-b border-t-0 border-solid border-white"
 										></div>
 										<p
-											class="my-0 font-inter text-xl font-normal text-white mdd:text-lg tablet:text-lg"
+											class="my-0 font-inter text-16 font-normal text-white mdd:text-lg tablet:text-lg"
 										>
 											or
 										</p>
@@ -133,10 +146,7 @@
 											class="flex flex-grow border-b border-t-0 border-solid border-white"
 										></div>
 									</div>
-									<ul
-										id="files__container"
-										class="m-0 hidden max-w-[11.375rem] flex-col overflow-x-hidden whitespace-nowrap text-white"
-									></ul>
+
 									<div
 										class="mt-10 text-center mdd:mt-5 tablet:mt-5"
 									>
@@ -164,61 +174,205 @@
 					</div>
 				</div>
 			</div>
-            <div class="hidden items-start" id="uploadBar--progress">
-				<div class="mx-7 my-8 flex-col justify-start text-left">
-                    <div
-					class="mx-11 mb-24 mt-10 flex flex-1 justify-center border border-dashed border-blue"
-				>
+			<div class="hidden items-start" id="uploadBar--progress">
+				<div class="flex-col justify-start text-left">
 					<div
-						class="mx-4 flex max-w-[27.125rem] grow flex-col items-center justify-start gap-16 mdd:gap-8 tablet:gap-8"
+						class="flex flex-1 justify-center border border-dashed border-blue"
 					>
-						<div class="text-center">
-							<div>
-								<p
-									class="my-0 pt-5 font-public text-2xl text-blue mdd:text-xl tablet:text-xl"
-								>
-									Can you make a circle from squares in the
-									meantime?
-								</p>
+						<div
+							class="mx-4 flex grow flex-col items-center justify-start gap-5"
+						>
+							<div class="text-center">
+								<div>
+									<p
+										class="my-0 px-5 pt-5 font-public text-16 text-blue"
+									>
+										Can you make a circle from squares in
+										the meantime?
+									</p>
+								</div>
 							</div>
-						</div>
 
-						<div>
+							<div>
+								<div
+									id="puzzle__container"
+									class="relative h-[11.25rem] w-[11.25rem]"
+								>
+									<img
+										class="hidden"
+										src="./img/puzzlegame/1.png"
+									/>
+									<img
+										class="hidden"
+										src="./img/puzzlegame/2.png"
+									/>
+									<img
+										class="hidden"
+										src="./img/puzzlegame/3.png"
+									/>
+									<img
+										class="hidden"
+										src="./img/puzzlegame/4.png"
+									/>
+									<img
+										class="hidden"
+										src="./img/puzzlegame/5.png"
+									/>
+									<img
+										class="hidden"
+										src="./img/puzzlegame/6.png"
+									/>
+									<img
+										class="hidden"
+										src="./img/puzzlegame/7.png"
+									/>
+									<img
+										class="hidden"
+										src="./img/puzzlegame/8.png"
+									/>
+									<img
+										class="hidden"
+										src="./img/puzzlegame/9.png"
+									/>
+									<img
+										class="hidden"
+										src="./img/puzzlegame/10.png"
+									/>
+									<img
+										class="hidden"
+										src="./img/puzzlegame/11.png"
+									/>
+									<img
+										class="hidden"
+										src="./img/puzzlegame/12.png"
+									/>
+									<img
+										class="hidden"
+										src="./img/puzzlegame/13.png"
+									/>
+									<img
+										class="hidden"
+										src="./img/puzzlegame/14.png"
+									/>
+									<img
+										class="hidden"
+										src="./img/puzzlegame/15.png"
+									/>
+								</div>
+							</div>
+
+							<div class="text-center">
+								<div>
+									<p
+										class="my-0 px-5 font-public text-16 text-blue"
+									>
+										Your data is now uploading. Please do
+										not close this window.
+									</p>
+								</div>
+							</div>
+
 							<div
-								id="puzzle__container"
-								class="relative h-[11.25rem] w-[11.25rem]"
-							></div>
-						</div>
+								class="flex grow flex-col items-stretch justify-start self-stretch pb-5 pt-5 text-center"
+							>
+								<progress
+									id="progress__bar"
+									class="mx-auto h-3 max-h-3 w-full max-w-[27.125rem] grow [&::-moz-progress-bar]:bg-blue [&::-webkit-progress-bar]:bg-[#D9D9D9] [&::-webkit-progress-value]:bg-blue"
+									value="0"
+									max="100"
+								></progress>
 
-						<div class="text-center">
-							<div>
 								<p
-									class="my-0 font-public text-2xl text-blue mdd:text-xl tablet:text-xl"
-								>
-									Your data is now uploading.<br />Please do
-									not close this window.
+									id="progress__percents"
+									class="my-0 pt-5 font-public text-2xl text-blue mdd:text-xl tablet:text-xl"
+								></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div
+				id="uploadBar--result"
+				class="hidden flex-1 items-center justify-center bg-blue"
+			>
+				<div class="flex grow flex-col items-center gap-5">
+					<div class="flex flex-col items-center gap-8">
+						<div
+							class="h-[4.68rem] w-[4.68rem] bg-[url('/src/img/upload__success.svg')] bg-contain bg-center bg-no-repeat"
+						></div>
+						<div class="text-center text-white">
+							<h2 class="my-0 font-public text-16 text-white">
+								Sounds great!
+							</h2>
+						</div>
+						<div class="flex flex-col text-center">
+							<div
+								id="metadata__container"
+								class="flex flex-col overflow-x-clip text-white"
+							>
+								<p class="my-0 font-public text-16 text-white">
+									Your data
 								</p>
 							</div>
+							<div class="text-white">
+								<p class="my-0 font-public text-16 text-white">
+									have been uploaded
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div>
+						<div class="text-center text-white">
+							<p class="my-0 font-public text-16 text-white">
+								Get your link here
+							</p>
 						</div>
 
 						<div
-							class="flex grow flex-col items-stretch justify-start self-stretch pb-5 text-center"
+							class="relative mt-3 text-center hover:cursor-pointer"
 						>
-							<progress
-								id="progress__bar"
-								class="mx-auto h-3 max-h-3 w-full max-w-[27.125rem] grow [&::-moz-progress-bar]:bg-blue [&::-webkit-progress-bar]:bg-[#D9D9D9] [&::-webkit-progress-value]:bg-blue"
-								value="0"
-								max="100"
-							></progress>
-
 							<p
-								id="progress__percents"
-								class="my-0 pt-5 font-public text-2xl text-blue mdd:text-xl tablet:text-xl"
-							></p>
+								id="download__link"
+								class="my-0 bg-white px-2 py-2 font-public text-xs text-blue"
+							>
+								soundsquare.cz/upload/GdX9lI2
+							</p>
+
+							<div
+								id="copylink__tooltip"
+								role="tooltip"
+								class="absolute left-2/4 top-10 hidden -translate-x-2/4 rounded-lg bg-black px-3 py-2 font-public text-sm font-medium text-white shadow-sm"
+							>
+								<span
+									id="tooltip__hover"
+									class="whitespace-nowrap text-xs"
+									>Click to copy link</span
+								>
+							</div>
+
+							<div
+								id="copylink__tooltip--success"
+								role="tooltip"
+								class="absolute left-2/4 top-10 hidden -translate-x-2/4 rounded-lg bg-black px-3 py-2 font-public text-sm font-medium text-white shadow-sm"
+							>
+								<span class="whitespace-nowrap text-xs"
+									>Link copied</span
+								>
+							</div>
 						</div>
 					</div>
-                </div>
-            </div>
+
+					<div class="text-center text-white">
+						<h2
+							id="homescreen__link"
+							class="my-0 mt-6 font-public text-16 text-white hover:cursor-pointer hover:underline"
+						>
+							Upload more files?
+						</h2>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<main></main>
