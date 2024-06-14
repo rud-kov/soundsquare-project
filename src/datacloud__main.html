@@ -37,14 +37,14 @@
 			</div>
 
 			<div
-				class="flex flex-1 flex-col items-start justify-start bg-white"
+				class="flex flex-1 flex-col items-start justify-start bg-white dark:bg-black"
 			>
 				<div
 					class="mx-7 my-8 flex flex-col justify-center self-stretch text-left"
 				>
-					<div class="border-b border-black">
+					<div class="border-b border-black dark:border-white">
 						<p
-							class="m-0 pb-2 font-public text-24 font-bold tracking-tighter"
+							class="m-0 pb-2 font-public text-24 font-bold tracking-tighter text-black dark:text-white"
 						>
 							My drive
 						</p>
@@ -54,22 +54,22 @@
 						id="menubar__linkwrapper"
 					>
 						<a
-							class="before-h-5 text-black before:absolute before:left-0 before:hidden before:h-5 before:w-4 before:bg-black before:content-['']"
+							class="before-h-5 text-black before:absolute before:left-0 before:hidden before:h-5 before:w-4 before:bg-black before:content-[''] hover:before:block dark:text-white dark:before:bg-white"
 							href="#"
 							>My files</a
 						>
 						<a
-							class="before-h-5 text-black before:absolute before:left-0 before:hidden before:h-5 before:w-4 before:bg-black before:content-['']"
+							class="before-h-5 text-black before:absolute before:left-0 before:hidden before:h-5 before:w-4 before:bg-black before:content-[''] hover:before:block dark:text-white dark:before:bg-white"
 							href="#"
 							>Received</a
 						>
 						<a
-							class="before-h-5 text-black before:absolute before:left-0 before:hidden before:h-5 before:w-4 before:bg-black before:content-['']"
+							class="before-h-5 text-black before:absolute before:left-0 before:hidden before:h-5 before:w-4 before:bg-black before:content-[''] hover:before:block dark:text-white dark:before:bg-white"
 							href="#"
 							>Sent</a
 						>
 						<a
-							class="before-h-5 text-black before:absolute before:left-0 before:hidden before:h-5 before:w-4 before:bg-black before:content-['']"
+							class="before-h-5 text-black before:absolute before:left-0 before:hidden before:h-5 before:w-4 before:bg-black before:content-[''] hover:before:block dark:text-white dark:before:bg-white"
 							href="#"
 							>Trash</a
 						>
@@ -118,15 +118,15 @@
 									>
 										and
 									</p>
-			
-										<button
-											type="submit"
-											id="upload__button"
-											class="hidden w-36 grow select-none whitespace-nowrap bg-white py-2 text-center font-public text-16 text-blue hover:cursor-pointer hover:bg-black hover:text-white"
-										>
-											Upload files
-										</button>
-									
+
+									<button
+										type="submit"
+										id="upload__button"
+										class="hidden w-36 grow select-none whitespace-nowrap bg-white py-2 text-center font-public text-16 text-blue hover:cursor-pointer hover:bg-black hover:text-white"
+									>
+										Upload files
+									</button>
+
 									<ul
 										id="files__container"
 										class="m-0 hidden max-w-[11.375rem] flex-col overflow-x-hidden whitespace-nowrap text-white"
@@ -284,7 +284,7 @@
 
 								<p
 									id="progress__percents"
-									class="my-0 pt-5 font-public text-2xl text-blue mdd:text-xl tablet:text-xl"
+									class="my-0 pt-5 font-public text-16 text-blue"
 								></p>
 							</div>
 						</div>
@@ -295,7 +295,7 @@
 				id="uploadBar--result"
 				class="hidden flex-1 items-center justify-center bg-blue"
 			>
-				<div class="flex grow flex-col items-center gap-5">
+				<div class="mx-7 my-8 flex grow flex-col items-center gap-5">
 					<div class="flex flex-col items-center gap-8">
 						<div
 							class="h-[4.68rem] w-[4.68rem] bg-[url('/src/img/upload__success.svg')] bg-contain bg-center bg-no-repeat"
@@ -375,7 +375,57 @@
 			</div>
 		</div>
 
-		<main></main>
+		<main class="flex grow flex-col justify-start bg-[#ECECEC]">
+			<div
+				class="flex h-24 grow flex-row items-center justify-between bg-[#DADADA]"
+			>
+				<div>
+					<p
+						class="font-public text-2xl font-bold tracking-tighter text-[#161616]"
+					>
+						Data<span class="font-normal">Cloud</span>
+					</p>
+				</div>
+
+				<div>
+					<p
+						class="font-public text-2xl font-normal tracking-tighter text-[#161616]"
+					>
+						My files<span class="font-bold" id="files__size">
+							(2.87 GB)</span
+						>
+					</p>
+				</div>
+
+				<div>
+					<button
+						class="font-public text-sm hover:font-bold"
+						id="lightSwitch"
+					>
+						☾ Dark</button
+					><span class="font-public">/</span
+					><button
+						id="darkSwitch"
+						class="font-public text-sm hover:font-bold"
+					>
+						Light ☼︎
+					</button>
+				</div>
+
+				<div class="flex flex-row items-center">
+					<div>
+					<p
+						class="font-public text-2xl font-normal tracking-tighter text-[#161616]"
+					>
+						Welcome,<span class="font-bold"> Adam</span>
+					</p>
+					</div>
+					<div class="h-8 w-8 bg-black dark:bg-[#C3C3C3]">
+						
+					</div>
+				</div>
+			</div>
+		</main>
 
 		<!-- <script src="js/plugins.js"></script> -->
 		<script src="js/datacloud.js" type="module"></script>

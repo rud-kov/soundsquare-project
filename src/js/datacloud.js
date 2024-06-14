@@ -9,7 +9,7 @@
 const html = document.querySelector("html");
 const body = document.querySelector("body");
 
-const mainRight = document.getElementById("uploadBar");
+const uploadBar = document.getElementById("uploadBar");
 
 const uploadScreen = document.getElementById("uploadBar--progress");
 
@@ -17,9 +17,6 @@ const uploadResultScreen = document.getElementById("uploadBar--result");
 
 const metadataContainer = document.getElementById("metadata__container");
 
-const login = document.getElementById("login");
-
-const prelogin = document.getElementById("prelogin");
 
 const Engine = {
 	ui: {
@@ -145,6 +142,16 @@ const Engine = {
 					(xDiff === 0 && yDiff === 45)
 				);
 			}
+
+			/// DOWNLOAD RESULT SCREEN JUMP BACK TO HOMESCREEN
+
+			const homeScreenLink = document
+				.getElementById("homescreen__link")
+				.addEventListener("click", () => {
+					uploadResultScreen.classList.replace("flex", "hidden");
+					uploadBar.classList.replace("hidden", "flex");
+					metadataContainer.removeChild(metadataContainer.lastChild);
+				});
 		},
 		forms: function () {
 			console.log("Forms are running");
@@ -174,7 +181,6 @@ const Engine = {
 
 			fileInput.addEventListener("click", () => {
 				uploadBttn.classList.replace("hidden", "inline-block");
-				uploadBttn.classList.remove("w-fixedBttn");
 				uploadAnd.classList.remove("hidden");
 				filesContainer.classList.replace("hidden", "flex");
 			});
@@ -274,7 +280,7 @@ const Engine = {
 
 				xhr.upload.addEventListener("error", () => {
 					uploadScreen.classList.replace("flex", "hidden");
-					mainRight.classList.replace("hidden", "flex");
+					uploadBar.classList.replace("hidden", "flex");
 					updateStatusMessage("somethingWrong");
 				});
 
@@ -291,7 +297,7 @@ const Engine = {
 			/// DISPLAYING PROGRESS AND RESULTS SCREEN
 
 			function displayUploadResult() {
-				mainRight.classList.replace("flex", "hidden");
+				uploadBar.classList.replace("flex", "hidden");
 				uploadScreen.classList.replace("hidden", "flex");
 			}
 
@@ -323,8 +329,7 @@ const Engine = {
 					"flex-col",
 					"overflow-x-hidden",
 					"whitespace-nowrap",
-					"max-w-[20.813rem]",
-					"mdd:max-w-[14.46rem]",
+					"max-w-[11.375rem]",
 				);
 
 				for (const file of fileList) {
@@ -367,9 +372,6 @@ const Engine = {
 
 			/// ERROR HANDLING
 
-			//const statusContainer =
-				//document.getElementById("status__container");
-
 			function updateStatusMessage(message) {
 				const status = document.createElement("div");
 
@@ -377,7 +379,7 @@ const Engine = {
 					"absolute",
 					"top-[35%]",
 					"left-0",
-                    "right-0",
+					"right-0",
 					"z-10",
 				);
 
@@ -400,7 +402,7 @@ const Engine = {
 						break;
 				}
 				uploadForm.appendChild(status);
-                setTimeout(() => {
+				setTimeout(() => {
 					uploadForm.removeChild(status);
 				}, 2000);
 			}

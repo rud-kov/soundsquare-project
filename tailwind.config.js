@@ -49,6 +49,11 @@ module.exports = {
 				fullWidth: "27.125rem",
 				mobileWidth: "14.46rem",
 			},
+			backgroundColor: {
+				darkPrimary: "#353535",
+				darkSecondary: "#000",
+				darkThird: "#303030",
+			},
 		},
 	},
 	plugins: [],
