@@ -29,6 +29,24 @@ const Engine = {
 		events: function () {
 			console.log("Events are running");
 
+			//////////////// LIGHT & DARK SWITCH DODĚLAT
+
+			const lightSwitch = document.getElementById("light__switch");
+
+			const darkSwitch = document.getElementById("dark__switch");
+
+			darkSwitch.addEventListener("click", () => {
+				document.body.classList.remove("light");
+				document.body.classList.add('dark');
+				console.log("dark");
+			});
+
+			lightSwitch.addEventListener("click", () => {
+				document.body.classList.remove("dark");
+				document.body.classList.add("light");
+				console.log("light");
+			});
+
 			//////////////// SLIDING PUZZLE GAME
 
 			const puzzleContainer =

@@ -13,6 +13,7 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: colors,
+			backgroundImage: ["dark"],
 			screens: {
 				mdd: { max: "767px" },
 				tablet: { min: "768px", max: "1023px" },
@@ -53,6 +54,15 @@ module.exports = {
 				darkPrimary: "#353535",
 				darkSecondary: "#000",
 				darkThird: "#303030",
+				darkFourth: "#C3C3C3",
+				lightPrimary: "#ECECEC",
+				lightSecondary: "#DADADA",
+				lightThird: "#D9D9D9",
+				lightFourth: "#161616",
+			},
+			textColor: {
+				lightFont: "#161616",
+				darkFont: "#C3C3C3",
 			},
 		},
 	},
