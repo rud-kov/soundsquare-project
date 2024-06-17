@@ -376,11 +376,11 @@
 		</div>
 
 		<main class="flex grow flex-col justify-start">
-			<div class="dark:bg-darkThird bg-lightSecondary">
+			<div class="bg-lightSecondary dark:bg-darkThird">
 				<div class="grid h-24 grid-flow-row grid-cols-4 grid-rows-1">
 					<div class="flex items-center justify-self-start">
 						<p
-							class="dark:text-darkFont ml-7 font-public text-2xl font-bold tracking-tighter text-[#161616]"
+							class="ml-7 font-public text-2xl font-bold tracking-tighter text-[#161616] dark:text-darkFont"
 						>
 							Data<span class="font-normal">Cloud</span>
 						</p>
@@ -388,7 +388,7 @@
 
 					<div class="flex items-center justify-self-center">
 						<p
-							class="dark:text-darkFont font-public text-2xl font-normal tracking-tighter text-[#161616]"
+							class="font-public text-2xl font-normal tracking-tighter text-[#161616] dark:text-darkFont"
 						>
 							My files<span class="font-bold" id="files__size">
 								(2.87 GB)</span
@@ -398,14 +398,14 @@
 
 					<div class="flex items-center justify-self-center">
 						<button
-							class="dark:text-darkFont font-public text-sm hover:font-bold"
+							class="font-public text-sm hover:font-bold dark:text-darkFont"
 							id="dark__switch"
 						>
 							☾ Dark</button
-						><span class="dark:text-darkFont font-public">/</span
+						><span class="font-public dark:text-darkFont">/</span
 						><button
 							id="light__switch"
-							class="dark:text-darkFont font-public text-sm hover:font-bold"
+							class="font-public text-sm hover:font-bold dark:text-darkFont"
 						>
 							Light ☼︎
 						</button>
@@ -416,17 +416,17 @@
 					>
 						<div>
 							<p
-								class="dark:text-darkFont font-public text-2xl font-normal tracking-tighter text-[#161616]"
+								class="font-public text-2xl font-normal tracking-tighter text-[#161616] dark:text-darkFont"
 							>
 								Welcome,<span
-									class="dark:text-darkFont font-bold"
+									class="font-bold dark:text-darkFont"
 								>
 									Adam</span
 								>
 							</p>
 						</div>
 						<div
-							class="dark:bg-darkFourth flex min-h-8 min-w-8 flex-col items-center justify-center gap-1 bg-black"
+							class="flex min-h-8 min-w-8 flex-col items-center justify-center gap-1 bg-black dark:bg-darkFourth"
 						>
 							<div class="h-[0.094rem] w-5 bg-black"></div>
 							<div class="h-[0.094rem] w-5 bg-black"></div>
@@ -436,12 +436,12 @@
 				</div>
 			</div>
 
-			<div class="dark:bg-darkPrimary bg-lightSecondary">
+			<div class="bg-lightSecondary dark:bg-darkPrimary">
 				<div
 					class="grid h-[6.875rem] grid-flow-row grid-cols-4 grid-rows-1"
 				>
 					<div
-						class="flex col-span-1  flex-row items-center justify-start justify-self-start"
+						class="col-span-1 flex flex-row items-center justify-start justify-self-start"
 					>
 						<div class="ml-7">
 							<p class="text-lightFont dark:text-darkFont">
@@ -452,28 +452,73 @@
 						<div class="ml-5 flex flex-row gap-3">
 							<div
 								id="add__bttn"
-								class="bg-lightFourth dark:bg-darkFourth min-h-5 min-w-5 bg-[url('/src/img/cross__icon--light.svg')] bg-contain bg-center bg-no-repeat dark:bg-[url('/src/img/cross__icon--dark.svg')]"
-							></div>
+								class="hover:cursor-pointer flex min-h-5 min-w-5 items-center justify-center bg-lightFourth dark:bg-darkFourth"
+							>
+								<img
+									class="h-[0.688rem] w-[0.688rem]"
+									src="/src/img/cross__icon--dark.svg"
+								/>
+								<img
+									class="h-[0.688rem] w-[0.688rem] dark:hidden"
+									src="/src/img/cross__icon--light.svg"
+								/>
+							</div>
 
 							<div
-								id="arrow__bttn"
-								class="bg-lightFourth dark:bg-darkFourth min-h-5 min-w-5 bg-[url('/src/img/arrow__icon--light.svg')] bg-contain bg-center bg-no-repeat dark:bg-[url('/src/img/arrow__icon--dark.svg')]"
-							></div>
+								id="add__bttn"
+								class="hover:cursor-pointer flex min-h-5 min-w-5 items-center justify-center bg-lightFourth dark:bg-darkFourth"
+							>
+								<img
+									class="h-[0.688rem] w-[0.688rem]"
+									src="/src/img/arrow__icon--dark.svg"
+								/>
+								<img
+									class="h-[0.688rem] w-[0.688rem] dark:hidden"
+									src="/src/img/arrow__icon--light.svg"
+								/>
+							</div>
 
 							<div
-								id="play__bttn"
-								class="bg-lightFourth dark:bg-darkFourth min-h-5 min-w-5 bg-[url('/src/img/play__icon--light.svg')] bg-contain bg-center bg-no-repeat dark:bg-[url('/src/img/play__icon--dark.svg')]"
-							></div>
+								id="add__bttn"
+								class="hover:cursor-pointer flex min-h-5 min-w-5 items-center justify-center bg-lightFourth dark:bg-darkFourth"
+							>
+								<img
+									class="h-[0.688rem] w-[0.688rem]"
+									src="/src/img/play__icon--dark.svg"
+								/>
+								<img
+									class="h-[0.688rem] w-[0.688rem] dark:hidden"
+									src="/src/img/play__icon--light.svg"
+								/>
+							</div>
 
 							<div
-								id="download__bttn"
-								class="bg-lightFourth dark:bg-darkFourth min-h-5 min-w-5 bg-[url('/src/img/downarrow__icon--light.svg')] bg-contain bg-center bg-no-repeat dark:bg-[url('/src/img/downarrow__icon--dark.svg')]"
-							></div>
+								id="add__bttn"
+								class="hover:cursor-pointer flex min-h-5 min-w-5 items-center justify-center bg-lightFourth dark:bg-darkFourth"
+							>
+								<img
+									class="h-[0.688rem] w-[0.688rem]"
+									src="/src/img/downarrow__icon--dark.svg"
+								/>
+								<img
+									class="h-[0.688rem] w-[0.688rem] dark:hidden"
+									src="/src/img/downarrow__icon--light.svg"
+								/>
+							</div>
 
 							<div
-								id="clear__bttn"
-								class="bg-lightFourth dark:bg-darkFourth min-h-5 min-w-5 bg-[url('/src/img/clear__icon--light.svg')] bg-contain bg-center bg-no-repeat dark:bg-[url('/src/img/clear__icon--dark.svg')]"
-							></div>
+								id="add__bttn"
+								class="hover:cursor-pointer flex min-h-5 min-w-5 items-center justify-center bg-lightFourth dark:bg-darkFourth"
+							>
+								<img
+									class="h-[0.688rem] w-[0.688rem]"
+									src="/src/img/clear__icon--dark.svg"
+								/>
+								<img
+									class="h-[0.688rem] w-[0.688rem] dark:hidden"
+									src="/src/img/clear__icon--light.svg"
+								/>
+							</div>
 						</div>
 
 						<div
@@ -481,28 +526,68 @@
 						>
 							<input
 								id="check__all"
-								class="bg-darkPrimary h-3 w-3 border-[#C3C3C3]"
+								class="h-[0.875rem] w-[0.875rem] border-[#C3C3C3] bg-darkPrimary"
 								type="checkbox"
 							/>
 							<p
-								class="text-lightFont dark:text-darkFont whitespace-nowrap font-public text-[0.75rem]"
+								class="whitespace-nowrap font-public text-[0.75rem] text-lightFont dark:text-darkFont"
 							>
 								Check all
 							</p>
 						</div>
 					</div>
 
-					<div class="mr-[1.875rem] flex self-center justify-self-end col-start-4 flex-row items-center">
+					<div
+						class="col-start-4 mr-[1.875rem] flex flex-row items-center gap-7 self-center justify-self-end"
+					>
+						<img
+							class="min-h-[0.241rem] min-w-6 dark:hidden hover:cursor-pointer"
+							src="/src/img/zoomout__icon--light.svg"
+						/>
 
-						<div class="h-[0.241rem] w-6  dark:bg-[url('/src/img/zoomout__icon--dark.svg')] bg-[url('/src/img/zoomout__icon--light.svg')] bg-no-repeat bg-cover"></div>
+						<img
+							class="min-h-[0.241rem] min-w-6 hover:cursor-pointer"
+							src="/src/img/zoomout__icon--dark.svg"
+						/>
 
-						<div class="h-6 w-6  dark:bg-[url('/src/img/zoomin__icon--dark.svg')] bg-[url('/src/img/zoomin__icon--light.svg')] bg-no-repeat bg-cover"></div>
+						<img
+							class="min-h-[0.241rem] min-w-6 dark:hidden hover:cursor-pointer"
+							src="/src/img/zoomin__icon--light.svg"
+						/>
 
-					
+						<img
+							class="min-h-[0.241rem] min-w-6 hover:cursor-pointer"
+							src="/src/img/zoomin__icon--dark.svg"
+						/>
+
+						<div class="flex flex-row gap-2">
+							<div
+								class="flex min-h-8 min-w-8 items-center justify-center bg-lightFourth dark:bg-darkFourth hover:cursor-pointer"
+							>
+								<img
+									class="h-[0.688rem] w-[0.688rem] dark:hidden"
+									src="/src/img/gridicon--light.svg"
+								/>
+								<img
+									class="h-[0.688rem] w-[0.688rem]"
+									src="/src/img/gridicon--dark.svg"
+								/>
+							</div>
+
+							<div
+								class="flex min-h-8 min-w-8 items-center justify-center bg-lightFourth dark:bg-darkFourth hover:cursor-pointer"
+							>
+								<img
+									class="h-[0.688rem] w-[0.688rem] dark:hidden"
+									src="/src/img/listicon--light.svg"
+								/>
+								<img
+									class="h-[0.688rem] w-[0.688rem]"
+									src="/src/img/listicon--dark.svg"
+								/>
+							</div>
+						</div>
 					</div>
-
-
-
 				</div>
 			</div>
 		</main>
