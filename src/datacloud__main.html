@@ -387,9 +387,11 @@
 			</div>
 		</div>
 
-		<main class="flex grow flex-col justify-start">
-			<div class="bg-lightSecondary dark:bg-darkThird">
-				<div class="grid h-24 grid-flow-row grid-cols-4 grid-rows-1">
+		<main class="relative flex grow flex-col justify-start">
+			<div class="static bg-lightSecondary dark:bg-darkThird">
+				<div
+					class="static grid h-24 grid-flow-row grid-cols-4 grid-rows-1"
+				>
 					<div class="flex items-center justify-self-start">
 						<p
 							class="ml-7 font-public text-2xl font-bold tracking-tighter text-[#161616] dark:text-darkFont"
@@ -424,7 +426,7 @@
 					</div>
 
 					<div
-						class="mr-7 flex flex-row items-center gap-6 justify-self-end"
+						class="static mr-7 flex flex-row items-center gap-6 justify-self-end"
 					>
 						<div>
 							<p
@@ -438,8 +440,8 @@
 								>
 							</p>
 						</div>
-						<div
-							class="flex min-h-8 min-w-8 flex-col items-center justify-center gap-1 bg-black dark:bg-darkFourth"
+						<div id="hamSwitch"
+							class="flex min-h-8 min-w-8 flex-col items-center justify-center gap-1 bg-black dark:bg-darkFourth static"
 						>
 							<div
 								class="h-[0.094rem] w-5 bg-lightSecondary dark:bg-black"
@@ -450,6 +452,31 @@
 							<div
 								class="h-[0.094rem] w-5 bg-lightSecondary dark:bg-black"
 							></div>
+
+
+							<div id="hamMenu" class="absolute flex items-start justify-center top-0 bottom-0 right-0 z-10 min-w-60 bg-lightThird dark:bg-darkPrimary hidden">
+
+								<div class="flex flex-col mt-6 mx-7 gap-[4.188rem]">
+									<div>
+										<div>
+										<p class="m-0 public font-bold text-16 text-lightFont dark:text-darkFont">Adam Zanka</p>
+										<p class="m-0 public font-normal text-16 text-lightFont dark:text-darkFont">adam.zanka@gmail.com</p>
+										</div>
+										<hr class="mt-8 border-black dark:border-white">
+									</div>
+
+									<div class="flex flex-col">
+										<a id="settingsBttn" class="m-0 public font-normal text-16 text-lightFont dark:text-darkFont" href="#">Settings</a>
+										<a id="signoutBttn"  class="m-0 public font-normal text-16 text-lightFont dark:text-darkFont" href="#">Sign Out</a>
+									</div>
+
+								</div>
+
+
+
+							</div>
+
+
 						</div>
 					</div>
 				</div>
@@ -723,7 +750,7 @@
 				</div>
 			</div>
 
-			<div class="bg-lightPrimary dark:bg-darkPrimary grow">
+			<div class="grow bg-lightPrimary dark:bg-darkPrimary">
 				<div id="mainfiles__wrapper">
 					<div
 						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
@@ -949,7 +976,7 @@
 						<p
 							class="m-0 mt-6 font-public text-16 font-bold leading-[1.175rem] text-lightFont dark:text-darkFont"
 						>
-							Modified:
+							Preview
 						</p>
 
 						<div

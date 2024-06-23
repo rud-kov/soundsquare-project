@@ -30,11 +30,100 @@ const Engine = {
 			console.log("Events are running");
 
 			//////////////// DISPLAYING MY FILES 
-			
-			
-			const filesWrapper = document.getElementById("files__wrapper");
 
+			const testData = {
+				file1: {
+					name: "file1.jpg",
+					type: "Jpg image",
+					modified: new Date("2024-06-22"),
+					size: "340 kB",
+				},
+				file2: {
+					name: "file2.mp3",
+					type: "mp3 file",
+					modified: new Date("2024-06-17"),
+					size: "20 Mb",
+				},
+				file3: {
+					name: "file2.avi",
+					type: "avi file",
+					modified: new Date("2024-05-11"),
+					size: "13,4 Gb",
+				},
+			};
 			
+			/*
+			const filesWrapper = document.getElementById("mainfiles__wrapper");
+
+			const displayMainFiles = testData.map(
+				file => `<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input
+								class="dark:accent-darkInput ml-3 accent-black"
+								type="checkbox"
+							/>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								${file.name}
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								${file.type}
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								${file.modified}
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								${file.size}
+							</p>
+						</div>
+					</div>`,
+			);
+
+			filesWrapper.innerHTML = displayMainFiles;
+
+			*/
+
+
+			//////////////// SIDEBAR
+
+			const hamSwitch = document.getElementById("hamSwitch");
+
+			const hamMenu = document.getElementById("hamMenu");
+
+			hamSwitch.addEventListener("click", () => {
+				hamMenu.classList.toggle("hidden");
+				console.log("lalal")
+			});
+
+
+
+
 
 
 
