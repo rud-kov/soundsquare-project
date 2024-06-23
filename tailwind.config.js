@@ -64,6 +64,10 @@ module.exports = {
 				lightFont: "#161616",
 				darkFont: "#C3C3C3",
 			},
+			borderColor: {
+				lightBorder: "#161616",
+				darkBorder: "#C3C3C3",
+			},
 		},
 	},
 	plugins: [],

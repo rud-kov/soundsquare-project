@@ -26,350 +26,362 @@
 	</head>
 
 	<body class="flex">
-		<div class="flex max-w-60 flex-grow flex-col justify-center">
-			<div class="flex items-center justify-center bg-black">
-				<div class="mx-7 my-8 flex">
-					<img
-						class="min-h-4 min-w-[11.375rem]"
-						src="./img/soundsquare__logo.svg"
-					/>
-				</div>
-			</div>
-
+		<div class="flex min-w-60">
 			<div
-				class="flex flex-1 flex-col items-start justify-start bg-white dark:bg-black"
+				class="fixed bottom-0 left-0 top-0 flex max-w-60 flex-grow flex-col justify-center overflow-scroll"
 			>
-				<div
-					class="mx-7 my-8 flex flex-col justify-center self-stretch text-left"
-				>
-					<div class="border-b border-black dark:border-white">
-						<p
-							class="m-0 pb-2 font-public text-24 font-bold tracking-tighter text-black dark:text-white"
-						>
-							My drive
-						</p>
-					</div>
-					<div
-						class="mt-3 flex flex-col gap-3 self-stretch"
-						id="menubar__linkwrapper"
-					>
-						<a
-							class="before-h-5 text-black before:absolute before:left-0 before:hidden before:h-5 before:w-4 before:bg-black before:content-[''] hover:before:block dark:text-white dark:before:bg-white"
-							href="#"
-							>My files</a
-						>
-						<a
-							class="before-h-5 text-black before:absolute before:left-0 before:hidden before:h-5 before:w-4 before:bg-black before:content-[''] hover:before:block dark:text-white dark:before:bg-white"
-							href="#"
-							>Received</a
-						>
-						<a
-							class="before-h-5 text-black before:absolute before:left-0 before:hidden before:h-5 before:w-4 before:bg-black before:content-[''] hover:before:block dark:text-white dark:before:bg-white"
-							href="#"
-							>Sent</a
-						>
-						<a
-							class="before-h-5 text-black before:absolute before:left-0 before:hidden before:h-5 before:w-4 before:bg-black before:content-[''] hover:before:block dark:text-white dark:before:bg-white"
-							href="#"
-							>Trash</a
-						>
+				<div class="flex items-center justify-center bg-black">
+					<div class="mx-7 my-8 flex">
+						<img
+							class="min-h-4 min-w-[11.375rem]"
+							src="./img/soundsquare__logo.svg"
+						/>
 					</div>
 				</div>
-			</div>
 
-			<div class="flex items-start bg-blue" id="uploadBar">
-				<div class="mx-7 my-8 flex flex-col justify-start text-left">
+				<div
+					class="flex flex-1 flex-col items-start justify-start bg-white dark:bg-black"
+				>
 					<div
-						class="relative flex grow flex-wrap content-center justify-center"
+						class="mx-7 my-8 flex flex-col justify-center self-stretch text-left"
 					>
-						<div>
-							<div
-								class="flex max-w-[20.813rem] items-center justify-center text-center mdd:max-w-[14.46rem]"
-								id="dragdrop__area"
+						<div class="border-b border-black dark:border-white">
+							<p
+								class="m-0 pb-2 font-public text-24 font-bold tracking-tighter text-black dark:text-white"
 							>
-								<form
-									action="https://httpbin.org/post"
-									method="post"
-									enctype="multipart/form-data"
-									id="upload__form"
-									class="relative flex grow flex-col items-center justify-center gap-5 self-stretch text-center"
-								>
-									<p
-										class="my-0 font-public text-16 font-normal text-white"
-									>
-										Upload stuff?
-									</p>
-									<label
-										class="w-36 grow select-none whitespace-nowrap bg-white py-2 text-center font-public text-16 text-blue hover:cursor-pointer hover:bg-black hover:text-white"
-									>
-										Browse files
-										<input
-											id="file__input"
-											name="file"
-											type="file"
-											class="hidden"
-											multiple
-											accept=""
-										/>
-									</label>
-									<p
-										id="upload__and"
-										class="my-0 hidden font-public text-16 font-normal text-white mdd:text-lg tablet:text-lg"
-									>
-										and
-									</p>
-
-									<button
-										type="submit"
-										id="upload__button"
-										class="hidden w-36 grow select-none whitespace-nowrap bg-white py-2 text-center font-public text-16 text-blue hover:cursor-pointer hover:bg-black hover:text-white"
-									>
-										Upload files
-									</button>
-
-									<ul
-										id="files__container"
-										class="m-0 hidden max-w-[11.375rem] flex-col overflow-x-hidden whitespace-nowrap text-white"
-									></ul>
-									<div
-										class="relative flex items-center justify-center gap-2 self-stretch"
-									>
-										<div
-											class="flex flex-grow border-b border-t-0 border-solid border-white"
-										></div>
-										<p
-											class="my-0 font-inter text-16 font-normal text-white mdd:text-lg tablet:text-lg"
-										>
-											or
-										</p>
-										<div
-											class="flex flex-grow border-b border-t-0 border-solid border-white"
-										></div>
-									</div>
-
-									<div
-										class="mt-10 text-center mdd:mt-5 tablet:mt-5"
-									>
-										<div
-											class="border border-dashed border-white"
-										>
-											<div
-												class="flex flex-col items-center py-8"
-											>
-												<p
-													class="mx-0 my-0 px-5 font-public text-xl font-normal uppercase leading-6 text-white"
-												>
-													Drop your files here
-												</p>
-												<img
-													class="px-8 pt-4"
-													src="./img/dragdrop__icon--white.svg"
-												/>
-											</div>
-										</div>
-									</div>
-								</form>
-							</div>
+								My drive
+							</p>
+						</div>
+						<div
+							class="mt-3 flex flex-col gap-3 self-stretch"
+							id="menubar__linkwrapper"
+						>
+							<a
+								class="before-h-5 text-black before:absolute before:left-0 before:hidden before:h-5 before:w-4 before:bg-black before:content-[''] hover:before:block dark:text-white dark:before:bg-white"
+								href="#"
+								>My files</a
+							>
+							<a
+								class="before-h-5 text-black before:absolute before:left-0 before:hidden before:h-5 before:w-4 before:bg-black before:content-[''] hover:before:block dark:text-white dark:before:bg-white"
+								href="#"
+								>Received</a
+							>
+							<a
+								class="before-h-5 text-black before:absolute before:left-0 before:hidden before:h-5 before:w-4 before:bg-black before:content-[''] hover:before:block dark:text-white dark:before:bg-white"
+								href="#"
+								>Sent</a
+							>
+							<a
+								class="before-h-5 text-black before:absolute before:left-0 before:hidden before:h-5 before:w-4 before:bg-black before:content-[''] hover:before:block dark:text-white dark:before:bg-white"
+								href="#"
+								>Trash</a
+							>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="hidden items-start" id="uploadBar--progress">
-				<div class="flex-col justify-start text-left">
+
+				<div class="flex items-start bg-blue" id="uploadBar">
 					<div
-						class="flex flex-1 justify-center border border-dashed border-blue"
+						class="mx-7 my-8 flex flex-col justify-start text-left"
 					>
 						<div
-							class="mx-4 flex grow flex-col items-center justify-start gap-5"
+							class="relative flex grow flex-wrap content-center justify-center"
 						>
-							<div class="text-center">
-								<div>
-									<p
-										class="my-0 px-5 pt-5 font-public text-16 text-blue"
-									>
-										Can you make a circle from squares in
-										the meantime?
-									</p>
-								</div>
-							</div>
-
 							<div>
 								<div
-									id="puzzle__container"
-									class="relative h-[11.25rem] w-[11.25rem]"
+									class="flex max-w-[20.813rem] items-center justify-center text-center mdd:max-w-[14.46rem]"
+									id="dragdrop__area"
 								>
-									<img
-										class="hidden"
-										src="./img/puzzlegame/1.png"
-									/>
-									<img
-										class="hidden"
-										src="./img/puzzlegame/2.png"
-									/>
-									<img
-										class="hidden"
-										src="./img/puzzlegame/3.png"
-									/>
-									<img
-										class="hidden"
-										src="./img/puzzlegame/4.png"
-									/>
-									<img
-										class="hidden"
-										src="./img/puzzlegame/5.png"
-									/>
-									<img
-										class="hidden"
-										src="./img/puzzlegame/6.png"
-									/>
-									<img
-										class="hidden"
-										src="./img/puzzlegame/7.png"
-									/>
-									<img
-										class="hidden"
-										src="./img/puzzlegame/8.png"
-									/>
-									<img
-										class="hidden"
-										src="./img/puzzlegame/9.png"
-									/>
-									<img
-										class="hidden"
-										src="./img/puzzlegame/10.png"
-									/>
-									<img
-										class="hidden"
-										src="./img/puzzlegame/11.png"
-									/>
-									<img
-										class="hidden"
-										src="./img/puzzlegame/12.png"
-									/>
-									<img
-										class="hidden"
-										src="./img/puzzlegame/13.png"
-									/>
-									<img
-										class="hidden"
-										src="./img/puzzlegame/14.png"
-									/>
-									<img
-										class="hidden"
-										src="./img/puzzlegame/15.png"
-									/>
-								</div>
-							</div>
-
-							<div class="text-center">
-								<div>
-									<p
-										class="my-0 px-5 font-public text-16 text-blue"
+									<form
+										action="https://httpbin.org/post"
+										method="post"
+										enctype="multipart/form-data"
+										id="upload__form"
+										class="relative flex grow flex-col items-center justify-center gap-5 self-stretch text-center"
 									>
-										Your data is now uploading. Please do
-										not close this window.
-									</p>
+										<p
+											class="my-0 font-public text-16 font-normal text-white"
+										>
+											Upload stuff?
+										</p>
+										<label
+											class="w-36 grow select-none whitespace-nowrap bg-white py-2 text-center font-public text-16 text-blue hover:cursor-pointer hover:bg-black hover:text-white"
+										>
+											Browse files
+											<input
+												id="file__input"
+												name="file"
+												type="file"
+												class="hidden"
+												multiple
+												accept=""
+											/>
+										</label>
+										<p
+											id="upload__and"
+											class="my-0 hidden font-public text-16 font-normal text-white mdd:text-lg tablet:text-lg"
+										>
+											and
+										</p>
+
+										<button
+											type="submit"
+											id="upload__button"
+											class="hidden w-36 grow select-none whitespace-nowrap bg-white py-2 text-center font-public text-16 text-blue hover:cursor-pointer hover:bg-black hover:text-white"
+										>
+											Upload files
+										</button>
+
+										<ul
+											id="files__container"
+											class="m-0 hidden max-w-[11.375rem] flex-col overflow-x-hidden whitespace-nowrap text-white"
+										></ul>
+										<div
+											class="relative flex items-center justify-center gap-2 self-stretch"
+										>
+											<div
+												class="flex flex-grow border-b border-t-0 border-solid border-white"
+											></div>
+											<p
+												class="my-0 font-inter text-16 font-normal text-white mdd:text-lg tablet:text-lg"
+											>
+												or
+											</p>
+											<div
+												class="flex flex-grow border-b border-t-0 border-solid border-white"
+											></div>
+										</div>
+
+										<div
+											class="mt-10 text-center mdd:mt-5 tablet:mt-5"
+										>
+											<div
+												class="border border-dashed border-white"
+											>
+												<div
+													class="flex flex-col items-center py-8"
+												>
+													<p
+														class="mx-0 my-0 px-5 font-public text-xl font-normal uppercase leading-6 text-white"
+													>
+														Drop your files here
+													</p>
+													<img
+														class="px-8 pt-4"
+														src="./img/dragdrop__icon--white.svg"
+													/>
+												</div>
+											</div>
+										</div>
+									</form>
 								</div>
-							</div>
-
-							<div
-								class="flex grow flex-col items-stretch justify-start self-stretch pb-5 pt-5 text-center"
-							>
-								<progress
-									id="progress__bar"
-									class="mx-auto h-3 max-h-3 w-full max-w-[27.125rem] grow [&::-moz-progress-bar]:bg-blue [&::-webkit-progress-bar]:bg-[#D9D9D9] [&::-webkit-progress-value]:bg-blue"
-									value="0"
-									max="100"
-								></progress>
-
-								<p
-									id="progress__percents"
-									class="my-0 pt-5 font-public text-16 text-blue"
-								></p>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div
-				id="uploadBar--result"
-				class="hidden flex-1 items-center justify-center bg-blue"
-			>
-				<div class="mx-7 my-8 flex grow flex-col items-center gap-5">
-					<div class="flex flex-col items-center gap-8">
+				<div class="hidden items-start" id="uploadBar--progress">
+					<div class="flex-col justify-start text-left">
 						<div
-							class="h-[4.68rem] w-[4.68rem] bg-[url('/src/img/upload__success.svg')] bg-contain bg-center bg-no-repeat"
-						></div>
+							class="flex flex-1 justify-center border border-dashed border-blue"
+						>
+							<div
+								class="mx-4 flex grow flex-col items-center justify-start gap-5"
+							>
+								<div class="text-center">
+									<div>
+										<p
+											class="my-0 px-5 pt-5 font-public text-16 text-blue"
+										>
+											Can you make a circle from squares
+											in the meantime?
+										</p>
+									</div>
+								</div>
+
+								<div>
+									<div
+										id="puzzle__container"
+										class="relative h-[11.25rem] w-[11.25rem]"
+									>
+										<img
+											class="hidden"
+											src="./img/puzzlegame/1.png"
+										/>
+										<img
+											class="hidden"
+											src="./img/puzzlegame/2.png"
+										/>
+										<img
+											class="hidden"
+											src="./img/puzzlegame/3.png"
+										/>
+										<img
+											class="hidden"
+											src="./img/puzzlegame/4.png"
+										/>
+										<img
+											class="hidden"
+											src="./img/puzzlegame/5.png"
+										/>
+										<img
+											class="hidden"
+											src="./img/puzzlegame/6.png"
+										/>
+										<img
+											class="hidden"
+											src="./img/puzzlegame/7.png"
+										/>
+										<img
+											class="hidden"
+											src="./img/puzzlegame/8.png"
+										/>
+										<img
+											class="hidden"
+											src="./img/puzzlegame/9.png"
+										/>
+										<img
+											class="hidden"
+											src="./img/puzzlegame/10.png"
+										/>
+										<img
+											class="hidden"
+											src="./img/puzzlegame/11.png"
+										/>
+										<img
+											class="hidden"
+											src="./img/puzzlegame/12.png"
+										/>
+										<img
+											class="hidden"
+											src="./img/puzzlegame/13.png"
+										/>
+										<img
+											class="hidden"
+											src="./img/puzzlegame/14.png"
+										/>
+										<img
+											class="hidden"
+											src="./img/puzzlegame/15.png"
+										/>
+									</div>
+								</div>
+
+								<div class="text-center">
+									<div>
+										<p
+											class="my-0 px-5 font-public text-16 text-blue"
+										>
+											Your data is now uploading. Please
+											do not close this window.
+										</p>
+									</div>
+								</div>
+
+								<div
+									class="flex grow flex-col items-stretch justify-start self-stretch pb-5 pt-5 text-center"
+								>
+									<progress
+										id="progress__bar"
+										class="mx-auto h-3 max-h-3 w-full max-w-[27.125rem] grow [&::-moz-progress-bar]:bg-blue [&::-webkit-progress-bar]:bg-[#D9D9D9] [&::-webkit-progress-value]:bg-blue"
+										value="0"
+										max="100"
+									></progress>
+
+									<p
+										id="progress__percents"
+										class="my-0 pt-5 font-public text-16 text-blue"
+									></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div
+					id="uploadBar--result"
+					class="hidden flex-1 items-center justify-center bg-blue"
+				>
+					<div
+						class="mx-7 my-8 flex grow flex-col items-center gap-5"
+					>
+						<div class="flex flex-col items-center gap-8">
+							<div
+								class="h-[4.68rem] w-[4.68rem] bg-[url('/src/img/upload__success.svg')] bg-contain bg-center bg-no-repeat"
+							></div>
+							<div class="text-center text-white">
+								<h2 class="my-0 font-public text-16 text-white">
+									Sounds great!
+								</h2>
+							</div>
+							<div class="flex flex-col text-center">
+								<div
+									id="metadata__container"
+									class="flex flex-col overflow-x-clip text-white"
+								>
+									<p
+										class="my-0 font-public text-16 text-white"
+									>
+										Your data
+									</p>
+								</div>
+								<div class="text-white">
+									<p
+										class="my-0 font-public text-16 text-white"
+									>
+										have been uploaded
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<div class="text-center text-white">
+								<p class="my-0 font-public text-16 text-white">
+									Get your link here
+								</p>
+							</div>
+
+							<div
+								class="relative mt-3 text-center hover:cursor-pointer"
+							>
+								<p
+									id="download__link"
+									class="my-0 bg-white px-2 py-2 font-public text-xs text-blue"
+								>
+									soundsquare.cz/upload/GdX9lI2
+								</p>
+
+								<div
+									id="copylink__tooltip"
+									role="tooltip"
+									class="absolute left-2/4 top-10 hidden -translate-x-2/4 rounded-lg bg-black px-3 py-2 font-public text-sm font-medium text-white shadow-sm"
+								>
+									<span
+										id="tooltip__hover"
+										class="whitespace-nowrap text-xs"
+										>Click to copy link</span
+									>
+								</div>
+
+								<div
+									id="copylink__tooltip--success"
+									role="tooltip"
+									class="absolute left-2/4 top-10 hidden -translate-x-2/4 rounded-lg bg-black px-3 py-2 font-public text-sm font-medium text-white shadow-sm"
+								>
+									<span class="whitespace-nowrap text-xs"
+										>Link copied</span
+									>
+								</div>
+							</div>
+						</div>
+
 						<div class="text-center text-white">
-							<h2 class="my-0 font-public text-16 text-white">
-								Sounds great!
+							<h2
+								id="homescreen__link"
+								class="my-0 mt-6 font-public text-16 text-white hover:cursor-pointer hover:underline"
+							>
+								Upload more files?
 							</h2>
 						</div>
-						<div class="flex flex-col text-center">
-							<div
-								id="metadata__container"
-								class="flex flex-col overflow-x-clip text-white"
-							>
-								<p class="my-0 font-public text-16 text-white">
-									Your data
-								</p>
-							</div>
-							<div class="text-white">
-								<p class="my-0 font-public text-16 text-white">
-									have been uploaded
-								</p>
-							</div>
-						</div>
-					</div>
-
-					<div>
-						<div class="text-center text-white">
-							<p class="my-0 font-public text-16 text-white">
-								Get your link here
-							</p>
-						</div>
-
-						<div
-							class="relative mt-3 text-center hover:cursor-pointer"
-						>
-							<p
-								id="download__link"
-								class="my-0 bg-white px-2 py-2 font-public text-xs text-blue"
-							>
-								soundsquare.cz/upload/GdX9lI2
-							</p>
-
-							<div
-								id="copylink__tooltip"
-								role="tooltip"
-								class="absolute left-2/4 top-10 hidden -translate-x-2/4 rounded-lg bg-black px-3 py-2 font-public text-sm font-medium text-white shadow-sm"
-							>
-								<span
-									id="tooltip__hover"
-									class="whitespace-nowrap text-xs"
-									>Click to copy link</span
-								>
-							</div>
-
-							<div
-								id="copylink__tooltip--success"
-								role="tooltip"
-								class="absolute left-2/4 top-10 hidden -translate-x-2/4 rounded-lg bg-black px-3 py-2 font-public text-sm font-medium text-white shadow-sm"
-							>
-								<span class="whitespace-nowrap text-xs"
-									>Link copied</span
-								>
-							</div>
-						</div>
-					</div>
-
-					<div class="text-center text-white">
-						<h2
-							id="homescreen__link"
-							class="my-0 mt-6 font-public text-16 text-white hover:cursor-pointer hover:underline"
-						>
-							Upload more files?
-						</h2>
 					</div>
 				</div>
 			</div>
@@ -589,7 +601,9 @@
 						</div>
 					</div>
 
-					<div class="col-start-1 row-start-2 flex gap-5 flex-row items-center ml-7">
+					<div
+						class="col-start-1 row-start-2 ml-7 flex flex-row items-center gap-5"
+					>
 						<input
 							id="check__all"
 							class="h-[0.875rem] w-[0.875rem] border-[#C3C3C3] bg-darkPrimary"
@@ -597,48 +611,1036 @@
 						/>
 
 						<div class="flex flex-row gap-2">
-							<p class="text-16 font-bold font-public dark:text-darkFont text-lightFont">Name</p>
-							<img class="dark:hidden" src="/src/img/arrowup--light.svg">
-							<img src="/src/img/arrowup--dark.svg">
+							<p
+								class="font-public text-16 font-bold text-lightFont dark:text-darkFont"
+							>
+								Name
+							</p>
+							<img
+								class="dark:hidden"
+								src="/src/img/arrowup--light.svg"
+							/>
+							<img src="/src/img/arrowup--dark.svg" />
 						</div>
 					</div>
 
-					<div class="col-start-2 row-start-2 self-center justify-self-center flex flex-row gap-2">
-						<div class="flex flex-col justify-center items-center">
-							<img class="dark:hidden" src="/src/img/arrowup--light.svg">
-							<img src="/src/img/arrowup--dark.svg">
-							<img class="dark:hidden" src="/src/img/arrowdown--light.svg">
-							<img src="/src/img/arrowdown--dark.svg">
+					<div
+						class="col-start-2 row-start-2 flex flex-row gap-2 self-center justify-self-center"
+					>
+						<div class="flex flex-col items-center justify-center">
+							<img
+								class="dark:hidden"
+								src="/src/img/arrowup--light.svg"
+							/>
+							<img src="/src/img/arrowup--dark.svg" />
+							<img
+								class="dark:hidden"
+								src="/src/img/arrowdown--light.svg"
+							/>
+							<img src="/src/img/arrowdown--dark.svg" />
 						</div>
-						
-						<p class="text-16 font-bold font-public dark:text-darkFont text-lightFont">File type</p>
+
+						<p
+							class="font-public text-16 font-bold text-lightFont dark:text-darkFont"
+						>
+							File type
+						</p>
 					</div>
 
-
-					<div class="col-start-3 row-start-2 self-center justify-self-center flex flex-row gap-2">
-						<div class="flex flex-col justify-center items-center">
-							<img class="dark:hidden" src="/src/img/arrowup--light.svg">
-							<img src="/src/img/arrowup--dark.svg">
-							<img class="dark:hidden" src="/src/img/arrowdown--light.svg">
-							<img src="/src/img/arrowdown--dark.svg">
+					<div
+						class="col-start-3 row-start-2 flex flex-row gap-2 self-center justify-self-center"
+					>
+						<div class="flex flex-col items-center justify-center">
+							<img
+								class="dark:hidden"
+								src="/src/img/arrowup--light.svg"
+							/>
+							<img src="/src/img/arrowup--dark.svg" />
+							<img
+								class="dark:hidden"
+								src="/src/img/arrowdown--light.svg"
+							/>
+							<img src="/src/img/arrowdown--dark.svg" />
 						</div>
-						
-						<p class="text-16 font-bold font-public dark:text-darkFont text-lightFont">Last modified</p>
+
+						<p
+							class="font-public text-16 font-bold text-lightFont dark:text-darkFont"
+						>
+							Last modified
+						</p>
 					</div>
 
-
-					<div class="col-start-4 row-start-2 self-center justify-self-end mr-7 flex flex-row gap-2">
-						<div class="flex flex-col justify-center items-center">
-							<img class="dark:hidden" src="/src/img/arrowup--light.svg">
-							<img src="/src/img/arrowup--dark.svg">
-							<img class="dark:hidden" src="/src/img/arrowdown--light.svg">
-							<img src="/src/img/arrowdown--dark.svg">
+					<div
+						class="col-start-4 row-start-2 mr-7 flex flex-row gap-2 self-center justify-self-end"
+					>
+						<div class="flex flex-col items-center justify-center">
+							<img
+								class="dark:hidden"
+								src="/src/img/arrowup--light.svg"
+							/>
+							<img src="/src/img/arrowup--dark.svg" />
+							<img
+								class="dark:hidden"
+								src="/src/img/arrowdown--light.svg"
+							/>
+							<img src="/src/img/arrowdown--dark.svg" />
 						</div>
-						
-						<p class="text-16 font-bold font-public dark:text-darkFont text-lightFont">Size</p>
+
+						<p
+							class="font-public text-16 font-bold text-lightFont dark:text-darkFont"
+						>
+							Size
+						</p>
+					</div>
+				</div>
+
+				<div id="files__wrapper">
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input class="ml-3" type="checkbox" />
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								03/12/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
 					</div>
 
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input class="ml-3" type="checkbox" />
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
 
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								03/12/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
+
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input class="ml-3" type="checkbox" />
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								03/12/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
+
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input class="ml-3" type="checkbox" />
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								03/12/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
+
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input class="ml-3" type="checkbox" />
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								03/12/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
+
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input class="ml-3" type="checkbox" />
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								03/12/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
+
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input class="ml-3" type="checkbox" />
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								03/12/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
+
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input class="ml-3" type="checkbox" />
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								03/12/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
+
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input class="ml-3" type="checkbox" />
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								03/12/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
+
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input class="ml-3" type="checkbox" />
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								03/12/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
+
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input class="ml-3" type="checkbox" />
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								03/12/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
+
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input class="ml-3" type="checkbox" />
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								03/12/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
+
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input class="ml-3" type="checkbox" />
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								03/12/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
+
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input class="ml-3" type="checkbox" />
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								03/12/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
+
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input class="ml-3" type="checkbox" />
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								03/12/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
+
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input class="ml-3" type="checkbox" />
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								03/12/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
+
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input class="ml-3" type="checkbox" />
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								03/12/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
+
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input class="ml-3" type="checkbox" />
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								03/12/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
+
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input class="ml-3" type="checkbox" />
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								03/12/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="grid grid-flow-row grid-cols-4 grid-rows-1">
+					<div
+						class="col-start-1 col-end-1 ml-7 self-start justify-self-start pb-6 pt-6"
+					>
+						<p
+							class="m-0 font-public text-16 font-bold leading-[1.175rem] text-lightFont dark:text-darkFont"
+						>
+							File name.jpg
+						</p>
+					</div>
+
+					<div
+						class="col-start-2 col-end-2 ml-7 flex flex-row gap-1 self-center justify-self-end pb-6 pt-6"
+					>
+						<div class="flex flex-col text-right">
+							<p
+								class="m-0 font-public text-16 font-bold leading-[1.175rem] text-lightFont dark:text-darkFont"
+							>
+								File name:
+							</p>
+							<p
+								class="m-0 font-public text-16 font-bold leading-[1.175rem] text-lightFont dark:text-darkFont"
+							>
+								Size:
+							</p>
+							<p
+								class="m-0 font-public text-16 font-bold leading-[1.175rem] text-lightFont dark:text-darkFont"
+							>
+								Type:
+							</p>
+							<p
+								class="m-0 font-public text-16 font-bold leading-[1.175rem] text-lightFont dark:text-darkFont"
+							>
+								Created:
+							</p>
+							<p
+								class="m-0 font-public text-16 font-bold leading-[1.175rem] text-lightFont dark:text-darkFont"
+							>
+								Modified:
+							</p>
+						</div>
+
+						<div class="flex flex-col">
+							<p
+								class="m-0 font-public text-16 leading-[1.175rem] text-lightFont dark:text-darkFont"
+							>
+								Document-A.txt
+							</p>
+							<p
+								class="m-0 font-public text-16 leading-[1.175rem] text-lightFont dark:text-darkFont"
+							>
+								256kb
+							</p>
+							<p
+								class="m-0 font-public text-16 leading-[1.175rem] text-lightFont dark:text-darkFont"
+							>
+								.txt
+							</p>
+							<p
+								class="m-0 font-public text-16 leading-[1.175rem] text-lightFont dark:text-darkFont"
+							>
+								June 15, 2023 14:32:00
+							</p>
+							<p
+								class="m-0 font-public text-16 leading-[1.175rem] text-lightFont dark:text-darkFont"
+							>
+								August 7, 2023 09:45:23
+							</p>
+						</div>
+					</div>
+
+					<div
+						class="col-start-4 col-end-4 mb-6 mr-7 flex flex-row gap-[5.375rem] self-center justify-self-end"
+					>
+						<p
+							class="m-0 mt-6 font-public text-16 font-bold leading-[1.175rem] text-lightFont dark:text-darkFont"
+						>
+							Modified:
+						</p>
+
+						<div
+							class="mt-4 flex min-h-[6.5rem] min-w-[6.5rem] items-center justify-center bg-lightSecondary dark:bg-[#666666]"
+						>
+							<p
+								class="public text-2xl font-bold uppercase text-[#C5C5C5]"
+							>
+								svg
+							</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</main>
