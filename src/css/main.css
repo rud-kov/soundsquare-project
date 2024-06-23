@@ -134,6 +134,7 @@ select::placeholder {
   @apply text-black/50;
 }
 
+
 textarea {
   resize: vertical;
 }

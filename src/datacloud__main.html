@@ -30,7 +30,7 @@
 			<div
 				class="fixed bottom-0 left-0 top-0 flex max-w-60 flex-grow flex-col justify-center overflow-scroll"
 			>
-				<div class="flex items-center justify-center bg-black">
+				<div class="flex min-h-24 items-center justify-center bg-black">
 					<div class="mx-7 my-8 flex">
 						<img
 							class="min-h-4 min-w-[11.375rem]"
@@ -431,6 +431,7 @@
 								class="font-public text-2xl font-normal tracking-tighter text-[#161616] dark:text-darkFont"
 							>
 								Welcome,<span
+									id="user__name"
 									class="font-bold dark:text-darkFont"
 								>
 									Adam</span
@@ -440,15 +441,21 @@
 						<div
 							class="flex min-h-8 min-w-8 flex-col items-center justify-center gap-1 bg-black dark:bg-darkFourth"
 						>
-							<div class="h-[0.094rem] w-5 bg-black"></div>
-							<div class="h-[0.094rem] w-5 bg-black"></div>
-							<div class="h-[0.094rem] w-5 bg-black"></div>
+							<div
+								class="h-[0.094rem] w-5 bg-lightSecondary dark:bg-black"
+							></div>
+							<div
+								class="h-[0.094rem] w-5 bg-lightSecondary dark:bg-black"
+							></div>
+							<div
+								class="h-[0.094rem] w-5 bg-lightSecondary dark:bg-black"
+							></div>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<div class="bg-lightSecondary dark:bg-darkPrimary">
+			<div class="bg-lightPrimary dark:bg-darkPrimary">
 				<div
 					class="grid h-[6.875rem] grid-flow-row grid-cols-4 grid-rows-2"
 				>
@@ -467,7 +474,7 @@
 								class="flex min-h-5 min-w-5 items-center justify-center bg-lightFourth hover:cursor-pointer dark:bg-darkFourth"
 							>
 								<img
-									class="h-[0.688rem] w-[0.688rem]"
+									class="hidden h-[0.688rem] w-[0.688rem] dark:flex"
 									src="/src/img/cross__icon--dark.svg"
 								/>
 								<img
@@ -481,7 +488,7 @@
 								class="flex min-h-5 min-w-5 items-center justify-center bg-lightFourth hover:cursor-pointer dark:bg-darkFourth"
 							>
 								<img
-									class="h-[0.688rem] w-[0.688rem]"
+									class="hidden h-[0.688rem] w-[0.688rem] dark:flex"
 									src="/src/img/arrow__icon--dark.svg"
 								/>
 								<img
@@ -495,7 +502,7 @@
 								class="flex min-h-5 min-w-5 items-center justify-center bg-lightFourth hover:cursor-pointer dark:bg-darkFourth"
 							>
 								<img
-									class="h-[0.688rem] w-[0.688rem]"
+									class="hidden h-[0.688rem] w-[0.688rem] dark:flex"
 									src="/src/img/play__icon--dark.svg"
 								/>
 								<img
@@ -509,7 +516,7 @@
 								class="flex min-h-5 min-w-5 items-center justify-center bg-lightFourth hover:cursor-pointer dark:bg-darkFourth"
 							>
 								<img
-									class="h-[0.688rem] w-[0.688rem]"
+									class="hidden h-[0.688rem] w-[0.688rem] dark:flex"
 									src="/src/img/downarrow__icon--dark.svg"
 								/>
 								<img
@@ -523,7 +530,7 @@
 								class="flex min-h-5 min-w-5 items-center justify-center bg-lightFourth hover:cursor-pointer dark:bg-darkFourth"
 							>
 								<img
-									class="h-[0.688rem] w-[0.688rem]"
+									class="hidden h-[0.688rem] w-[0.688rem] dark:flex"
 									src="/src/img/clear__icon--dark.svg"
 								/>
 								<img
@@ -538,7 +545,7 @@
 						>
 							<input
 								id="check__all"
-								class="h-[0.875rem] w-[0.875rem] border-[#C3C3C3] bg-darkPrimary"
+								class="dark:accent-darkInput h-[0.875rem] w-[0.875rem] border-[#C3C3C3] accent-black"
 								type="checkbox"
 							/>
 							<p
@@ -558,7 +565,7 @@
 						/>
 
 						<img
-							class="min-h-[0.241rem] min-w-6 hover:cursor-pointer"
+							class="hidden min-h-[0.241rem] min-w-6 hover:cursor-pointer dark:flex"
 							src="/src/img/zoomout__icon--dark.svg"
 						/>
 
@@ -568,7 +575,7 @@
 						/>
 
 						<img
-							class="min-h-[0.241rem] min-w-6 hover:cursor-pointer"
+							class="hidden min-h-[0.241rem] min-w-6 hover:cursor-pointer dark:flex"
 							src="/src/img/zoomin__icon--dark.svg"
 						/>
 
@@ -581,7 +588,7 @@
 									src="/src/img/gridicon--light.svg"
 								/>
 								<img
-									class="h-[0.688rem] w-[0.688rem]"
+									class="hidden h-[0.688rem] w-[0.688rem] dark:flex"
 									src="/src/img/gridicon--dark.svg"
 								/>
 							</div>
@@ -594,7 +601,7 @@
 									src="/src/img/listicon--light.svg"
 								/>
 								<img
-									class="h-[0.688rem] w-[0.688rem]"
+									class="hidden h-[0.688rem] w-[0.688rem] dark:flex"
 									src="/src/img/listicon--dark.svg"
 								/>
 							</div>
@@ -606,7 +613,7 @@
 					>
 						<input
 							id="check__all"
-							class="h-[0.875rem] w-[0.875rem] border-[#C3C3C3] bg-darkPrimary"
+							class="dark:accent-darkInput h-[0.875rem] w-[0.875rem] border-[#C3C3C3] accent-black"
 							type="checkbox"
 						/>
 
@@ -620,7 +627,10 @@
 								class="dark:hidden"
 								src="/src/img/arrowup--light.svg"
 							/>
-							<img src="/src/img/arrowup--dark.svg" />
+							<img
+								class="hidden dark:flex"
+								src="/src/img/arrowup--dark.svg"
+							/>
 						</div>
 					</div>
 
@@ -632,12 +642,18 @@
 								class="dark:hidden"
 								src="/src/img/arrowup--light.svg"
 							/>
-							<img src="/src/img/arrowup--dark.svg" />
+							<img
+								class="hidden dark:flex"
+								src="/src/img/arrowup--dark.svg"
+							/>
 							<img
 								class="dark:hidden"
 								src="/src/img/arrowdown--light.svg"
 							/>
-							<img src="/src/img/arrowdown--dark.svg" />
+							<img
+								class="hidden dark:flex"
+								src="/src/img/arrowdown--dark.svg"
+							/>
 						</div>
 
 						<p
@@ -655,12 +671,18 @@
 								class="dark:hidden"
 								src="/src/img/arrowup--light.svg"
 							/>
-							<img src="/src/img/arrowup--dark.svg" />
+							<img
+								class="hidden dark:flex"
+								src="/src/img/arrowup--dark.svg"
+							/>
 							<img
 								class="dark:hidden"
 								src="/src/img/arrowdown--light.svg"
 							/>
-							<img src="/src/img/arrowdown--dark.svg" />
+							<img
+								class="hidden dark:flex"
+								src="/src/img/arrowdown--dark.svg"
+							/>
 						</div>
 
 						<p
@@ -678,12 +700,18 @@
 								class="dark:hidden"
 								src="/src/img/arrowup--light.svg"
 							/>
-							<img src="/src/img/arrowup--dark.svg" />
+							<img
+								class="hidden dark:flex"
+								src="/src/img/arrowup--dark.svg"
+							/>
 							<img
 								class="dark:hidden"
 								src="/src/img/arrowdown--light.svg"
 							/>
-							<img src="/src/img/arrowdown--dark.svg" />
+							<img
+								class="hidden dark:flex"
+								src="/src/img/arrowdown--dark.svg"
+							/>
 						</div>
 
 						<p
@@ -693,15 +721,20 @@
 						</p>
 					</div>
 				</div>
+			</div>
 
-				<div id="files__wrapper">
+			<div class="bg-lightPrimary dark:bg-darkPrimary grow">
+				<div id="mainfiles__wrapper">
 					<div
 						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
 					>
 						<div
 							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
 						>
-							<input class="ml-3" type="checkbox" />
+							<input
+								class="dark:accent-darkInput ml-3 accent-black"
+								type="checkbox"
+							/>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
 							>
@@ -746,7 +779,10 @@
 						<div
 							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
 						>
-							<input class="ml-3" type="checkbox" />
+							<input
+								class="dark:accent-darkInput ml-3 accent-black"
+								type="checkbox"
+							/>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
 							>
@@ -791,727 +827,10 @@
 						<div
 							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
 						>
-							<input class="ml-3" type="checkbox" />
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								File name.jpg
-							</p>
-						</div>
-
-						<div
-							class="col-start-2 col-end-2 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								Jpg image
-							</p>
-						</div>
-
-						<div
-							class="col-start-3 col-end-3 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								03/12/2023
-							</p>
-						</div>
-
-						<div
-							class="col-start-4 col-end-4 self-center justify-self-end"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								340 kB
-							</p>
-						</div>
-					</div>
-
-					<div
-						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
-					>
-						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
-						>
-							<input class="ml-3" type="checkbox" />
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								File name.jpg
-							</p>
-						</div>
-
-						<div
-							class="col-start-2 col-end-2 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								Jpg image
-							</p>
-						</div>
-
-						<div
-							class="col-start-3 col-end-3 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								03/12/2023
-							</p>
-						</div>
-
-						<div
-							class="col-start-4 col-end-4 self-center justify-self-end"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								340 kB
-							</p>
-						</div>
-					</div>
-
-					<div
-						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
-					>
-						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
-						>
-							<input class="ml-3" type="checkbox" />
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								File name.jpg
-							</p>
-						</div>
-
-						<div
-							class="col-start-2 col-end-2 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								Jpg image
-							</p>
-						</div>
-
-						<div
-							class="col-start-3 col-end-3 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								03/12/2023
-							</p>
-						</div>
-
-						<div
-							class="col-start-4 col-end-4 self-center justify-self-end"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								340 kB
-							</p>
-						</div>
-					</div>
-
-					<div
-						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
-					>
-						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
-						>
-							<input class="ml-3" type="checkbox" />
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								File name.jpg
-							</p>
-						</div>
-
-						<div
-							class="col-start-2 col-end-2 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								Jpg image
-							</p>
-						</div>
-
-						<div
-							class="col-start-3 col-end-3 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								03/12/2023
-							</p>
-						</div>
-
-						<div
-							class="col-start-4 col-end-4 self-center justify-self-end"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								340 kB
-							</p>
-						</div>
-					</div>
-
-					<div
-						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
-					>
-						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
-						>
-							<input class="ml-3" type="checkbox" />
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								File name.jpg
-							</p>
-						</div>
-
-						<div
-							class="col-start-2 col-end-2 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								Jpg image
-							</p>
-						</div>
-
-						<div
-							class="col-start-3 col-end-3 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								03/12/2023
-							</p>
-						</div>
-
-						<div
-							class="col-start-4 col-end-4 self-center justify-self-end"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								340 kB
-							</p>
-						</div>
-					</div>
-
-					<div
-						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
-					>
-						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
-						>
-							<input class="ml-3" type="checkbox" />
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								File name.jpg
-							</p>
-						</div>
-
-						<div
-							class="col-start-2 col-end-2 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								Jpg image
-							</p>
-						</div>
-
-						<div
-							class="col-start-3 col-end-3 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								03/12/2023
-							</p>
-						</div>
-
-						<div
-							class="col-start-4 col-end-4 self-center justify-self-end"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								340 kB
-							</p>
-						</div>
-					</div>
-
-					<div
-						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
-					>
-						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
-						>
-							<input class="ml-3" type="checkbox" />
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								File name.jpg
-							</p>
-						</div>
-
-						<div
-							class="col-start-2 col-end-2 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								Jpg image
-							</p>
-						</div>
-
-						<div
-							class="col-start-3 col-end-3 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								03/12/2023
-							</p>
-						</div>
-
-						<div
-							class="col-start-4 col-end-4 self-center justify-self-end"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								340 kB
-							</p>
-						</div>
-					</div>
-
-					<div
-						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
-					>
-						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
-						>
-							<input class="ml-3" type="checkbox" />
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								File name.jpg
-							</p>
-						</div>
-
-						<div
-							class="col-start-2 col-end-2 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								Jpg image
-							</p>
-						</div>
-
-						<div
-							class="col-start-3 col-end-3 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								03/12/2023
-							</p>
-						</div>
-
-						<div
-							class="col-start-4 col-end-4 self-center justify-self-end"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								340 kB
-							</p>
-						</div>
-					</div>
-
-					<div
-						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
-					>
-						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
-						>
-							<input class="ml-3" type="checkbox" />
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								File name.jpg
-							</p>
-						</div>
-
-						<div
-							class="col-start-2 col-end-2 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								Jpg image
-							</p>
-						</div>
-
-						<div
-							class="col-start-3 col-end-3 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								03/12/2023
-							</p>
-						</div>
-
-						<div
-							class="col-start-4 col-end-4 self-center justify-self-end"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								340 kB
-							</p>
-						</div>
-					</div>
-
-					<div
-						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
-					>
-						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
-						>
-							<input class="ml-3" type="checkbox" />
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								File name.jpg
-							</p>
-						</div>
-
-						<div
-							class="col-start-2 col-end-2 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								Jpg image
-							</p>
-						</div>
-
-						<div
-							class="col-start-3 col-end-3 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								03/12/2023
-							</p>
-						</div>
-
-						<div
-							class="col-start-4 col-end-4 self-center justify-self-end"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								340 kB
-							</p>
-						</div>
-					</div>
-
-					<div
-						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
-					>
-						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
-						>
-							<input class="ml-3" type="checkbox" />
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								File name.jpg
-							</p>
-						</div>
-
-						<div
-							class="col-start-2 col-end-2 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								Jpg image
-							</p>
-						</div>
-
-						<div
-							class="col-start-3 col-end-3 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								03/12/2023
-							</p>
-						</div>
-
-						<div
-							class="col-start-4 col-end-4 self-center justify-self-end"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								340 kB
-							</p>
-						</div>
-					</div>
-
-					<div
-						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
-					>
-						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
-						>
-							<input class="ml-3" type="checkbox" />
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								File name.jpg
-							</p>
-						</div>
-
-						<div
-							class="col-start-2 col-end-2 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								Jpg image
-							</p>
-						</div>
-
-						<div
-							class="col-start-3 col-end-3 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								03/12/2023
-							</p>
-						</div>
-
-						<div
-							class="col-start-4 col-end-4 self-center justify-self-end"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								340 kB
-							</p>
-						</div>
-					</div>
-
-					<div
-						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
-					>
-						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
-						>
-							<input class="ml-3" type="checkbox" />
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								File name.jpg
-							</p>
-						</div>
-
-						<div
-							class="col-start-2 col-end-2 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								Jpg image
-							</p>
-						</div>
-
-						<div
-							class="col-start-3 col-end-3 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								03/12/2023
-							</p>
-						</div>
-
-						<div
-							class="col-start-4 col-end-4 self-center justify-self-end"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								340 kB
-							</p>
-						</div>
-					</div>
-
-					<div
-						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
-					>
-						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
-						>
-							<input class="ml-3" type="checkbox" />
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								File name.jpg
-							</p>
-						</div>
-
-						<div
-							class="col-start-2 col-end-2 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								Jpg image
-							</p>
-						</div>
-
-						<div
-							class="col-start-3 col-end-3 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								03/12/2023
-							</p>
-						</div>
-
-						<div
-							class="col-start-4 col-end-4 self-center justify-self-end"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								340 kB
-							</p>
-						</div>
-					</div>
-
-					<div
-						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
-					>
-						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
-						>
-							<input class="ml-3" type="checkbox" />
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								File name.jpg
-							</p>
-						</div>
-
-						<div
-							class="col-start-2 col-end-2 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								Jpg image
-							</p>
-						</div>
-
-						<div
-							class="col-start-3 col-end-3 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								03/12/2023
-							</p>
-						</div>
-
-						<div
-							class="col-start-4 col-end-4 self-center justify-self-end"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								340 kB
-							</p>
-						</div>
-					</div>
-
-					<div
-						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
-					>
-						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
-						>
-							<input class="ml-3" type="checkbox" />
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								File name.jpg
-							</p>
-						</div>
-
-						<div
-							class="col-start-2 col-end-2 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								Jpg image
-							</p>
-						</div>
-
-						<div
-							class="col-start-3 col-end-3 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								03/12/2023
-							</p>
-						</div>
-
-						<div
-							class="col-start-4 col-end-4 self-center justify-self-end"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								340 kB
-							</p>
-						</div>
-					</div>
-
-					<div
-						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
-					>
-						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
-						>
-							<input class="ml-3" type="checkbox" />
+							<input
+								class="dark:accent-darkInput ml-3 accent-black"
+								type="checkbox"
+							/>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
 							>
@@ -1550,7 +869,9 @@
 						</div>
 					</div>
 				</div>
+			</div>
 
+			<div class="bg-lightPrimary dark:bg-darkPrimary">
 				<div class="grid grid-flow-row grid-cols-4 grid-rows-1">
 					<div
 						class="col-start-1 col-end-1 ml-7 self-start justify-self-start pb-6 pt-6"

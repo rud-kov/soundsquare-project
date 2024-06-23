@@ -29,22 +29,34 @@ const Engine = {
 		events: function () {
 			console.log("Events are running");
 
-			//////////////// LIGHT & DARK SWITCH DODĚLAT
+			//////////////// DISPLAYING MY FILES 
+			
+			
+			const filesWrapper = document.getElementById("files__wrapper");
+
+			
+
+
+
+
+			//////////////// LIGHT & DARK SWITCH
 
 			const lightSwitch = document.getElementById("light__switch");
 
 			const darkSwitch = document.getElementById("dark__switch");
 
 			darkSwitch.addEventListener("click", () => {
+				lightSwitch.classList.remove("font-bold");
+				darkSwitch.classList.add("font-bold")
 				document.body.classList.remove("light");
-				document.body.classList.add('dark');
-				console.log("dark");
+				document.body.classList.add("dark");
 			});
 
 			lightSwitch.addEventListener("click", () => {
+				darkSwitch.classList.remove("font-bold");
+				lightSwitch.classList.add("font-bold");
 				document.body.classList.remove("dark");
 				document.body.classList.add("light");
-				console.log("light");
 			});
 
 			//////////////// SLIDING PUZZLE GAME

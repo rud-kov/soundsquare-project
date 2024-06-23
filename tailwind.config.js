@@ -6,10 +6,12 @@ let colors = {
 	blue: "#00a3ff",
 	green: "#00ff00",
 	black: "#000000",
+	darkInput: "#C3C3C3",
 };
 
 module.exports = {
 	content: ["./src/**/*.{html,js,ts,jsx,tsx}"],
+	darkMode: "selector",
 	theme: {
 		extend: {
 			colors: colors,
