@@ -154,6 +154,38 @@ const Engine = {
 
 			document.addEventListener("click", menuSwitchOff);
 
+
+			///// SETTINGS MENU SWITCHING SECTIONS 
+
+			const passwordSectionToggle = document.getElementById("password__change");
+
+			const userSectionToggle = document.getElementById("user__settings");
+
+			const passwordContainer = document.getElementById(
+				"passwordchange__container"
+			);
+
+			passwordSectionToggle.addEventListener("click", () => {
+				passwordContainer.classList.replace("hidden", "flex");
+			})	
+
+
+
+
+			///////////////// PASSWORD COVER 
+
+			const passwordCovers = document.querySelectorAll("[passcover]");
+			console.log(passwordCovers);
+
+			passwordCovers.forEach((passwordCover) => {
+				passwordCover.addEventListener("click", () => {
+					console.log("lalala");	
+				})
+			})
+
+
+
+
 			//////////////// LIGHT & DARK SWITCH
 
 			const lightSwitch = document.getElementById("light__switch");

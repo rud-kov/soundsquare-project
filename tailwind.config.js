@@ -57,6 +57,7 @@ module.exports = {
 				darkSecondary: "#000",
 				darkThird: "#303030",
 				darkFourth: "#C3C3C3",
+				darkFive: "#202020",
 				lightPrimary: "#ECECEC",
 				lightSecondary: "#DADADA",
 				lightThird: "#D9D9D9",
