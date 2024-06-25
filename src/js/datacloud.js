@@ -29,7 +29,7 @@ const Engine = {
 		events: function () {
 			console.log("Events are running");
 
-			//////////////// DISPLAYING MY FILES 
+			//////////////// DISPLAYING MY FILES
 
 			const testData = {
 				file1: {
@@ -51,7 +51,7 @@ const Engine = {
 					size: "13,4 Gb",
 				},
 			};
-			
+
 			/*
 			const filesWrapper = document.getElementById("mainfiles__wrapper");
 
@@ -109,24 +109,50 @@ const Engine = {
 
 			*/
 
+			////// CHECK ALLL
+
+			const checkAll = document.getElementById("check__all");
+
+			const filesWrapper = document.getElementById("mainfiles__wrapper");
+
+			const inputs = filesWrapper.querySelectorAll("input");
+
+			checkAll.addEventListener("change", () => {
+				inputs.forEach((input) => {
+					if (checkAll.checked) {
+						input.checked = true;
+					} else {
+						input.checked = false;
+					}
+				});
+			});
 
 			//////////////// SIDEBAR
 
 			const hamSwitch = document.getElementById("hamSwitch");
 
+			const hamWrapper = document.getElementById("hamWrapper")
+
 			const hamMenu = document.getElementById("hamMenu");
 
 			hamSwitch.addEventListener("click", () => {
-				hamMenu.classList.toggle("hidden");
-				console.log("lalal")
+				hamMenu.classList.replace("hidden", "flex");
 			});
 
+			////////////// CLOSING SIDEBAR
 
+			function menuSwitchOff(event) {
+			
+				const clickedElement = event.target;
+			
+				if (hamWrapper.contains(clickedElement)) {
+					return
+				} else {
+					hamMenu.classList.replace("flex", "hidden");
+				}
+			}
 
-
-
-
-
+			document.addEventListener("click", menuSwitchOff);
 
 			//////////////// LIGHT & DARK SWITCH
 
@@ -136,7 +162,7 @@ const Engine = {
 
 			darkSwitch.addEventListener("click", () => {
 				lightSwitch.classList.remove("font-bold");
-				darkSwitch.classList.add("font-bold")
+				darkSwitch.classList.add("font-bold");
 				document.body.classList.remove("light");
 				document.body.classList.add("dark");
 			});
