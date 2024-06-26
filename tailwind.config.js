@@ -62,6 +62,7 @@ module.exports = {
 				lightSecondary: "#DADADA",
 				lightThird: "#D9D9D9",
 				lightFourth: "#161616",
+				lightFive: "hsl(180, 40%, 100%)",
 			},
 			textColor: {
 				lightFont: "#161616",

@@ -25,10 +25,10 @@
 		</style>
 	</head>
 
-	<body class="flex">
+	<body class="flex min-w-[60.063rem] overflow-x-scroll">
 		<div class="flex min-w-60">
 			<div
-				class="fixed bottom-0 left-0 top-0 flex max-w-60 flex-grow flex-col justify-center overflow-scroll"
+				class="fixed bottom-0 left-0 top-0 z-20 flex max-w-60 flex-grow flex-col justify-center overflow-scroll"
 			>
 				<div class="flex min-h-24 items-center justify-center bg-black">
 					<div class="mx-7 my-8 flex">
@@ -394,7 +394,7 @@
 				>
 					<div class="flex items-center justify-self-start">
 						<p
-							class="ml-7 font-public text-2xl font-bold tracking-tighter text-[#161616] dark:text-darkFont"
+							class="ml-7 select-none font-public text-2xl font-bold tracking-tighter text-[#161616] dark:text-darkFont"
 						>
 							Data<span class="font-normal">Cloud</span>
 						</p>
@@ -465,7 +465,7 @@
 										<div>
 											<div>
 												<p
-													class="public m-0 text-16 font-bold text-lightFont dark:text-darkFont"
+													class="public m-0 select-none text-16 font-bold text-lightFont dark:text-darkFont"
 												>
 													Adam Zanka
 												</p>
@@ -483,13 +483,13 @@
 										<div class="flex flex-col">
 											<a
 												id="settingsBttn"
-												class="public m-0 text-16 font-normal text-lightFont dark:text-darkFont"
+												class="public m-0 text-16 font-normal text-lightFont hover:font-semibold dark:text-darkFont"
 												href="#"
 												>Settings</a
 											>
 											<a
 												id="signoutBttn"
-												class="public mb-0 mt-1 text-16 font-normal text-lightFont dark:text-darkFont"
+												class="public mb-0 mt-1 text-16 font-normal text-lightFont hover:font-semibold dark:text-darkFont"
 												href="#"
 												>Sign Out</a
 											>
@@ -497,7 +497,8 @@
 									</div>
 
 									<div
-										class="dark:bg-darkFive fixed left-1/2 top-1/2 flex min-h-[640px] min-w-[960px] -translate-x-1/2 -translate-y-1/2 bg-white"
+										class="fixed left-1/2 top-1/2 flex hidden min-h-[640px] min-w-[960px] -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-darkFive"
+										id="settings__overlay"
 									>
 										<div class="m-10 flex grow flex-row">
 											<div
@@ -521,7 +522,7 @@
 													>
 													<a
 														id="password__change"
-														class="public cursor-pointer whitespace-nowrap text-xl font-medium leading-6 text-lightFont hover:font-semibold dark:text-white"
+														class="public w-[11.25rem] cursor-pointer whitespace-nowrap text-xl font-medium leading-6 text-lightFont hover:font-semibold dark:text-white"
 														>Change Password</a
 													>
 												</div>
@@ -673,7 +674,7 @@
 												class="flex flex-grow"
 											>
 												<div
-													class="flex flex-grow flex-col justify-between"
+													class="flex flex-grow flex-col justify-between gap-[6.563rem]"
 												>
 													<p
 														class="mb-0 ml-5 mt-0 font-public text-24 text-black dark:text-white"
@@ -682,36 +683,45 @@
 													</p>
 
 													<div
-														class="flex flex-col items-center justify-center gap-24"
+														class="flex flex-grow flex-col items-center justify-between gap-24"
 													>
-														<div
-															class="flex flex-col gap-4"
-														>
+														<div class="flex">
 															<div
-																class="flex flex-row"
+																class="flex flex-row gap-9"
 															>
-																<p class="m-0 text-16 font-normal leading-5 text-black dark:text-white">
+																<p
+																	class="m-0 text-16 font-normal leading-5 text-black dark:text-white"
+																>
 																	Set
 																	thumbnail as
 																	default view
 																</p>
-																<label class="relative inline-block w-[2.25rem] h-[1.125rem]" for="switch">
-																	<input class="opacity-0 w-0 h-0" type="checkbox">
-																	<span class="absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-lightThird transition">
 
-																	</span>
+																<label
+																	class="inline-flex cursor-pointer items-center"
+																>
+																	<input
+																		id="viewswitch"
+																		value=""
+																		class="peer sr-only"
+																		type="checkbox"
+																		checked
+																	/>
+																	<div
+																		class="relative h-[1.125rem] w-[2.25rem] bg-lightThird after:absolute after:h-[1.125rem] after:w-[1.125rem] after:bg-[#9B9B9B] after:transition-all after:content-[''] peer-checked:after:translate-x-full peer-checked:after:bg-blue peer-focus:ring-blue"
+																	></div>
 																</label>
 															</div>
 														</div>
-													</div>
-													<div class="mx-0">
-														<button
-															id="change__bttn"
-															class="mx-0 w-fixedBttn flex-grow select-none whitespace-nowrap bg-blue px-4 py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black hover:text-white"
-															type="submit"
-														>
-															Change settings
-														</button>
+														<div class="mx-0">
+															<button
+																id="change__bttn"
+																class="w-fixedBttn flex-grow select-none whitespace-nowrap bg-blue px-4 py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black hover:text-white"
+																type="submit"
+															>
+																Change settings
+															</button>
+														</div>
 													</div>
 												</div>
 											</div>
@@ -739,7 +749,7 @@
 
 						<div class="ml-5 flex flex-row gap-3">
 							<div
-								id="add__bttn"
+								id="cross__bttn"
 								class="flex min-h-5 min-w-5 items-center justify-center bg-lightFourth hover:cursor-pointer dark:bg-darkFourth"
 							>
 								<img
@@ -753,7 +763,7 @@
 							</div>
 
 							<div
-								id="add__bttn"
+								id="send__bttn"
 								class="flex min-h-5 min-w-5 items-center justify-center bg-lightFourth hover:cursor-pointer dark:bg-darkFourth"
 							>
 								<img
@@ -764,10 +774,19 @@
 									class="h-[0.688rem] w-[0.688rem] dark:hidden"
 									src="/src/img/arrow__icon--light.svg"
 								/>
+
+								<div
+									id="sendContainer"
+									class="fixed left-1/2 top-1/2 z-20 flex min-h-[640px] min-w-[960px] -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-darkFive"
+								>
+								<div class="m-10 flex grow flex-row">
+									<div>Lalalalala</div>
+								</div>
+								</div>
 							</div>
 
 							<div
-								id="add__bttn"
+								id="play__bttn"
 								class="flex min-h-5 min-w-5 items-center justify-center bg-lightFourth hover:cursor-pointer dark:bg-darkFourth"
 							>
 								<img
@@ -781,7 +800,7 @@
 							</div>
 
 							<div
-								id="add__bttn"
+								id="arrow__bttn"
 								class="flex min-h-5 min-w-5 items-center justify-center bg-lightFourth hover:cursor-pointer dark:bg-darkFourth"
 							>
 								<img
@@ -850,6 +869,7 @@
 
 						<div class="flex flex-row gap-2">
 							<div
+								id="tableSwitch"
 								class="flex min-h-8 min-w-8 items-center justify-center bg-lightFourth hover:cursor-pointer dark:bg-darkFourth"
 							>
 								<img
@@ -863,6 +883,7 @@
 							</div>
 
 							<div
+								id="tileSwitch"
 								class="flex min-h-8 min-w-8 items-center justify-center bg-lightFourth hover:cursor-pointer dark:bg-darkFourth"
 							>
 								<img
@@ -888,7 +909,7 @@
 
 						<div class="flex flex-row gap-2">
 							<p
-								class="font-public text-16 font-bold text-lightFont dark:text-darkFont"
+								class="m-0 font-public text-16 font-bold text-lightFont dark:text-darkFont"
 							>
 								Name
 							</p>
@@ -926,7 +947,7 @@
 						</div>
 
 						<p
-							class="font-public text-16 font-bold text-lightFont dark:text-darkFont"
+							class="m-0 font-public text-16 font-bold text-lightFont dark:text-darkFont"
 						>
 							File type
 						</p>
@@ -955,7 +976,7 @@
 						</div>
 
 						<p
-							class="font-public text-16 font-bold text-lightFont dark:text-darkFont"
+							class="m-0 font-public text-16 font-bold text-lightFont dark:text-darkFont"
 						>
 							Last modified
 						</p>
@@ -984,7 +1005,7 @@
 						</div>
 
 						<p
-							class="font-public text-16 font-bold text-lightFont dark:text-darkFont"
+							class="m-0 font-public text-16 font-bold text-lightFont dark:text-darkFont"
 						>
 							Size
 						</p>
@@ -993,19 +1014,20 @@
 			</div>
 
 			<div class="grow bg-lightPrimary dark:bg-darkPrimary">
-				<div id="mainfiles__wrapper">
+				<div class="mt-3 hidden" id="mainfiles__wrapper--table">
 					<div
 						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
 					>
 						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start overflow-x-hidden"
 						>
 							<input
 								class="ml-3 accent-black dark:accent-darkInput"
 								type="checkbox"
+								data-role="filesbox"
 							/>
 							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
+								class="text-nowrap font-public text-16 text-lightFont dark:text-darkFont"
 							>
 								File name.jpg
 							</p>
@@ -1027,7 +1049,7 @@
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
 							>
-								03/12/2023
+								03/11/2023
 							</p>
 						</div>
 
@@ -1051,6 +1073,7 @@
 							<input
 								class="ml-3 accent-black dark:accent-darkInput"
 								type="checkbox"
+								data-role="filesbox"
 							/>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
@@ -1075,7 +1098,7 @@
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
 							>
-								03/12/2023
+								05/04/2023
 							</p>
 						</div>
 
@@ -1099,6 +1122,7 @@
 							<input
 								class="ml-3 accent-black dark:accent-darkInput"
 								type="checkbox"
+								data-role="filesbox"
 							/>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
@@ -1123,7 +1147,7 @@
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
 							>
-								03/12/2023
+								06/10/2023
 							</p>
 						</div>
 
@@ -1135,6 +1159,1190 @@
 							>
 								340 kB
 							</p>
+						</div>
+					</div>
+				</div>
+
+				<div id="mainfiles__wrapper--tiles">
+					<div class="ml-7 mr-7 mt-5 flex flex-wrap gap-[1.125rem]">
+						<div
+							class="relative flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+						>
+							<img
+								class="absolute bottom-0 left-0 right-0 top-0 h-full object-cover opacity-40"
+								src="https://s3-alpha-sig.figma.com/img/8f97/978a/ad1d02d9039cd7bdb54b11143bb3a657?Expires=1720396800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=XjPAEw1AmA7oLLodZnqhorPtrV4G3hAkwYptCkS9JoKqxXw65ugysaV6bG7XN3N74yQNPkfByC8Dv11n87dORO0FXcNC9l9xQ958K-z1yPoTYT4~WV6RpYcR72F03RqeXDQXgjK7Kabw0p9LZ3FXLsgduSQYhE9M63zgi7Tl6CV1ZKZz-0VyoMvuYizj3dn3-FaevA1fupmb4JZ9V2NZUGONDnhXcSafDAvQoBHxMmYg8W5Deapo~FX5S1RuMtuYA~dbzy8U4ZP4TgeIq6Q~j3JeC9Hl81kiYAnEY5-5wUWSAeZfnp~S6QnDYqJvHvf3goxuCdAh8tiKdLGcZzqbbA__"
+							/>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 accent-black dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+									/>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										3 GB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="relative flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+						>
+							<img
+								class="absolute bottom-0 left-0 right-0 top-0 h-full object-cover opacity-40"
+								src="https://s3-alpha-sig.figma.com/img/8f18/d886/63953a5a82e3fab5b3ac9910f34dc74a?Expires=1720396800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=jn3ckwCn5xLDhgAhhYIM2~5sibFOw9OK-oVoVVKl4FhSOOPtd-gfe7chliDP3cFiiE~iL8jp3bFSuEbxqry2475MEf3m6fmDcjRAoWh-08q4Cnj2dbzv7cSurqTb08OYI51irau6CJdFC7xgCgfvEia7MI-vm54l1ia70OHKEzWfYtnqkANFx8PH~4PZiOmdGUJ8jB8EdhV5MezCtk8839myri5-ehRDGtnz8VUE1VlJXvpOTTb11ws1GisWckwDor2crr8QwQlp7XSUSUcjUWlppguGwUrtfEN~PxENxfW0lEkHt1R30u4v~0IgN-tgbAzK5euKW5l8APUbeP0DMA__"
+							/>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 accent-black dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+									/>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										340 KB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="relative flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+						>
+							<img
+								class="absolute bottom-0 left-0 right-0 top-0 h-full object-cover opacity-40"
+								src="https://s3-alpha-sig.figma.com/img/c8aa/2d19/538b382b8f70ed5bbef3e17896036824?Expires=1720396800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=e6tWEWywZ5g44CP5eIDcLz-bifL4~Q05mvLXMIl9D5X3~XWrVARievNRdcU624BeICp6qK9e-HAL3gwvK7KtxrxK9-7l1Ec~wChGYVoKpSwRpNv88vRn8GlrHUSS4BuvIU1OGQ6p33S4j~bxPdgvBL~TXF2PcI-0DVE-KNBnVBPQT0lj4hbTx1jOfeftnlzXQbKMwyNw645ttlRPncCxW0d7dAZaHUqBhiK6fKoqyoYTRXZWb4kRhdn9JPj3a~lDgLEnjsYmOENjsT4wDtMwuPm-tJmYk4spoQNEJ6HwSQLxDURkyoQ4rwjP1zVR3ltUONtgStS6RQtkYHTHDff~3g__"
+							/>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 accent-black dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+									/>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										324 MB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 accent-black dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+									>
+										svg
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 accent-black dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 accent-black dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 accent-black dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 accent-black dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 accent-black dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 accent-black dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 accent-black dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 accent-black dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 accent-black dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 accent-black dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 accent-black dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 accent-black dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 accent-black dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 accent-black dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 accent-black dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 accent-black dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 accent-black dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 accent-black dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 accent-black dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 accent-black dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 accent-black dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 accent-black dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 accent-black dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 accent-black dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 accent-black dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

@@ -17,7 +17,6 @@ const uploadResultScreen = document.getElementById("uploadBar--result");
 
 const metadataContainer = document.getElementById("metadata__container");
 
-
 const Engine = {
 	ui: {
 		init: function () {
@@ -109,13 +108,24 @@ const Engine = {
 
 			*/
 
-			////// CHECK ALLL
+			///// SENDING FILES THROUGH
+
+			const sendFilesBttn = document.getElementById("send__bttn");
+
+			sendFilesBttn.addEventListener("click", () => {
+				
+			})
+
+
+
+
+
+
+			////// CHECK ALL FILES
 
 			const checkAll = document.getElementById("check__all");
 
-			const filesWrapper = document.getElementById("mainfiles__wrapper");
-
-			const inputs = filesWrapper.querySelectorAll("input");
+			const inputs = document.querySelectorAll("[data-role='filesbox']");
 
 			checkAll.addEventListener("change", () => {
 				inputs.forEach((input) => {
@@ -127,11 +137,34 @@ const Engine = {
 				});
 			});
 
+			///// SWITCHING TABLE / TILE DISPLAY OF FILES
+
+			const filesWrapperTiles = document.getElementById(
+				"mainfiles__wrapper--tiles",
+			);
+
+			const filesWrapperTable = document.getElementById(
+				"mainfiles__wrapper--table",
+			);
+
+			const tableSwitch = document.getElementById("tableSwitch");
+
+			const tileSwitch = document.getElementById("tileSwitch");
+
+			function filesDisplaySwitch() {
+				filesWrapperTable.classList.toggle("hidden");
+				filesWrapperTiles.classList.toggle("hidden");
+			}
+
+			tableSwitch.addEventListener("click", filesDisplaySwitch);
+
+			tileSwitch.addEventListener("click", filesDisplaySwitch);
+
 			//////////////// SIDEBAR
 
 			const hamSwitch = document.getElementById("hamSwitch");
 
-			const hamWrapper = document.getElementById("hamWrapper")
+			const hamWrapper = document.getElementById("hamWrapper");
 
 			const hamMenu = document.getElementById("hamMenu");
 
@@ -142,11 +175,10 @@ const Engine = {
 			////////////// CLOSING SIDEBAR
 
 			function menuSwitchOff(event) {
-			
 				const clickedElement = event.target;
-			
+
 				if (hamWrapper.contains(clickedElement)) {
-					return
+					return;
 				} else {
 					hamMenu.classList.replace("flex", "hidden");
 				}
@@ -154,37 +186,61 @@ const Engine = {
 
 			document.addEventListener("click", menuSwitchOff);
 
+			//////////// SETTINGS MENU OPEN/CLOSE
 
-			///// SETTINGS MENU SWITCHING SECTIONS 
+			const settingsBttn = document.getElementById("settingsBttn");
 
-			const passwordSectionToggle = document.getElementById("password__change");
+			const settingsOverlay =
+				document.getElementById("settings__overlay");
+
+			settingsBttn.addEventListener("click", () => {
+				settingsOverlay.classList.toggle("hidden");
+			});
+
+			///// SETTINGS MENU SWITCHING SECTIONS
+
+			const passwordSectionToggle =
+				document.getElementById("password__change");
 
 			const userSectionToggle = document.getElementById("user__settings");
 
 			const passwordContainer = document.getElementById(
-				"passwordchange__container"
+				"passwordchange__container",
+			);
+
+			const userContainer = document.getElementById(
+				"usersettings__container",
 			);
 
 			passwordSectionToggle.addEventListener("click", () => {
+				passwordSectionToggle.classList.replace(
+					"font-medium",
+					"font-bold",
+				);
+				userSectionToggle.classList.replace("font-bold", "font-medium");
 				passwordContainer.classList.replace("hidden", "flex");
-			})	
+				userContainer.classList.replace("flex", "hidden");
+			});
 
+			userSectionToggle.addEventListener("click", () => {
+				passwordSectionToggle.classList.replace(
+					"font-bold",
+					"font-medium",
+				);
+				userSectionToggle.classList.replace("font-medium", "font-bold");
+				passwordContainer.classList.replace("flex", "hidden");
+				userContainer.classList.replace("hidden", "flex");
+			});
 
+			///////////////// PASSWORD COVER
 
+			const passwordCovers = document.querySelectorAll(
+				"[data-role='passcover']",
+			);
 
-			///////////////// PASSWORD COVER 
-
-			const passwordCovers = document.querySelectorAll("[passcover]");
-			console.log(passwordCovers);
-
-			passwordCovers.forEach((passwordCover) => {
-				passwordCover.addEventListener("click", () => {
-					console.log("lalala");	
-				})
-			})
-
-
-
+			passwordCovers.forEach((passwordCover) => {
+				passwordCover.addEventListener("click", () => {});
+			});
 
 			//////////////// LIGHT & DARK SWITCH
 
