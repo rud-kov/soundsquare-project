@@ -51,62 +51,7 @@ const Engine = {
 				},
 			};
 
-			/*
-			const filesWrapper = document.getElementById("mainfiles__wrapper");
-
-			const displayMainFiles = testData.map(
-				file => `<div
-						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
-					>
-						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
-						>
-							<input
-								class="dark:accent-darkInput ml-3 accent-black"
-								type="checkbox"
-							/>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								${file.name}
-							</p>
-						</div>
-
-						<div
-							class="col-start-2 col-end-2 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								${file.type}
-							</p>
-						</div>
-
-						<div
-							class="col-start-3 col-end-3 self-center justify-self-center"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								${file.modified}
-							</p>
-						</div>
-
-						<div
-							class="col-start-4 col-end-4 self-center justify-self-end"
-						>
-							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
-							>
-								${file.size}
-							</p>
-						</div>
-					</div>`,
-			);
-
-			filesWrapper.innerHTML = displayMainFiles;
-
-			*/
+			////// SWITCHING MAIN COMPONENT (myfiles, received..)
 
 			///// SENDING FILES OVERLAY
 
@@ -256,6 +201,21 @@ const Engine = {
 			settingsBttn.addEventListener("click", () => {
 				settingsOverlay.classList.replace("hidden", "flex");
 			});
+
+			function toggleSettingsOverlay(event) {
+				const clickedElement = event.target;
+
+				if (
+					settingsOverlay.contains(clickedElement) ||
+					settingsBttn.contains(clickedElement)
+				) {
+					return;
+				} else {
+					settingsOverlay.classList.replace("flex", "hidden");
+				}
+			}
+
+			document.body.addEventListener("click", toggleSettingsOverlay);
 
 			///// SETTINGS MENU SWITCHING SECTIONS
 

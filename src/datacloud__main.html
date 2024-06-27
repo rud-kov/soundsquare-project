@@ -28,7 +28,7 @@
 	<body class="flex min-w-[60.063rem] overflow-x-scroll">
 		<div class="flex min-w-60">
 			<div
-				class="fixed bottom-0 left-0 top-0 z-20 flex max-w-60 flex-grow flex-col justify-center overflow-scroll"
+				class="z-2 fixed bottom-0 left-0 top-0 flex max-w-60 flex-grow flex-col justify-center overflow-scroll"
 			>
 				<div class="flex min-h-24 items-center justify-center bg-black">
 					<div class="mx-7 my-8 flex">
@@ -57,21 +57,25 @@
 							id="menubar__linkwrapper"
 						>
 							<a
+								data-role="menulink"
 								class="before-h-5 text-black before:absolute before:left-0 before:hidden before:h-5 before:w-4 before:bg-black before:content-[''] hover:before:block dark:text-white dark:before:bg-white"
 								href="#"
 								>My files</a
 							>
 							<a
+								data-role="menulink"
 								class="before-h-5 text-black before:absolute before:left-0 before:hidden before:h-5 before:w-4 before:bg-black before:content-[''] hover:before:block dark:text-white dark:before:bg-white"
 								href="#"
 								>Received</a
 							>
 							<a
+								data-role="menulink"
 								class="before-h-5 text-black before:absolute before:left-0 before:hidden before:h-5 before:w-4 before:bg-black before:content-[''] hover:before:block dark:text-white dark:before:bg-white"
 								href="#"
 								>Sent</a
 							>
 							<a
+								data-role="menulink"
 								class="before-h-5 text-black before:absolute before:left-0 before:hidden before:h-5 before:w-4 before:bg-black before:content-[''] hover:before:block dark:text-white dark:before:bg-white"
 								href="#"
 								>Trash</a
@@ -387,7 +391,10 @@
 			</div>
 		</div>
 
-		<main class="relative flex grow flex-col justify-start">
+		<main
+			id="main--myfiles"
+			class="relative flex grow flex-col justify-start"
+		>
 			<div class="static bg-lightSecondary dark:bg-darkThird">
 				<div
 					class="static grid h-24 grid-flow-row grid-cols-4 grid-rows-1"
@@ -457,7 +464,7 @@
 
 								<div
 									id="hamMenu"
-									class="fixed bottom-0 right-0 top-0 z-10 hidden min-w-60 items-start justify-center bg-lightThird dark:bg-darkThird"
+									class="fixed bottom-0 right-0 top-0 z-50 hidden min-w-60 items-start justify-center bg-lightThird dark:bg-darkThird"
 								>
 									<div
 										class="mx-7 mt-6 flex flex-col gap-[4.188rem]"
@@ -497,7 +504,7 @@
 									</div>
 
 									<div
-										class="fixed left-1/2 top-1/2 hidden min-h-[40rem] min-w-[60rem] -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-darkFive"
+										class="min-w-[46.25rem]] fixed left-1/2 top-1/2 z-50 hidden min-h-[40rem] w-full max-w-[60rem] -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg dark:bg-darkFive"
 										id="settings__overlay"
 									>
 										<div class="m-10 flex grow flex-row">
@@ -713,7 +720,7 @@
 																</label>
 															</div>
 														</div>
-														<div class="mx-0">
+														<div class="ml-5">
 															<button
 																id="change__bttn"
 																class="w-fixedBttn flex-grow select-none whitespace-nowrap bg-blue px-4 py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black hover:text-white"
@@ -777,10 +784,12 @@
 
 								<div
 									id="sendContainer"
-									class="fixed left-1/2 top-1/2 z-20 hidden min-h-[40rem] min-w-[60rem] -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-darkFive"
+									class="fixed left-1/2 top-1/2 z-20 hidden max-h-[40rem] min-h-[40rem] w-full min-w-[41rem] max-w-[60rem] -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg dark:bg-darkFive"
 								>
 									<div class="m-10 flex grow flex-row">
-										<div class="flex-1 flex-grow flex-col">
+										<div
+											class="flex-1 flex-grow flex-col overflow-scroll"
+										>
 											<div>
 												<p
 													class="public m-0 text-24 font-bold text-lightFont dark:text-white"
@@ -799,8 +808,296 @@
 												</p>
 											</div>
 											<div
-												class="mt-[1.875rem] flex flex-col gap-4 overflow-scroll"
+												class="mt-[1.875rem] flex flex-col gap-4"
 											>
+												<div
+													data-role="fileForUpload"
+													class="flex flex-row items-center gap-[0.625rem]"
+												>
+													<p
+														class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+													>
+														File name0 name0
+														name01.jpg (34.4 MB)
+													</p>
+													<div
+														data-role="eraseFile"
+														class="cursor-pointer"
+													>
+														<img
+															class="h-[0.688rem] w-[0.688rem] dark:hidden"
+															src="/src/img/close__icon--black.svg"
+														/>
+														<img
+															class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+															src="/src/img/close__icon--white.svg"
+														/>
+													</div>
+												</div>
+												<div
+													data-role="fileForUpload"
+													class="flex flex-row items-center gap-[0.625rem]"
+												>
+													<p
+														class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+													>
+														File name0 name0
+														name01.jpg (34.4 MB)
+													</p>
+													<div
+														data-role="eraseFile"
+														class="cursor-pointer"
+													>
+														<img
+															class="h-[0.688rem] w-[0.688rem] dark:hidden"
+															src="/src/img/close__icon--black.svg"
+														/>
+														<img
+															class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+															src="/src/img/close__icon--white.svg"
+														/>
+													</div>
+												</div>
+												<div
+													data-role="fileForUpload"
+													class="flex flex-row items-center gap-[0.625rem]"
+												>
+													<p
+														class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+													>
+														File name0 name0
+														name01.jpg (34.4 MB)
+													</p>
+													<div
+														data-role="eraseFile"
+														class="cursor-pointer"
+													>
+														<img
+															class="h-[0.688rem] w-[0.688rem] dark:hidden"
+															src="/src/img/close__icon--black.svg"
+														/>
+														<img
+															class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+															src="/src/img/close__icon--white.svg"
+														/>
+													</div>
+												</div>
+												<div
+													data-role="fileForUpload"
+													class="flex flex-row items-center gap-[0.625rem]"
+												>
+													<p
+														class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+													>
+														File name0 name0
+														name01.jpg (34.4 MB)
+													</p>
+													<div
+														data-role="eraseFile"
+														class="cursor-pointer"
+													>
+														<img
+															class="h-[0.688rem] w-[0.688rem] dark:hidden"
+															src="/src/img/close__icon--black.svg"
+														/>
+														<img
+															class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+															src="/src/img/close__icon--white.svg"
+														/>
+													</div>
+												</div>
+												<div
+													data-role="fileForUpload"
+													class="flex flex-row items-center gap-[0.625rem]"
+												>
+													<p
+														class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+													>
+														File name0 name0
+														name01.jpg (34.4 MB)
+													</p>
+													<div
+														data-role="eraseFile"
+														class="cursor-pointer"
+													>
+														<img
+															class="h-[0.688rem] w-[0.688rem] dark:hidden"
+															src="/src/img/close__icon--black.svg"
+														/>
+														<img
+															class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+															src="/src/img/close__icon--white.svg"
+														/>
+													</div>
+												</div>
+												<div
+													data-role="fileForUpload"
+													class="flex flex-row items-center gap-[0.625rem]"
+												>
+													<p
+														class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+													>
+														File name0 name0
+														name01.jpg (34.4 MB)
+													</p>
+													<div
+														data-role="eraseFile"
+														class="cursor-pointer"
+													>
+														<img
+															class="h-[0.688rem] w-[0.688rem] dark:hidden"
+															src="/src/img/close__icon--black.svg"
+														/>
+														<img
+															class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+															src="/src/img/close__icon--white.svg"
+														/>
+													</div>
+												</div>
+												<div
+													data-role="fileForUpload"
+													class="flex flex-row items-center gap-[0.625rem]"
+												>
+													<p
+														class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+													>
+														File name0 name0
+														name01.jpg (34.4 MB)
+													</p>
+													<div
+														data-role="eraseFile"
+														class="cursor-pointer"
+													>
+														<img
+															class="h-[0.688rem] w-[0.688rem] dark:hidden"
+															src="/src/img/close__icon--black.svg"
+														/>
+														<img
+															class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+															src="/src/img/close__icon--white.svg"
+														/>
+													</div>
+												</div>
+												<div
+													data-role="fileForUpload"
+													class="flex flex-row items-center gap-[0.625rem]"
+												>
+													<p
+														class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+													>
+														File name0 name0
+														name01.jpg (34.4 MB)
+													</p>
+													<div
+														data-role="eraseFile"
+														class="cursor-pointer"
+													>
+														<img
+															class="h-[0.688rem] w-[0.688rem] dark:hidden"
+															src="/src/img/close__icon--black.svg"
+														/>
+														<img
+															class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+															src="/src/img/close__icon--white.svg"
+														/>
+													</div>
+												</div>
+												<div
+													data-role="fileForUpload"
+													class="flex flex-row items-center gap-[0.625rem]"
+												>
+													<p
+														class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+													>
+														File name0 name0
+														name01.jpg (34.4 MB)
+													</p>
+													<div
+														data-role="eraseFile"
+														class="cursor-pointer"
+													>
+														<img
+															class="h-[0.688rem] w-[0.688rem] dark:hidden"
+															src="/src/img/close__icon--black.svg"
+														/>
+														<img
+															class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+															src="/src/img/close__icon--white.svg"
+														/>
+													</div>
+												</div>
+												<div
+													data-role="fileForUpload"
+													class="flex flex-row items-center gap-[0.625rem]"
+												>
+													<p
+														class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+													>
+														File name0 name0
+														name01.jpg (34.4 MB)
+													</p>
+													<div
+														data-role="eraseFile"
+														class="cursor-pointer"
+													>
+														<img
+															class="h-[0.688rem] w-[0.688rem] dark:hidden"
+															src="/src/img/close__icon--black.svg"
+														/>
+														<img
+															class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+															src="/src/img/close__icon--white.svg"
+														/>
+													</div>
+												</div>
+												<div
+													data-role="fileForUpload"
+													class="flex flex-row items-center gap-[0.625rem]"
+												>
+													<p
+														class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+													>
+														File name0 name0
+														name01.jpg (34.4 MB)
+													</p>
+													<div
+														data-role="eraseFile"
+														class="cursor-pointer"
+													>
+														<img
+															class="h-[0.688rem] w-[0.688rem] dark:hidden"
+															src="/src/img/close__icon--black.svg"
+														/>
+														<img
+															class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+															src="/src/img/close__icon--white.svg"
+														/>
+													</div>
+												</div>
+												<div
+													data-role="fileForUpload"
+													class="flex flex-row items-center gap-[0.625rem]"
+												>
+													<p
+														class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+													>
+														File name0 name0
+														name01.jpg (34.4 MB)
+													</p>
+													<div
+														data-role="eraseFile"
+														class="cursor-pointer"
+													>
+														<img
+															class="h-[0.688rem] w-[0.688rem] dark:hidden"
+															src="/src/img/close__icon--black.svg"
+														/>
+														<img
+															class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+															src="/src/img/close__icon--white.svg"
+														/>
+													</div>
+												</div>
 												<div
 													data-role="fileForUpload"
 													class="flex flex-row items-center gap-[0.625rem]"
@@ -829,7 +1126,7 @@
 										</div>
 
 										<div class="flex flex-1 flex-grow">
-											<form 
+											<form
 												id="upload__form--overlay"
 												class="relative flex grow flex-col items-center justify-center gap-10 self-stretch text-center"
 											>
@@ -869,7 +1166,7 @@
 
 								<div
 									id="sendSubmenu"
-									class="fixed hidden left-1/2 top-1/2 z-20 min-h-[40rem] min-w-[80rem] -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-darkFive"
+									class="fixed left-1/2 top-1/2 z-20 hidden min-h-[40rem] min-w-[80rem] -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg dark:bg-darkFive"
 								>
 									<div class="m-10 flex grow flex-col">
 										<div class="flex">
@@ -957,7 +1254,7 @@
 														>
 
 														<input
-															class="mt-[1.125rem] max-h-9 border border-solid border-black bg-transparent px-3 py-2 font-public text-black placeholder:text-16 placeholder:text-black dark:border-white dark:text-white dark:placeholder:text-white"
+															class="mt-[1.125rem] max-h-9 border border-solid border-black bg-transparent px-3 py-2 font-public text-black placeholder:text-16 placeholder:text-black dark:border-white dark:text-white dark:[color-scheme:dark] dark:placeholder:text-white"
 															type="date"
 															placeholder="24.12.2024"
 															name="link"
@@ -1010,7 +1307,7 @@
 															>
 
 															<textarea
-																class="mt-5 grow border border-black dark:border-white dark:bg-black dark:text-white"
+																class="mt-5 grow border border-black px-2 dark:border-white dark:bg-black dark:text-white"
 																role="textbox"
 																placeholder="text (or email annoucement)"
 															></textarea>
@@ -1260,7 +1557,7 @@
 						>
 							<input
 								id="check__all"
-								class="h-[0.875rem] w-[0.875rem] border-[#C3C3C3] accent-black dark:accent-darkInput"
+								class="h-[0.875rem] w-[0.875rem] border-[#C3C3C3] accent-black dark:bg-gray-700 dark:accent-[#66666]"
 								type="checkbox"
 							/>
 							<p
@@ -1441,7 +1738,7 @@
 			</div>
 
 			<div class="grow bg-lightPrimary dark:bg-darkPrimary">
-				<div class="mt-3 pb-60 hidden" id="mainfiles__wrapper--table">
+				<div class="mt-3 hidden pb-60" id="mainfiles__wrapper--table">
 					<div
 						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
 					>
@@ -2359,7 +2656,9 @@
 				</div>
 
 				<div id="mainfiles__wrapper--tiles">
-					<div class="ml-7 mr-7 mt-5 pb-60 flex flex-wrap gap-[1.125rem]">
+					<div
+						class="ml-7 mr-7 mt-5 flex flex-wrap gap-[1.125rem] pb-60"
+					>
 						<div
 							class="relative flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
 						>
@@ -2368,7 +2667,7 @@
 								src="https://s3-alpha-sig.figma.com/img/8f97/978a/ad1d02d9039cd7bdb54b11143bb3a657?Expires=1720396800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=XjPAEw1AmA7oLLodZnqhorPtrV4G3hAkwYptCkS9JoKqxXw65ugysaV6bG7XN3N74yQNPkfByC8Dv11n87dORO0FXcNC9l9xQ958K-z1yPoTYT4~WV6RpYcR72F03RqeXDQXgjK7Kabw0p9LZ3FXLsgduSQYhE9M63zgi7Tl6CV1ZKZz-0VyoMvuYizj3dn3-FaevA1fupmb4JZ9V2NZUGONDnhXcSafDAvQoBHxMmYg8W5Deapo~FX5S1RuMtuYA~dbzy8U4ZP4TgeIq6Q~j3JeC9Hl81kiYAnEY5-5wUWSAeZfnp~S6QnDYqJvHvf3goxuCdAh8tiKdLGcZzqbbA__"
 							/>
 							<div
-								class="flex grow flex-col justify-between p-[0.625rem]"
+								class="z-10 flex grow flex-col justify-between p-[0.625rem]"
 							>
 								<div class="flex flex-row justify-between">
 									<p
@@ -2406,7 +2705,7 @@
 								src="https://s3-alpha-sig.figma.com/img/8f18/d886/63953a5a82e3fab5b3ac9910f34dc74a?Expires=1720396800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=jn3ckwCn5xLDhgAhhYIM2~5sibFOw9OK-oVoVVKl4FhSOOPtd-gfe7chliDP3cFiiE~iL8jp3bFSuEbxqry2475MEf3m6fmDcjRAoWh-08q4Cnj2dbzv7cSurqTb08OYI51irau6CJdFC7xgCgfvEia7MI-vm54l1ia70OHKEzWfYtnqkANFx8PH~4PZiOmdGUJ8jB8EdhV5MezCtk8839myri5-ehRDGtnz8VUE1VlJXvpOTTb11ws1GisWckwDor2crr8QwQlp7XSUSUcjUWlppguGwUrtfEN~PxENxfW0lEkHt1R30u4v~0IgN-tgbAzK5euKW5l8APUbeP0DMA__"
 							/>
 							<div
-								class="flex grow flex-col justify-between p-[0.625rem]"
+								class="z-10 flex grow flex-col justify-between p-[0.625rem]"
 							>
 								<div class="flex flex-row justify-between">
 									<p
@@ -2444,7 +2743,7 @@
 								src="https://s3-alpha-sig.figma.com/img/c8aa/2d19/538b382b8f70ed5bbef3e17896036824?Expires=1720396800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=e6tWEWywZ5g44CP5eIDcLz-bifL4~Q05mvLXMIl9D5X3~XWrVARievNRdcU624BeICp6qK9e-HAL3gwvK7KtxrxK9-7l1Ec~wChGYVoKpSwRpNv88vRn8GlrHUSS4BuvIU1OGQ6p33S4j~bxPdgvBL~TXF2PcI-0DVE-KNBnVBPQT0lj4hbTx1jOfeftnlzXQbKMwyNw645ttlRPncCxW0d7dAZaHUqBhiK6fKoqyoYTRXZWb4kRhdn9JPj3a~lDgLEnjsYmOENjsT4wDtMwuPm-tJmYk4spoQNEJ6HwSQLxDURkyoQ4rwjP1zVR3ltUONtgStS6RQtkYHTHDff~3g__"
 							/>
 							<div
-								class="flex grow flex-col justify-between p-[0.625rem]"
+								class="z-10 flex grow flex-col justify-between p-[0.625rem]"
 							>
 								<div class="flex flex-row justify-between">
 									<p
@@ -3543,7 +3842,9 @@
 				</div>
 			</div>
 
-			<div class="bg-lightPrimary dark:bg-darkPrimary fixed bottom-0 right-0 left-60">
+			<div
+				class="fixed bottom-0 left-60 right-0 bg-lightPrimary dark:bg-darkPrimary"
+			>
 				<div class="grid grid-flow-row grid-cols-4 grid-rows-1">
 					<div
 						class="col-start-1 col-end-1 ml-7 self-start justify-self-start pb-6 pt-6"
