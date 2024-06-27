@@ -497,7 +497,7 @@
 									</div>
 
 									<div
-										class="fixed left-1/2 top-1/2 flex hidden min-h-[640px] min-w-[960px] -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-darkFive"
+										class="fixed left-1/2 top-1/2 hidden min-h-[40rem] min-w-[60rem] -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-darkFive"
 										id="settings__overlay"
 									>
 										<div class="m-10 flex grow flex-row">
@@ -764,24 +764,451 @@
 
 							<div
 								id="send__bttn"
-								class="flex min-h-5 min-w-5 items-center justify-center bg-lightFourth hover:cursor-pointer dark:bg-darkFourth"
+								class="flex min-h-5 min-w-5 items-center justify-center bg-lightFourth dark:bg-darkFourth"
 							>
 								<img
-									class="hidden h-[0.688rem] w-[0.688rem] dark:flex"
+									class="hidden h-[0.688rem] w-[0.688rem] hover:cursor-pointer dark:flex"
 									src="/src/img/arrow__icon--dark.svg"
 								/>
 								<img
-									class="h-[0.688rem] w-[0.688rem] dark:hidden"
+									class="h-[0.688rem] w-[0.688rem] hover:cursor-pointer dark:hidden"
 									src="/src/img/arrow__icon--light.svg"
 								/>
 
 								<div
 									id="sendContainer"
-									class="fixed left-1/2 top-1/2 z-20 flex min-h-[640px] min-w-[960px] -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-darkFive"
+									class="fixed left-1/2 top-1/2 z-20 hidden min-h-[40rem] min-w-[60rem] -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-darkFive"
 								>
-								<div class="m-10 flex grow flex-row">
-									<div>Lalalalala</div>
+									<div class="m-10 flex grow flex-row">
+										<div class="flex-1 flex-grow flex-col">
+											<div>
+												<p
+													class="public m-0 text-24 font-bold text-lightFont dark:text-white"
+												>
+													Upload or Send selected
+													files (3)
+												</p>
+											</div>
+											<div
+												class="mt-10 border-b border-black pb-[0.625rem] dark:border-white"
+											>
+												<p
+													class="public m-0 text-16 font-normal text-lightFont dark:text-white"
+												>
+													List of files
+												</p>
+											</div>
+											<div
+												class="mt-[1.875rem] flex flex-col gap-4 overflow-scroll"
+											>
+												<div
+													data-role="fileForUpload"
+													class="flex flex-row items-center gap-[0.625rem]"
+												>
+													<p
+														class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+													>
+														File name0 name0
+														name01.jpg (34.4 MB)
+													</p>
+													<div
+														data-role="eraseFile"
+														class="cursor-pointer"
+													>
+														<img
+															class="h-[0.688rem] w-[0.688rem] dark:hidden"
+															src="/src/img/close__icon--black.svg"
+														/>
+														<img
+															class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+															src="/src/img/close__icon--white.svg"
+														/>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="flex flex-1 flex-grow">
+											<form 
+												id="upload__form--overlay"
+												class="relative flex grow flex-col items-center justify-center gap-10 self-stretch text-center"
+											>
+												<p
+													class="my-0 font-public text-16 font-normal text-black dark:text-white"
+												>
+													What do you want with your
+													files:
+												</p>
+
+												<div
+													class="flex flex-col gap-3"
+												>
+													<button
+														id="upload__button--overlay"
+														class="w-36 select-none whitespace-nowrap bg-blue py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black dark:hover:bg-white dark:hover:text-blue"
+													>
+														Upload
+													</button>
+
+													<p
+														class="my-0 font-inter text-xs font-normal text-black mdd:text-lg tablet:text-lg dark:text-white"
+													>
+														or
+													</p>
+													<button
+														id="send__button--overlay"
+														class="w-36 select-none whitespace-nowrap bg-blue py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black dark:hover:bg-white dark:hover:text-blue"
+													>
+														Send
+													</button>
+												</div>
+											</form>
+										</div>
+									</div>
 								</div>
+
+								<div
+									id="sendSubmenu"
+									class="fixed hidden left-1/2 top-1/2 z-20 min-h-[40rem] min-w-[80rem] -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-darkFive"
+								>
+									<div class="m-10 flex grow flex-col">
+										<div class="flex">
+											<p
+												class="m-0 font-public text-24 font-bold text-lightFont dark:text-white"
+											>
+												Send selected resources: 1
+												file(s) with total size 7.5 MiB
+											</p>
+										</div>
+										<div
+											class="mb-[0.625rem] mt-10 flex flex-row gap-[7.438rem] border-b border-black pb-[0.625rem] dark:border-white"
+										>
+											<div>
+												<a
+													id="send__mail__switch"
+													class="m-0 cursor-pointer font-public text-16 text-lightFont dark:text-white"
+												>
+													Send email
+												</a>
+											</div>
+
+											<div>
+												<a
+													id="create__link__switch"
+													class="m-0 cursor-pointer font-public text-16 font-bold text-lightFont dark:text-white"
+												>
+													Create link
+												</a>
+											</div>
+										</div>
+
+										<div
+											id="sendmail__container"
+											class="flex grow flex-col"
+										>
+											<div
+												class="mt-5 flex grow flex-row gap-[1.375rem]"
+											>
+												<div
+													class="flex flex-col gap-[1.875rem]"
+												>
+													<div>
+														<label
+															class="font-public text-16 font-normal leading-5 text-black dark:text-white"
+															for="link"
+															>Recipient</label
+														>
+
+														<input
+															class="mt-[1.125rem] max-h-9 border border-solid border-black bg-transparent px-3 py-2 font-public text-black placeholder:text-16 placeholder:text-black dark:border-white dark:text-white dark:placeholder:text-white"
+															type="email"
+															placeholder="your@mail.com"
+															name="link"
+															required
+														/>
+													</div>
+
+													<div>
+														<label
+															class="font-public text-16 font-normal leading-5 text-black dark:text-white"
+															for="email"
+															>E-mail
+															subject</label
+														>
+
+														<input
+															class="mt-[1.125rem] max-h-9 border border-solid border-black bg-transparent px-3 py-2 font-public text-black placeholder:text-16 placeholder:text-black dark:border-white dark:text-white dark:placeholder:text-white"
+															type="email"
+															placeholder="your@mail.com"
+															name="email"
+															required
+														/>
+													</div>
+												</div>
+
+												<div
+													class="flex grow flex-row gap-[3.813rem]"
+												>
+													<div class="flex-col">
+														<label
+															class="font-public text-16 font-normal leading-5 text-black dark:text-white"
+															for="date"
+															>Valid to:</label
+														>
+
+														<input
+															class="mt-[1.125rem] max-h-9 border border-solid border-black bg-transparent px-3 py-2 font-public text-black placeholder:text-16 placeholder:text-black dark:border-white dark:text-white dark:placeholder:text-white"
+															type="date"
+															placeholder="24.12.2024"
+															name="link"
+															required
+														/>
+													</div>
+													<div
+														class="flex grow flex-col gap-[1.625rem]"
+													>
+														<p
+															class="m-0 font-public text-16 font-normal leading-5 text-black dark:text-white"
+														>
+															What is allowed to
+															recipients
+														</p>
+
+														<div
+															class="flex flex-row gap-4"
+														>
+															<label
+																class="inline-flex cursor-pointer items-center"
+															>
+																<input
+																	id="recipients__allow"
+																	value=""
+																	class="peer sr-only"
+																	type="checkbox"
+																	checked
+																/>
+																<div
+																	class="relative h-[1.125rem] w-[2.25rem] bg-lightThird after:absolute after:h-[1.125rem] after:w-[1.125rem] after:bg-[#9B9B9B] after:transition-all after:content-[''] peer-checked:after:translate-x-full peer-checked:after:bg-blue peer-focus:ring-blue"
+																></div>
+															</label>
+															<div>
+																<p
+																	class="m-0 font-public text-16 font-normal leading-5 text-black dark:text-white"
+																>
+																	Download
+																</p>
+															</div>
+														</div>
+
+														<div
+															class="flex grow flex-col"
+														>
+															<label
+																class="font-public text-16 font-normal leading-5 text-black dark:text-white"
+																for="date"
+																>Recipient</label
+															>
+
+															<textarea
+																class="mt-5 grow border border-black dark:border-white dark:bg-black dark:text-white"
+																role="textbox"
+																placeholder="text (or email annoucement)"
+															></textarea>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div
+												class="mt-5 flex flex-row justify-end gap-6"
+											>
+												<div
+													class="flex flex-row items-center gap-[1.625rem]"
+												>
+													<p
+														class="m-0 font-public text-16 font-normal leading-5 text-black dark:text-white"
+													>
+														Send copy to myself
+													</p>
+
+													<label
+														class="inline-flex cursor-pointer items-center"
+													>
+														<input
+															id="recipients__allow"
+															value=""
+															class="peer sr-only"
+															type="checkbox"
+															checked
+														/>
+														<div
+															class="relative h-[1.125rem] w-[2.25rem] bg-lightThird after:absolute after:h-[1.125rem] after:w-[1.125rem] after:bg-[#9B9B9B] after:transition-all after:content-[''] peer-checked:after:translate-x-full peer-checked:after:bg-blue peer-focus:ring-blue"
+														></div>
+													</label>
+												</div>
+												<div
+													class="flex flex-row items-center gap-[1.625rem]"
+												>
+													<p
+														class="m-0 font-public text-16 font-normal leading-5 text-black dark:text-white"
+													>
+														Let me know files were
+														downloaded
+													</p>
+
+													<label
+														class="inline-flex cursor-pointer items-center"
+													>
+														<input
+															id="recipients__allow"
+															value=""
+															class="peer sr-only"
+															type="checkbox"
+															checked
+														/>
+														<div
+															class="relative h-[1.125rem] w-[2.25rem] bg-lightThird after:absolute after:h-[1.125rem] after:w-[1.125rem] after:bg-[#9B9B9B] after:transition-all after:content-[''] peer-checked:after:translate-x-full peer-checked:after:bg-blue peer-focus:ring-blue"
+														></div>
+													</label>
+												</div>
+
+												<button
+													data-role="cancelBttn"
+													class="h-[2.313rem] w-[8.688rem] select-none whitespace-nowrap bg-[#CECECE] py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black dark:hover:bg-white dark:hover:text-blue"
+												>
+													Cancel
+												</button>
+												<button
+													id="send__button--generate"
+													class="h-[2.313rem] w-[8.688rem] select-none whitespace-nowrap bg-blue px-[0.625rem] py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black dark:hover:bg-white dark:hover:text-blue"
+												>
+													Send
+												</button>
+											</div>
+										</div>
+
+										<div
+											id="createlink__container"
+											class="hidden grow flex-col"
+										>
+											<div
+												class="mt-5 flex grow flex-row gap-[1.375rem]"
+											>
+												<div
+													class="flex flex-col gap-[1.875rem]"
+												>
+													<div>
+														<label
+															class="font-public text-16 font-normal leading-5 text-black dark:text-white"
+															for="link"
+															>Link name</label
+														>
+
+														<input
+															class="mt-[1.125rem] max-h-9 border border-solid border-black bg-transparent px-3 py-2 font-public text-black placeholder:text-16 placeholder:text-black dark:border-white dark:text-white dark:placeholder:text-white"
+															type="link"
+															placeholder="file name 123"
+															name="link"
+															required
+														/>
+													</div>
+
+													<div>
+														<label
+															class="font-public text-16 font-normal leading-5 text-black dark:text-white"
+															for="email"
+															>E-mail</label
+														>
+
+														<input
+															class="mt-[1.125rem] max-h-9 border border-solid border-black bg-transparent px-3 py-2 font-public text-black placeholder:text-16 placeholder:text-black dark:border-white dark:text-white dark:placeholder:text-white"
+															type="email"
+															placeholder="your@mail.com"
+															name="email"
+															required
+														/>
+													</div>
+												</div>
+
+												<div
+													class="flex flex-row gap-[3.813rem]"
+												>
+													<div class="flex-col">
+														<label
+															class="font-public text-16 font-normal leading-5 text-black dark:text-white"
+															for="password"
+															>Valid to:</label
+														>
+
+														<input
+															class="mt-[1.125rem] max-h-9 border border-solid border-black bg-transparent px-3 py-2 font-public text-black placeholder:text-16 placeholder:text-black dark:border-white dark:text-white dark:placeholder:text-white"
+															type="date"
+															placeholder="24.12.2024"
+															name="link"
+															required
+														/>
+													</div>
+													<div
+														class="flex flex-col gap-[1.625rem]"
+													>
+														<p
+															class="m-0 font-public text-16 font-normal leading-5 text-black dark:text-white"
+														>
+															What is allowed to
+															recipients
+														</p>
+
+														<div
+															class="flex flex-row gap-4"
+														>
+															<label
+																class="inline-flex cursor-pointer items-center"
+															>
+																<input
+																	id="recipients__allow"
+																	value=""
+																	class="peer sr-only"
+																	type="checkbox"
+																	checked
+																/>
+																<div
+																	class="relative h-[1.125rem] w-[2.25rem] bg-lightThird after:absolute after:h-[1.125rem] after:w-[1.125rem] after:bg-[#9B9B9B] after:transition-all after:content-[''] peer-checked:after:translate-x-full peer-checked:after:bg-blue peer-focus:ring-blue"
+																></div>
+															</label>
+															<div>
+																<p
+																	class="m-0 font-public text-16 font-normal leading-5 text-black dark:text-white"
+																>
+																	Download
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div
+												class="mt-5 flex flex-row justify-end gap-[1.875rem]"
+											>
+												<button
+													data-role="cancelBttn"
+													class="w-[8.688rem] select-none whitespace-nowrap bg-[#CECECE] py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black dark:hover:bg-white dark:hover:text-blue"
+												>
+													Cancel
+												</button>
+												<button
+													id="send__button--mail"
+													class="select-none whitespace-nowrap bg-blue px-[0.625rem] py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black dark:hover:bg-white dark:hover:text-blue"
+												>
+													Send links via email
+												</button>
+												<button
+													id="send__button--generate"
+													class="select-none whitespace-nowrap bg-blue px-[0.625rem] py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black dark:hover:bg-white dark:hover:text-blue"
+												>
+													Generate links
+												</button>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 
@@ -1014,7 +1441,7 @@
 			</div>
 
 			<div class="grow bg-lightPrimary dark:bg-darkPrimary">
-				<div class="mt-3 hidden" id="mainfiles__wrapper--table">
+				<div class="mt-3 pb-60 hidden" id="mainfiles__wrapper--table">
 					<div
 						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
 					>
@@ -1161,10 +1588,778 @@
 							</p>
 						</div>
 					</div>
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input
+								class="ml-3 accent-black dark:accent-darkInput"
+								type="checkbox"
+								data-role="filesbox"
+							/>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								06/10/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input
+								class="ml-3 accent-black dark:accent-darkInput"
+								type="checkbox"
+								data-role="filesbox"
+							/>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								06/10/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input
+								class="ml-3 accent-black dark:accent-darkInput"
+								type="checkbox"
+								data-role="filesbox"
+							/>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								06/10/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input
+								class="ml-3 accent-black dark:accent-darkInput"
+								type="checkbox"
+								data-role="filesbox"
+							/>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								06/10/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input
+								class="ml-3 accent-black dark:accent-darkInput"
+								type="checkbox"
+								data-role="filesbox"
+							/>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								06/10/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input
+								class="ml-3 accent-black dark:accent-darkInput"
+								type="checkbox"
+								data-role="filesbox"
+							/>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								06/10/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input
+								class="ml-3 accent-black dark:accent-darkInput"
+								type="checkbox"
+								data-role="filesbox"
+							/>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								06/10/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input
+								class="ml-3 accent-black dark:accent-darkInput"
+								type="checkbox"
+								data-role="filesbox"
+							/>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								06/10/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input
+								class="ml-3 accent-black dark:accent-darkInput"
+								type="checkbox"
+								data-role="filesbox"
+							/>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								06/10/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input
+								class="ml-3 accent-black dark:accent-darkInput"
+								type="checkbox"
+								data-role="filesbox"
+							/>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								06/10/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input
+								class="ml-3 accent-black dark:accent-darkInput"
+								type="checkbox"
+								data-role="filesbox"
+							/>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								06/10/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input
+								class="ml-3 accent-black dark:accent-darkInput"
+								type="checkbox"
+								data-role="filesbox"
+							/>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								06/10/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input
+								class="ml-3 accent-black dark:accent-darkInput"
+								type="checkbox"
+								data-role="filesbox"
+							/>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								06/10/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input
+								class="ml-3 accent-black dark:accent-darkInput"
+								type="checkbox"
+								data-role="filesbox"
+							/>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								06/10/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input
+								class="ml-3 accent-black dark:accent-darkInput"
+								type="checkbox"
+								data-role="filesbox"
+							/>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								06/10/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
+					<div
+						class="ml-7 mr-7 grid h-10 grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
+					>
+						<div
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+						>
+							<input
+								class="ml-3 accent-black dark:accent-darkInput"
+								type="checkbox"
+								data-role="filesbox"
+							/>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								File name.jpg
+							</p>
+						</div>
+
+						<div
+							class="col-start-2 col-end-2 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								Jpg image
+							</p>
+						</div>
+
+						<div
+							class="col-start-3 col-end-3 self-center justify-self-center"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								06/10/2023
+							</p>
+						</div>
+
+						<div
+							class="col-start-4 col-end-4 self-center justify-self-end"
+						>
+							<p
+								class="font-public text-16 text-lightFont dark:text-darkFont"
+							>
+								340 kB
+							</p>
+						</div>
+					</div>
 				</div>
 
 				<div id="mainfiles__wrapper--tiles">
-					<div class="ml-7 mr-7 mt-5 flex flex-wrap gap-[1.125rem]">
+					<div class="ml-7 mr-7 mt-5 pb-60 flex flex-wrap gap-[1.125rem]">
 						<div
 							class="relative flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
 						>
@@ -2348,7 +3543,7 @@
 				</div>
 			</div>
 
-			<div class="bg-lightPrimary dark:bg-darkPrimary">
+			<div class="bg-lightPrimary dark:bg-darkPrimary fixed bottom-0 right-0 left-60">
 				<div class="grid grid-flow-row grid-cols-4 grid-rows-1">
 					<div
 						class="col-start-1 col-end-1 ml-7 self-start justify-self-start pb-6 pt-6"

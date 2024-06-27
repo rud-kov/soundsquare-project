@@ -108,18 +108,78 @@ const Engine = {
 
 			*/
 
-			///// SENDING FILES THROUGH
+			///// SENDING FILES OVERLAY
+
+			const sendSubmenu = document.getElementById("sendSubmenu");
 
 			const sendFilesBttn = document.getElementById("send__bttn");
 
+			const sendContainer = document.getElementById("sendContainer");
+
 			sendFilesBttn.addEventListener("click", () => {
-				
+				sendContainer.classList.replace("hidden", "flex");
+			});
+
+			function hideSendContainer(event) {
+				const clickedElement = event.target;
+
+				if (sendFilesBttn.contains(clickedElement)) {
+					return;
+				} else {
+					sendContainer.classList.replace("flex", "hidden");
+				}
+			}
+
+			document.body.addEventListener("click", hideSendContainer);
+
+			const sendSubmenuBttn = document.getElementById(
+				"send__button--overlay",
+			);
+
+			sendSubmenuBttn.addEventListener("click", () => {
+				sendSubmenu.classList.replace("hidden", "flex")
 			})
 
+			/////// SWITCHING TABS INSIDE SEND SUBMENU /////
 
+			const mailSubmenuSwitch =
+				document.getElementById("send__mail__switch");
 
+			const linkSubmenuSwitch = document.getElementById(
+				"create__link__switch",
+			);
 
+			const sendMailContainer = document.getElementById(
+				"sendmail__container",
+			);
 
+			const createLinkContainer = document.getElementById(
+				"createlink__container",
+			);
+
+			mailSubmenuSwitch.addEventListener("click", () => {
+				mailSubmenuSwitch.classList.add("font-bold");
+				linkSubmenuSwitch.classList.remove("font-bold");
+				createLinkContainer.classList.replace("flex", "hidden");
+				sendMailContainer.classList.replace("hidden", "flex");
+			});
+
+			linkSubmenuSwitch.addEventListener("click", () => {
+				linkSubmenuSwitch.classList.add("font-bold");
+				mailSubmenuSwitch.classList.remove("font-bold");
+				createLinkContainer.classList.replace("hidden", "flex");
+				sendMailContainer.classList.replace("flex", "hidden");
+			});
+
+			/////// CLOSING SEND SUBMENU VIA CANCEL BUTTON 
+
+			const cancelButtons = document.querySelectorAll("[data-role='cancelBttn']");
+
+			cancelButtons.forEach((cancelButton) => {
+				cancelButton.addEventListener("click", () => {
+					sendSubmenu.classList.replace("flex", "hidden")
+				})
+			});
 
 			////// CHECK ALL FILES
 
@@ -194,7 +254,7 @@ const Engine = {
 				document.getElementById("settings__overlay");
 
 			settingsBttn.addEventListener("click", () => {
-				settingsOverlay.classList.toggle("hidden");
+				settingsOverlay.classList.replace("hidden", "flex");
 			});
 
 			///// SETTINGS MENU SWITCHING SECTIONS
