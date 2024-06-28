@@ -81,8 +81,10 @@ const Engine = {
 				"send__button--overlay",
 			);
 
-			sendSubmenuBttn.addEventListener("click", () => {
-				sendSubmenu.classList.replace("hidden", "flex")
+			sendSubmenuBttn.addEventListener("click", (event) => {
+				event.preventDefault();
+				sendSubmenu.classList.add("flex");
+				sendSubmenu.classList.remove("hidden");
 			})
 
 			/////// SWITCHING TABS INSIDE SEND SUBMENU /////
