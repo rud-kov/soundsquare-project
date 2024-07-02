@@ -1166,7 +1166,7 @@
 
 								<div
 									id="sendSubmenu"
-									class="fixed left-1/2 top-1/2 z-20 hidden min-h-[40rem] max-w-[80rem] min-w-[50rem] w-full -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg dark:bg-darkFive"
+									class="fixed left-1/2 top-1/2 z-20 hidden min-h-[40rem] w-full min-w-[50rem] max-w-[80rem] -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg dark:bg-darkFive"
 								>
 									<div class="m-10 flex grow flex-col">
 										<div class="flex">
@@ -1552,20 +1552,22 @@
 							</div>
 						</div>
 
-						<div
-							class="ml-12 flex flex-row items-center gap-[0.625rem]"
+						<label
+							class="ml-12 flex cursor-pointer flex-row items-center gap-[0.625rem]"
 						>
 							<input
 								id="check__all"
-								class="h-[0.875rem] w-[0.875rem] border-[#C3C3C3] accent-black dark:bg-gray-700 dark:accent-[#66666]"
+								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 								type="checkbox"
+								data-role="filesbox"
 							/>
+
 							<p
 								class="whitespace-nowrap font-public text-[0.75rem] text-lightFont dark:text-darkFont"
 							>
 								Check all
 							</p>
-						</div>
+						</label>
 					</div>
 
 					<div
@@ -1626,8 +1628,7 @@
 						class="col-start-1 row-start-2 ml-7 flex flex-row items-center gap-5"
 					>
 						<input
-							id="check__all"
-							class="h-[0.875rem] w-[0.875rem] border-[#C3C3C3] accent-black dark:accent-darkInput"
+							class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 							type="checkbox"
 						/>
 
@@ -2663,7 +2664,7 @@
 							class="relative flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
 						>
 							<img
-								class="absolute bottom-0 left-0 right-0 top-0 h-full object-cover opacity-40"
+								class="absolute bottom-0 left-0 right-0 top-0 h-full object-cover opacity-50 dark:opacity-30"
 								src="https://s3-alpha-sig.figma.com/img/8f97/978a/ad1d02d9039cd7bdb54b11143bb3a657?Expires=1720396800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=XjPAEw1AmA7oLLodZnqhorPtrV4G3hAkwYptCkS9JoKqxXw65ugysaV6bG7XN3N74yQNPkfByC8Dv11n87dORO0FXcNC9l9xQ958K-z1yPoTYT4~WV6RpYcR72F03RqeXDQXgjK7Kabw0p9LZ3FXLsgduSQYhE9M63zgi7Tl6CV1ZKZz-0VyoMvuYizj3dn3-FaevA1fupmb4JZ9V2NZUGONDnhXcSafDAvQoBHxMmYg8W5Deapo~FX5S1RuMtuYA~dbzy8U4ZP4TgeIq6Q~j3JeC9Hl81kiYAnEY5-5wUWSAeZfnp~S6QnDYqJvHvf3goxuCdAh8tiKdLGcZzqbbA__"
 							/>
 							<div
@@ -2675,8 +2676,9 @@
 									>
 										File name.jpg
 									</p>
+
 									<input
-										class="ml-3 accent-black dark:accent-darkInput"
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
 									/>
@@ -2701,7 +2703,7 @@
 							class="relative flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
 						>
 							<img
-								class="absolute bottom-0 left-0 right-0 top-0 h-full object-cover opacity-40"
+								class="absolute bottom-0 left-0 right-0 top-0 h-full object-cover opacity-50 dark:opacity-30"
 								src="https://s3-alpha-sig.figma.com/img/8f18/d886/63953a5a82e3fab5b3ac9910f34dc74a?Expires=1720396800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=jn3ckwCn5xLDhgAhhYIM2~5sibFOw9OK-oVoVVKl4FhSOOPtd-gfe7chliDP3cFiiE~iL8jp3bFSuEbxqry2475MEf3m6fmDcjRAoWh-08q4Cnj2dbzv7cSurqTb08OYI51irau6CJdFC7xgCgfvEia7MI-vm54l1ia70OHKEzWfYtnqkANFx8PH~4PZiOmdGUJ8jB8EdhV5MezCtk8839myri5-ehRDGtnz8VUE1VlJXvpOTTb11ws1GisWckwDor2crr8QwQlp7XSUSUcjUWlppguGwUrtfEN~PxENxfW0lEkHt1R30u4v~0IgN-tgbAzK5euKW5l8APUbeP0DMA__"
 							/>
 							<div
@@ -2714,7 +2716,7 @@
 										File name.jpg
 									</p>
 									<input
-										class="ml-3 accent-black dark:accent-darkInput"
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
 									/>
@@ -2739,7 +2741,7 @@
 							class="relative flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
 						>
 							<img
-								class="absolute bottom-0 left-0 right-0 top-0 h-full object-cover opacity-40"
+								class="absolute bottom-0 left-0 right-0 top-0 h-full object-cover opacity-50 dark:opacity-30"
 								src="https://s3-alpha-sig.figma.com/img/c8aa/2d19/538b382b8f70ed5bbef3e17896036824?Expires=1720396800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=e6tWEWywZ5g44CP5eIDcLz-bifL4~Q05mvLXMIl9D5X3~XWrVARievNRdcU624BeICp6qK9e-HAL3gwvK7KtxrxK9-7l1Ec~wChGYVoKpSwRpNv88vRn8GlrHUSS4BuvIU1OGQ6p33S4j~bxPdgvBL~TXF2PcI-0DVE-KNBnVBPQT0lj4hbTx1jOfeftnlzXQbKMwyNw645ttlRPncCxW0d7dAZaHUqBhiK6fKoqyoYTRXZWb4kRhdn9JPj3a~lDgLEnjsYmOENjsT4wDtMwuPm-tJmYk4spoQNEJ6HwSQLxDURkyoQ4rwjP1zVR3ltUONtgStS6RQtkYHTHDff~3g__"
 							/>
 							<div
@@ -2752,7 +2754,7 @@
 										File name.jpg
 									</p>
 									<input
-										class="ml-3 accent-black dark:accent-darkInput"
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
 									/>
@@ -2786,7 +2788,7 @@
 										File name.jpg
 									</p>
 									<input
-										class="ml-3 accent-black dark:accent-darkInput"
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
 									/>
@@ -2827,7 +2829,7 @@
 										File name.jpg
 									</p>
 									<input
-										class="ml-3 accent-black dark:accent-darkInput"
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
 									/>
@@ -2868,7 +2870,7 @@
 										File name.jpg
 									</p>
 									<input
-										class="ml-3 accent-black dark:accent-darkInput"
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
 									/>
@@ -2909,7 +2911,7 @@
 										File name.jpg
 									</p>
 									<input
-										class="ml-3 accent-black dark:accent-darkInput"
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
 									/>
@@ -2950,7 +2952,7 @@
 										File name.jpg
 									</p>
 									<input
-										class="ml-3 accent-black dark:accent-darkInput"
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
 									/>
@@ -2991,7 +2993,7 @@
 										File name.jpg
 									</p>
 									<input
-										class="ml-3 accent-black dark:accent-darkInput"
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
 									/>
@@ -3032,7 +3034,7 @@
 										File name.jpg
 									</p>
 									<input
-										class="ml-3 accent-black dark:accent-darkInput"
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
 									/>
@@ -3073,7 +3075,7 @@
 										File name.jpg
 									</p>
 									<input
-										class="ml-3 accent-black dark:accent-darkInput"
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
 									/>
@@ -3114,7 +3116,7 @@
 										File name.jpg
 									</p>
 									<input
-										class="ml-3 accent-black dark:accent-darkInput"
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
 									/>
@@ -3155,7 +3157,7 @@
 										File name.jpg
 									</p>
 									<input
-										class="ml-3 accent-black dark:accent-darkInput"
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
 									/>
@@ -3196,7 +3198,7 @@
 										File name.jpg
 									</p>
 									<input
-										class="ml-3 accent-black dark:accent-darkInput"
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
 									/>
@@ -3237,7 +3239,7 @@
 										File name.jpg
 									</p>
 									<input
-										class="ml-3 accent-black dark:accent-darkInput"
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
 									/>
@@ -3278,7 +3280,7 @@
 										File name.jpg
 									</p>
 									<input
-										class="ml-3 accent-black dark:accent-darkInput"
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
 									/>
@@ -3319,7 +3321,7 @@
 										File name.jpg
 									</p>
 									<input
-										class="ml-3 accent-black dark:accent-darkInput"
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
 									/>
@@ -3360,7 +3362,7 @@
 										File name.jpg
 									</p>
 									<input
-										class="ml-3 accent-black dark:accent-darkInput"
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
 									/>
@@ -3401,7 +3403,7 @@
 										File name.jpg
 									</p>
 									<input
-										class="ml-3 accent-black dark:accent-darkInput"
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
 									/>
@@ -3442,7 +3444,7 @@
 										File name.jpg
 									</p>
 									<input
-										class="ml-3 accent-black dark:accent-darkInput"
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
 									/>
@@ -3483,7 +3485,7 @@
 										File name.jpg
 									</p>
 									<input
-										class="ml-3 accent-black dark:accent-darkInput"
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
 									/>
@@ -3524,7 +3526,7 @@
 										File name.jpg
 									</p>
 									<input
-										class="ml-3 accent-black dark:accent-darkInput"
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
 									/>
@@ -3565,7 +3567,7 @@
 										File name.jpg
 									</p>
 									<input
-										class="ml-3 accent-black dark:accent-darkInput"
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
 									/>
@@ -3606,7 +3608,7 @@
 										File name.jpg
 									</p>
 									<input
-										class="ml-3 accent-black dark:accent-darkInput"
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
 									/>
@@ -3647,7 +3649,7 @@
 										File name.jpg
 									</p>
 									<input
-										class="ml-3 accent-black dark:accent-darkInput"
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
 									/>
@@ -3688,7 +3690,7 @@
 										File name.jpg
 									</p>
 									<input
-										class="ml-3 accent-black dark:accent-darkInput"
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
 									/>
@@ -3729,7 +3731,7 @@
 										File name.jpg
 									</p>
 									<input
-										class="ml-3 accent-black dark:accent-darkInput"
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
 									/>
@@ -3770,7 +3772,7 @@
 										File name.jpg
 									</p>
 									<input
-										class="ml-3 accent-black dark:accent-darkInput"
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
 									/>
@@ -3811,7 +3813,7 @@
 										File name.jpg
 									</p>
 									<input
-										class="ml-3 accent-black dark:accent-darkInput"
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
 									/>
@@ -3843,7 +3845,7 @@
 			</div>
 
 			<div
-				class="fixed bottom-0 left-60 right-0 bg-lightPrimary dark:bg-darkPrimary"
+				class="fixed bottom-0 left-60 right-0 z-40 bg-lightPrimary dark:bg-darkPrimary"
 			>
 				<div class="grid grid-flow-row grid-cols-4 grid-rows-1">
 					<div
