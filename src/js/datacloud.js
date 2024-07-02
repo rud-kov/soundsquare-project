@@ -28,30 +28,6 @@ const Engine = {
 		events: function () {
 			console.log("Events are running");
 
-			//////////////// DISPLAYING MY FILES
-
-			const testData = {
-				file1: {
-					name: "file1.jpg",
-					type: "Jpg image",
-					modified: new Date("2024-06-22"),
-					size: "340 kB",
-				},
-				file2: {
-					name: "file2.mp3",
-					type: "mp3 file",
-					modified: new Date("2024-06-17"),
-					size: "20 Mb",
-				},
-				file3: {
-					name: "file2.avi",
-					type: "avi file",
-					modified: new Date("2024-05-11"),
-					size: "13,4 Gb",
-				},
-			};
-
-			////// SWITCHING MAIN COMPONENT (myfiles, received..)
 
 			///// SENDING FILES OVERLAY
 
@@ -260,10 +236,18 @@ const Engine = {
 				"[data-role='passcover']",
 			);
 
-			passwordCovers.forEach((passwordCover) => {
-				passwordCover.addEventListener("click", () => {});
-			});
+			const passwords = document.querySelectorAll("[data-role='password']");
 
+			passwordCovers.forEach((passwordCover, index) => {
+				passwordCover.addEventListener("click", () => {
+					const type =
+						passwords[index].getAttribute("type") === "password"
+							? "text"
+							: "password";
+					passwords[index].setAttribute("type", type);
+				});
+			});
+			
 			//////////////// LIGHT & DARK SWITCH
 
 			const lightSwitch = document.getElementById("light__switch");
