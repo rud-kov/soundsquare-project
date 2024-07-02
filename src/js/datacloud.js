@@ -28,7 +28,6 @@ const Engine = {
 		events: function () {
 			console.log("Events are running");
 
-
 			///// SENDING FILES OVERLAY
 
 			const sendSubmenu = document.getElementById("sendSubmenu");
@@ -61,7 +60,7 @@ const Engine = {
 				event.preventDefault();
 				sendSubmenu.classList.add("flex");
 				sendSubmenu.classList.remove("hidden");
-			})
+			});
 
 			/////// SWITCHING TABS INSIDE SEND SUBMENU /////
 
@@ -94,14 +93,16 @@ const Engine = {
 				sendMailContainer.classList.replace("flex", "hidden");
 			});
 
-			/////// CLOSING SEND SUBMENU VIA CANCEL BUTTON 
+			/////// CLOSING SEND SUBMENU VIA CANCEL BUTTON
 
-			const cancelButtons = document.querySelectorAll("[data-role='cancelBttn']");
+			const cancelButtons = document.querySelectorAll(
+				"[data-role='cancelBttn']",
+			);
 
 			cancelButtons.forEach((cancelButton) => {
 				cancelButton.addEventListener("click", () => {
-					sendSubmenu.classList.replace("flex", "hidden")
-				})
+					sendSubmenu.classList.replace("flex", "hidden");
+				});
 			});
 
 			////// CHECK ALL FILES
@@ -236,7 +237,9 @@ const Engine = {
 				"[data-role='passcover']",
 			);
 
-			const passwords = document.querySelectorAll("[data-role='password']");
+			const passwords = document.querySelectorAll(
+				"[data-role='password']",
+			);
 
 			passwordCovers.forEach((passwordCover, index) => {
 				passwordCover.addEventListener("click", () => {
@@ -247,7 +250,13 @@ const Engine = {
 					passwords[index].setAttribute("type", type);
 				});
 			});
-			
+
+			///////////////// PASSWORD MATCHING CHECK
+
+			//passwordMatch = document.querySelectorAll(
+			//	"[data-class='passwordToMatch']",
+			//);
+
 			//////////////// LIGHT & DARK SWITCH
 
 			const lightSwitch = document.getElementById("light__switch");
