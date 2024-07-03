@@ -253,9 +253,67 @@ const Engine = {
 
 			///////////////// PASSWORD MATCHING CHECK
 
-			//passwordMatch = document.querySelectorAll(
-			//	"[data-class='passwordToMatch']",
-			//);
+			const newPassword = document.querySelector(
+				"[data-class='new-password']",
+			);
+
+			const confirmPassword = document.querySelector(
+				"[data-class='confirm-password']",
+			);
+
+			const newPassContainers = document.querySelectorAll(
+				"[data-role='new-password-container']",
+			);
+
+			console.log(newPassContainers);
+
+			const correct = document.createElement("div");
+
+			correct.classList.add(
+				"absolute",
+				"h-[2.625rem]",
+				"flex",
+				"items-center",
+				"-right-[3.563rem]",
+				"top-0",
+				"text-black",
+			);
+
+			correct.innerHTML = `<p class="font-public text-[0.875rem] m-0 text-[#C6C4C4]">Correct</p>`;
+
+			const incorrect = document.createElement("div");
+
+			incorrect.classList.add(
+				"absolute",
+				"h-[2.625rem]",
+				"flex",
+				"items-center",
+				"-right-[4.063rem]",
+				"top-0",
+				"text-black",
+			);
+
+			incorrect.innerHTML = `<p class="font-public text-[0.875rem] m-0 text-[#FF2E00]">Incorrect</p>`;
+
+			function passwordMatch() {
+				if (confirmPassword.value === newPassword.value) {
+					console.log("mačuje");
+					newPassContainers.forEach((newPassContainer) => {
+						//newPassContainer.appendChild(correct);
+						//newPassContainer.removeChild(incorrect);
+					});
+				} else {
+					console.log("nemačuje");
+					newPassContainers.forEach((newPassContainer) => {
+						//newPassContainer.appendChild(incorrect);
+						//newPassContainer.appendChild(incorrect)
+					});
+				}
+			}
+
+			confirmPassword.addEventListener("input", passwordMatch);
+
+			newPassword.addEventListener("input", passwordMatch);
 
 			//////////////// LIGHT & DARK SWITCH
 

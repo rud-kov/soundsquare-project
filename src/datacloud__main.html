@@ -464,8 +464,8 @@
 
 								<div
 									id="hamMenu"
-									class="fixed bottom-0 right-0 top-0 z-50 hidden min-w-60 items-start justify-center bg-lightThird dark:bg-darkThird"
-								>
+									class="fixed bottom-0 right-0 top-0 z-50 flex min-w-60 items-start justify-center bg-lightThird dark:bg-darkThird"
+								> <!-----   HIDDEN    ---> 
 									<div
 										class="mx-7 mt-6 flex flex-col gap-[4.188rem]"
 									>
@@ -504,9 +504,9 @@
 									</div>
 
 									<div
-										class="min-w-[46.25rem]] fixed left-1/2 top-1/2 z-50 hidden min-h-[40rem] w-full max-w-[60rem] -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg dark:bg-darkFive"
-										id="settings__overlay"
-									>
+										class="min-w-[46.25rem]] fixed left-1/2 top-1/2 z-50 flex min-h-[40rem] w-full max-w-[60rem] -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg dark:bg-darkFive"
+										id="settings__overlay" 
+									> <!-----   HIDDEN    ---> 
 										<div class="m-10 flex grow flex-row">
 											<div
 												class="flex flex-col justify-start gap-[12.313rem] border-r border-black pr-[7.688rem] dark:border-white"
@@ -537,8 +537,8 @@
 
 											<div
 												id="passwordchange__container"
-												class="hidden flex-grow"
-											>
+												class="flex flex-grow" 
+											> <!-----   HIDDEN    ---> 
 												<div
 													class="flex flex-grow flex-col justify-between"
 												>
@@ -602,6 +602,7 @@
 																>
 																<div
 																	class="relative mt-[1.125rem] flex items-center"
+																	data-role="new-password-container"
 																>
 																	<input
 																		class="border border-solid border-black bg-transparent py-2 pl-2 pr-3 font-public text-black placeholder:text-black dark:border-white dark:text-white dark:placeholder:text-white"
@@ -611,7 +612,7 @@
 																		required
 																		autocomplete="current-password"
 																		data-role="password"
-																		data-class="password-to-match"
+																		data-class="new-password"
 																	/>
 																	<div
 																		data-role="passcover"
@@ -640,6 +641,7 @@
 																>
 																<div
 																	class="relative mt-[1.125rem] flex items-center"
+																	data-role="new-password-container"
 																>
 																	<input
 																		class="border border-solid border-black bg-transparent py-2 pl-2 pr-3 font-public text-black placeholder:text-black dark:border-white dark:text-white dark:placeholder:text-white"
@@ -649,7 +651,7 @@
 																		required
 																		autocomplete="current-password"
 																		data-role="password"
-																		data-class="password-to-match"
+																		data-class="confirm-password"
 																	/>
 																	<div
 																		data-role="passcover"
@@ -683,8 +685,8 @@
 
 											<div
 												id="usersettings__container"
-												class="flex flex-grow"
-											>
+												class="hidden flex-grow"
+											> <!-----   flex    ---> 
 												<div
 													class="flex flex-grow flex-col justify-between gap-[6.563rem]"
 												>
