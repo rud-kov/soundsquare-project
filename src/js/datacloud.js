@@ -261,10 +261,6 @@ const Engine = {
 				"[data-class='confirm-password']",
 			);
 
-			const newPassContainers = document.querySelectorAll(
-				"[data-role='new-password-container']",
-			);
-
 			const corrects = document.querySelectorAll(
 				"[data-class='correct']",
 			);
