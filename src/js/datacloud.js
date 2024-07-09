@@ -265,55 +265,43 @@ const Engine = {
 				"[data-role='new-password-container']",
 			);
 
-			console.log(newPassContainers);
-
-			const correct = document.createElement("div");
-
-			correct.classList.add(
-				"absolute",
-				"h-[2.625rem]",
-				"flex",
-				"items-center",
-				"-right-[3.563rem]",
-				"top-0",
-				"text-black",
+			const corrects = document.querySelectorAll(
+				"[data-class='correct']",
 			);
 
-			correct.innerHTML = `<p class="font-public text-[0.875rem] m-0 text-[#C6C4C4]">Correct</p>`;
-
-			const incorrect = document.createElement("div");
-
-			incorrect.classList.add(
-				"absolute",
-				"h-[2.625rem]",
-				"flex",
-				"items-center",
-				"-right-[4.063rem]",
-				"top-0",
-				"text-black",
+			const incorrects = document.querySelectorAll(
+				"[data-class='incorrect']",
 			);
 
-			incorrect.innerHTML = `<p class="font-public text-[0.875rem] m-0 text-[#FF2E00]">Incorrect</p>`;
+			function newPasswordMatch() {
+				const isMatch = () => {
+					return (
+						confirmPassword.value === newPassword.value &&
+						(confirmPassword.value !== "" ||
+							newPassword.value !== "")
+					);
+				};
 
-			function passwordMatch() {
-				if (confirmPassword.value === newPassword.value) {
-					console.log("mačuje");
-					newPassContainers.forEach((newPassContainer) => {
-						//newPassContainer.appendChild(correct);
-						//newPassContainer.removeChild(incorrect);
-					});
-				} else {
-					console.log("nemačuje");
-					newPassContainers.forEach((newPassContainer) => {
-						//newPassContainer.appendChild(incorrect);
-						//newPassContainer.appendChild(incorrect)
-					});
-				}
+				corrects.forEach((correct) => {
+					if (isMatch()) {
+						correct.classList.replace("hidden", "flex");
+					} else {
+						correct.classList.replace("flex", "hidden");
+					}
+				});
+
+				incorrects.forEach((incorrect) => {
+					if (!isMatch()) {
+						incorrect.classList.replace("hidden", "flex");
+					} else {
+						incorrect.classList.replace("flex", "hidden");
+					}
+				});
 			}
 
-			confirmPassword.addEventListener("input", passwordMatch);
+			confirmPassword.addEventListener("input", newPasswordMatch);
 
-			newPassword.addEventListener("input", passwordMatch);
+			newPassword.addEventListener("input", newPasswordMatch);
 
 			//////////////// LIGHT & DARK SWITCH
 
