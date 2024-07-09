@@ -605,7 +605,7 @@ const Engine = {
 
 					filesContainer.insertAdjacentHTML(
 						"beforeend",
-						`<li class="py-1 overflow-hidden text-ellipsis font-public">${name}</li>`,
+						`<li class="py-1 overflow-hidden text-ellipsis font-public text-white">${name}</li>`,
 					);
 				}
 			}
@@ -626,7 +626,7 @@ const Engine = {
 					const name = file.name;
 					uploadedFilesData.insertAdjacentHTML(
 						"beforeend",
-						`<li class="py-1 overflow-hidden text-ellipsis">${name}</li>`,
+						`<li class="py-1 overflow-hidden text-ellipsis text-white">${name}</li>`,
 					);
 				}
 				metadataContainer.appendChild(uploadedFilesData);
