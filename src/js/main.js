@@ -36,7 +36,7 @@ const Engine = {
 
 			/// LOGIN ROLLDOWN
 
-			const signBttn = document.getElementById("signBttn");
+			const signBttn = document.getElementById("sign-bttn");
 
 			const prelogin = document.getElementById("prelogin");
 
@@ -49,6 +49,10 @@ const Engine = {
 				login.classList.replace("hidden", "flex");
 				divider.classList.add("hidden");
 				loginWrapper.classList.remove("max-h-60");
+				window.scrollTo({
+					top: document.body.scrollHeight,
+					behavior: "smooth",
+				});
 			});
 
 			//////////////// SLIDING PUZZLE GAME
@@ -115,12 +119,11 @@ const Engine = {
 			function renderPuzzle() {
 				puzzleContainer.innerHTML = "";
 				for (let puzzleItem of puzzle) {
-
 					if (puzzleItem.disabled) continue;
 					puzzleContainer.innerHTML += `
 						<img class="w-[2.813rem] h-[2.813rem] border-4 border-solid border-transparent absolute" style="left: ${puzzleItem.x / 16}rem; top: ${puzzleItem.y / 16}rem" src="
 							../img/puzzlegame/${puzzleItem.value}.png" />
-					`;					
+					`;
 				}
 			}
 
