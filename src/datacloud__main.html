@@ -506,294 +506,314 @@
 									<div
 										class="min-w-[46.25rem]] fixed left-1/2 top-1/2 z-50 hidden min-h-[40rem] w-full max-w-[60rem] -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg dark:bg-darkFive"
 										id="settings__overlay"
+										data-class="overlay-container"
 									>
-										<div class="m-10 flex grow flex-row">
-											<div
-												class="flex flex-col justify-start gap-[12.313rem] border-r border-black pr-[7.688rem] dark:border-white"
-											>
-												<div>
-													<p
-														class="public m-0 text-24 font-bold text-lightFont dark:text-white"
-													>
-														User Settings
-													</p>
-												</div>
-
-												<div
-													class="flex flex-col gap-1"
-												>
-													<a
-														id="user__settings"
-														class="public cursor-pointer text-xl font-medium leading-6 text-lightFont hover:font-semibold dark:text-white"
-														>Settings</a
-													>
-													<a
-														id="password__change"
-														class="public w-[11.25rem] cursor-pointer whitespace-nowrap text-xl font-medium leading-6 text-lightFont hover:font-semibold dark:text-white"
-														>Change Password</a
-													>
-												</div>
+										<div class="relative flex grow">
+											<div class="absolute right-5 top-5">
+												<img
+													data-class="closer"
+													class="dark:hidden"
+													src="/src/img/closer--light.svg"
+												/>
+												<img
+													data-class="closer"
+													class="hidden dark:block"
+													src="/src/img/closer--dark.svg"
+												/>
 											</div>
-
 											<div
-												id="passwordchange__container"
-												class="hidden flex-grow"
+												class="m-10 flex grow flex-row"
 											>
 												<div
-													class="flex flex-grow flex-col justify-between"
+													class="flex flex-col justify-start gap-[12.313rem] border-r border-black pr-[7.688rem] dark:border-white"
 												>
-													<p
-														class="mb-0 ml-5 mt-0 font-public text-24 text-black dark:text-white"
-													>
-														Password Change
-													</p>
+													<div>
+														<p
+															class="public m-0 text-24 font-bold text-lightFont dark:text-white"
+														>
+															User Settings
+														</p>
+													</div>
 
 													<div
-														class="flex flex-col items-center justify-center gap-24"
+														class="flex flex-col gap-1"
 													>
+														<a
+															id="user__settings"
+															class="public cursor-pointer text-xl font-medium leading-6 text-lightFont hover:font-semibold dark:text-white"
+															>Settings</a
+														>
+														<a
+															id="password__change"
+															class="public w-[11.25rem] cursor-pointer whitespace-nowrap text-xl font-medium leading-6 text-lightFont hover:font-semibold dark:text-white"
+															>Change Password</a
+														>
+													</div>
+												</div>
+
+												<div
+													id="passwordchange__container"
+													class="hidden flex-grow"
+												>
+													<div
+														class="flex flex-grow flex-col justify-between"
+													>
+														<p
+															class="mb-0 ml-5 mt-0 font-public text-24 text-black dark:text-white"
+														>
+															Password Change
+														</p>
+
 														<div
-															class="flex flex-col gap-11"
+															class="flex flex-col items-center justify-center gap-24"
 														>
 															<div
-																class="w-fixedBttn text-white"
+																class="flex flex-col gap-11"
 															>
-																<label
-																	class="text-16 font-normal leading-5 text-black dark:text-white"
-																	for="password"
-																	>Current
-																	password</label
-																>
 																<div
-																	class="relative mt-[1.125rem] flex items-center"
+																	class="w-fixedBttn text-white"
 																>
-																	<input
-																		class="border border-solid border-black bg-transparent py-2 pl-2 pr-3 font-public text-black placeholder:text-black dark:border-white dark:text-white dark:placeholder:text-white"
-																		type="password"
-																		placeholder="Enter password"
-																		name="password"
-																		required
-																		autocomplete="current-password"
-																		data-role="password"
-																	/>
-																	<div
-																		data-role="passcover"
-																		class="absolute right-[0.9rem] z-10 cursor-pointer"
+																	<label
+																		class="text-16 font-normal leading-5 text-black dark:text-white"
+																		for="password"
+																		>Current
+																		password</label
 																	>
-																		<img
-																			class="block dark:hidden"
-																			src="./img/subtract--black.svg"
+																	<div
+																		class="relative mt-[1.125rem] flex items-center"
+																	>
+																		<input
+																			class="border border-solid border-black bg-transparent py-2 pl-2 pr-3 font-public text-black placeholder:text-black dark:border-white dark:text-white dark:placeholder:text-white"
+																			type="password"
+																			placeholder="Enter password"
+																			name="password"
+																			required
+																			autocomplete="current-password"
+																			data-role="password"
 																		/>
-																		<img
-																			class="hidden dark:block"
-																			src="./img/subtract--white.svg"
+																		<div
+																			data-role="passcover"
+																			class="absolute right-[0.9rem] z-10 cursor-pointer"
+																		>
+																			<img
+																				class="block dark:hidden"
+																				src="./img/subtract--black.svg"
+																			/>
+																			<img
+																				class="hidden dark:block"
+																				src="./img/subtract--white.svg"
+																			/>
+																		</div>
+																		<div
+																			class="absolute -right-[3.563rem] top-0 hidden h-[2.625rem] items-center"
+																		>
+																			<p
+																				class="m-0 font-public text-[0.875rem] text-[#C6C4C4]"
+																			>
+																				Correct
+																			</p>
+																		</div>
+																		<div
+																			class="absolute -right-[4.063rem] top-0 hidden h-[2.625rem] items-center"
+																		>
+																			<p
+																				class="m-0 font-public text-[0.875rem] text-[#FF2E00]"
+																			>
+																				Incorrect
+																			</p>
+																		</div>
+																	</div>
+																</div>
+
+																<div
+																	class="w-fixedBttn text-white"
+																>
+																	<label
+																		class="text-16 font-normal leading-5 text-black dark:text-white"
+																		for="password"
+																		>New
+																		password</label
+																	>
+																	<div
+																		class="relative mt-[1.125rem] flex items-center"
+																		data-role="new-password-container"
+																	>
+																		<input
+																			class="border border-solid border-black bg-transparent py-2 pl-2 pr-3 font-public text-black placeholder:text-black dark:border-white dark:text-white dark:placeholder:text-white"
+																			type="password"
+																			placeholder="Enter password"
+																			name="password"
+																			required
+																			autocomplete="current-password"
+																			data-role="password"
+																			data-class="new-password"
 																		/>
-																	</div>
-																	<div
-																		class="absolute -right-[3.563rem] top-0 hidden h-[2.625rem] items-center"
-																	>
-																		<p
-																			class="m-0 font-public text-[0.875rem] text-[#C6C4C4]"
+																		<div
+																			data-role="passcover"
+																			class="absolute right-[0.9rem] z-10 cursor-pointer"
 																		>
-																			Correct
-																		</p>
-																	</div>
-																	<div
-																		class="absolute -right-[4.063rem] top-0 hidden h-[2.625rem] items-center"
-																	>
-																		<p
-																			class="m-0 font-public text-[0.875rem] text-[#FF2E00]"
+																			<img
+																				class="block dark:hidden"
+																				src="./img/subtract--black.svg"
+																			/>
+																			<img
+																				class="hidden dark:block"
+																				src="./img/subtract--white.svg"
+																			/>
+																		</div>
+																		<div
+																			class="absolute -right-[3.563rem] top-0 hidden h-[2.625rem] items-center"
+																			data-class="correct"
 																		>
-																			Incorrect
-																		</p>
+																			<p
+																				class="m-0 font-public text-[0.875rem] text-[#C6C4C4]"
+																			>
+																				Correct
+																			</p>
+																		</div>
+																		<div
+																			class="absolute -right-[4.063rem] top-0 hidden h-[2.625rem] items-center"
+																			data-class="incorrect"
+																		>
+																			<p
+																				class="m-0 font-public text-[0.875rem] text-[#FF2E00]"
+																			>
+																				Incorrect
+																			</p>
+																		</div>
+																	</div>
+																</div>
+
+																<div
+																	class="w-fixedBttn text-white"
+																>
+																	<label
+																		class="text-16 font-normal leading-5 text-black dark:text-white"
+																		for="password"
+																		>Confirm
+																		password</label
+																	>
+																	<div
+																		class="relative mt-[1.125rem] flex items-center"
+																		data-role="new-password-container"
+																	>
+																		<input
+																			class="border border-solid border-black bg-transparent py-2 pl-2 pr-3 font-public text-black placeholder:text-black dark:border-white dark:text-white dark:placeholder:text-white"
+																			type="password"
+																			placeholder="Enter password"
+																			name="password"
+																			required
+																			autocomplete="current-password"
+																			data-role="password"
+																			data-class="confirm-password"
+																		/>
+																		<div
+																			data-role="passcover"
+																			class="absolute right-[0.9rem] z-10 cursor-pointer"
+																		>
+																			<img
+																				class="block dark:hidden"
+																				src="./img/subtract--black.svg"
+																			/>
+																			<img
+																				class="hidden dark:block"
+																				src="./img/subtract--white.svg"
+																			/>
+																		</div>
+																		<div
+																			class="absolute -right-[3.563rem] top-0 hidden h-[2.625rem] items-center"
+																			data-class="correct"
+																		>
+																			<p
+																				class="m-0 font-public text-[0.875rem] text-[#C6C4C4]"
+																			>
+																				Correct
+																			</p>
+																		</div>
+																		<div
+																			class="absolute -right-[4.063rem] top-0 hidden h-[2.625rem] items-center"
+																			data-class="incorrect"
+																		>
+																			<p
+																				class="m-0 font-public text-[0.875rem] text-[#FF2E00]"
+																			>
+																				Incorrect
+																			</p>
+																		</div>
 																	</div>
 																</div>
 															</div>
 
-															<div
-																class="w-fixedBttn text-white"
-															>
-																<label
-																	class="text-16 font-normal leading-5 text-black dark:text-white"
-																	for="password"
-																	>New
-																	password</label
+															<div class="flex">
+																<button
+																	id="change__bttn"
+																	class="mx-0 w-fixedBttn flex-grow select-none whitespace-nowrap bg-blue px-4 py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black hover:text-white"
+																	type="submit"
 																>
-																<div
-																	class="relative mt-[1.125rem] flex items-center"
-																	data-role="new-password-container"
-																>
-																	<input
-																		class="border border-solid border-black bg-transparent py-2 pl-2 pr-3 font-public text-black placeholder:text-black dark:border-white dark:text-white dark:placeholder:text-white"
-																		type="password"
-																		placeholder="Enter password"
-																		name="password"
-																		required
-																		autocomplete="current-password"
-																		data-role="password"
-																		data-class="new-password"
-																	/>
-																	<div
-																		data-role="passcover"
-																		class="absolute right-[0.9rem] z-10 cursor-pointer"
-																	>
-																		<img
-																			class="block dark:hidden"
-																			src="./img/subtract--black.svg"
-																		/>
-																		<img
-																			class="hidden dark:block"
-																			src="./img/subtract--white.svg"
-																		/>
-																	</div>
-																	<div
-																		class="absolute -right-[3.563rem] top-0 hidden h-[2.625rem] items-center"
-																		data-class="correct"
-																	>
-																		<p
-																			class="m-0 font-public text-[0.875rem] text-[#C6C4C4]"
-																		>
-																			Correct
-																		</p>
-																	</div>
-																	<div
-																		class="absolute -right-[4.063rem] top-0 hidden h-[2.625rem] items-center"
-																		data-class="incorrect"
-																	>
-																		<p
-																			class="m-0 font-public text-[0.875rem] text-[#FF2E00]"
-																		>
-																			Incorrect
-																		</p>
-																	</div>
-																</div>
+																	Change
+																	password
+																</button>
 															</div>
-
-															<div
-																class="w-fixedBttn text-white"
-															>
-																<label
-																	class="text-16 font-normal leading-5 text-black dark:text-white"
-																	for="password"
-																	>Confirm
-																	password</label
-																>
-																<div
-																	class="relative mt-[1.125rem] flex items-center"
-																	data-role="new-password-container"
-																>
-																	<input
-																		class="border border-solid border-black bg-transparent py-2 pl-2 pr-3 font-public text-black placeholder:text-black dark:border-white dark:text-white dark:placeholder:text-white"
-																		type="password"
-																		placeholder="Enter password"
-																		name="password"
-																		required
-																		autocomplete="current-password"
-																		data-role="password"
-																		data-class="confirm-password"
-																	/>
-																	<div
-																		data-role="passcover"
-																		class="absolute right-[0.9rem] z-10 cursor-pointer"
-																	>
-																		<img
-																			class="block dark:hidden"
-																			src="./img/subtract--black.svg"
-																		/>
-																		<img
-																			class="hidden dark:block"
-																			src="./img/subtract--white.svg"
-																		/>
-																	</div>
-																	<div
-																		class="absolute -right-[3.563rem] top-0 hidden h-[2.625rem] items-center"
-																		data-class="correct"
-																	>
-																		<p
-																			class="m-0 font-public text-[0.875rem] text-[#C6C4C4]"
-																		>
-																			Correct
-																		</p>
-																	</div>
-																	<div
-																		class="absolute -right-[4.063rem] top-0 hidden h-[2.625rem] items-center"
-																		data-class="incorrect"
-																	>
-																		<p
-																			class="m-0 font-public text-[0.875rem] text-[#FF2E00]"
-																		>
-																			Incorrect
-																		</p>
-																	</div>
-																</div>
-															</div>
-														</div>
-
-														<div class="flex">
-															<button
-																id="change__bttn"
-																class="mx-0 w-fixedBttn flex-grow select-none whitespace-nowrap bg-blue px-4 py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black hover:text-white"
-																type="submit"
-															>
-																Change password
-															</button>
 														</div>
 													</div>
 												</div>
-											</div>
 
-											<div
-												id="usersettings__container"
-												class="hidden flex-grow"
-											>
-												<!-----   flex    --->
 												<div
-													class="flex flex-grow flex-col justify-between gap-[6.563rem]"
+													id="usersettings__container"
+													class="flex flex-grow"
 												>
-													<p
-														class="mb-0 ml-5 mt-0 font-public text-24 text-black dark:text-white"
-													>
-														Settings
-													</p>
-
 													<div
-														class="flex flex-grow flex-col items-center justify-between gap-24"
+														class="flex flex-grow flex-col justify-between gap-[6.563rem]"
 													>
-														<div class="flex">
-															<div
-																class="flex flex-row gap-9"
-															>
-																<p
-																	class="m-0 text-16 font-normal leading-5 text-black dark:text-white"
-																>
-																	Set
-																	thumbnail as
-																	default view
-																</p>
+														<p
+															class="mb-0 ml-5 mt-0 font-public text-24 text-black dark:text-white"
+														>
+															Settings
+														</p>
 
-																<label
-																	class="inline-flex cursor-pointer items-center"
+														<div
+															class="flex flex-grow flex-col items-center justify-between gap-24"
+														>
+															<div class="flex">
+																<div
+																	class="flex flex-row gap-9"
 																>
-																	<input
-																		id="viewswitch"
-																		value=""
-																		class="peer sr-only"
-																		type="checkbox"
-																		checked
-																	/>
-																	<div
-																		class="relative h-[1.125rem] w-[2.25rem] bg-lightThird after:absolute after:h-[1.125rem] after:w-[1.125rem] after:bg-[#9B9B9B] after:transition-all after:content-[''] peer-checked:after:translate-x-full peer-checked:after:bg-blue peer-focus:ring-blue"
-																	></div>
-																</label>
+																	<p
+																		class="m-0 text-16 font-normal leading-5 text-black dark:text-white"
+																	>
+																		Set
+																		thumbnail
+																		as
+																		default
+																		view
+																	</p>
+
+																	<label
+																		class="inline-flex cursor-pointer items-center"
+																	>
+																		<input
+																			id="viewswitch"
+																			value=""
+																			class="peer sr-only"
+																			type="checkbox"
+																			checked
+																		/>
+																		<div
+																			class="relative h-[1.125rem] w-[2.25rem] bg-lightThird after:absolute after:h-[1.125rem] after:w-[1.125rem] after:bg-[#9B9B9B] after:transition-all after:content-[''] peer-checked:after:translate-x-full peer-checked:after:bg-blue peer-focus:ring-blue"
+																		></div>
+																	</label>
+																</div>
 															</div>
-														</div>
-														<div class="ml-5">
-															<button
-																id="change__bttn"
-																class="w-fixedBttn flex-grow select-none whitespace-nowrap bg-blue px-4 py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black hover:text-white"
-																type="submit"
-															>
-																Change settings
-															</button>
+															<div class="ml-5">
+																<button
+																	id="change__bttn"
+																	class="w-fixedBttn flex-grow select-none whitespace-nowrap bg-blue px-4 py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black hover:text-white"
+																	type="submit"
+																>
+																	Change
+																	settings
+																</button>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -823,7 +843,7 @@
 						<div class="ml-5 flex flex-row gap-3">
 							<div
 								id="cross__bttn"
-								class="justify-center hover:cursor-pointer flex min-h-5 min-w-5 items-center"
+								class="flex min-h-5 min-w-5 items-center justify-center hover:cursor-pointer"
 							>
 								<img
 									class="min-h-[32px] min-w-[32px] bg-white"
@@ -832,398 +852,413 @@
 							</div>
 
 							<div
-								id="send__bttn"
-								class="flex min-h-5 min-w-5 items-center hover:cursor-pointer justify-center bg-lightFourth dark:bg-darkFourth"
+								class="flex min-h-5 min-w-5 items-center justify-center bg-lightFourth hover:cursor-pointer dark:bg-darkFourth"
 							>
 								<img
 									class="min-h-[32px] min-w-[32px] bg-white"
 									src="/src/img/arrow__icon.png"
+									id="send__bttn"
 								/>
 								<div
 									id="sendContainer"
+									data-class="overlay-container"
 									class="fixed left-1/2 top-1/2 z-20 hidden max-h-[40rem] min-h-[40rem] w-full min-w-[41rem] max-w-[60rem] -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg dark:bg-darkFive"
 								>
-									<div class="m-10 flex grow flex-row">
-										<div
-											class="flex-1 flex-grow flex-col overflow-scroll"
-										>
-											<div>
-												<p
-													class="public m-0 text-24 font-bold text-lightFont dark:text-white"
-												>
-													Upload or Send selected
-													files (3)
-												</p>
-											</div>
-											<div
-												class="mt-10 border-b border-black pb-[0.625rem] dark:border-white"
-											>
-												<p
-													class="public m-0 text-16 font-normal text-lightFont dark:text-white"
-												>
-													List of files
-												</p>
-											</div>
-											<div
-												class="mt-[1.875rem] flex flex-col gap-4"
-											>
-												<div
-													data-role="fileForUpload"
-													class="flex flex-row items-center gap-[0.625rem]"
-												>
-													<p
-														class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
-													>
-														File name0 name0
-														name01.jpg (34.4 MB)
-													</p>
-													<div
-														data-role="eraseFile"
-														class="cursor-pointer"
-													>
-														<img
-															class="h-[0.688rem] w-[0.688rem] dark:hidden"
-															src="/src/img/close__icon--black.svg"
-														/>
-														<img
-															class="hidden h-[0.688rem] w-[0.688rem] dark:block"
-															src="/src/img/close__icon--white.svg"
-														/>
-													</div>
-												</div>
-												<div
-													data-role="fileForUpload"
-													class="flex flex-row items-center gap-[0.625rem]"
-												>
-													<p
-														class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
-													>
-														File name0 name0
-														name01.jpg (34.4 MB)
-													</p>
-													<div
-														data-role="eraseFile"
-														class="cursor-pointer"
-													>
-														<img
-															class="h-[0.688rem] w-[0.688rem] dark:hidden"
-															src="/src/img/close__icon--black.svg"
-														/>
-														<img
-															class="hidden h-[0.688rem] w-[0.688rem] dark:block"
-															src="/src/img/close__icon--white.svg"
-														/>
-													</div>
-												</div>
-												<div
-													data-role="fileForUpload"
-													class="flex flex-row items-center gap-[0.625rem]"
-												>
-													<p
-														class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
-													>
-														File name0 name0
-														name01.jpg (34.4 MB)
-													</p>
-													<div
-														data-role="eraseFile"
-														class="cursor-pointer"
-													>
-														<img
-															class="h-[0.688rem] w-[0.688rem] dark:hidden"
-															src="/src/img/close__icon--black.svg"
-														/>
-														<img
-															class="hidden h-[0.688rem] w-[0.688rem] dark:block"
-															src="/src/img/close__icon--white.svg"
-														/>
-													</div>
-												</div>
-												<div
-													data-role="fileForUpload"
-													class="flex flex-row items-center gap-[0.625rem]"
-												>
-													<p
-														class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
-													>
-														File name0 name0
-														name01.jpg (34.4 MB)
-													</p>
-													<div
-														data-role="eraseFile"
-														class="cursor-pointer"
-													>
-														<img
-															class="h-[0.688rem] w-[0.688rem] dark:hidden"
-															src="/src/img/close__icon--black.svg"
-														/>
-														<img
-															class="hidden h-[0.688rem] w-[0.688rem] dark:block"
-															src="/src/img/close__icon--white.svg"
-														/>
-													</div>
-												</div>
-												<div
-													data-role="fileForUpload"
-													class="flex flex-row items-center gap-[0.625rem]"
-												>
-													<p
-														class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
-													>
-														File name0 name0
-														name01.jpg (34.4 MB)
-													</p>
-													<div
-														data-role="eraseFile"
-														class="cursor-pointer"
-													>
-														<img
-															class="h-[0.688rem] w-[0.688rem] dark:hidden"
-															src="/src/img/close__icon--black.svg"
-														/>
-														<img
-															class="hidden h-[0.688rem] w-[0.688rem] dark:block"
-															src="/src/img/close__icon--white.svg"
-														/>
-													</div>
-												</div>
-												<div
-													data-role="fileForUpload"
-													class="flex flex-row items-center gap-[0.625rem]"
-												>
-													<p
-														class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
-													>
-														File name0 name0
-														name01.jpg (34.4 MB)
-													</p>
-													<div
-														data-role="eraseFile"
-														class="cursor-pointer"
-													>
-														<img
-															class="h-[0.688rem] w-[0.688rem] dark:hidden"
-															src="/src/img/close__icon--black.svg"
-														/>
-														<img
-															class="hidden h-[0.688rem] w-[0.688rem] dark:block"
-															src="/src/img/close__icon--white.svg"
-														/>
-													</div>
-												</div>
-												<div
-													data-role="fileForUpload"
-													class="flex flex-row items-center gap-[0.625rem]"
-												>
-													<p
-														class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
-													>
-														File name0 name0
-														name01.jpg (34.4 MB)
-													</p>
-													<div
-														data-role="eraseFile"
-														class="cursor-pointer"
-													>
-														<img
-															class="h-[0.688rem] w-[0.688rem] dark:hidden"
-															src="/src/img/close__icon--black.svg"
-														/>
-														<img
-															class="hidden h-[0.688rem] w-[0.688rem] dark:block"
-															src="/src/img/close__icon--white.svg"
-														/>
-													</div>
-												</div>
-												<div
-													data-role="fileForUpload"
-													class="flex flex-row items-center gap-[0.625rem]"
-												>
-													<p
-														class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
-													>
-														File name0 name0
-														name01.jpg (34.4 MB)
-													</p>
-													<div
-														data-role="eraseFile"
-														class="cursor-pointer"
-													>
-														<img
-															class="h-[0.688rem] w-[0.688rem] dark:hidden"
-															src="/src/img/close__icon--black.svg"
-														/>
-														<img
-															class="hidden h-[0.688rem] w-[0.688rem] dark:block"
-															src="/src/img/close__icon--white.svg"
-														/>
-													</div>
-												</div>
-												<div
-													data-role="fileForUpload"
-													class="flex flex-row items-center gap-[0.625rem]"
-												>
-													<p
-														class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
-													>
-														File name0 name0
-														name01.jpg (34.4 MB)
-													</p>
-													<div
-														data-role="eraseFile"
-														class="cursor-pointer"
-													>
-														<img
-															class="h-[0.688rem] w-[0.688rem] dark:hidden"
-															src="/src/img/close__icon--black.svg"
-														/>
-														<img
-															class="hidden h-[0.688rem] w-[0.688rem] dark:block"
-															src="/src/img/close__icon--white.svg"
-														/>
-													</div>
-												</div>
-												<div
-													data-role="fileForUpload"
-													class="flex flex-row items-center gap-[0.625rem]"
-												>
-													<p
-														class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
-													>
-														File name0 name0
-														name01.jpg (34.4 MB)
-													</p>
-													<div
-														data-role="eraseFile"
-														class="cursor-pointer"
-													>
-														<img
-															class="h-[0.688rem] w-[0.688rem] dark:hidden"
-															src="/src/img/close__icon--black.svg"
-														/>
-														<img
-															class="hidden h-[0.688rem] w-[0.688rem] dark:block"
-															src="/src/img/close__icon--white.svg"
-														/>
-													</div>
-												</div>
-												<div
-													data-role="fileForUpload"
-													class="flex flex-row items-center gap-[0.625rem]"
-												>
-													<p
-														class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
-													>
-														File name0 name0
-														name01.jpg (34.4 MB)
-													</p>
-													<div
-														data-role="eraseFile"
-														class="cursor-pointer"
-													>
-														<img
-															class="h-[0.688rem] w-[0.688rem] dark:hidden"
-															src="/src/img/close__icon--black.svg"
-														/>
-														<img
-															class="hidden h-[0.688rem] w-[0.688rem] dark:block"
-															src="/src/img/close__icon--white.svg"
-														/>
-													</div>
-												</div>
-												<div
-													data-role="fileForUpload"
-													class="flex flex-row items-center gap-[0.625rem]"
-												>
-													<p
-														class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
-													>
-														File name0 name0
-														name01.jpg (34.4 MB)
-													</p>
-													<div
-														data-role="eraseFile"
-														class="cursor-pointer"
-													>
-														<img
-															class="h-[0.688rem] w-[0.688rem] dark:hidden"
-															src="/src/img/close__icon--black.svg"
-														/>
-														<img
-															class="hidden h-[0.688rem] w-[0.688rem] dark:block"
-															src="/src/img/close__icon--white.svg"
-														/>
-													</div>
-												</div>
-												<div
-													data-role="fileForUpload"
-													class="flex flex-row items-center gap-[0.625rem]"
-												>
-													<p
-														class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
-													>
-														File name0 name0
-														name01.jpg (34.4 MB)
-													</p>
-													<div
-														data-role="eraseFile"
-														class="cursor-pointer"
-													>
-														<img
-															class="h-[0.688rem] w-[0.688rem] dark:hidden"
-															src="/src/img/close__icon--black.svg"
-														/>
-														<img
-															class="hidden h-[0.688rem] w-[0.688rem] dark:block"
-															src="/src/img/close__icon--white.svg"
-														/>
-													</div>
-												</div>
-											</div>
+									<div class="relative flex grow">
+										<div class="absolute right-5 top-5">
+											<img
+												data-class="closer"
+												class="dark:hidden"
+												src="/src/img/closer--light.svg"
+											/>
+											<img
+												data-class="closer"
+												class="hidden dark:block"
+												src="/src/img/closer--dark.svg"
+											/>
 										</div>
-
-										<div class="flex flex-1 flex-grow">
-											<form
-												id="upload__form--overlay"
-												class="relative flex grow flex-col items-center justify-center gap-10 self-stretch text-center"
+										<div class="m-10 flex grow flex-row">
+											<div
+												class="flex-1 flex-grow flex-col overflow-scroll"
 											>
-												<p
-													class="my-0 font-public text-16 font-normal text-black dark:text-white"
-												>
-													What do you want with your
-													files:
-												</p>
-
-												<div
-													class="flex flex-col gap-3"
-												>
-													<button
-														id="upload__button--overlay"
-														class="w-36 select-none whitespace-nowrap bg-blue py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black dark:hover:bg-white dark:hover:text-blue"
-													>
-														Upload
-													</button>
-
+												<div>
 													<p
-														class="my-0 font-inter text-xs font-normal text-black mdd:text-lg tablet:text-lg dark:text-white"
+														class="public m-0 text-24 font-bold text-lightFont dark:text-white"
 													>
-														or
+														Upload or Send selected
+														files (3)
 													</p>
-													<button
-														id="send__button--overlay"
-														class="w-36 whitespace-nowrap bg-blue py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black dark:hover:bg-white dark:hover:text-blue"
-													>
-														Send
-													</button>
 												</div>
-											</form>
+												<div
+													class="mt-10 border-b border-black pb-[0.625rem] dark:border-white"
+												>
+													<p
+														class="public m-0 text-16 font-normal text-lightFont dark:text-white"
+													>
+														List of files
+													</p>
+												</div>
+												<div
+													class="mt-[1.875rem] flex flex-col gap-4"
+												>
+													<div
+														data-role="fileForUpload"
+														class="flex flex-row items-center gap-[0.625rem]"
+													>
+														<p
+															class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+														>
+															File name0 name0
+															name01.jpg (34.4 MB)
+														</p>
+														<div
+															data-role="eraseFile"
+															class="cursor-pointer"
+														>
+															<img
+																class="h-[0.688rem] w-[0.688rem] dark:hidden"
+																src="/src/img/close__icon--black.svg"
+															/>
+															<img
+																class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+																src="/src/img/close__icon--white.svg"
+															/>
+														</div>
+													</div>
+													<div
+														data-role="fileForUpload"
+														class="flex flex-row items-center gap-[0.625rem]"
+													>
+														<p
+															class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+														>
+															File name0 name0
+															name01.jpg (34.4 MB)
+														</p>
+														<div
+															data-role="eraseFile"
+															class="cursor-pointer"
+														>
+															<img
+																class="h-[0.688rem] w-[0.688rem] dark:hidden"
+																src="/src/img/close__icon--black.svg"
+															/>
+															<img
+																class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+																src="/src/img/close__icon--white.svg"
+															/>
+														</div>
+													</div>
+													<div
+														data-role="fileForUpload"
+														class="flex flex-row items-center gap-[0.625rem]"
+													>
+														<p
+															class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+														>
+															File name0 name0
+															name01.jpg (34.4 MB)
+														</p>
+														<div
+															data-role="eraseFile"
+															class="cursor-pointer"
+														>
+															<img
+																class="h-[0.688rem] w-[0.688rem] dark:hidden"
+																src="/src/img/close__icon--black.svg"
+															/>
+															<img
+																class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+																src="/src/img/close__icon--white.svg"
+															/>
+														</div>
+													</div>
+													<div
+														data-role="fileForUpload"
+														class="flex flex-row items-center gap-[0.625rem]"
+													>
+														<p
+															class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+														>
+															File name0 name0
+															name01.jpg (34.4 MB)
+														</p>
+														<div
+															data-role="eraseFile"
+															class="cursor-pointer"
+														>
+															<img
+																class="h-[0.688rem] w-[0.688rem] dark:hidden"
+																src="/src/img/close__icon--black.svg"
+															/>
+															<img
+																class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+																src="/src/img/close__icon--white.svg"
+															/>
+														</div>
+													</div>
+													<div
+														data-role="fileForUpload"
+														class="flex flex-row items-center gap-[0.625rem]"
+													>
+														<p
+															class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+														>
+															File name0 name0
+															name01.jpg (34.4 MB)
+														</p>
+														<div
+															data-role="eraseFile"
+															class="cursor-pointer"
+														>
+															<img
+																class="h-[0.688rem] w-[0.688rem] dark:hidden"
+																src="/src/img/close__icon--black.svg"
+															/>
+															<img
+																class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+																src="/src/img/close__icon--white.svg"
+															/>
+														</div>
+													</div>
+													<div
+														data-role="fileForUpload"
+														class="flex flex-row items-center gap-[0.625rem]"
+													>
+														<p
+															class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+														>
+															File name0 name0
+															name01.jpg (34.4 MB)
+														</p>
+														<div
+															data-role="eraseFile"
+															class="cursor-pointer"
+														>
+															<img
+																class="h-[0.688rem] w-[0.688rem] dark:hidden"
+																src="/src/img/close__icon--black.svg"
+															/>
+															<img
+																class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+																src="/src/img/close__icon--white.svg"
+															/>
+														</div>
+													</div>
+													<div
+														data-role="fileForUpload"
+														class="flex flex-row items-center gap-[0.625rem]"
+													>
+														<p
+															class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+														>
+															File name0 name0
+															name01.jpg (34.4 MB)
+														</p>
+														<div
+															data-role="eraseFile"
+															class="cursor-pointer"
+														>
+															<img
+																class="h-[0.688rem] w-[0.688rem] dark:hidden"
+																src="/src/img/close__icon--black.svg"
+															/>
+															<img
+																class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+																src="/src/img/close__icon--white.svg"
+															/>
+														</div>
+													</div>
+													<div
+														data-role="fileForUpload"
+														class="flex flex-row items-center gap-[0.625rem]"
+													>
+														<p
+															class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+														>
+															File name0 name0
+															name01.jpg (34.4 MB)
+														</p>
+														<div
+															data-role="eraseFile"
+															class="cursor-pointer"
+														>
+															<img
+																class="h-[0.688rem] w-[0.688rem] dark:hidden"
+																src="/src/img/close__icon--black.svg"
+															/>
+															<img
+																class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+																src="/src/img/close__icon--white.svg"
+															/>
+														</div>
+													</div>
+													<div
+														data-role="fileForUpload"
+														class="flex flex-row items-center gap-[0.625rem]"
+													>
+														<p
+															class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+														>
+															File name0 name0
+															name01.jpg (34.4 MB)
+														</p>
+														<div
+															data-role="eraseFile"
+															class="cursor-pointer"
+														>
+															<img
+																class="h-[0.688rem] w-[0.688rem] dark:hidden"
+																src="/src/img/close__icon--black.svg"
+															/>
+															<img
+																class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+																src="/src/img/close__icon--white.svg"
+															/>
+														</div>
+													</div>
+													<div
+														data-role="fileForUpload"
+														class="flex flex-row items-center gap-[0.625rem]"
+													>
+														<p
+															class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+														>
+															File name0 name0
+															name01.jpg (34.4 MB)
+														</p>
+														<div
+															data-role="eraseFile"
+															class="cursor-pointer"
+														>
+															<img
+																class="h-[0.688rem] w-[0.688rem] dark:hidden"
+																src="/src/img/close__icon--black.svg"
+															/>
+															<img
+																class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+																src="/src/img/close__icon--white.svg"
+															/>
+														</div>
+													</div>
+													<div
+														data-role="fileForUpload"
+														class="flex flex-row items-center gap-[0.625rem]"
+													>
+														<p
+															class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+														>
+															File name0 name0
+															name01.jpg (34.4 MB)
+														</p>
+														<div
+															data-role="eraseFile"
+															class="cursor-pointer"
+														>
+															<img
+																class="h-[0.688rem] w-[0.688rem] dark:hidden"
+																src="/src/img/close__icon--black.svg"
+															/>
+															<img
+																class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+																src="/src/img/close__icon--white.svg"
+															/>
+														</div>
+													</div>
+													<div
+														data-role="fileForUpload"
+														class="flex flex-row items-center gap-[0.625rem]"
+													>
+														<p
+															class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+														>
+															File name0 name0
+															name01.jpg (34.4 MB)
+														</p>
+														<div
+															data-role="eraseFile"
+															class="cursor-pointer"
+														>
+															<img
+																class="h-[0.688rem] w-[0.688rem] dark:hidden"
+																src="/src/img/close__icon--black.svg"
+															/>
+															<img
+																class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+																src="/src/img/close__icon--white.svg"
+															/>
+														</div>
+													</div>
+													<div
+														data-role="fileForUpload"
+														class="flex flex-row items-center gap-[0.625rem]"
+													>
+														<p
+															class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+														>
+															File name0 name0
+															name01.jpg (34.4 MB)
+														</p>
+														<div
+															data-role="eraseFile"
+															class="cursor-pointer"
+														>
+															<img
+																class="h-[0.688rem] w-[0.688rem] dark:hidden"
+																src="/src/img/close__icon--black.svg"
+															/>
+															<img
+																class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+																src="/src/img/close__icon--white.svg"
+															/>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="flex flex-1 flex-grow">
+												<form
+													id="upload__form--overlay"
+													class="relative flex grow flex-col items-center justify-center gap-10 self-stretch text-center"
+												>
+													<p
+														class="my-0 font-public text-16 font-normal text-black dark:text-white"
+													>
+														What do you want with
+														your files:
+													</p>
+
+													<div
+														class="flex flex-col gap-3"
+													>
+														<button
+															id="upload__button--overlay"
+															class="w-36 select-none whitespace-nowrap bg-blue py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black dark:hover:bg-white dark:hover:text-blue"
+														>
+															Upload
+														</button>
+
+														<p
+															class="my-0 font-inter text-xs font-normal text-black mdd:text-lg tablet:text-lg dark:text-white"
+														>
+															or
+														</p>
+														<button
+															id="send__button--overlay"
+															class="w-36 whitespace-nowrap bg-blue py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black dark:hover:bg-white dark:hover:text-blue"
+														>
+															Send
+														</button>
+													</div>
+												</form>
+											</div>
 										</div>
 									</div>
 								</div>
 
 								<div
 									id="sendSubmenu"
-									class="fixed left-1/2 top-1/2 z-20 hidden min-h-[40rem] w-full min-w-[50rem] max-w-[80rem] -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg dark:bg-darkFive"
+									class="fixed left-1/2 top-1/2 z-50 hidden min-h-[40rem] w-full min-w-[50rem] max-w-[80rem] -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg dark:bg-darkFive"
 								>
 									<div class="m-10 flex grow flex-col">
 										<div class="flex">

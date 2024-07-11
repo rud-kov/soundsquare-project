@@ -43,7 +43,10 @@ const Engine = {
 			function hideSendContainer(event) {
 				const clickedElement = event.target;
 
-				if (sendFilesBttn.contains(clickedElement)) {
+				if (
+					sendContainer.contains(clickedElement) ||
+					sendFilesBttn.contains(clickedElement)
+				) {
 					return;
 				} else {
 					sendContainer.classList.replace("flex", "hidden");
@@ -103,6 +106,23 @@ const Engine = {
 				cancelButton.addEventListener("click", () => {
 					sendSubmenu.classList.replace("flex", "hidden");
 				});
+			});
+
+			//////// CLOSING OVERLAY MENUS THROUGH X ICON
+
+			const closers = document.querySelectorAll("[data-class='closer']");
+
+			closers.forEach((closer) => {
+				closer.addEventListener("click", closeOverlay);
+
+				function closeOverlay() {
+					const overlayMenu = closer.closest(
+						"[data-class='overlay-container']",
+					);
+					overlayMenu.classList.remove("flex");
+					overlayMenu.classList.add("hidden");
+					console.log("lalala");
+				}
 			});
 
 			////// CHECK ALL FILES
