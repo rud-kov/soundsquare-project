@@ -32,17 +32,56 @@
 		>
 			<div class="relative flex flex-1 mdd:min-h-52 tablet:min-h-60">
 				<div
-					style="
-						background-image: linear-gradient(
-								rgba(0, 0, 0, 0.5),
-								rgba(0, 0, 0, 0.5)
-							),
-							url(&quot;./img/studio__background.png&quot;);
-					"
-					class="fixed bottom-0 left-0 right-[50%] top-0 flex flex-1 items-end bg-opacity-50 bg-cover bg-center bg-no-repeat before:absolute before:left-8 before:top-12 before:inline-block before:h-2 before:w-2 before:content-soundsquare__logo mdd:static mdd:w-auto mdd:before:left-4 mdd:before:right-4 mdd:before:content-soundsquare__logo__small tablet:static tablet:w-auto tablet:before:left-4 tablet:before:right-4"
+					class="fixed bottom-0 left-0 right-[50%] top-0 flex flex-1 items-end before:absolute before:left-8 before:top-12 before:inline-block before:h-2 before:w-2 before:content-soundsquare__logo mdd:static mdd:w-auto mdd:before:left-4 mdd:before:right-4 mdd:before:content-soundsquare__logo__small tablet:static tablet:w-auto tablet:before:left-4 tablet:before:right-4"
 				>
 					<div
-						class="mb-28 flex flex-1 justify-between gap-6 mdd:mb-6 tablet:mb-6"
+						class="absolute bottom-0 left-0 right-0 top-0 -z-20 flex"
+					>
+						<div
+							class="absolute bottom-0 left-0 right-0 top-0 grow bg-black bg-opacity-50"
+						></div>
+						<div id="slideshow" class="flex grow">
+							<div data-class="slide" class="hidden grow">
+								<img
+									class="-z-30 h-full w-full object-cover"
+									src="/src/img/studio_1.png"
+								/>
+							</div>
+							<div data-class="slide" class="hidden grow">
+								<img
+									class="-z-30 h-full w-full object-cover"
+									src="/src/img/studio_2.jpg"
+								/>
+							</div>
+							<div data-class="slide" class="hidden grow">
+								<img
+									class="-z-30 h-full w-full object-cover"
+									src="/src/img/studio_3.jpg"
+								/>
+							</div>
+							<div data-class="slide" class="hidden grow">
+								<img
+									class="-z-30 h-full w-full object-cover"
+									src="/src/img/studio_4.jpg"
+								/>
+							</div>
+							<div data-class="slide" class="hidden grow">
+								<img
+									class="-z-30 h-full w-full object-cover"
+									src="/src/img/studio_5.jpg"
+								/>
+							</div>
+							<div data-class="slide" class="hidden grow">
+								<img
+									class="-z-30 h-full w-full object-cover"
+									src="/src/img/studio_6.jpg"
+								/>
+							</div>
+						</div>
+					</div>
+
+					<div
+						class="z-50 mb-28 flex flex-1 justify-between gap-6 mdd:mb-6 tablet:mb-6"
 					>
 						<div
 							class="ml-8 flex flex-col text-white mdd:ml-4 tablet:ml-4"

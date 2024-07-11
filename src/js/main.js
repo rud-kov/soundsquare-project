@@ -34,6 +34,31 @@ const Engine = {
 		events: function () {
 			console.log("Events are running");
 
+			//// SLIDESHOW
+
+			let slideIndex = 0;
+
+			function showSlides() {
+				let i;
+
+				let slides = document.querySelectorAll("[data-class='slide']");
+
+				for (i = 0; i < slides.length; i++) {
+					slides[i].classList.replace("flex", "hidden");
+				}
+				slideIndex++;
+
+				if (slideIndex > slides.length) {
+					slideIndex = 1;
+				}
+
+				slides[slideIndex - 1].classList.replace("hidden", "flex");
+
+				setTimeout(showSlides, 5000);
+			}
+
+			showSlides();
+
 			/// LOGIN ROLLDOWN
 
 			const signBttn = document.getElementById("sign-bttn");
