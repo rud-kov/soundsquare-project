@@ -28,6 +28,30 @@ const Engine = {
 		events: function () {
 			console.log("Events are running");
 
+			///////////// MY DRIVE MOBILE MENU SWITCH
+
+			const driveSwitch = document.getElementById("drive-switch");
+
+			const driveMenu = document.getElementById("drive-menu");
+
+			driveSwitch.addEventListener("click", () => {
+				driveMenu.classList.replace("mdd:hidden", "mdd:absolute");
+			});
+
+			document.body.addEventListener("click", (event) => {
+				const clickedElement = event.target;
+
+				if (
+					driveMenu.contains(clickedElement) ||
+					driveSwitch.contains(clickedElement)
+				) {
+					return;
+				} else {
+					driveMenu.classList.replace("mdd:absolute", "mdd:hidden");
+				}
+			})
+
+
 			///// SENDING FILES OVERLAY
 
 			const sendSubmenu = document.getElementById("sendSubmenu");
