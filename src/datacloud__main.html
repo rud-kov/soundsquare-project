@@ -544,12 +544,14 @@
 									</div>
 
 									<div
-										class="min-w-[46.25rem]] fixed left-1/2 top-1/2 z-50 hidden min-h-[40rem] w-full max-w-[60rem] -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg dark:bg-darkFive"
+										class="min-w-[46.25rem]] fixed left-1/2 top-1/2 z-50 hidden min-h-[40rem] w-full max-w-[60rem] -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg mdd:min-h-fit dark:bg-darkFive"
 										id="settings__overlay"
 										data-class="overlay-container"
 									>
 										<div class="relative flex grow">
-											<div class="absolute right-5 top-5">
+											<div
+												class="absolute right-5 top-5 mdd:right-2 mdd:top-2"
+											>
 												<img
 													data-class="closer"
 													class="dark:hidden"
@@ -562,12 +564,12 @@
 												/>
 											</div>
 											<div
-												class="m-10 flex grow flex-row"
+												class="m-10 flex grow flex-row mdd:m-3 mdd:flex-col mdd:gap-10"
 											>
 												<div
-													class="flex flex-col justify-start gap-[12.313rem] border-r border-black pr-[7.688rem] dark:border-white"
+													class="flex flex-col justify-start gap-[12.313rem] border-r border-black pr-[7.688rem] mdd:flex-row mdd:border-none mdd:pr-0 dark:border-white"
 												>
-													<div>
+													<div class="mdd:hidden">
 														<p
 															class="public m-0 text-24 font-bold text-lightFont dark:text-white"
 														>
@@ -576,7 +578,7 @@
 													</div>
 
 													<div
-														class="flex flex-col gap-1"
+														class="flex flex-col gap-1 mdd:flex-row mdd:gap-5"
 													>
 														<a
 															id="user__settings"
@@ -599,19 +601,19 @@
 														class="flex flex-grow flex-col justify-between"
 													>
 														<p
-															class="mb-0 ml-5 mt-0 font-public text-24 text-black dark:text-white"
+															class="mb-0 ml-5 mt-0 font-public text-24 text-black mdd:hidden dark:text-white"
 														>
 															Password Change
 														</p>
 
 														<div
-															class="flex flex-col items-center justify-center gap-24"
+															class="flex flex-col items-center justify-center gap-24 mdd:gap-11"
 														>
 															<div
 																class="flex flex-col gap-11"
 															>
 																<div
-																	class="w-fixedBttn text-white"
+																	class="w-fixedBttn text-white mdd:w-auto"
 																>
 																	<label
 																		class="text-16 font-normal leading-5 text-black dark:text-white"
@@ -666,7 +668,7 @@
 																</div>
 
 																<div
-																	class="w-fixedBttn text-white"
+																	class="w-fixedBttn text-white mdd:w-auto"
 																>
 																	<label
 																		class="text-16 font-normal leading-5 text-black dark:text-white"
@@ -725,7 +727,7 @@
 																</div>
 
 																<div
-																	class="w-fixedBttn text-white"
+																	class="w-fixedBttn text-white mdd:w-auto"
 																>
 																	<label
 																		class="text-16 font-normal leading-5 text-black dark:text-white"
@@ -787,7 +789,7 @@
 															<div class="flex">
 																<button
 																	id="change__bttn"
-																	class="mx-0 w-fixedBttn flex-grow select-none whitespace-nowrap bg-blue px-4 py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black hover:text-white"
+																	class="mx-0 w-fixedBttn flex-grow select-none whitespace-nowrap bg-blue px-4 py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black hover:text-white mdd:w-52"
 																	type="submit"
 																>
 																	Change
@@ -806,7 +808,7 @@
 														class="flex flex-grow flex-col justify-between gap-[6.563rem]"
 													>
 														<p
-															class="mb-0 ml-5 mt-0 font-public text-24 text-black dark:text-white"
+															class="mb-0 ml-5 mt-0 font-public text-24 text-black mdd:hidden dark:text-white"
 														>
 															Settings
 														</p>
@@ -847,7 +849,7 @@
 															<div class="ml-5">
 																<button
 																	id="change__bttn"
-																	class="mx-0 w-fixedBttn flex-grow select-none whitespace-nowrap bg-blue px-4 py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black hover:text-white"
+																	class="mx-0 w-fixedBttn flex-grow select-none whitespace-nowrap bg-blue px-4 py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black hover:text-white mdd:w-52"
 																	type="submit"
 																>
 																	Change
@@ -904,10 +906,12 @@
 								<div
 									id="send-container"
 									data-class="overlay-container"
-									class="fixed left-1/2 top-1/2 z-50 hidden max-h-[40rem] min-h-[40rem] w-full min-w-[41rem] max-w-[60rem] -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg dark:bg-darkFive"
+									class="fixed left-1/2 top-1/2 z-50 hidden max-h-[40rem] min-h-[40rem] w-full min-w-[41rem] max-w-[60rem] -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg mdd:min-w-fit dark:bg-darkFive"
 								>
 									<div class="relative flex grow">
-										<div class="absolute right-5 top-5">
+										<div
+											class="absolute right-5 top-5 mdd:right-2 mdd:top-2"
+										>
 											<img
 												data-class="closer"
 												class="dark:hidden"
@@ -919,13 +923,15 @@
 												src="/src/img/closer--dark.svg"
 											/>
 										</div>
-										<div class="m-10 flex grow flex-row">
+										<div
+											class="m-10 flex grow flex-row mdd:m-3 mdd:flex-col"
+										>
 											<div
 												class="flex-1 flex-grow flex-col overflow-scroll"
 											>
 												<div>
 													<p
-														class="public m-0 text-24 font-bold text-lightFont dark:text-white"
+														class="public m-0 text-24 font-bold text-lightFont mdd:p-2 dark:text-white"
 													>
 														Upload or Send selected
 														files (3)
@@ -1300,9 +1306,11 @@
 
 								<div
 									id="send-submenu"
-									class="fixed left-1/2 top-1/2 z-50 hidden min-h-[40rem] w-full min-w-[50rem] max-w-[80rem] -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg dark:bg-darkFive"
+									class="fixed left-1/2 top-1/2 z-50 hidden min-h-[40rem] w-full min-w-[50rem] max-w-[80rem] -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg mdd:min-w-fit dark:bg-darkFive overflow-y-scroll"
 								>
-									<div class="m-10 flex grow flex-col">
+									<div
+										class="m-10 flex grow flex-col mdd:m-3"
+									>
 										<div class="flex">
 											<p
 												class="m-0 font-public text-24 font-bold text-lightFont dark:text-white"
@@ -1338,7 +1346,7 @@
 											class="flex grow flex-col"
 										>
 											<div
-												class="mt-5 flex grow flex-row gap-[1.375rem]"
+												class="mt-5 flex grow flex-row gap-[1.375rem] mdd:flex-col"
 											>
 												<div
 													class="flex flex-col gap-[1.875rem]"
@@ -1378,7 +1386,7 @@
 												</div>
 
 												<div
-													class="flex grow flex-row gap-[3.813rem]"
+													class="flex grow flex-row gap-[3.813rem] mdd:flex-col"
 												>
 													<div class="flex-col">
 														<label
@@ -1450,7 +1458,7 @@
 												</div>
 											</div>
 											<div
-												class="mt-5 flex flex-row justify-end gap-6"
+												class="mt-5 flex flex-row justify-end gap-6 mdd:flex-col mdd:items-center"
 											>
 												<div
 													class="flex flex-row items-center gap-[1.625rem]"
@@ -1522,7 +1530,7 @@
 											class="hidden grow flex-col"
 										>
 											<div
-												class="mt-5 flex grow flex-row gap-[1.375rem]"
+												class="mt-5 flex grow flex-row gap-[1.375rem] mdd:flex-col"
 											>
 												<div
 													class="flex flex-col gap-[1.875rem]"
@@ -1561,7 +1569,7 @@
 												</div>
 
 												<div
-													class="flex flex-row gap-[3.813rem]"
+													class="flex flex-row gap-[3.813rem] mdd:flex-col"
 												>
 													<div class="flex-col">
 														<label
@@ -1617,7 +1625,7 @@
 												</div>
 											</div>
 											<div
-												class="mt-5 flex flex-row justify-end gap-[1.875rem]"
+												class="mt-5 flex flex-row justify-end gap-[1.875rem] mdd:flex-col-reverse mdd:items-center"
 											>
 												<button
 													data-role="cancelBttn"
@@ -1863,7 +1871,7 @@
 
 			<div class="grow bg-lightPrimary dark:bg-darkPrimary">
 				<div
-					class="mt-3 hidden overflow-x-scroll pb-60"
+					class="mt-3 hidden overflow-x-scroll pb-72"
 					id="mainfiles__wrapper--table"
 				>
 					<div
