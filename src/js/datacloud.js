@@ -9,11 +9,11 @@
 const html = document.querySelector("html");
 const body = document.querySelector("body");
 
-const uploadBar = document.getElementById("uploadBar");
+const uploadBar = document.getElementById("upload-bar");
 
-const uploadScreen = document.getElementById("uploadBar--progress");
+const uploadScreen = document.getElementById("upload-bar--progress");
 
-const uploadResultScreen = document.getElementById("uploadBar--result");
+const uploadResultScreen = document.getElementById("upload-bar--result");
 
 const metadataContainer = document.getElementById("metadata__container");
 
@@ -54,11 +54,11 @@ const Engine = {
 
 			///// SENDING FILES OVERLAY
 
-			const sendSubmenu = document.getElementById("sendSubmenu");
+			const sendSubmenu = document.getElementById("send-submenu");
 
 			const sendFilesBttn = document.getElementById("send__bttn");
 
-			const sendContainer = document.getElementById("sendContainer");
+			const sendContainer = document.getElementById("send-container");
 
 			sendFilesBttn.addEventListener("click", () => {
 				sendContainer.classList.replace("hidden", "flex");
@@ -175,9 +175,9 @@ const Engine = {
 				"mainfiles__wrapper--table",
 			);
 
-			const tableSwitch = document.getElementById("tableSwitch");
+			const tableSwitch = document.getElementById("table-switch");
 
-			const tileSwitch = document.getElementById("tileSwitch");
+			const tileSwitch = document.getElementById("tile-switch");
 
 			function filesDisplaySwitch() {
 				filesWrapperTable.classList.toggle("hidden");
@@ -190,11 +190,11 @@ const Engine = {
 
 			//////////////// SIDEBAR
 
-			const hamSwitch = document.getElementById("hamSwitch");
+			const hamSwitch = document.getElementById("ham-switch");
 
-			const hamWrapper = document.getElementById("hamWrapper");
+			const hamWrapper = document.getElementById("ham-wrapper");
 
-			const hamMenu = document.getElementById("hamMenu");
+			const hamMenu = document.getElementById("ham-menu");
 
 			hamSwitch.addEventListener("click", () => {
 				hamMenu.classList.replace("hidden", "flex");
@@ -216,7 +216,7 @@ const Engine = {
 
 			//////////// SETTINGS MENU OPEN/CLOSE
 
-			const settingsBttn = document.getElementById("settingsBttn");
+			const settingsBttn = document.getElementById("settings-bttn");
 
 			const settingsOverlay =
 				document.getElementById("settings__overlay");
