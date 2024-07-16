@@ -926,7 +926,9 @@
 										<div
 											class="m-10 flex grow flex-row mdd:m-3 mdd:flex-col"
 										>
-											<div class="flex flex-col mdd:overflow-scroll">
+											<div
+												class="flex flex-col mdd:overflow-scroll"
+											>
 												<div class="flex-col">
 													<div>
 														<p
@@ -951,7 +953,7 @@
 													class="flex-1 flex-grow flex-col overflow-scroll"
 												>
 													<div
-														class="mt-[1.875rem] mb-[1.875rem] flex flex-col gap-4"
+														class="mb-[1.875rem] mt-[1.875rem] flex flex-col gap-4"
 													>
 														<div
 															data-role="fileForUpload"
@@ -1324,10 +1326,10 @@
 
 								<div
 									id="send-submenu"
-									class="fixed left-1/2 top-1/2 z-50 hidden min-h-[40rem] w-full min-w-[50rem] max-w-[80rem] -translate-x-1/2 -translate-y-1/2 overflow-y-scroll bg-white shadow-lg mdd:min-w-fit dark:bg-darkFive"
+									class="fixed left-1/2 top-1/2 z-50 hidden min-h-[40rem] w-full min-w-[50rem] max-w-[80rem] -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg mdd:bottom-0 mdd:min-w-fit dark:bg-darkFive"
 								>
 									<div
-										class="m-10 flex grow flex-col mdd:m-3"
+										class="m-10 flex grow flex-col overflow-y-scroll mdd:m-3"
 									>
 										<div class="flex">
 											<p
@@ -1476,10 +1478,10 @@
 												</div>
 											</div>
 											<div
-												class="mt-5 flex flex-row justify-end gap-6 mdd:flex-col mdd:items-center"
+												class="mt-5 flex flex-row justify-end gap-6 mdd:flex-col mdd:items-start"
 											>
 												<div
-													class="flex flex-row items-center gap-[1.625rem]"
+													class="flex flex-row items-center gap-[1.625rem] mdd:justify-between"
 												>
 													<p
 														class="m-0 font-public text-16 font-normal leading-5 text-black dark:text-white"
@@ -1528,18 +1530,22 @@
 													</label>
 												</div>
 
-												<button
-													data-role="cancelBttn"
-													class="h-[2.313rem] w-[8.688rem] select-none whitespace-nowrap bg-[#CECECE] py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black dark:hover:bg-white dark:hover:text-blue"
+												<div
+													class="flex flex-row justify-end gap-6"
 												>
-													Cancel
-												</button>
-												<button
-													id="send__button--generate"
-													class="h-[2.313rem] w-[8.688rem] select-none whitespace-nowrap bg-blue px-[0.625rem] py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black dark:hover:bg-white dark:hover:text-blue"
-												>
-													Send
-												</button>
+													<button
+														data-role="cancelBttn"
+														class="h-[2.313rem] w-[8.688rem] select-none whitespace-nowrap bg-[#CECECE] py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black dark:hover:bg-white dark:hover:text-blue"
+													>
+														Cancel
+													</button>
+													<button
+														id="send__button--generate"
+														class="h-[2.313rem] w-[8.688rem] select-none whitespace-nowrap bg-blue px-[0.625rem] py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black dark:hover:bg-white dark:hover:text-blue"
+													>
+														Send
+													</button>
+												</div>
 											</div>
 										</div>
 
