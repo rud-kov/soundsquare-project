@@ -20,6 +20,7 @@ module.exports = {
 				mdd: { max: "767px" },
 				tablet: { min: "768px", max: "1023px" },
 				lgd: { max: "1023px" },
+				xl: { max: "1279px" },
 			},
 			fontFamily: {
 				sans: ["'Roboto'", "sans-serif"],

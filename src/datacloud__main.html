@@ -544,14 +544,14 @@
 									</div>
 
 									<div
-										class="fixed left-1/2 top-1/2 z-50 hidden -translate-x-1/2 -translate-y-1/2 lgd:left-0 lgd:right-0 lgd:translate-x-0"
+										class="min-w-[46.25rem]] fixed left-1/2 top-1/2 z-50 hidden min-h-[40rem] w-full max-w-[60rem] -translate-x-1/2 -translate-y-1/2 mdd:min-h-fit lgd:left-0 lgd:right-0 lgd:translate-x-0"
 										id="settings__overlay"
 										data-class="overlay-container"
 									>
-										<div class="flex grow min-w-[46.25rem]] min-h-[40rem] w-full max-w-[60rem]  dark:bg-darkFive bg-white shadow-lg mdd:min-h-fit lgd:mx-3">
-											<div
-												class="relative flex grow"
-											>
+										<div
+											class="flex grow bg-white shadow-lg lgd:mx-3 dark:bg-darkFive"
+										>
+											<div class="relative flex grow">
 												<div
 													class="absolute right-5 top-5 mdd:right-2 mdd:top-2"
 												>
@@ -585,7 +585,7 @@
 														>
 															<a
 																id="user__settings"
-																class="public cursor-pointer text-xl font-bold leading-6 text-lightFont hover:font-semibold dark:text-white w-[4.932rem]"
+																class="public w-[4.932rem] cursor-pointer text-xl font-bold leading-6 text-lightFont hover:font-semibold dark:text-white"
 																>Settings</a
 															>
 															<a
@@ -917,419 +917,439 @@
 								<div
 									id="send-container"
 									data-class="overlay-container"
-									class="fixed left-1/2 top-1/2 z-50 hidden max-h-[40rem] min-h-[40rem] w-full min-w-[41rem] max-w-[60rem] -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg mdd:min-w-fit dark:bg-darkFive"
+									class="fixed left-1/2 top-1/2 z-50 hidden max-h-[40rem] min-h-[40rem] w-full min-w-[41rem] max-w-[60rem] -translate-x-1/2 -translate-y-1/2 mdd:min-w-fit"
 								>
-									<div class="relative flex grow">
-										<div
-											class="absolute right-5 top-5 mdd:right-2 mdd:top-2"
-										>
-											<img
-												data-class="closer"
-												class="dark:hidden"
-												src="/src/img/closer--light.svg"
-											/>
-											<img
-												data-class="closer"
-												class="hidden dark:block"
-												src="/src/img/closer--dark.svg"
-											/>
-										</div>
-										<div
-											class="m-10 flex grow flex-row mdd:m-3 mdd:flex-col"
-										>
+									<div
+										class="flex grow bg-white shadow-lg lgd:mx-3 dark:bg-darkFive"
+									>
+										<div class="relative flex grow">
 											<div
-												class="flex flex-col mdd:overflow-scroll"
+												class="absolute right-5 top-5 mdd:right-2 mdd:top-2"
 											>
-												<div class="flex-col">
-													<div>
-														<p
-															class="public m-0 text-24 font-bold text-lightFont mdd:p-2 dark:text-white"
+												<img
+													data-class="closer"
+													class="dark:hidden"
+													src="/src/img/closer--light.svg"
+												/>
+												<img
+													data-class="closer"
+													class="hidden dark:block"
+													src="/src/img/closer--dark.svg"
+												/>
+											</div>
+											<div
+												class="m-10 flex grow flex-row mdd:m-3 mdd:flex-col"
+											>
+												<div
+													class="flex flex-col mdd:overflow-scroll"
+												>
+													<div class="flex-col">
+														<div>
+															<p
+																class="public m-0 text-24 font-bold text-lightFont mdd:p-2 dark:text-white"
+															>
+																Upload or Send
+																selected files
+																(3)
+															</p>
+														</div>
+														<div
+															class="mt-10 border-b border-black pb-[0.625rem] dark:border-white"
 														>
-															Upload or Send
-															selected files (3)
-														</p>
+															<p
+																class="public m-0 text-16 font-normal text-lightFont dark:text-white"
+															>
+																List of files
+															</p>
+														</div>
 													</div>
+
 													<div
-														class="mt-10 border-b border-black pb-[0.625rem] dark:border-white"
+														class="flex-1 flex-grow flex-col overflow-scroll"
 													>
-														<p
-															class="public m-0 text-16 font-normal text-lightFont dark:text-white"
+														<div
+															class="mb-[1.875rem] mt-[1.875rem] flex flex-col gap-4"
 														>
-															List of files
-														</p>
+															<div
+																data-role="fileForUpload"
+																class="flex flex-row items-center gap-[0.625rem]"
+															>
+																<p
+																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+																>
+																	File name0
+																	name0
+																	name01.jpg
+																	(34.4 MB)
+																</p>
+																<div
+																	data-role="eraseFile"
+																	class="cursor-pointer"
+																>
+																	<img
+																		class="min-h-[0.688rem] min-w-[0.688rem] dark:hidden"
+																		src="/src/img/close__icon--black.svg"
+																	/>
+																	<img
+																		class="hidden min-h-[0.688rem] min-w-[0.688rem] dark:block"
+																		src="/src/img/close__icon--white.svg"
+																	/>
+																</div>
+															</div>
+															<div
+																data-role="fileForUpload"
+																class="flex flex-row items-center gap-[0.625rem]"
+															>
+																<p
+																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+																>
+																	File name0
+																	name0
+																	name01.jpg
+																	(34.4 MB)
+																</p>
+																<div
+																	data-role="eraseFile"
+																	class="cursor-pointer"
+																>
+																	<img
+																		class="min-h-[0.688rem] min-w-[0.688rem] dark:hidden"
+																		src="/src/img/close__icon--black.svg"
+																	/>
+																	<img
+																		class="hidden min-h-[0.688rem] min-w-[0.688rem] dark:block"
+																		src="/src/img/close__icon--white.svg"
+																	/>
+																</div>
+															</div>
+															<div
+																data-role="fileForUpload"
+																class="flex flex-row items-center gap-[0.625rem]"
+															>
+																<p
+																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+																>
+																	File name0
+																	name0
+																	name01.jpg
+																	(34.4 MB)
+																</p>
+																<div
+																	data-role="eraseFile"
+																	class="cursor-pointer"
+																>
+																	<img
+																		class="min-h-[0.688rem] min-w-[0.688rem] dark:hidden"
+																		src="/src/img/close__icon--black.svg"
+																	/>
+																	<img
+																		class="hidden min-h-[0.688rem] min-w-[0.688rem] dark:block"
+																		src="/src/img/close__icon--white.svg"
+																	/>
+																</div>
+															</div>
+															<div
+																data-role="fileForUpload"
+																class="flex flex-row items-center gap-[0.625rem]"
+															>
+																<p
+																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+																>
+																	File name0
+																	name0
+																	name01.jpg
+																	(34.4 MB)
+																</p>
+																<div
+																	data-role="eraseFile"
+																	class="cursor-pointer"
+																>
+																	<img
+																		class="min-h-[0.688rem] min-w-[0.688rem] dark:hidden"
+																		src="/src/img/close__icon--black.svg"
+																	/>
+																	<img
+																		class="hidden min-h-[0.688rem] min-w-[0.688rem] dark:block"
+																		src="/src/img/close__icon--white.svg"
+																	/>
+																</div>
+															</div>
+															<div
+																data-role="fileForUpload"
+																class="flex flex-row items-center gap-[0.625rem]"
+															>
+																<p
+																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+																>
+																	File name0
+																	name0
+																	name01.jpg
+																	(34.4 MB)
+																</p>
+																<div
+																	data-role="eraseFile"
+																	class="cursor-pointer"
+																>
+																	<img
+																		class="min-h-[0.688rem] min-w-[0.688rem] dark:hidden"
+																		src="/src/img/close__icon--black.svg"
+																	/>
+																	<img
+																		class="hidden min-h-[0.688rem] min-w-[0.688rem] dark:block"
+																		src="/src/img/close__icon--white.svg"
+																	/>
+																</div>
+															</div>
+															<div
+																data-role="fileForUpload"
+																class="flex flex-row items-center gap-[0.625rem]"
+															>
+																<p
+																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+																>
+																	File name0
+																	name0
+																	name01.jpg
+																	(34.4 MB)
+																</p>
+																<div
+																	data-role="eraseFile"
+																	class="cursor-pointer"
+																>
+																	<img
+																		class="min-h-[0.688rem] min-w-[0.688rem] dark:hidden"
+																		src="/src/img/close__icon--black.svg"
+																	/>
+																	<img
+																		class="hidden min-h-[0.688rem] min-w-[0.688rem] dark:block"
+																		src="/src/img/close__icon--white.svg"
+																	/>
+																</div>
+															</div>
+															<div
+																data-role="fileForUpload"
+																class="flex flex-row items-center gap-[0.625rem]"
+															>
+																<p
+																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+																>
+																	File name0
+																	name0
+																	name01.jpg
+																	(34.4 MB)
+																</p>
+																<div
+																	data-role="eraseFile"
+																	class="cursor-pointer"
+																>
+																	<img
+																		class="min-h-[0.688rem] min-w-[0.688rem] dark:hidden"
+																		src="/src/img/close__icon--black.svg"
+																	/>
+																	<img
+																		class="hidden min-h-[0.688rem] min-w-[0.688rem] dark:block"
+																		src="/src/img/close__icon--white.svg"
+																	/>
+																</div>
+															</div>
+															<div
+																data-role="fileForUpload"
+																class="flex flex-row items-center gap-[0.625rem]"
+															>
+																<p
+																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+																>
+																	File name0
+																	name0
+																	name01.jpg
+																	(34.4 MB)
+																</p>
+																<div
+																	data-role="eraseFile"
+																	class="cursor-pointer"
+																>
+																	<img
+																		class="min-h-[0.688rem] min-w-[0.688rem] dark:hidden"
+																		src="/src/img/close__icon--black.svg"
+																	/>
+																	<img
+																		class="hidden min-h-[0.688rem] min-w-[0.688rem] dark:block"
+																		src="/src/img/close__icon--white.svg"
+																	/>
+																</div>
+															</div>
+															<div
+																data-role="fileForUpload"
+																class="flex flex-row items-center gap-[0.625rem]"
+															>
+																<p
+																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+																>
+																	File name0
+																	name0
+																	name01.jpg
+																	(34.4 MB)
+																</p>
+																<div
+																	data-role="eraseFile"
+																	class="cursor-pointer"
+																>
+																	<img
+																		class="min-h-[0.688rem] min-w-[0.688rem] dark:hidden"
+																		src="/src/img/close__icon--black.svg"
+																	/>
+																	<img
+																		class="hidden min-h-[0.688rem] min-w-[0.688rem] dark:block"
+																		src="/src/img/close__icon--white.svg"
+																	/>
+																</div>
+															</div>
+															<div
+																data-role="fileForUpload"
+																class="flex flex-row items-center gap-[0.625rem]"
+															>
+																<p
+																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+																>
+																	File name0
+																	name0
+																	name01.jpg
+																	(34.4 MB)
+																</p>
+																<div
+																	data-role="eraseFile"
+																	class="cursor-pointer"
+																>
+																	<img
+																		class="min-h-[0.688rem] min-w-[0.688rem] dark:hidden"
+																		src="/src/img/close__icon--black.svg"
+																	/>
+																	<img
+																		class="hidden min-h-[0.688rem] min-w-[0.688rem] dark:block"
+																		src="/src/img/close__icon--white.svg"
+																	/>
+																</div>
+															</div>
+															<div
+																data-role="fileForUpload"
+																class="flex flex-row items-center gap-[0.625rem]"
+															>
+																<p
+																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+																>
+																	File name0
+																	name0
+																	name01.jpg
+																	(34.4 MB)
+																</p>
+																<div
+																	data-role="eraseFile"
+																	class="cursor-pointer"
+																>
+																	<img
+																		class="min-h-[0.688rem] min-w-[0.688rem] dark:hidden"
+																		src="/src/img/close__icon--black.svg"
+																	/>
+																	<img
+																		class="hidden min-h-[0.688rem] min-w-[0.688rem] dark:block"
+																		src="/src/img/close__icon--white.svg"
+																	/>
+																</div>
+															</div>
+															<div
+																data-role="fileForUpload"
+																class="flex flex-row items-center gap-[0.625rem]"
+															>
+																<p
+																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+																>
+																	File name0
+																	name0
+																	name01.jpg
+																	(34.4 MB)
+																</p>
+																<div
+																	data-role="eraseFile"
+																	class="cursor-pointer"
+																>
+																	<img
+																		class="min-h-[0.688rem] min-w-[0.688rem] dark:hidden"
+																		src="/src/img/close__icon--black.svg"
+																	/>
+																	<img
+																		class="hidden min-h-[0.688rem] min-w-[0.688rem] dark:block"
+																		src="/src/img/close__icon--white.svg"
+																	/>
+																</div>
+															</div>
+															<div
+																data-role="fileForUpload"
+																class="flex flex-row items-center gap-[0.625rem]"
+															>
+																<p
+																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+																>
+																	File name0
+																	name0
+																	name01.jpg
+																	(34.4 MB)
+																</p>
+																<div
+																	data-role="eraseFile"
+																	class="cursor-pointer"
+																>
+																	<img
+																		class="min-h-[0.688rem] min-w-[0.688rem] dark:hidden"
+																		src="/src/img/close__icon--black.svg"
+																	/>
+																	<img
+																		class="hidden min-h-[0.688rem] min-w-[0.688rem] dark:block"
+																		src="/src/img/close__icon--white.svg"
+																	/>
+																</div>
+															</div>
+														</div>
 													</div>
 												</div>
 
 												<div
-													class="flex-1 flex-grow flex-col overflow-scroll"
+													class="flex flex-1 flex-grow"
 												>
-													<div
-														class="mb-[1.875rem] mt-[1.875rem] flex flex-col gap-4"
+													<form
+														id="upload__form--overlay"
+														class="relative flex grow flex-col items-center justify-center gap-10 self-stretch text-center"
 													>
-														<div
-															data-role="fileForUpload"
-															class="flex flex-row items-center gap-[0.625rem]"
-														>
-															<p
-																class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
-															>
-																File name0 name0
-																name01.jpg (34.4
-																MB)
-															</p>
-															<div
-																data-role="eraseFile"
-																class="cursor-pointer"
-															>
-																<img
-																	class="h-[0.688rem] w-[0.688rem] dark:hidden"
-																	src="/src/img/close__icon--black.svg"
-																/>
-																<img
-																	class="hidden h-[0.688rem] w-[0.688rem] dark:block"
-																	src="/src/img/close__icon--white.svg"
-																/>
-															</div>
-														</div>
-														<div
-															data-role="fileForUpload"
-															class="flex flex-row items-center gap-[0.625rem]"
-														>
-															<p
-																class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
-															>
-																File name0 name0
-																name01.jpg (34.4
-																MB)
-															</p>
-															<div
-																data-role="eraseFile"
-																class="cursor-pointer"
-															>
-																<img
-																	class="h-[0.688rem] w-[0.688rem] dark:hidden"
-																	src="/src/img/close__icon--black.svg"
-																/>
-																<img
-																	class="hidden h-[0.688rem] w-[0.688rem] dark:block"
-																	src="/src/img/close__icon--white.svg"
-																/>
-															</div>
-														</div>
-														<div
-															data-role="fileForUpload"
-															class="flex flex-row items-center gap-[0.625rem]"
-														>
-															<p
-																class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
-															>
-																File name0 name0
-																name01.jpg (34.4
-																MB)
-															</p>
-															<div
-																data-role="eraseFile"
-																class="cursor-pointer"
-															>
-																<img
-																	class="h-[0.688rem] w-[0.688rem] dark:hidden"
-																	src="/src/img/close__icon--black.svg"
-																/>
-																<img
-																	class="hidden h-[0.688rem] w-[0.688rem] dark:block"
-																	src="/src/img/close__icon--white.svg"
-																/>
-															</div>
-														</div>
-														<div
-															data-role="fileForUpload"
-															class="flex flex-row items-center gap-[0.625rem]"
-														>
-															<p
-																class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
-															>
-																File name0 name0
-																name01.jpg (34.4
-																MB)
-															</p>
-															<div
-																data-role="eraseFile"
-																class="cursor-pointer"
-															>
-																<img
-																	class="h-[0.688rem] w-[0.688rem] dark:hidden"
-																	src="/src/img/close__icon--black.svg"
-																/>
-																<img
-																	class="hidden h-[0.688rem] w-[0.688rem] dark:block"
-																	src="/src/img/close__icon--white.svg"
-																/>
-															</div>
-														</div>
-														<div
-															data-role="fileForUpload"
-															class="flex flex-row items-center gap-[0.625rem]"
-														>
-															<p
-																class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
-															>
-																File name0 name0
-																name01.jpg (34.4
-																MB)
-															</p>
-															<div
-																data-role="eraseFile"
-																class="cursor-pointer"
-															>
-																<img
-																	class="h-[0.688rem] w-[0.688rem] dark:hidden"
-																	src="/src/img/close__icon--black.svg"
-																/>
-																<img
-																	class="hidden h-[0.688rem] w-[0.688rem] dark:block"
-																	src="/src/img/close__icon--white.svg"
-																/>
-															</div>
-														</div>
-														<div
-															data-role="fileForUpload"
-															class="flex flex-row items-center gap-[0.625rem]"
-														>
-															<p
-																class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
-															>
-																File name0 name0
-																name01.jpg (34.4
-																MB)
-															</p>
-															<div
-																data-role="eraseFile"
-																class="cursor-pointer"
-															>
-																<img
-																	class="h-[0.688rem] w-[0.688rem] dark:hidden"
-																	src="/src/img/close__icon--black.svg"
-																/>
-																<img
-																	class="hidden h-[0.688rem] w-[0.688rem] dark:block"
-																	src="/src/img/close__icon--white.svg"
-																/>
-															</div>
-														</div>
-														<div
-															data-role="fileForUpload"
-															class="flex flex-row items-center gap-[0.625rem]"
-														>
-															<p
-																class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
-															>
-																File name0 name0
-																name01.jpg (34.4
-																MB)
-															</p>
-															<div
-																data-role="eraseFile"
-																class="cursor-pointer"
-															>
-																<img
-																	class="h-[0.688rem] w-[0.688rem] dark:hidden"
-																	src="/src/img/close__icon--black.svg"
-																/>
-																<img
-																	class="hidden h-[0.688rem] w-[0.688rem] dark:block"
-																	src="/src/img/close__icon--white.svg"
-																/>
-															</div>
-														</div>
-														<div
-															data-role="fileForUpload"
-															class="flex flex-row items-center gap-[0.625rem]"
-														>
-															<p
-																class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
-															>
-																File name0 name0
-																name01.jpg (34.4
-																MB)
-															</p>
-															<div
-																data-role="eraseFile"
-																class="cursor-pointer"
-															>
-																<img
-																	class="h-[0.688rem] w-[0.688rem] dark:hidden"
-																	src="/src/img/close__icon--black.svg"
-																/>
-																<img
-																	class="hidden h-[0.688rem] w-[0.688rem] dark:block"
-																	src="/src/img/close__icon--white.svg"
-																/>
-															</div>
-														</div>
-														<div
-															data-role="fileForUpload"
-															class="flex flex-row items-center gap-[0.625rem]"
-														>
-															<p
-																class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
-															>
-																File name0 name0
-																name01.jpg (34.4
-																MB)
-															</p>
-															<div
-																data-role="eraseFile"
-																class="cursor-pointer"
-															>
-																<img
-																	class="h-[0.688rem] w-[0.688rem] dark:hidden"
-																	src="/src/img/close__icon--black.svg"
-																/>
-																<img
-																	class="hidden h-[0.688rem] w-[0.688rem] dark:block"
-																	src="/src/img/close__icon--white.svg"
-																/>
-															</div>
-														</div>
-														<div
-															data-role="fileForUpload"
-															class="flex flex-row items-center gap-[0.625rem]"
-														>
-															<p
-																class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
-															>
-																File name0 name0
-																name01.jpg (34.4
-																MB)
-															</p>
-															<div
-																data-role="eraseFile"
-																class="cursor-pointer"
-															>
-																<img
-																	class="h-[0.688rem] w-[0.688rem] dark:hidden"
-																	src="/src/img/close__icon--black.svg"
-																/>
-																<img
-																	class="hidden h-[0.688rem] w-[0.688rem] dark:block"
-																	src="/src/img/close__icon--white.svg"
-																/>
-															</div>
-														</div>
-														<div
-															data-role="fileForUpload"
-															class="flex flex-row items-center gap-[0.625rem]"
-														>
-															<p
-																class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
-															>
-																File name0 name0
-																name01.jpg (34.4
-																MB)
-															</p>
-															<div
-																data-role="eraseFile"
-																class="cursor-pointer"
-															>
-																<img
-																	class="h-[0.688rem] w-[0.688rem] dark:hidden"
-																	src="/src/img/close__icon--black.svg"
-																/>
-																<img
-																	class="hidden h-[0.688rem] w-[0.688rem] dark:block"
-																	src="/src/img/close__icon--white.svg"
-																/>
-															</div>
-														</div>
-														<div
-															data-role="fileForUpload"
-															class="flex flex-row items-center gap-[0.625rem]"
-														>
-															<p
-																class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
-															>
-																File name0 name0
-																name01.jpg (34.4
-																MB)
-															</p>
-															<div
-																data-role="eraseFile"
-																class="cursor-pointer"
-															>
-																<img
-																	class="h-[0.688rem] w-[0.688rem] dark:hidden"
-																	src="/src/img/close__icon--black.svg"
-																/>
-																<img
-																	class="hidden h-[0.688rem] w-[0.688rem] dark:block"
-																	src="/src/img/close__icon--white.svg"
-																/>
-															</div>
-														</div>
-														<div
-															data-role="fileForUpload"
-															class="flex flex-row items-center gap-[0.625rem]"
-														>
-															<p
-																class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
-															>
-																File name0 name0
-																name01.jpg (34.4
-																MB)
-															</p>
-															<div
-																data-role="eraseFile"
-																class="cursor-pointer"
-															>
-																<img
-																	class="h-[0.688rem] w-[0.688rem] dark:hidden"
-																	src="/src/img/close__icon--black.svg"
-																/>
-																<img
-																	class="hidden h-[0.688rem] w-[0.688rem] dark:block"
-																	src="/src/img/close__icon--white.svg"
-																/>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-
-											<div class="flex flex-1 flex-grow">
-												<form
-													id="upload__form--overlay"
-													class="relative flex grow flex-col items-center justify-center gap-10 self-stretch text-center"
-												>
-													<p
-														class="my-0 font-public text-16 font-normal text-black dark:text-white"
-													>
-														What do you want with
-														your files:
-													</p>
-
-													<div
-														class="flex flex-col gap-3"
-													>
-														<button
-															id="upload__button--overlay"
-															class="w-36 select-none whitespace-nowrap bg-blue py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black dark:hover:bg-white dark:hover:text-blue"
-														>
-															Upload
-														</button>
-
 														<p
-															class="my-0 font-inter text-xs font-normal text-black mdd:text-lg tablet:text-lg dark:text-white"
+															class="my-0 font-public text-16 font-normal text-black dark:text-white"
 														>
-															or
+															What do you want
+															with your files:
 														</p>
-														<button
-															id="send__button--overlay"
-															class="w-36 whitespace-nowrap bg-blue py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black dark:hover:bg-white dark:hover:text-blue"
+
+														<div
+															class="flex flex-col gap-3"
 														>
-															Send
-														</button>
-													</div>
-												</form>
+															<button
+																id="upload__button--overlay"
+																class="w-36 select-none whitespace-nowrap bg-blue py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black dark:hover:bg-white dark:hover:text-blue"
+															>
+																Upload
+															</button>
+
+															<p
+																class="my-0 font-inter text-xs font-normal text-black mdd:text-lg tablet:text-lg dark:text-white"
+															>
+																or
+															</p>
+															<button
+																id="send__button--overlay"
+																class="w-36 whitespace-nowrap bg-blue py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black dark:hover:bg-white dark:hover:text-blue"
+															>
+																Send
+															</button>
+														</div>
+													</form>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -1337,349 +1357,357 @@
 
 								<div
 									id="send-submenu"
-									class="fixed left-1/2 top-1/2 z-50 hidden min-h-[40rem] w-full min-w-[50rem] max-w-[80rem] -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg mdd:bottom-0 mdd:min-w-fit dark:bg-darkFive"
+									class="fixed left-1/2 top-1/2 z-50 hidden min-h-[40rem] w-full min-w-[50rem] max-w-[80rem] -translate-x-1/2 -translate-y-1/2 mdd:bottom-0 mdd:min-w-fit"
 								>
 									<div
-										class="m-10 flex grow flex-col overflow-y-scroll mdd:m-3"
+										class="flex grow bg-white shadow-lg xl:mx-3 dark:bg-darkFive"
 									>
-										<div class="flex">
-											<p
-												class="m-0 font-public text-24 font-bold text-lightFont dark:text-white"
-											>
-												Send selected resources: 1
-												file(s) with total size 7.5 MiB
-											</p>
-										</div>
 										<div
-											class="mb-[0.625rem] mt-10 flex flex-row gap-[7.438rem] border-b border-black pb-[0.625rem] dark:border-white"
+											class="m-10 flex grow flex-col overflow-y-scroll mdd:m-3"
 										>
-											<div>
-												<a
-													id="send__mail__switch"
-													class="m-0 cursor-pointer font-public text-16 text-lightFont dark:text-white"
+											<div class="flex">
+												<p
+													class="m-0 font-public text-24 font-bold text-lightFont dark:text-white"
 												>
-													Send email
-												</a>
+													Send selected resources: 1
+													file(s) with total size 7.5
+													MiB
+												</p>
 											</div>
-
-											<div>
-												<a
-													id="create__link__switch"
-													class="m-0 cursor-pointer font-public text-16 font-bold text-lightFont dark:text-white"
-												>
-													Create link
-												</a>
-											</div>
-										</div>
-
-										<div
-											id="sendmail__container"
-											class="flex grow flex-col"
-										>
 											<div
-												class="mt-5 flex grow flex-row gap-[1.375rem] mdd:flex-col"
+												class="mb-[0.625rem] mt-10 flex flex-row gap-[7.438rem] border-b border-black pb-[0.625rem] dark:border-white"
 											>
-												<div
-													class="flex flex-col gap-[1.875rem]"
-												>
-													<div>
-														<label
-															class="font-public text-16 font-normal leading-5 text-black dark:text-white"
-															for="link"
-															>Recipient</label
-														>
-
-														<input
-															class="mt-[1.125rem] max-h-9 border border-solid border-black bg-transparent px-3 py-2 font-public text-black placeholder:text-16 placeholder:text-black dark:border-white dark:text-white dark:placeholder:text-white"
-															type="email"
-															placeholder="your@mail.com"
-															name="link"
-															required
-														/>
-													</div>
-
-													<div>
-														<label
-															class="font-public text-16 font-normal leading-5 text-black dark:text-white"
-															for="email"
-															>E-mail
-															subject</label
-														>
-
-														<input
-															class="mt-[1.125rem] max-h-9 border border-solid border-black bg-transparent px-3 py-2 font-public text-black placeholder:text-16 placeholder:text-black dark:border-white dark:text-white dark:placeholder:text-white"
-															type="email"
-															placeholder="your@mail.com"
-															name="email"
-															required
-														/>
-													</div>
+												<div>
+													<a
+														id="send__mail__switch"
+														class="m-0 cursor-pointer text-nowrap font-public text-16 text-lightFont dark:text-white"
+													>
+														Send email
+													</a>
 												</div>
 
-												<div
-													class="flex grow flex-row gap-[3.813rem] mdd:flex-col"
-												>
-													<div class="flex-col">
-														<label
-															class="font-public text-16 font-normal leading-5 text-black dark:text-white"
-															for="date"
-															>Valid to:</label
-														>
+												<div>
+													<a
+														id="create__link__switch"
+														class="m-0 cursor-pointer text-nowrap font-public text-16 font-bold text-lightFont dark:text-white"
+													>
+														Create link
+													</a>
+												</div>
+											</div>
 
-														<input
-															class="mt-[1.125rem] max-h-9 border border-solid border-black bg-transparent px-3 py-2 font-public text-black placeholder:text-16 placeholder:text-black dark:border-white dark:text-white dark:[color-scheme:dark] dark:placeholder:text-white"
-															type="date"
-															placeholder="24.12.2024"
-															name="link"
-															required
-														/>
-													</div>
+											<div
+												id="sendmail__container"
+												class="flex grow flex-col"
+											>
+												<div
+													class="mt-5 flex grow flex-row gap-[1.375rem] mdd:flex-col"
+												>
 													<div
-														class="flex grow flex-col gap-[1.625rem]"
+														class="flex flex-col gap-[1.875rem]"
+													>
+														<div>
+															<label
+																class="font-public text-16 font-normal leading-5 text-black dark:text-white"
+																for="link"
+																>Recipient</label
+															>
+
+															<input
+																class="mt-[1.125rem] max-h-9 border border-solid border-black bg-transparent px-3 py-2 font-public text-black placeholder:text-16 placeholder:text-black dark:border-white dark:text-white dark:placeholder:text-white"
+																type="email"
+																placeholder="your@mail.com"
+																name="link"
+																required
+															/>
+														</div>
+
+														<div>
+															<label
+																class="font-public text-16 font-normal leading-5 text-black dark:text-white"
+																for="email"
+																>E-mail
+																subject</label
+															>
+
+															<input
+																class="mt-[1.125rem] max-h-9 border border-solid border-black bg-transparent px-3 py-2 font-public text-black placeholder:text-16 placeholder:text-black dark:border-white dark:text-white dark:placeholder:text-white"
+																type="email"
+																placeholder="your@mail.com"
+																name="email"
+																required
+															/>
+														</div>
+													</div>
+
+													<div
+														class="flex grow flex-row gap-[3.813rem] mdd:flex-col"
+													>
+														<div class="flex-col">
+															<label
+																class="font-public text-16 font-normal leading-5 text-black dark:text-white"
+																for="date"
+																>Valid
+																to:</label
+															>
+
+															<input
+																class="mt-[1.125rem] max-h-9 border border-solid border-black bg-transparent px-3 py-2 font-public text-black placeholder:text-16 placeholder:text-black dark:border-white dark:text-white dark:[color-scheme:dark] dark:placeholder:text-white"
+																type="date"
+																placeholder="24.12.2024"
+																name="link"
+																required
+															/>
+														</div>
+														<div
+															class="flex grow flex-col gap-[1.625rem]"
+														>
+															<p
+																class="m-0 font-public text-16 font-normal leading-5 text-black dark:text-white"
+															>
+																What is allowed
+																to recipients
+															</p>
+
+															<div
+																class="flex flex-row gap-4"
+															>
+																<label
+																	class="inline-flex cursor-pointer items-center"
+																>
+																	<input
+																		id="recipients__allow"
+																		value=""
+																		class="peer sr-only"
+																		type="checkbox"
+																		checked
+																	/>
+																	<div
+																		class="relative h-[1.125rem] w-[2.25rem] bg-lightThird after:absolute after:h-[1.125rem] after:w-[1.125rem] after:bg-[#9B9B9B] after:transition-all after:content-[''] peer-checked:after:translate-x-full peer-checked:after:bg-blue peer-focus:ring-blue"
+																	></div>
+																</label>
+																<div>
+																	<p
+																		class="m-0 font-public text-16 font-normal leading-5 text-black dark:text-white"
+																	>
+																		Download
+																	</p>
+																</div>
+															</div>
+
+															<div
+																class="flex grow flex-col"
+															>
+																<label
+																	class="font-public text-16 font-normal leading-5 text-black dark:text-white"
+																	for="date"
+																	>Recipient</label
+																>
+
+																<textarea
+																	class="mt-5 grow border border-black px-2 dark:border-white dark:bg-black dark:text-white p-2"
+																	role="textbox"
+																	placeholder="text (or email annoucement)"
+																></textarea>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div
+													class="mt-5 flex flex-row justify-end gap-6 mdd:flex-col mdd:items-start"
+												>
+													<div
+														class="flex flex-row items-center gap-[1.625rem] mdd:justify-between"
 													>
 														<p
 															class="m-0 font-public text-16 font-normal leading-5 text-black dark:text-white"
 														>
-															What is allowed to
-															recipients
+															Send copy to myself
 														</p>
 
-														<div
-															class="flex flex-row gap-4"
+														<label
+															class="inline-flex cursor-pointer items-center"
 														>
-															<label
-																class="inline-flex cursor-pointer items-center"
-															>
-																<input
-																	id="recipients__allow"
-																	value=""
-																	class="peer sr-only"
-																	type="checkbox"
-																	checked
-																/>
-																<div
-																	class="relative h-[1.125rem] w-[2.25rem] bg-lightThird after:absolute after:h-[1.125rem] after:w-[1.125rem] after:bg-[#9B9B9B] after:transition-all after:content-[''] peer-checked:after:translate-x-full peer-checked:after:bg-blue peer-focus:ring-blue"
-																></div>
-															</label>
-															<div>
-																<p
-																	class="m-0 font-public text-16 font-normal leading-5 text-black dark:text-white"
-																>
-																	Download
-																</p>
-															</div>
-														</div>
-
-														<div
-															class="flex grow flex-col"
+															<input
+																id="recipients__allow"
+																value=""
+																class="peer sr-only"
+																type="checkbox"
+																checked
+															/>
+															<div
+																class="relative h-[1.125rem] w-[2.25rem] bg-lightThird after:absolute after:h-[1.125rem] after:w-[1.125rem] after:bg-[#9B9B9B] after:transition-all after:content-[''] peer-checked:after:translate-x-full peer-checked:after:bg-blue peer-focus:ring-blue"
+															></div>
+														</label>
+													</div>
+													<div
+														class="flex flex-row items-center gap-[1.625rem]"
+													>
+														<p
+															class="m-0 font-public text-16 font-normal leading-5 text-black dark:text-white"
 														>
-															<label
-																class="font-public text-16 font-normal leading-5 text-black dark:text-white"
-																for="date"
-																>Recipient</label
-															>
+															Let me know files
+															were downloaded
+														</p>
 
-															<textarea
-																class="mt-5 grow border border-black px-2 dark:border-white dark:bg-black dark:text-white"
-																role="textbox"
-																placeholder="text (or email annoucement)"
-															></textarea>
-														</div>
+														<label
+															class="inline-flex cursor-pointer items-center"
+														>
+															<input
+																id="recipients__allow"
+																value=""
+																class="peer sr-only"
+																type="checkbox"
+																checked
+															/>
+															<div
+																class="relative h-[1.125rem] w-[2.25rem] bg-lightThird after:absolute after:h-[1.125rem] after:w-[1.125rem] after:bg-[#9B9B9B] after:transition-all after:content-[''] peer-checked:after:translate-x-full peer-checked:after:bg-blue peer-focus:ring-blue"
+															></div>
+														</label>
+													</div>
+
+													<div
+														class="flex flex-row justify-end gap-6"
+													>
+														<button
+															data-role="cancelBttn"
+															class="h-[2.313rem] w-[8.688rem] select-none whitespace-nowrap bg-[#CECECE] py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black dark:hover:bg-white dark:hover:text-blue"
+														>
+															Cancel
+														</button>
+														<button
+															id="send__button--generate"
+															class="h-[2.313rem] w-[8.688rem] select-none whitespace-nowrap bg-blue px-[0.625rem] py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black dark:hover:bg-white dark:hover:text-blue"
+														>
+															Send
+														</button>
 													</div>
 												</div>
 											</div>
+
 											<div
-												class="mt-5 flex flex-row justify-end gap-6 mdd:flex-col mdd:items-start"
+												id="createlink__container"
+												class="hidden grow flex-col"
 											>
 												<div
-													class="flex flex-row items-center gap-[1.625rem] mdd:justify-between"
+													class="mt-5 flex grow flex-row gap-[1.375rem] mdd:flex-col"
 												>
-													<p
-														class="m-0 font-public text-16 font-normal leading-5 text-black dark:text-white"
+													<div
+														class="flex flex-col gap-[1.875rem]"
 													>
-														Send copy to myself
-													</p>
+														<div>
+															<label
+																class="font-public text-16 font-normal leading-5 text-black dark:text-white"
+																for="link"
+																>Link
+																name</label
+															>
 
-													<label
-														class="inline-flex cursor-pointer items-center"
+															<input
+																class="mt-[1.125rem] max-h-9 border border-solid border-black bg-transparent px-3 py-2 font-public text-black placeholder:text-16 placeholder:text-black dark:border-white dark:text-white dark:placeholder:text-white"
+																type="link"
+																placeholder="file name 123"
+																name="link"
+																required
+															/>
+														</div>
+
+														<div>
+															<label
+																class="font-public text-16 font-normal leading-5 text-black dark:text-white"
+																for="email"
+																>E-mail</label
+															>
+
+															<input
+																class="mt-[1.125rem] max-h-9 border border-solid border-black bg-transparent px-3 py-2 font-public text-black placeholder:text-16 placeholder:text-black dark:border-white dark:text-white dark:placeholder:text-white"
+																type="email"
+																placeholder="your@mail.com"
+																name="email"
+																required
+															/>
+														</div>
+													</div>
+
+													<div
+														class="flex flex-row gap-[3.813rem] mdd:flex-col"
 													>
-														<input
-															id="recipients__allow"
-															value=""
-															class="peer sr-only"
-															type="checkbox"
-															checked
-														/>
+														<div class="flex-col">
+															<label
+																class="font-public text-16 font-normal leading-5 text-black dark:text-white"
+																for="password"
+																>Valid
+																to:</label
+															>
+
+															<input
+																class="mt-[1.125rem] max-h-9 border border-solid border-black bg-transparent px-3 py-2 font-public text-black placeholder:text-16 placeholder:text-black dark:border-white dark:text-white dark:placeholder:text-white"
+																type="date"
+																placeholder="24.12.2024"
+																name="link"
+																required
+															/>
+														</div>
 														<div
-															class="relative h-[1.125rem] w-[2.25rem] bg-lightThird after:absolute after:h-[1.125rem] after:w-[1.125rem] after:bg-[#9B9B9B] after:transition-all after:content-[''] peer-checked:after:translate-x-full peer-checked:after:bg-blue peer-focus:ring-blue"
-														></div>
-													</label>
+															class="flex flex-col gap-[1.625rem]"
+														>
+															<p
+																class="m-0 font-public text-16 font-normal leading-5 text-black dark:text-white"
+															>
+																What is allowed
+																to recipients
+															</p>
+
+															<div
+																class="flex flex-row gap-4"
+															>
+																<label
+																	class="inline-flex cursor-pointer items-center"
+																>
+																	<input
+																		id="recipients__allow"
+																		value=""
+																		class="peer sr-only"
+																		type="checkbox"
+																		checked
+																	/>
+																	<div
+																		class="relative h-[1.125rem] w-[2.25rem] bg-lightThird after:absolute after:h-[1.125rem] after:w-[1.125rem] after:bg-[#9B9B9B] after:transition-all after:content-[''] peer-checked:after:translate-x-full peer-checked:after:bg-blue peer-focus:ring-blue"
+																	></div>
+																</label>
+																<div>
+																	<p
+																		class="m-0 font-public text-16 font-normal leading-5 text-black dark:text-white"
+																	>
+																		Download
+																	</p>
+																</div>
+															</div>
+														</div>
+													</div>
 												</div>
 												<div
-													class="flex flex-row items-center gap-[1.625rem]"
-												>
-													<p
-														class="m-0 font-public text-16 font-normal leading-5 text-black dark:text-white"
-													>
-														Let me know files were
-														downloaded
-													</p>
-
-													<label
-														class="inline-flex cursor-pointer items-center"
-													>
-														<input
-															id="recipients__allow"
-															value=""
-															class="peer sr-only"
-															type="checkbox"
-															checked
-														/>
-														<div
-															class="relative h-[1.125rem] w-[2.25rem] bg-lightThird after:absolute after:h-[1.125rem] after:w-[1.125rem] after:bg-[#9B9B9B] after:transition-all after:content-[''] peer-checked:after:translate-x-full peer-checked:after:bg-blue peer-focus:ring-blue"
-														></div>
-													</label>
-												</div>
-
-												<div
-													class="flex flex-row justify-end gap-6"
+													class="mt-5 flex flex-row justify-end gap-[1.875rem] mdd:flex-col-reverse mdd:items-center"
 												>
 													<button
 														data-role="cancelBttn"
-														class="h-[2.313rem] w-[8.688rem] select-none whitespace-nowrap bg-[#CECECE] py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black dark:hover:bg-white dark:hover:text-blue"
+														class="w-[8.688rem] select-none whitespace-nowrap bg-[#CECECE] py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black dark:hover:bg-white dark:hover:text-blue"
 													>
 														Cancel
 													</button>
 													<button
-														id="send__button--generate"
-														class="h-[2.313rem] w-[8.688rem] select-none whitespace-nowrap bg-blue px-[0.625rem] py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black dark:hover:bg-white dark:hover:text-blue"
+														id="send__button--mail"
+														class="select-none whitespace-nowrap bg-blue px-[0.625rem] py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black dark:hover:bg-white dark:hover:text-blue"
 													>
-														Send
+														Send links via email
+													</button>
+													<button
+														id="send__button--generate"
+														class="select-none whitespace-nowrap bg-blue px-[0.625rem] py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black dark:hover:bg-white dark:hover:text-blue"
+													>
+														Generate links
 													</button>
 												</div>
-											</div>
-										</div>
-
-										<div
-											id="createlink__container"
-											class="hidden grow flex-col"
-										>
-											<div
-												class="mt-5 flex grow flex-row gap-[1.375rem] mdd:flex-col"
-											>
-												<div
-													class="flex flex-col gap-[1.875rem]"
-												>
-													<div>
-														<label
-															class="font-public text-16 font-normal leading-5 text-black dark:text-white"
-															for="link"
-															>Link name</label
-														>
-
-														<input
-															class="mt-[1.125rem] max-h-9 border border-solid border-black bg-transparent px-3 py-2 font-public text-black placeholder:text-16 placeholder:text-black dark:border-white dark:text-white dark:placeholder:text-white"
-															type="link"
-															placeholder="file name 123"
-															name="link"
-															required
-														/>
-													</div>
-
-													<div>
-														<label
-															class="font-public text-16 font-normal leading-5 text-black dark:text-white"
-															for="email"
-															>E-mail</label
-														>
-
-														<input
-															class="mt-[1.125rem] max-h-9 border border-solid border-black bg-transparent px-3 py-2 font-public text-black placeholder:text-16 placeholder:text-black dark:border-white dark:text-white dark:placeholder:text-white"
-															type="email"
-															placeholder="your@mail.com"
-															name="email"
-															required
-														/>
-													</div>
-												</div>
-
-												<div
-													class="flex flex-row gap-[3.813rem] mdd:flex-col"
-												>
-													<div class="flex-col">
-														<label
-															class="font-public text-16 font-normal leading-5 text-black dark:text-white"
-															for="password"
-															>Valid to:</label
-														>
-
-														<input
-															class="mt-[1.125rem] max-h-9 border border-solid border-black bg-transparent px-3 py-2 font-public text-black placeholder:text-16 placeholder:text-black dark:border-white dark:text-white dark:placeholder:text-white"
-															type="date"
-															placeholder="24.12.2024"
-															name="link"
-															required
-														/>
-													</div>
-													<div
-														class="flex flex-col gap-[1.625rem]"
-													>
-														<p
-															class="m-0 font-public text-16 font-normal leading-5 text-black dark:text-white"
-														>
-															What is allowed to
-															recipients
-														</p>
-
-														<div
-															class="flex flex-row gap-4"
-														>
-															<label
-																class="inline-flex cursor-pointer items-center"
-															>
-																<input
-																	id="recipients__allow"
-																	value=""
-																	class="peer sr-only"
-																	type="checkbox"
-																	checked
-																/>
-																<div
-																	class="relative h-[1.125rem] w-[2.25rem] bg-lightThird after:absolute after:h-[1.125rem] after:w-[1.125rem] after:bg-[#9B9B9B] after:transition-all after:content-[''] peer-checked:after:translate-x-full peer-checked:after:bg-blue peer-focus:ring-blue"
-																></div>
-															</label>
-															<div>
-																<p
-																	class="m-0 font-public text-16 font-normal leading-5 text-black dark:text-white"
-																>
-																	Download
-																</p>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div
-												class="mt-5 flex flex-row justify-end gap-[1.875rem] mdd:flex-col-reverse mdd:items-center"
-											>
-												<button
-													data-role="cancelBttn"
-													class="w-[8.688rem] select-none whitespace-nowrap bg-[#CECECE] py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black dark:hover:bg-white dark:hover:text-blue"
-												>
-													Cancel
-												</button>
-												<button
-													id="send__button--mail"
-													class="select-none whitespace-nowrap bg-blue px-[0.625rem] py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black dark:hover:bg-white dark:hover:text-blue"
-												>
-													Send links via email
-												</button>
-												<button
-													id="send__button--generate"
-													class="select-none whitespace-nowrap bg-blue px-[0.625rem] py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black dark:hover:bg-white dark:hover:text-blue"
-												>
-													Generate links
-												</button>
 											</div>
 										</div>
 									</div>
