@@ -49,27 +49,34 @@ const Engine = {
 				} else {
 					driveMenu.classList.replace("mdd:absolute", "mdd:hidden");
 				}
-			})
-
+			});
 
 			///// SENDING FILES OVERLAY
 
 			const sendSubmenu = document.getElementById("send-submenu");
 
-			const sendFilesBttn = document.getElementById("send__bttn");
+			const sendFilesBttn = document.querySelectorAll(
+				"[data-class='send-bttn']",
+			);
 
 			const sendContainer = document.getElementById("send-container");
 
-			sendFilesBttn.addEventListener("click", () => {
-				sendContainer.classList.replace("hidden", "flex");
+			sendFilesBttn.forEach((bttn) => {
+				bttn.addEventListener("click", showSendContainer);
 			});
+
+			function showSendContainer() {
+				sendContainer.classList.replace("hidden", "flex");
+			}
 
 			function hideSendContainer(event) {
 				const clickedElement = event.target;
 
 				if (
 					sendContainer.contains(clickedElement) ||
-					sendFilesBttn.contains(clickedElement)
+					Array.from(sendFilesBttn).some((bttn) =>
+						bttn.contains(clickedElement),
+					)
 				) {
 					return;
 				} else {
