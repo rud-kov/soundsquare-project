@@ -9,11 +9,11 @@
 const html = document.querySelector("html");
 const body = document.querySelector("body");
 
-const uploadBar = document.getElementById("upload-bar");
+const uploadBar = document.getElementById("upload__bar");
 
-const uploadScreen = document.getElementById("upload-bar--progress");
+const uploadScreen = document.getElementById("upload__bar--progress");
 
-const uploadResultScreen = document.getElementById("upload-bar--result");
+const uploadResultScreen = document.getElementById("upload__bar--result");
 
 const metadataContainer = document.getElementById("metadata__container");
 
@@ -30,9 +30,9 @@ const Engine = {
 
 			///////////// MY DRIVE MOBILE MENU SWITCH
 
-			const driveSwitch = document.getElementById("drive-switch");
+			const driveSwitch = document.getElementById("drive__switch");
 
-			const driveMenu = document.getElementById("drive-menu");
+			const driveMenu = document.getElementById("drive__menu");
 
 			driveSwitch.addEventListener("click", () => {
 				driveMenu.classList.replace("mdd:hidden", "mdd:absolute");
@@ -53,13 +53,13 @@ const Engine = {
 
 			///// SENDING FILES OVERLAY
 
-			const sendSubmenu = document.getElementById("send-submenu");
+			const sendSubmenu = document.getElementById("send__submenu");
 
 			const sendFilesBttn = document.querySelectorAll(
 				"[data-class='send-bttn']",
 			);
 
-			const sendContainer = document.getElementById("send-container");
+			const sendContainer = document.getElementById("send__container");
 
 			sendFilesBttn.forEach((bttn) => {
 				bttn.addEventListener("click", showSendContainer);
@@ -182,9 +182,9 @@ const Engine = {
 				"mainfiles__wrapper--table",
 			);
 
-			const tableSwitch = document.getElementById("table-switch");
+			const tableSwitch = document.getElementById("table__switch");
 
-			const tileSwitch = document.getElementById("tile-switch");
+			const tileSwitch = document.getElementById("tile__switch");
 
 			function filesDisplaySwitch() {
 				filesWrapperTable.classList.toggle("hidden");
@@ -197,11 +197,11 @@ const Engine = {
 
 			//////////////// SIDEBAR
 
-			const hamSwitch = document.getElementById("ham-switch");
+			const hamSwitch = document.getElementById("ham__switch");
 
-			const hamWrapper = document.getElementById("ham-wrapper");
+			const hamWrapper = document.getElementById("ham__wrapper");
 
-			const hamMenu = document.getElementById("ham-menu");
+			const hamMenu = document.getElementById("ham__menu");
 
 			hamSwitch.addEventListener("click", () => {
 				hamMenu.classList.replace("hidden", "flex");
@@ -223,7 +223,7 @@ const Engine = {
 
 			//////////// SETTINGS MENU OPEN/CLOSE
 
-			const settingsBttn = document.getElementById("settings-bttn");
+			const settingsBttn = document.getElementById("settings__bttn");
 
 			const settingsOverlay =
 				document.getElementById("settings__overlay");
