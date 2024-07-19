@@ -43,8 +43,11 @@ const Engine = {
 
 				let slides = document.querySelectorAll("[data-class='slide']");
 
+				let slideDescription = document.querySelectorAll("[data-class='slide__description']")
+
 				for (i = 0; i < slides.length; i++) {
 					slides[i].classList.replace("flex", "hidden");
+					slideDescription[i].classList.replace("flex", "hidden")
 				}
 				slideIndex++;
 
@@ -53,6 +56,7 @@ const Engine = {
 				}
 
 				slides[slideIndex - 1].classList.replace("hidden", "flex");
+				slideDescription[slideIndex - 1].classList.replace("hidden", "flex");
 
 				setTimeout(showSlides, 5000);
 			}
