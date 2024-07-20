@@ -255,6 +255,26 @@ const Engine = {
 				const passwordValue = password.value;
 			}
 
+			///////////////// PASSWORD COVER
+
+			const passwordCovers = document.querySelectorAll(
+				"[data-role='passcover']",
+			);
+
+			const passwords = document.querySelectorAll(
+				"[data-role='password']",
+			);
+
+			passwordCovers.forEach((passwordCover, index) => {
+				passwordCover.addEventListener("click", () => {
+					const type =
+						passwords[index].getAttribute("type") === "password"
+							? "text"
+							: "password";
+					passwords[index].setAttribute("type", type);
+				});
+			});
+
 			/////////////// BROWSE AND UPLOAD FILES /////////////////////////////
 
 			const fileInput = document.getElementById("file__input");

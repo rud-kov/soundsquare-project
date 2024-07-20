@@ -33,10 +33,13 @@
 				<div
 					class="flex h-24 items-center justify-center bg-black pb-[2.301rem] pt-[2.502rem]"
 				>
-					<img
-						class="h-[1.056rem] w-[11.375rem]"
-						src="./img/soundsquare__logo.svg"
-					/>
+					<svg class="h-[1.056rem] w-[11.375rem]">
+						<use
+							xlink:href="icons__sprite.svg#soundsquare__logo"
+							width="182"
+							height="16.896"
+						></use>
+					</svg>
 				</div>
 
 				<div
@@ -173,10 +176,18 @@
 													>
 														Drop your files here
 													</p>
-													<img
-														class="px-8 pt-4"
-														src="./img/dragdrop__icon--white.svg"
-													/>
+
+													<div class="px-8 pt-4">
+														<svg
+															class="h-[6.688rem] w-[6.688rem]"
+														>
+															<use
+																xlink:href="icons__sprite.svg#dragdrop__icon--white"
+																width="106"
+																height="106"
+															></use>
+														</svg>
+													</div>
 												</div>
 											</div>
 										</div>
@@ -555,16 +566,27 @@
 												<div
 													class="absolute right-5 top-5 mdd:right-2 mdd:top-2"
 												>
-													<img
+													<!--- SVG NEFUNGUJE DPČ -->
+													<svg
+														class="block h-3 w-3 dark:hidden"
 														data-class="closer"
-														class="dark:hidden"
-														src="/src/img/closer--light.svg"
-													/>
-													<img
+													>
+														<use
+															xlink:href="icons__sprite.svg#closer--white"
+															width="12"
+															height="11"
+														></use>
+													</svg>
+													<svg
+														class="hidden h-3 w-3 dark:block"
 														data-class="closer"
-														class="hidden dark:block"
-														src="/src/img/closer--dark.svg"
-													/>
+													>
+														<use
+															xlink:href="icons__sprite.svg#closer--dark"
+															width="12"
+															height="11"
+														></use>
+													</svg>
 												</div>
 												<div
 													class="m-10 flex grow flex-row mdd:m-3 mdd:flex-col mdd:gap-10"
@@ -641,14 +663,25 @@
 																				data-role="passcover"
 																				class="absolute right-[0.9rem] z-10 cursor-pointer"
 																			>
-																				<img
-																					class="block dark:hidden"
-																					src="./img/subtract--black.svg"
-																				/>
-																				<img
-																					class="hidden dark:block"
-																					src="./img/subtract--white.svg"
-																				/>
+																				<svg
+																					class="mx-auto h-[0.563rem] w-[0.938rem] hidden dark:block"
+																				>
+																					<use
+																						xlink:href="icons__sprite.svg#passcover--white"
+																						width="15"
+																						height="9"
+																					></use>
+																				</svg>
+																				<svg
+																					class="mx-auto h-[0.563rem] w-[0.938rem] block dark:hidden"
+																				>
+																					<use
+																						xlink:href="icons__sprite.svg#passcover--black"
+																						width="15"
+																						height="9"
+																					></use>
+																				</svg>
+																				
 																			</div>
 																			<div
 																				class="absolute -right-[3.563rem] top-0 hidden h-[2.625rem] items-center mdd:right-0 mdd:top-[2.4rem]"

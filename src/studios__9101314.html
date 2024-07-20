@@ -143,9 +143,8 @@
 							<p
 								class="my-0 font-public text-sm font-normal text-white mdd:mr-10 mdd:text-xs"
 							>
-								Atmos HE. Feature film and commercial mixing <br
-									class="mdd:hidden"
-								/>
+								Atmos HE. Feature film and commercial mixing
+								<br class="mdd:hidden" />
 								stages and editing suites.
 							</p>
 						</div>
@@ -183,9 +182,8 @@
 							<p
 								class="my-0 font-public text-sm font-normal text-white mdd:mr-10 mdd:text-xs"
 							>
-								Atmos HE. Feature film and commercial mixing <br
-									class="mdd:hidden"
-								/>
+								Atmos HE. Feature film and commercial mixing
+								<br class="mdd:hidden" />
 								stages and editing suites.
 							</p>
 						</div>
@@ -223,9 +221,8 @@
 							<p
 								class="my-0 font-public text-sm font-normal text-white mdd:mr-10 mdd:text-xs"
 							>
-								Atmos HE. Feature film and commercial mixing <br
-									class="mdd:hidden"
-								/>
+								Atmos HE. Feature film and commercial mixing
+								<br class="mdd:hidden" />
 								stages and editing suites.
 							</p>
 						</div>
@@ -263,9 +260,8 @@
 							<p
 								class="my-0 font-public text-sm font-normal text-white mdd:mr-10 mdd:text-xs"
 							>
-								Atmos HE. Feature film and commercial mixing <br
-									class="mdd:hidden"
-								/>
+								Atmos HE. Feature film and commercial mixing
+								<br class="mdd:hidden" />
 								stages and editing suites.
 							</p>
 						</div>
@@ -303,9 +299,8 @@
 							<p
 								class="my-0 font-public text-sm font-normal text-white mdd:mr-10 mdd:text-xs"
 							>
-								Atmos HE. Feature film and commercial mixing <br
-									class="mdd:hidden"
-								/>
+								Atmos HE. Feature film and commercial mixing
+								<br class="mdd:hidden" />
 								stages and editing suites.
 							</p>
 						</div>
@@ -342,11 +337,13 @@
 								class="relative flex grow flex-col justify-center gap-5 self-stretch text-center"
 							>
 								<div class="flex justify-center mdd:hidden">
-									<img
-										class="block"
-										src="/src/img/arrow__down--big.svg"
-										alt=""
-									/>
+									<svg class="h-[2.22rem] w-[1.862rem]">
+										<use
+											xlink:href="icons__sprite.svg#arrow__down--big"
+											width="31"
+											height="36"
+										></use>
+									</svg>
 								</div>
 								<div
 									class="mt-10 text-center mdd:hidden tablet:mt-5"
@@ -426,12 +423,14 @@
 				>
 					<div class="flex" id="prelogin">
 						<div class="flex flex-col gap-0 py-8 text-center">
-							<div class="flex justify-center">
-								<img
-									class="mx-0 mb-2 block"
-									src="/src/img/lock__icon.svg"
-									alt=""
-								/>
+							<div class="mx-0 mb-2">
+								<svg class="mx-auto h-[0.875rem] w-[0.75rem]">
+									<use
+										xlink:href="icons__sprite.svg#lock__icon"
+										width="13"
+										height="14"
+									></use>
+								</svg>
 							</div>
 							<div class="text-white">
 								<p
@@ -490,20 +489,37 @@
 											for="password"
 											>Password</label
 										>
-										<input
-											class="mt-3 border border-solid border-white bg-black bg-[url('/src/img/lock__icon--login.svg')] bg-[left_0.9rem_center] bg-no-repeat py-2 pl-16 pr-3 font-public placeholder:text-white"
-											type="password"
-											placeholder="Enter password"
-											name="password"
-											required
-											id="password"
-											autocomplete="current-password"
-										/>
+										<div class="relative">
+											<input
+												class="mt-3 border border-solid border-white bg-black bg-[url('/src/img/lock__icon--login.svg')] bg-[left_0.9rem_center] bg-no-repeat py-2 pl-16 pr-3 font-public placeholder:text-white"
+												type="password"
+												placeholder="Enter password"
+												name="password"
+												required
+												id="password"
+												autocomplete="current-password"
+												data-role="password"
+											/>
+											<div
+												data-role="passcover"
+												class="absolute right-[0.9rem] top-[16px] cursor-pointer"
+											>
+												<svg
+													class="mx-auto h-[0.563rem] w-[0.938rem]"
+												>
+													<use
+														xlink:href="icons__sprite.svg#passcover--white"
+														width="15"
+														height="9"
+													></use>
+												</svg>
+											</div>
+										</div>
 									</div>
 
 									<div class="flex items-baseline text-white">
 										<input
-											class="ml-3 h-[0.688rem] w-[0.688rem] cursor-pointer appearance-none border border-white bg-transparent checked:appearance-auto"
+											class="h-[0.688rem] w-[0.688rem] cursor-pointer appearance-none border border-white bg-transparent checked:appearance-auto"
 											type="checkbox"
 											name="remember"
 											id="checkbox__remember"
@@ -563,8 +579,29 @@
 							</div>
 
 							<div
-								class="h-[9.375rem] w-[9.375rem] bg-[url('/src/img/dragdrop__icon.svg')] bg-contain bg-center bg-no-repeat mdd:h-[4.68rem] mdd:w-[4.68rem]"
-							></div>
+								class="h-[9.375rem] w-[9.375rem] mdd:h-[4.68rem] mdd:w-[4.68rem]"
+							>
+								<svg
+									width="157"
+									height="157"
+									class="mdd:hidden"
+								>
+									<use
+										xlink:href="icons__sprite.svg#dragdrop__icon"
+										width="157"
+										height="157"
+									></use>
+								</svg>
+								<svg
+									class="hidden h-[4.68rem] w-[4.68rem] mdd:block"
+								>
+									<use
+										xlink:href="icons__sprite.svg#dragdrop__icon"
+										width="75"
+										height="75"
+									></use>
+								</svg>
+							</div>
 						</div>
 					</div>
 				</div>
