@@ -6,27 +6,27 @@
     </symbol>
 
      <symbol id="arrow__down--dark" viewBox="0 0 13 9">
-        <path d="M6.5 8L1.73686 1.25L11.2631 1.25L6.5 8Z" stroke="#C3C3C3"/>
+        <path d="M6.5 8 1.737 1.25h9.526L6.5 8Z" fill="#ececec" stroke="#000"/>
     </symbol>
 
     <symbol id="arrow__down--light" viewBox="0 0 13 9">
-        <path d="M6.5 8L1.73686 1.25L11.2631 1.25L6.5 8Z" stroke="black"/>
+        <path d="M6.5 8 1.737 1.25h9.526L6.5 8Z" fill="#353535" stroke="#C3C3C3"/>
     </symbol>
 
     <symbol id="arrow__up--dark" viewBox="0 0 13 9">
-        <path d="M6.5 1L11.2631 8.5H1.73686L6.5 1Z" fill="#C3C3C3" stroke="#C3C3C3"/>
+        <path d="M6.5 1L11.2631 8.5H1.73686L6.5 1Z" fill="black" stroke="#000"/>
     </symbol>
 
     <symbol id="arrow__up--light" viewBox="0 0 13 9">
-        <path d="M6.5 1L11.2631 8.5H1.73686L6.5 1Z" fill="black" stroke="black"/>
-    </symbol>
-
-    <symbol id="clear__icon--dark" viewBox="0 0 390 390">
-        <path d="M6.5 1L11.2631 8.5H1.73686L6.5 1Z" fill="black" stroke="black"/>
+        <path d="M6.5 1L11.2631 8.5H1.73686L6.5 1Z" fill="#C3C3C3" stroke="#C3C3C3"/>
     </symbol>
 
     <symbol id="clear__icon" viewBox="0 0 390 390">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H390V390H0V0ZM132.627 124.352L65 193.168L132.627 261.984V261.861H331V124.352H132.627ZM227.55 166.804L253.861 193.116L225.57 221.407L236.321 232.158L264.612 203.866L292.904 232.158L303.655 221.407L275.363 193.116L301.674 166.805L290.923 156.054L264.612 182.365L238.301 156.054L227.55 166.804Z" fill="black"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0h390v390H0V0Zm132.627 124.352L65 193.168l67.627 68.816v-.123H331V124.352H132.627Zm94.923 42.452 26.311 26.312-28.291 28.291 10.751 10.751 28.291-28.292 28.292 28.292 10.751-10.751-28.292-28.291 26.311-26.311-10.751-10.751-26.311 26.311-26.311-26.311-10.751 10.75Z" fill="#000"/>
+    </symbol>
+
+     <symbol id="clear__icon--dark" viewBox="0 0 390 390">
+         <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0h390v390H0V0Zm132.627 124.352L65 193.168l67.627 68.816v-.123H331V124.352H132.627Zm94.923 42.452 26.311 26.312-28.291 28.291 10.751 10.751 28.291-28.292 28.292 28.292 10.751-10.751-28.292-28.291 26.311-26.311-10.751-10.751-26.311 26.311-26.311-26.311-10.751 10.75Z" fill="#C3C3C3"/>
     </symbol>
 
 
@@ -68,7 +68,7 @@
 
 
     <symbol id="closer--light" viewBox="0 0 11 12">
-       <path d="M10.6227 9.90254L9.16984 11.3554L0.000488281 2.22667L1.46349 0.763672L10.6227 9.90254ZM1.71705 11.2176L0.201041 9.70156L8.94765 0.912525L10.4742 2.43913L1.71705 11.2176Z" fill="#C3C3C3"/>
+       <path d="M10.6227 9.90254L9.16984 11.3554L0.000488281 2.22667L1.46349 0.763672L10.6227 9.90254ZM1.71705 11.2176L0.201041 9.70156L8.94765 0.912525L10.4742 2.43913L1.71705 11.2176Z" fill="#161616"/>
     </symbol>
 
 
@@ -105,18 +105,16 @@
         <path d="M75.3871 0L80.6129 0V34.0108L92.4 21.8811L96 25.5081L78.0581 44L60 25.5081L63.6 21.8811L75.3871 33.9513V0Z" fill="white"/>
     </symbol>
 
-    
-
     <symbol id="grid__icon--dark"  viewBox="0 0 18 18">
-        <rect x="1" y="1" width="5.33333" height="5.33333" stroke="black"/>
-        <rect x="1" y="6.33331" width="5.33333" height="5.33333" stroke="black"/>
-        <rect x="1" y="11.6667" width="5.33333" height="5.33333" stroke="black"/>
-        <rect x="6.33325" y="1" width="5.33333" height="5.33333" stroke="black"/>
-        <rect x="6.33325" y="6.33331" width="5.33333" height="5.33333" stroke="black"/>
-        <rect x="6.33325" y="11.6667" width="5.33333" height="5.33333" stroke="black"/>
-        <rect x="11.6667" y="1" width="5.33333" height="5.33333" stroke="black"/>
-        <rect x="11.6667" y="6.33331" width="5.33333" height="5.33333" stroke="black"/>
-        <rect x="11.6667" y="11.6667" width="5.33333" height="5.33333" stroke="black"/>
+        <rect x="1" y="1" width="5.33333" height="5.33333" fill="none" stroke="black"/>
+        <rect x="1" y="6.33331" width="5.33333" height="5.33333" fill="none" stroke="black"/>
+        <rect x="1" y="11.6667" width="5.33333" height="5.33333" fill="none" stroke="black"/>
+        <rect x="6.3335" y="1" width="5.33333" height="5.33333" fill="none" stroke="black"/>
+        <rect x="6.3335" y="6.33331" width="5.33333" height="5.33333" fill="none" stroke="black"/>
+        <rect x="6.3335" y="11.6667" width="5.33333" height="5.33333" fill="none" stroke="black"/>
+        <rect x="11.6665" y="1" width="5.33333" height="5.33333" fill="none" stroke="black"/>
+        <rect x="11.6665" y="6.33331" width="5.33333" height="5.33333" fill="none" stroke="black"/>
+        <rect x="11.6665" y="11.6667" width="5.33333" height="5.33333" fill="none" stroke="black"/>
     </symbol>
 
     <symbol id="grid__icon--light"  viewBox="0 0 18 18">
@@ -230,7 +228,7 @@
     </symbol>
 
      <symbol id="zoomout__icon--light" viewBox="0 0 24 5">
-        <path d="M24 0.594421V4.40555L0 4.45885V0.621076L24 0.594421ZM14.0441 4.42766H10.0672L10.0116 0.60522H14.0162L14.0441 4.42766Z" fill="#C3C3C3"/>
+        <path d="M24 0.594421V4.40555L0 4.45885V0.621076L24 0.594421ZM14.0441 4.42766H10.0672L10.0116 0.60522H14.0162L14.0441 4.42766Z" fill="#161616"/>
     </symbol>
 
 </svg>

@@ -326,8 +326,13 @@
 					>
 						<div class="flex flex-col items-center gap-8">
 							<div
-								class="h-[4.68rem] w-[4.68rem] bg-[url('/src/img/upload__success.svg')] bg-contain bg-center bg-no-repeat"
-							></div>
+							>
+								<svg class="h-[4.68rem] w-[4.68rem]">
+									<use
+										xlink:href="icons__sprite.svg#upload__success"
+									></use>
+								</svg>
+							</div>
 							<div class="text-center text-white">
 								<h2 class="my-0 font-public text-16 text-white">
 									Sounds great!
@@ -663,7 +668,7 @@
 																				class="absolute right-[0.9rem] z-10 cursor-pointer"
 																			>
 																				<svg
-																					class="mx-auto h-[0.563rem] w-[0.938rem] hidden dark:block"
+																					class="mx-auto hidden h-[0.563rem] w-[0.938rem] dark:block"
 																				>
 																					<use
 																						xlink:href="icons__sprite.svg#passcover--white"
@@ -672,7 +677,7 @@
 																					></use>
 																				</svg>
 																				<svg
-																					class="mx-auto h-[0.563rem] w-[0.938rem] block dark:hidden"
+																					class="mx-auto block h-[0.563rem] w-[0.938rem] dark:hidden"
 																				>
 																					<use
 																						xlink:href="icons__sprite.svg#passcover--black"
@@ -680,7 +685,6 @@
 																						height="9"
 																					></use>
 																				</svg>
-																				
 																			</div>
 																			<div
 																				class="absolute -right-[3.563rem] top-0 hidden h-[2.625rem] items-center mdd:right-0 mdd:top-[2.4rem]"
@@ -730,14 +734,24 @@
 																				data-role="passcover"
 																				class="absolute right-[0.9rem] z-10 cursor-pointer"
 																			>
-																				<img
-																					class="block dark:hidden"
-																					src="./img/subtract--black.svg"
-																				/>
-																				<img
-																					class="hidden dark:block"
-																					src="./img/subtract--white.svg"
-																				/>
+																				<svg
+																					class="mx-auto hidden h-[0.563rem] w-[0.938rem] dark:block"
+																				>
+																					<use
+																						xlink:href="icons__sprite.svg#passcover--white"
+																						width="15"
+																						height="9"
+																					></use>
+																				</svg>
+																				<svg
+																					class="mx-auto block h-[0.563rem] w-[0.938rem] dark:hidden"
+																				>
+																					<use
+																						xlink:href="icons__sprite.svg#passcover--black"
+																						width="15"
+																						height="9"
+																					></use>
+																				</svg>
 																			</div>
 																			<div
 																				class="absolute -right-[3.563rem] top-0 hidden h-[2.625rem] items-center mdd:right-0 mdd:top-[2.4rem]"
@@ -789,14 +803,24 @@
 																				data-role="passcover"
 																				class="absolute right-[0.9rem] z-10 cursor-pointer"
 																			>
-																				<img
-																					class="block dark:hidden"
-																					src="./img/subtract--black.svg"
-																				/>
-																				<img
-																					class="hidden dark:block"
-																					src="./img/subtract--white.svg"
-																				/>
+																				<svg
+																					class="mx-auto hidden h-[0.563rem] w-[0.938rem] dark:block"
+																				>
+																					<use
+																						xlink:href="icons__sprite.svg#passcover--white"
+																						width="15"
+																						height="9"
+																					></use>
+																				</svg>
+																				<svg
+																					class="mx-auto block h-[0.563rem] w-[0.938rem] dark:hidden"
+																				>
+																					<use
+																						xlink:href="icons__sprite.svg#passcover--black"
+																						width="15"
+																						height="9"
+																					></use>
+																				</svg>
 																			</div>
 																			<div
 																				class="absolute -right-[3.563rem] top-0 hidden h-[2.625rem] items-center mdd:right-0 mdd:top-[2.4rem]"
@@ -932,29 +956,38 @@
 								id="cross__bttn"
 								class="flex h-8 w-8 items-center justify-center hover:cursor-pointer"
 							>
-								<img
-									class="h-full min-h-8 w-full min-w-8 bg-white dark:hidden"
-									src="/src/img/cross__icon.svg"
-								/>
-								<img
-									class="hidden h-full min-h-8 w-full min-w-8 bg-black dark:block"
-									src="/src/img/cross__icon--dark.svg"
-								/>
+								<svg class="mx-auto block h-8 w-8 dark:hidden">
+									<use
+										xlink:href="icons__sprite.svg#cross__icon"
+									></use>
+								</svg>
+								<svg class="mx-auto hidden h-8 w-8 dark:block">
+									<use
+										xlink:href="icons__sprite.svg#cross__icon--dark"
+									></use>
+								</svg>
 							</div>
 
 							<div
-								class="flex h-8 w-8 items-center justify-center bg-lightFourth hover:cursor-pointer dark:bg-darkFourth"
+								class="flex h-8 w-8 items-center justify-center hover:cursor-pointer"
 							>
-								<img
-									class="h-full min-h-8 w-full min-w-8 bg-white dark:hidden"
-									src="/src/img/send__icon.svg"
+								<svg
+									class="mx-auto block h-8 w-8 dark:hidden"
 									data-class="send-bttn"
-								/>
-								<img
-									class="hidden h-full min-h-8 w-full min-w-8 bg-black dark:block"
-									src="/src/img/send__icon--dark.svg"
+								>
+									<use
+										xlink:href="icons__sprite.svg#send__icon"
+									></use>
+								</svg>
+								<svg
+									class="mx-auto hidden h-8 w-8 dark:block"
 									data-class="send-bttn"
-								/>
+								>
+									<use
+										xlink:href="icons__sprite.svg#send__icon--dark"
+									></use>
+								</svg>
+
 								<div
 									id="send__container"
 									data-class="overlay-container"
@@ -967,16 +1000,26 @@
 											<div
 												class="absolute right-5 top-5 mdd:right-2 mdd:top-2"
 											>
-												<img
+												<svg
+													class="block h-3 w-3 dark:hidden"
 													data-class="closer"
-													class="dark:hidden"
-													src="/src/img/closer--light.svg"
-												/>
-												<img
+												>
+													<use
+														xlink:href="icons__sprite.svg#closer--light"
+														width="12"
+														height="11"
+													></use>
+												</svg>
+												<svg
+													class="hidden h-3 w-3 dark:block"
 													data-class="closer"
-													class="hidden dark:block"
-													src="/src/img/closer--dark.svg"
-												/>
+												>
+													<use
+														xlink:href="icons__sprite.svg#closer--dark"
+														width="12"
+														height="11"
+													></use>
+												</svg>
 											</div>
 											<div
 												class="m-10 flex grow flex-row mdd:m-3 mdd:flex-col"
@@ -1027,14 +1070,20 @@
 																	data-role="eraseFile"
 																	class="cursor-pointer"
 																>
-																	<img
-																		class="min-h-[0.688rem] min-w-[0.688rem] dark:hidden"
-																		src="/src/img/close__icon--black.svg"
-																	/>
-																	<img
-																		class="hidden min-h-[0.688rem] min-w-[0.688rem] dark:block"
-																		src="/src/img/close__icon--white.svg"
-																	/>
+																	<svg
+																		class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+																	>
+																		<use
+																			xlink:href="icons__sprite.svg#close__icon--white"
+																		></use>
+																	</svg>
+																	<svg
+																		class="block h-[0.688rem] w-[0.688rem] dark:hidden"
+																	>
+																		<use
+																			xlink:href="icons__sprite.svg#close__icon--black"
+																		></use>
+																	</svg>
 																</div>
 															</div>
 															<div
@@ -1053,14 +1102,20 @@
 																	data-role="eraseFile"
 																	class="cursor-pointer"
 																>
-																	<img
-																		class="min-h-[0.688rem] min-w-[0.688rem] dark:hidden"
-																		src="/src/img/close__icon--black.svg"
-																	/>
-																	<img
-																		class="hidden min-h-[0.688rem] min-w-[0.688rem] dark:block"
-																		src="/src/img/close__icon--white.svg"
-																	/>
+																	<svg
+																		class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+																	>
+																		<use
+																			xlink:href="icons__sprite.svg#close__icon--white"
+																		></use>
+																	</svg>
+																	<svg
+																		class="block h-[0.688rem] w-[0.688rem] dark:hidden"
+																	>
+																		<use
+																			xlink:href="icons__sprite.svg#close__icon--black"
+																		></use>
+																	</svg>
 																</div>
 															</div>
 															<div
@@ -1079,14 +1134,20 @@
 																	data-role="eraseFile"
 																	class="cursor-pointer"
 																>
-																	<img
-																		class="min-h-[0.688rem] min-w-[0.688rem] dark:hidden"
-																		src="/src/img/close__icon--black.svg"
-																	/>
-																	<img
-																		class="hidden min-h-[0.688rem] min-w-[0.688rem] dark:block"
-																		src="/src/img/close__icon--white.svg"
-																	/>
+																	<svg
+																		class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+																	>
+																		<use
+																			xlink:href="icons__sprite.svg#close__icon--white"
+																		></use>
+																	</svg>
+																	<svg
+																		class="block h-[0.688rem] w-[0.688rem] dark:hidden"
+																	>
+																		<use
+																			xlink:href="icons__sprite.svg#close__icon--black"
+																		></use>
+																	</svg>
 																</div>
 															</div>
 															<div
@@ -1105,14 +1166,20 @@
 																	data-role="eraseFile"
 																	class="cursor-pointer"
 																>
-																	<img
-																		class="min-h-[0.688rem] min-w-[0.688rem] dark:hidden"
-																		src="/src/img/close__icon--black.svg"
-																	/>
-																	<img
-																		class="hidden min-h-[0.688rem] min-w-[0.688rem] dark:block"
-																		src="/src/img/close__icon--white.svg"
-																	/>
+																	<svg
+																		class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+																	>
+																		<use
+																			xlink:href="icons__sprite.svg#close__icon--white"
+																		></use>
+																	</svg>
+																	<svg
+																		class="block h-[0.688rem] w-[0.688rem] dark:hidden"
+																	>
+																		<use
+																			xlink:href="icons__sprite.svg#close__icon--black"
+																		></use>
+																	</svg>
 																</div>
 															</div>
 															<div
@@ -1131,14 +1198,20 @@
 																	data-role="eraseFile"
 																	class="cursor-pointer"
 																>
-																	<img
-																		class="min-h-[0.688rem] min-w-[0.688rem] dark:hidden"
-																		src="/src/img/close__icon--black.svg"
-																	/>
-																	<img
-																		class="hidden min-h-[0.688rem] min-w-[0.688rem] dark:block"
-																		src="/src/img/close__icon--white.svg"
-																	/>
+																	<svg
+																		class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+																	>
+																		<use
+																			xlink:href="icons__sprite.svg#close__icon--white"
+																		></use>
+																	</svg>
+																	<svg
+																		class="block h-[0.688rem] w-[0.688rem] dark:hidden"
+																	>
+																		<use
+																			xlink:href="icons__sprite.svg#close__icon--black"
+																		></use>
+																	</svg>
 																</div>
 															</div>
 															<div
@@ -1157,14 +1230,20 @@
 																	data-role="eraseFile"
 																	class="cursor-pointer"
 																>
-																	<img
-																		class="min-h-[0.688rem] min-w-[0.688rem] dark:hidden"
-																		src="/src/img/close__icon--black.svg"
-																	/>
-																	<img
-																		class="hidden min-h-[0.688rem] min-w-[0.688rem] dark:block"
-																		src="/src/img/close__icon--white.svg"
-																	/>
+																	<svg
+																		class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+																	>
+																		<use
+																			xlink:href="icons__sprite.svg#close__icon--white"
+																		></use>
+																	</svg>
+																	<svg
+																		class="block h-[0.688rem] w-[0.688rem] dark:hidden"
+																	>
+																		<use
+																			xlink:href="icons__sprite.svg#close__icon--black"
+																		></use>
+																	</svg>
 																</div>
 															</div>
 															<div
@@ -1183,14 +1262,20 @@
 																	data-role="eraseFile"
 																	class="cursor-pointer"
 																>
-																	<img
-																		class="min-h-[0.688rem] min-w-[0.688rem] dark:hidden"
-																		src="/src/img/close__icon--black.svg"
-																	/>
-																	<img
-																		class="hidden min-h-[0.688rem] min-w-[0.688rem] dark:block"
-																		src="/src/img/close__icon--white.svg"
-																	/>
+																	<svg
+																		class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+																	>
+																		<use
+																			xlink:href="icons__sprite.svg#close__icon--white"
+																		></use>
+																	</svg>
+																	<svg
+																		class="block h-[0.688rem] w-[0.688rem] dark:hidden"
+																	>
+																		<use
+																			xlink:href="icons__sprite.svg#close__icon--black"
+																		></use>
+																	</svg>
 																</div>
 															</div>
 															<div
@@ -1209,14 +1294,20 @@
 																	data-role="eraseFile"
 																	class="cursor-pointer"
 																>
-																	<img
-																		class="min-h-[0.688rem] min-w-[0.688rem] dark:hidden"
-																		src="/src/img/close__icon--black.svg"
-																	/>
-																	<img
-																		class="hidden min-h-[0.688rem] min-w-[0.688rem] dark:block"
-																		src="/src/img/close__icon--white.svg"
-																	/>
+																	<svg
+																		class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+																	>
+																		<use
+																			xlink:href="icons__sprite.svg#close__icon--white"
+																		></use>
+																	</svg>
+																	<svg
+																		class="block h-[0.688rem] w-[0.688rem] dark:hidden"
+																	>
+																		<use
+																			xlink:href="icons__sprite.svg#close__icon--black"
+																		></use>
+																	</svg>
 																</div>
 															</div>
 															<div
@@ -1235,14 +1326,20 @@
 																	data-role="eraseFile"
 																	class="cursor-pointer"
 																>
-																	<img
-																		class="min-h-[0.688rem] min-w-[0.688rem] dark:hidden"
-																		src="/src/img/close__icon--black.svg"
-																	/>
-																	<img
-																		class="hidden min-h-[0.688rem] min-w-[0.688rem] dark:block"
-																		src="/src/img/close__icon--white.svg"
-																	/>
+																	<svg
+																		class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+																	>
+																		<use
+																			xlink:href="icons__sprite.svg#close__icon--white"
+																		></use>
+																	</svg>
+																	<svg
+																		class="block h-[0.688rem] w-[0.688rem] dark:hidden"
+																	>
+																		<use
+																			xlink:href="icons__sprite.svg#close__icon--black"
+																		></use>
+																	</svg>
 																</div>
 															</div>
 															<div
@@ -1261,14 +1358,20 @@
 																	data-role="eraseFile"
 																	class="cursor-pointer"
 																>
-																	<img
-																		class="min-h-[0.688rem] min-w-[0.688rem] dark:hidden"
-																		src="/src/img/close__icon--black.svg"
-																	/>
-																	<img
-																		class="hidden min-h-[0.688rem] min-w-[0.688rem] dark:block"
-																		src="/src/img/close__icon--white.svg"
-																	/>
+																	<svg
+																		class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+																	>
+																		<use
+																			xlink:href="icons__sprite.svg#close__icon--white"
+																		></use>
+																	</svg>
+																	<svg
+																		class="block h-[0.688rem] w-[0.688rem] dark:hidden"
+																	>
+																		<use
+																			xlink:href="icons__sprite.svg#close__icon--black"
+																		></use>
+																	</svg>
 																</div>
 															</div>
 															<div
@@ -1287,14 +1390,20 @@
 																	data-role="eraseFile"
 																	class="cursor-pointer"
 																>
-																	<img
-																		class="min-h-[0.688rem] min-w-[0.688rem] dark:hidden"
-																		src="/src/img/close__icon--black.svg"
-																	/>
-																	<img
-																		class="hidden min-h-[0.688rem] min-w-[0.688rem] dark:block"
-																		src="/src/img/close__icon--white.svg"
-																	/>
+																	<svg
+																		class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+																	>
+																		<use
+																			xlink:href="icons__sprite.svg#close__icon--white"
+																		></use>
+																	</svg>
+																	<svg
+																		class="block h-[0.688rem] w-[0.688rem] dark:hidden"
+																	>
+																		<use
+																			xlink:href="icons__sprite.svg#close__icon--black"
+																		></use>
+																	</svg>
 																</div>
 															</div>
 															<div
@@ -1313,14 +1422,20 @@
 																	data-role="eraseFile"
 																	class="cursor-pointer"
 																>
-																	<img
-																		class="min-h-[0.688rem] min-w-[0.688rem] dark:hidden"
-																		src="/src/img/close__icon--black.svg"
-																	/>
-																	<img
-																		class="hidden min-h-[0.688rem] min-w-[0.688rem] dark:block"
-																		src="/src/img/close__icon--white.svg"
-																	/>
+																	<svg
+																		class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+																	>
+																		<use
+																			xlink:href="icons__sprite.svg#close__icon--white"
+																		></use>
+																	</svg>
+																	<svg
+																		class="block h-[0.688rem] w-[0.688rem] dark:hidden"
+																	>
+																		<use
+																			xlink:href="icons__sprite.svg#close__icon--black"
+																		></use>
+																	</svg>
 																</div>
 															</div>
 															<div
@@ -1339,14 +1454,20 @@
 																	data-role="eraseFile"
 																	class="cursor-pointer"
 																>
-																	<img
-																		class="min-h-[0.688rem] min-w-[0.688rem] dark:hidden"
-																		src="/src/img/close__icon--black.svg"
-																	/>
-																	<img
-																		class="hidden min-h-[0.688rem] min-w-[0.688rem] dark:block"
-																		src="/src/img/close__icon--white.svg"
-																	/>
+																	<svg
+																		class="hidden h-[0.688rem] w-[0.688rem] dark:block"
+																	>
+																		<use
+																			xlink:href="icons__sprite.svg#close__icon--white"
+																		></use>
+																	</svg>
+																	<svg
+																		class="block h-[0.688rem] w-[0.688rem] dark:hidden"
+																	>
+																		<use
+																			xlink:href="icons__sprite.svg#close__icon--black"
+																		></use>
+																	</svg>
 																</div>
 															</div>
 														</div>
@@ -1759,42 +1880,60 @@
 								id="play__bttn"
 								class="flex h-8 w-8 items-center justify-center hover:cursor-pointer"
 							>
-								<img
-									class="h-full min-h-8 w-full min-w-8 bg-white dark:hidden"
-									src="/src/img/play__icon.svg"
-								/>
-								<img
-									class="hidden h-full min-h-8 w-full min-w-8 bg-black dark:block"
-									src="/src/img/play__icon--dark.svg"
-								/>
+								<svg
+									class="mx-auto block h-8 w-8 dark:hidden"
+									data-class="send-bttn"
+								>
+									<use
+										xlink:href="icons__sprite.svg#play__icon"
+									></use>
+								</svg>
+								<svg
+									class="mx-auto hidden h-8 w-8 dark:block"
+									data-class="send-bttn"
+								>
+									<use
+										xlink:href="icons__sprite.svg#play__icon--dark"
+									></use>
+								</svg>
 							</div>
 
 							<div
 								id="arrow__bttn"
 								class="flex h-8 w-8 items-center justify-center hover:cursor-pointer"
 							>
-								<img
-									class="h-full min-h-8 w-full min-w-8 bg-white dark:hidden"
-									src="/src/img/downarrow__icon.svg"
-								/>
-								<img
-									class="hidden h-full min-h-8 w-full min-w-8 bg-black dark:block"
-									src="/src/img/downarrow__icon--dark.svg"
-								/>
+								<svg
+									class="mx-auto block h-8 w-8 dark:hidden"
+									data-class="send-bttn"
+								>
+									<use
+										xlink:href="icons__sprite.svg#downarrow__icon"
+									></use>
+								</svg>
+								<svg
+									class="mx-auto hidden h-8 w-8 dark:block"
+									data-class="send-bttn"
+								>
+									<use
+										xlink:href="icons__sprite.svg#downarrow__icon--dark"
+									></use>
+								</svg>
 							</div>
 
 							<div
-								id="add__bttn"
+								id="clear__bttn"
 								class="flex h-8 w-8 items-center justify-center hover:cursor-pointer"
 							>
-								<img
-									class="h-full min-h-8 w-full min-w-8 bg-white dark:hidden"
-									src="/src/img/clear__icon.svg"
-								/>
-								<img
-									class="hidden h-full min-h-8 w-full min-w-8 bg-black dark:block"
-									src="/src/img/clear__icon--dark.svg"
-								/>
+								<svg class="mx-auto block h-8 w-8 dark:hidden">
+									<use
+										xlink:href="icons__sprite.svg#clear__icon"
+									></use>
+								</svg>
+								<svg class="mx-auto hidden h-8 w-8 dark:block">
+									<use
+										xlink:href="icons__sprite.svg#clear__icon--dark"
+									></use>
+								</svg>
 							</div>
 						</div>
 
@@ -1818,26 +1957,38 @@
 					<div
 						class="col-start-4 mr-[1.875rem] flex flex-row items-center gap-7 self-center justify-self-end lgd:col-start-2 lgd:row-start-1 lgd:flex-col-reverse"
 					>
-						<div class="flex flex-row gap-7">
-							<img
-								class="min-h-[0.241rem] min-w-6 hover:cursor-pointer dark:hidden"
-								src="/src/img/zoomout__icon--light.svg"
-							/>
+						<div class="flex flex-row items-center gap-7">
+							<svg
+								class="block h-[0.241rem] w-6 hover:cursor-pointer dark:hidden"
+							>
+								<use
+									xlink:href="icons__sprite.svg#zoomout__icon--light"
+								></use>
+							</svg>
 
-							<img
-								class="hidden min-h-[0.241rem] min-w-6 hover:cursor-pointer dark:flex"
-								src="/src/img/zoomout__icon--dark.svg"
-							/>
+							<svg
+								class="hidden h-[0.241rem] w-6 hover:cursor-pointer dark:block"
+							>
+								<use
+									xlink:href="icons__sprite.svg#zoomout__icon--dark"
+								></use>
+							</svg>
 
-							<img
-								class="min-h-[0.241rem] min-w-6 hover:cursor-pointer dark:hidden"
-								src="/src/img/zoomin__icon--light.svg"
-							/>
+							<svg
+								class="block h-[1.438rem] w-6 hover:cursor-pointer dark:hidden"
+							>
+								<use
+									xlink:href="icons__sprite.svg#zoomin__icon--light"
+								></use>
+							</svg>
 
-							<img
-								class="hidden min-h-[0.241rem] min-w-6 hover:cursor-pointer dark:flex"
-								src="/src/img/zoomin__icon--dark.svg"
-							/>
+							<svg
+								class="hidden h-[1.438rem] w-6 hover:cursor-pointer dark:block"
+							>
+								<use
+									xlink:href="icons__sprite.svg#zoomin__icon--dark"
+								></use>
+							</svg>
 						</div>
 
 						<div class="flex flex-row gap-2">
@@ -1845,28 +1996,42 @@
 								id="table__switch"
 								class="flex min-h-8 min-w-8 items-center justify-center bg-lightFourth hover:cursor-pointer dark:bg-darkFourth"
 							>
-								<img
-									class="h-[0.688rem] w-[0.688rem] dark:hidden"
-									src="/src/img/gridicon--light.svg"
-								/>
-								<img
-									class="hidden h-[0.688rem] w-[0.688rem] dark:flex"
-									src="/src/img/gridicon--dark.svg"
-								/>
+								<svg
+									class="block h-[0.688rem] w-[0.688rem] hover:cursor-pointer dark:hidden"
+								>
+									<use
+										xlink:href="icons__sprite.svg#grid__icon--light"
+									></use>
+								</svg>
+
+								<svg
+									class="hidden h-[0.688rem] w-[0.688rem] hover:cursor-pointer dark:block"
+								>
+									<use
+										xlink:href="icons__sprite.svg#grid__icon--dark"
+									></use>
+								</svg>
 							</div>
 
 							<div
 								id="tile__switch"
 								class="flex min-h-8 min-w-8 items-center justify-center bg-lightFourth hover:cursor-pointer dark:bg-darkFourth"
 							>
-								<img
-									class="h-[0.688rem] w-[0.688rem] dark:hidden"
-									src="/src/img/listicon--light.svg"
-								/>
-								<img
-									class="hidden h-[0.688rem] w-[0.688rem] dark:flex"
-									src="/src/img/listicon--dark.svg"
-								/>
+								<svg
+									class="block h-[0.688rem] w-[0.688rem] hover:cursor-pointer dark:hidden"
+								>
+									<use
+										xlink:href="icons__sprite.svg#list__icon--light"
+									></use>
+								</svg>
+
+								<svg
+									class="hidden h-[0.688rem] w-[0.688rem] hover:cursor-pointer dark:block"
+								>
+									<use
+										xlink:href="icons__sprite.svg#list__icon--dark"
+									></use>
+								</svg>
 							</div>
 						</div>
 					</div>
@@ -1879,20 +2044,26 @@
 							type="checkbox"
 						/>
 
-						<div class="flex flex-row gap-2">
+						<div class="flex flex-row items-center gap-2">
 							<p
 								class="m-0 font-public text-16 font-bold text-lightFont dark:text-darkFont"
 							>
 								Name
 							</p>
-							<img
-								class="dark:hidden"
-								src="/src/img/arrowup--light.svg"
-							/>
-							<img
-								class="hidden dark:flex"
-								src="/src/img/arrowup--dark.svg"
-							/>
+							<svg
+								class="block h-[0.563rem] w-[0.813rem] hover:cursor-pointer dark:hidden"
+							>
+								<use
+									xlink:href="icons__sprite.svg#arrow__up--dark"
+								></use>
+							</svg>
+							<svg
+								class="hidden h-[0.563rem] w-[0.813rem] hover:cursor-pointer dark:block"
+							>
+								<use
+									xlink:href="icons__sprite.svg#arrow__up--light"
+								></use>
+							</svg>
 						</div>
 					</div>
 
@@ -1900,22 +2071,34 @@
 						class="col-start-2 row-start-2 flex flex-row gap-2 self-center justify-self-center lgd:col-start-1 lgd:ml-7 lgd:self-end lgd:justify-self-start"
 					>
 						<div class="flex flex-col items-center justify-center">
-							<img
-								class="dark:hidden"
-								src="/src/img/arrowup--light.svg"
-							/>
-							<img
-								class="hidden dark:flex"
-								src="/src/img/arrowup--dark.svg"
-							/>
-							<img
-								class="dark:hidden"
-								src="/src/img/arrowdown--light.svg"
-							/>
-							<img
-								class="hidden dark:flex"
-								src="/src/img/arrowdown--dark.svg"
-							/>
+							<svg
+								class="block h-[0.563rem] w-[0.813rem] hover:cursor-pointer dark:hidden"
+							>
+								<use
+									xlink:href="icons__sprite.svg#arrow__up--dark"
+								></use>
+							</svg>
+							<svg
+								class="hidden h-[0.563rem] w-[0.813rem] hover:cursor-pointer dark:block"
+							>
+								<use
+									xlink:href="icons__sprite.svg#arrow__up--light"
+								></use>
+							</svg>
+							<svg
+								class="block h-[0.563rem] w-[0.813rem] hover:cursor-pointer dark:hidden"
+							>
+								<use
+									xlink:href="icons__sprite.svg#arrow__down--dark"
+								></use>
+							</svg>
+							<svg
+								class="hidden h-[0.563rem] w-[0.813rem] hover:cursor-pointer dark:block"
+							>
+								<use
+									xlink:href="icons__sprite.svg#arrow__down--light"
+								></use>
+							</svg>
 						</div>
 
 						<p
@@ -1929,22 +2112,34 @@
 						class="col-start-3 row-start-2 flex flex-row gap-2 self-center justify-self-center lgd:col-start-2 lgd:mr-7 lgd:justify-self-end"
 					>
 						<div class="flex flex-col items-center justify-center">
-							<img
-								class="dark:hidden"
-								src="/src/img/arrowup--light.svg"
-							/>
-							<img
-								class="hidden dark:flex"
-								src="/src/img/arrowup--dark.svg"
-							/>
-							<img
-								class="dark:hidden"
-								src="/src/img/arrowdown--light.svg"
-							/>
-							<img
-								class="hidden dark:flex"
-								src="/src/img/arrowdown--dark.svg"
-							/>
+							<svg
+								class="block h-[0.563rem] w-[0.813rem] hover:cursor-pointer dark:hidden"
+							>
+								<use
+									xlink:href="icons__sprite.svg#arrow__up--dark"
+								></use>
+							</svg>
+							<svg
+								class="hidden h-[0.563rem] w-[0.813rem] hover:cursor-pointer dark:block"
+							>
+								<use
+									xlink:href="icons__sprite.svg#arrow__up--light"
+								></use>
+							</svg>
+							<svg
+								class="block h-[0.563rem] w-[0.813rem] hover:cursor-pointer dark:hidden"
+							>
+								<use
+									xlink:href="icons__sprite.svg#arrow__down--dark"
+								></use>
+							</svg>
+							<svg
+								class="hidden h-[0.563rem] w-[0.813rem] hover:cursor-pointer dark:block"
+							>
+								<use
+									xlink:href="icons__sprite.svg#arrow__down--light"
+								></use>
+							</svg>
 						</div>
 
 						<p
@@ -1958,22 +2153,34 @@
 						class="col-start-4 row-start-2 mr-7 flex flex-row gap-2 self-center justify-self-end lgd:col-start-2 lgd:self-end"
 					>
 						<div class="flex flex-col items-center justify-center">
-							<img
-								class="dark:hidden"
-								src="/src/img/arrowup--light.svg"
-							/>
-							<img
-								class="hidden dark:flex"
-								src="/src/img/arrowup--dark.svg"
-							/>
-							<img
-								class="dark:hidden"
-								src="/src/img/arrowdown--light.svg"
-							/>
-							<img
-								class="hidden dark:flex"
-								src="/src/img/arrowdown--dark.svg"
-							/>
+							<svg
+								class="block h-[0.563rem] w-[0.813rem] hover:cursor-pointer dark:hidden"
+							>
+								<use
+									xlink:href="icons__sprite.svg#arrow__up--dark"
+								></use>
+							</svg>
+							<svg
+								class="hidden h-[0.563rem] w-[0.813rem] hover:cursor-pointer dark:block"
+							>
+								<use
+									xlink:href="icons__sprite.svg#arrow__up--light"
+								></use>
+							</svg>
+							<svg
+								class="block h-[0.563rem] w-[0.813rem] hover:cursor-pointer dark:hidden"
+							>
+								<use
+									xlink:href="icons__sprite.svg#arrow__down--dark"
+								></use>
+							</svg>
+							<svg
+								class="hidden h-[0.563rem] w-[0.813rem] hover:cursor-pointer dark:block"
+							>
+								<use
+									xlink:href="icons__sprite.svg#arrow__down--light"
+								></use>
+							</svg>
 						</div>
 
 						<p
