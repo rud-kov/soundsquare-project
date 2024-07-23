@@ -28,6 +28,63 @@ const Engine = {
 		events: function () {
 			console.log("Events are running");
 
+			////////////// DISPLAYING CLICKED FILE INFORMATION
+
+			//const files = document.querySelectorAll("[data-class='file']");
+
+			//files.forEach((file) => {
+			//	file.addEventListener("click", fileInfoDisplay);
+			//});
+//
+			//function fileInfoDisplay() {
+			//	const fileName = "";
+			//}
+
+			////////////// LISTING FILES BY LAST MODIFIED
+
+			//const modLastBttn = document.querySelector(
+			//	"[data-class='modified__latest']",
+			//);
+			//
+			//const modEarliestBttn = document.querySelector(
+			//	"[data-class='modified__earliest']",
+			//);
+			//
+			//function lineUp() {
+			//	let files = Array.from(
+			//		document.querySelectorAll("[data-class='file']"),
+			//	);
+			//
+			//	files.sort((a, b) => {
+			//		let dateA = new Date(
+			//			a.querySelector(
+			//				"[data-class='file-datum']",
+			//			).textContent,
+			//		);
+			//		let dateB = new Date(
+			//			b.querySelector(
+			//				"[data-class='file-datum']",
+			//			).textContent,
+			//		);
+			//		return dateA - dateB;
+			//	});
+			//
+			//	return files;
+			//}
+			//
+			//function listLast() {
+			//	let files = lineUp();
+			//
+			//	filesWrapperTiles.innerHTML = "";
+			//	files.forEach((file) => {
+			//		filesWrapperTiles.appendChild(file);
+			//	});
+			//}
+			//
+			//modLastBttn.addEventListener("click", listLast);
+
+			////////////// LISTING FILES BY SIZE
+
 			///////////// MY DRIVE MOBILE MENU SWITCH
 
 			const driveSwitch = document.getElementById("drive__switch");
