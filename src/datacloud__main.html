@@ -227,62 +227,77 @@
 										<img
 											class="hidden"
 											src="./img/puzzlegame/1.png"
+											alt="puzzlepiece"
 										/>
 										<img
 											class="hidden"
 											src="./img/puzzlegame/2.png"
+											alt="puzzlepiece"
 										/>
 										<img
 											class="hidden"
 											src="./img/puzzlegame/3.png"
+											alt="puzzlepiece"
 										/>
 										<img
 											class="hidden"
 											src="./img/puzzlegame/4.png"
+											alt="puzzlepiece"
 										/>
 										<img
 											class="hidden"
 											src="./img/puzzlegame/5.png"
+											alt="puzzlepiece"
 										/>
 										<img
 											class="hidden"
 											src="./img/puzzlegame/6.png"
+											alt="puzzlepiece"
 										/>
 										<img
 											class="hidden"
 											src="./img/puzzlegame/7.png"
+											alt="puzzlepiece"
 										/>
 										<img
 											class="hidden"
 											src="./img/puzzlegame/8.png"
+											alt="puzzlepiece"
 										/>
 										<img
 											class="hidden"
 											src="./img/puzzlegame/9.png"
+											alt="puzzlepiece"
 										/>
 										<img
 											class="hidden"
 											src="./img/puzzlegame/10.png"
+											alt="puzzlepiece"
 										/>
 										<img
 											class="hidden"
 											src="./img/puzzlegame/11.png"
+											alt="puzzlepiece"
 										/>
 										<img
 											class="hidden"
 											src="./img/puzzlegame/12.png"
+											alt="puzzlepiece"
 										/>
 										<img
 											class="hidden"
 											src="./img/puzzlegame/13.png"
+											alt="puzzlepiece"
 										/>
 										<img
 											class="hidden"
 											src="./img/puzzlegame/14.png"
+											alt="puzzlepiece"
 										/>
 										<img
 											class="hidden"
 											src="./img/puzzlegame/15.png"
+											alt="puzzlepiece"
 										/>
 									</div>
 								</div>
@@ -615,7 +630,7 @@
 															>
 															<a
 																id="password__change"
-																class="public w-[11.25rem] cursor-pointer whitespace-nowrap text-xl font-medium leading-6 text-lightFont hover:font-semibold dark:text-white "
+																class="public w-[11.25rem] cursor-pointer whitespace-nowrap text-xl font-medium leading-6 text-lightFont hover:font-semibold dark:text-white"
 																>Change
 																Password</a
 															>
@@ -647,21 +662,23 @@
 																	>
 																		<label
 																			class="text-16 font-normal leading-5 text-black dark:text-white"
-																			for="password"
+																			for="current__password"
 																			>Current
 																			password</label
 																		>
 																		<div
 																			class="relative mt-[1.125rem] flex items-center"
 																		>
+																			<input type="text" name="username" autocomplete="username" value="{{...}}" style="display:none"/>
 																			<input
 																				class="border border-solid border-black bg-transparent py-2 pl-2 pr-3 font-public text-black placeholder:text-black dark:border-white dark:text-white dark:placeholder:text-white"
 																				type="password"
 																				placeholder="Enter password"
-																				name="password"
+																				name="current__password"
 																				required
 																				autocomplete="current-password"
 																				data-role="password"
+																				id="current__password"
 																			/>
 																			<div
 																				data-role="passcover"
@@ -712,7 +729,7 @@
 																	>
 																		<label
 																			class="text-16 font-normal leading-5 text-black dark:text-white"
-																			for="password"
+																			for="new__password"
 																			>New
 																			password</label
 																		>
@@ -724,11 +741,12 @@
 																				class="border border-solid border-black bg-transparent py-2 pl-2 pr-3 font-public text-black placeholder:text-black dark:border-white dark:text-white dark:placeholder:text-white"
 																				type="password"
 																				placeholder="Enter password"
-																				name="password"
+																				name="new__password"
 																				required
-																				autocomplete="current-password"
+																				autocomplete="new-password"
 																				data-role="password"
 																				data-class="new-password"
+																				id="new__password"
 																			/>
 																			<div
 																				data-role="passcover"
@@ -781,7 +799,7 @@
 																	>
 																		<label
 																			class="text-16 font-normal leading-5 text-black dark:text-white"
-																			for="password"
+																			for="confirm__password"
 																			>Confirm
 																			password</label
 																		>
@@ -793,11 +811,12 @@
 																				class="border border-solid border-black bg-transparent py-2 pl-2 pr-3 font-public text-black placeholder:text-black dark:border-white dark:text-white dark:placeholder:text-white"
 																				type="password"
 																				placeholder="Enter password"
-																				name="password"
+																				name="confirm__password"
 																				required
 																				autocomplete="current-password"
 																				data-role="password"
 																				data-class="confirm-password"
+																				id="confirm__password"
 																			/>
 																			<div
 																				data-role="passcover"
@@ -851,7 +870,7 @@
 																>
 																	<button
 																		id="change__bttn"
-																		class="mx-0 w-fixedBttn flex-grow select-none whitespace-nowrap bg-blue px-4 py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black hover:text-white mdd:w-52  dark:hover:bg-white dark:hover:text-blue"
+																		class="mx-0 w-fixedBttn flex-grow select-none whitespace-nowrap bg-blue px-4 py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black hover:text-white mdd:w-52 dark:hover:bg-white dark:hover:text-blue"
 																		type="submit"
 																	>
 																		Change
@@ -896,6 +915,7 @@
 
 																		<label
 																			class="inline-flex cursor-pointer items-center"
+																			for="viewswitch"
 																		>
 																			<input
 																				id="viewswitch"
@@ -915,7 +935,7 @@
 																>
 																	<button
 																		id="change__bttn"
-																		class="mx-0 w-fixedBttn flex-grow select-none whitespace-nowrap bg-blue px-4 py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black hover:text-white mdd:w-52  dark:hover:bg-white dark:hover:text-blue"
+																		class="mx-0 w-fixedBttn flex-grow select-none whitespace-nowrap bg-blue px-4 py-2 text-center font-public text-16 text-white hover:cursor-pointer hover:bg-black hover:text-white mdd:w-52 dark:hover:bg-white dark:hover:text-blue"
 																		type="submit"
 																	>
 																		Change
@@ -1482,7 +1502,7 @@
 														class="relative flex grow flex-col items-center justify-center gap-10 self-stretch text-center"
 													>
 														<p
-															class="my-0 font-public text-16 font-normal text-black dark:text-white"
+															class="my-0 font-public text-16 font-normal text-black dark:text-white lgd:pt-3"
 														>
 															What do you want
 															with your files:
@@ -1499,7 +1519,7 @@
 															</button>
 
 															<p
-																class="my-0 font-inter text-xs font-normal text-black mdd:text-lg tablet:text-lg dark:text-white"
+																class="my-0 font-inter text-xs font-normal text-black dark:text-white"
 															>
 																or
 															</p>
@@ -1571,7 +1591,7 @@
 														<div>
 															<label
 																class="font-public text-16 font-normal leading-5 text-black dark:text-white"
-																for="link"
+																for="recipient__email"
 																>Recipient</label
 															>
 
@@ -1582,13 +1602,14 @@
 																name="link"
 																required
 																autocomplete="email"
+																id="recipient__email"
 															/>
 														</div>
 
 														<div>
 															<label
 																class="font-public text-16 font-normal leading-5 text-black dark:text-white"
-																for="email"
+																for="email__subject"
 																>E-mail
 																subject</label
 															>
@@ -1600,6 +1621,7 @@
 																name="email"
 																required
 																autocomplete="email"
+																id="email__subject"
 															/>
 														</div>
 													</div>
@@ -1610,7 +1632,7 @@
 														<div class="flex-col">
 															<label
 																class="font-public text-16 font-normal leading-5 text-black dark:text-white"
-																for="date"
+																for="validity__date"
 																>Valid
 																to:</label
 															>
@@ -1621,6 +1643,7 @@
 																placeholder="24.12.2024"
 																name="link"
 																required
+																id="validity__date"
 															/>
 														</div>
 														<div
@@ -1638,13 +1661,15 @@
 															>
 																<label
 																	class="inline-flex cursor-pointer items-center"
+																	for="recipients__allow"
 																>
 																	<input
-																		id="recipients__allow"
+																		data-class="recipients__allow"
 																		value=""
 																		class="peer sr-only"
 																		type="checkbox"
 																		checked
+																		id="recipients__allow"
 																	/>
 																	<div
 																		class="relative h-[1.125rem] w-[2.25rem] bg-lightThird after:absolute after:h-[1.125rem] after:w-[1.125rem] after:bg-[#9B9B9B] after:transition-all after:content-[''] peer-checked:after:translate-x-full peer-checked:after:bg-blue peer-focus:ring-blue"
@@ -1664,7 +1689,7 @@
 															>
 																<label
 																	class="font-public text-16 font-normal leading-5 text-black dark:text-white"
-																	for="date"
+																	for="text__area"
 																	>Recipient</label
 																>
 
@@ -1672,6 +1697,7 @@
 																	class="mt-5 grow border border-black p-2 px-2 dark:border-white dark:bg-black dark:text-white"
 																	role="textbox"
 																	placeholder="text (or email annoucement)"
+																	id="text__area"
 																></textarea>
 															</div>
 														</div>
@@ -1691,12 +1717,14 @@
 
 														<label
 															class="inline-flex cursor-pointer items-center"
+															for="recipients__allow--send"
 														>
 															<input
-																id="recipients__allow"
+																data-class="recipients__allow"
 																value=""
 																class="peer sr-only"
 																type="checkbox"
+																id="recipients__allow--send"
 																checked
 															/>
 															<div
@@ -1716,12 +1744,14 @@
 
 														<label
 															class="inline-flex cursor-pointer items-center"
+															for="recipients__allow--download"
 														>
 															<input
-																id="recipients__allow"
+																data-class="recipients__allow"
 																value=""
 																class="peer sr-only"
 																type="checkbox"
+																id="recipients__allow--download"
 																checked
 															/>
 															<div
@@ -1762,7 +1792,7 @@
 														<div>
 															<label
 																class="font-public text-16 font-normal leading-5 text-black dark:text-white"
-																for="link"
+																for="link__name"
 																>Link
 																name</label
 															>
@@ -1772,6 +1802,7 @@
 																type="link"
 																placeholder="file name 123"
 																name="link"
+																id="link__name"
 																required
 															/>
 														</div>
@@ -1779,7 +1810,7 @@
 														<div>
 															<label
 																class="font-public text-16 font-normal leading-5 text-black dark:text-white"
-																for="email"
+																for="email__adress"
 																>E-mail</label
 															>
 
@@ -1790,6 +1821,7 @@
 																name="email"
 																required
 																autocomplete="email"
+																id="email__adress"
 															/>
 														</div>
 													</div>
@@ -1800,16 +1832,16 @@
 														<div class="flex-col">
 															<label
 																class="font-public text-16 font-normal leading-5 text-black dark:text-white"
-																for="password"
+																for="valid__to"
 																>Valid
 																to:</label
 															>
-
 															<input
 																class="mt-[1.125rem] max-h-9 border border-solid border-black bg-transparent px-3 py-2 font-public text-black placeholder:text-16 placeholder:text-black dark:border-white dark:text-white dark:placeholder:text-white"
 																type="date"
 																placeholder="24.12.2024"
 																name="link"
+																id="valid__to"
 																required
 															/>
 														</div>
@@ -1828,9 +1860,10 @@
 															>
 																<label
 																	class="inline-flex cursor-pointer items-center"
+																	for="recipients__allow--link"
 																>
 																	<input
-																		id="recipients__allow"
+																		id="recipients__allow--link"
 																		value=""
 																		class="peer sr-only"
 																		type="checkbox"
@@ -2045,6 +2078,7 @@
 						<input
 							class="ml-3 block h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto lgd:ml-0 dark:accent-darkInput"
 							type="checkbox"
+							name="checkbox"
 						/>
 
 						<div class="flex flex-row items-center gap-2">
@@ -2208,6 +2242,7 @@
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 								type="checkbox"
 								data-role="filesbox"
+								name="checkbox"
 							/>
 							<p
 								class="text-nowrap font-public text-16 text-lightFont dark:text-darkFont"
@@ -2257,6 +2292,7 @@
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 								type="checkbox"
 								data-role="filesbox"
+								name="checkbox"
 							/>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
@@ -2306,6 +2342,7 @@
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 								type="checkbox"
 								data-role="filesbox"
+								name="checkbox"
 							/>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
@@ -2354,6 +2391,7 @@
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 								type="checkbox"
 								data-role="filesbox"
+								name="checkbox"
 							/>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
@@ -2403,6 +2441,7 @@
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 								type="checkbox"
 								data-role="filesbox"
+								name="checkbox"
 							/>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
@@ -2451,6 +2490,7 @@
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 								type="checkbox"
 								data-role="filesbox"
+								name="checkbox"
 							/>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
@@ -2499,6 +2539,7 @@
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 								type="checkbox"
 								data-role="filesbox"
+								name="checkbox"
 							/>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
@@ -2547,6 +2588,7 @@
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 								type="checkbox"
 								data-role="filesbox"
+								name="checkbox"
 							/>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
@@ -2595,6 +2637,7 @@
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 								type="checkbox"
 								data-role="filesbox"
+								name="checkbox"
 							/>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
@@ -2643,6 +2686,7 @@
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 								type="checkbox"
 								data-role="filesbox"
+								name="checkbox"
 							/>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
@@ -2691,6 +2735,7 @@
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 								type="checkbox"
 								data-role="filesbox"
+								name="checkbox"
 							/>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
@@ -2739,6 +2784,7 @@
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 								type="checkbox"
 								data-role="filesbox"
+								name="checkbox"
 							/>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
@@ -2787,6 +2833,7 @@
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 								type="checkbox"
 								data-role="filesbox"
+								name="checkbox"
 							/>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
@@ -2835,6 +2882,7 @@
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 								type="checkbox"
 								data-role="filesbox"
+								name="checkbox"
 							/>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
@@ -2883,6 +2931,7 @@
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 								type="checkbox"
 								data-role="filesbox"
+								name="checkbox"
 							/>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
@@ -2931,6 +2980,7 @@
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 								type="checkbox"
 								data-role="filesbox"
+								name="checkbox"
 							/>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
@@ -2979,6 +3029,7 @@
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 								type="checkbox"
 								data-role="filesbox"
+								name="checkbox"
 							/>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
@@ -3027,6 +3078,7 @@
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 								type="checkbox"
 								data-role="filesbox"
+								name="checkbox"
 							/>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
@@ -3075,6 +3127,7 @@
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 								type="checkbox"
 								data-role="filesbox"
+								name="checkbox"
 							/>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
@@ -3125,7 +3178,8 @@
 						>
 							<img
 								class="absolute bottom-0 left-0 right-0 top-0 h-full object-cover opacity-50 dark:opacity-30"
-								src="https://s3-alpha-sig.figma.com/img/8f97/978a/ad1d02d9039cd7bdb54b11143bb3a657?Expires=1721606400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dvx262UkJFcX4vG1bcyKLt4TpwjRQ8NTt8OAqvpIqyxqGCZJBUdps9rGtEBit-LJK9baDMuPeEH6maz022VSm9HQznwLkHGortwOzGyIqiVN6QpGn6-ew0aG3p4SB2cD7MESZqeCL3xVXpXzcb0IJNJKIOasqt2EfVZAAhxfX7wR~aOaAdamA8ygLVTz0jkTxHoAdYIGZAOrY7i2Cn7xK6gnBDN3qBI7oJEnhG0iHf3ZE-ZwvM4C34EJtFUP29mBogisSYdfFHPjSNFBXt0QLy0Ocj0AYoE4Z0rzHHxNsYn5bqG81pZuEvZ~98rKPeHEDq~8Ih4ALMNjr5si-zNzxA__"
+								src="./img/arrival__delete.jpeg"
+								alt="files preview"
 							/>
 							<div
 								class="z-10 flex grow flex-col justify-between p-[0.625rem]"
@@ -3141,6 +3195,7 @@
 										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
+										name="checkbox"
 									/>
 								</div>
 								<div class="flex justify-between">
@@ -3167,7 +3222,8 @@
 						>
 							<img
 								class="absolute bottom-0 left-0 right-0 top-0 h-full object-cover opacity-50 dark:opacity-30"
-								src="https://s3-alpha-sig.figma.com/img/8f18/d886/63953a5a82e3fab5b3ac9910f34dc74a?Expires=1720396800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=jn3ckwCn5xLDhgAhhYIM2~5sibFOw9OK-oVoVVKl4FhSOOPtd-gfe7chliDP3cFiiE~iL8jp3bFSuEbxqry2475MEf3m6fmDcjRAoWh-08q4Cnj2dbzv7cSurqTb08OYI51irau6CJdFC7xgCgfvEia7MI-vm54l1ia70OHKEzWfYtnqkANFx8PH~4PZiOmdGUJ8jB8EdhV5MezCtk8839myri5-ehRDGtnz8VUE1VlJXvpOTTb11ws1GisWckwDor2crr8QwQlp7XSUSUcjUWlppguGwUrtfEN~PxENxfW0lEkHt1R30u4v~0IgN-tgbAzK5euKW5l8APUbeP0DMA__"
+								src="./img/titanic__delete.png"
+								alt="files preview"
 							/>
 							<div
 								class="z-10 flex grow flex-col justify-between p-[0.625rem]"
@@ -3182,6 +3238,7 @@
 										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
+										name="checkbox"
 									/>
 								</div>
 								<div class="flex justify-between">
@@ -3208,7 +3265,8 @@
 						>
 							<img
 								class="absolute bottom-0 left-0 right-0 top-0 h-full object-cover opacity-50 dark:opacity-30"
-								src="https://s3-alpha-sig.figma.com/img/c8aa/2d19/538b382b8f70ed5bbef3e17896036824?Expires=1721606400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=CBO53ZHea38aw-PDlbLhIwbTpy1zFq~9dOmGburFB-aHToLgWfodPyrUoay9Dbrt5mVKIrPDefDRs5hYL16EZcnC5u4QfyImBvM5BlZt0BpK9gVXAHtRBeSC~3c2gqEJvMO2lNumN3~ZQrS~2BRLzoWLbDyojtLcbJ6GuMxaDsZHfQ3TgUwoU3UVAeGTPNeqRJ5WqAPY0KL~7WRy7GeaqNLpEPwXEUBU8Ba1eVjNbPjWP5xzkd0jkN1~SGyYHvmq3kosGNsPNl387wQhxgjPvBJL0DroUIt84iURth4pns4nK4yWeDY3SHYstRj~-2JgB6f9WW73M-kWtOxCfzO59w__"
+								src="./img/something__delete.jpeg"
+								alt="files preview"
 							/>
 							<div
 								class="z-10 flex grow flex-col justify-between p-[0.625rem]"
@@ -3223,6 +3281,7 @@
 										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
+										name="checkbox"
 									/>
 								</div>
 								<div class="flex justify-between">
@@ -3261,6 +3320,7 @@
 										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
+										name="checkbox"
 									/>
 								</div>
 								<div class="text-center">
@@ -3307,6 +3367,7 @@
 										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
+										name="checkbox"
 									/>
 								</div>
 								<div class="text-center">
@@ -3353,6 +3414,7 @@
 										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
+										name="checkbox"
 									/>
 								</div>
 								<div class="text-center">
@@ -3399,6 +3461,7 @@
 										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
+										name="checkbox"
 									/>
 								</div>
 								<div class="text-center">
@@ -3445,6 +3508,7 @@
 										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
+										name="checkbox"
 									/>
 								</div>
 								<div class="text-center">
@@ -3491,6 +3555,7 @@
 										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
+										name="checkbox"
 									/>
 								</div>
 								<div class="text-center">
@@ -3536,52 +3601,7 @@
 										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
-									/>
-								</div>
-								<div class="text-center">
-									<p
-										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
-										data-class="file-format"
-									>
-										wav
-									</p>
-								</div>
-								<div class="flex justify-between">
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-class="file-datum"
-									>
-										06/10/2023
-									</p>
-
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-class="file-size"
-									>
-										340 kB
-									</p>
-								</div>
-							</div>
-						</div>
-
-						<div
-							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
-							data-class="file"
-						>
-							<div
-								class="flex grow flex-col justify-between p-[0.625rem]"
-							>
-								<div class="flex flex-row justify-between">
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-class="file-name"
-									>
-										File name.jpg
-									</p>
-									<input
-										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
-										type="checkbox"
-										data-role="filesbox"
+										name="checkbox"
 									/>
 								</div>
 								<div class="text-center">
@@ -3628,6 +3648,7 @@
 										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
+										name="checkbox"
 									/>
 								</div>
 								<div class="text-center">
@@ -3674,6 +3695,7 @@
 										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
+										name="checkbox"
 									/>
 								</div>
 								<div class="text-center">
@@ -3720,6 +3742,7 @@
 										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
+										name="checkbox"
 									/>
 								</div>
 								<div class="text-center">
@@ -3766,6 +3789,7 @@
 										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
+										name="checkbox"
 									/>
 								</div>
 								<div class="text-center">
@@ -3812,6 +3836,7 @@
 										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
+										name="checkbox"
 									/>
 								</div>
 								<div class="text-center">
@@ -3858,6 +3883,7 @@
 										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
+										name="checkbox"
 									/>
 								</div>
 								<div class="text-center">
@@ -3904,6 +3930,7 @@
 										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
+										name="checkbox"
 									/>
 								</div>
 								<div class="text-center">
@@ -3950,6 +3977,7 @@
 										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
+										name="checkbox"
 									/>
 								</div>
 								<div class="text-center">
@@ -3996,6 +4024,7 @@
 										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
+										name="checkbox"
 									/>
 								</div>
 								<div class="text-center">
@@ -4042,6 +4071,7 @@
 										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
+										name="checkbox"
 									/>
 								</div>
 								<div class="text-center">
@@ -4088,51 +4118,7 @@
 										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
-									/>
-								</div>
-								<div class="text-center">
-									<p
-										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
-										data-class="file-format"
-									>
-										wav
-									</p>
-								</div>
-								<div class="flex justify-between">
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-class="file-datum"
-									>
-										06/10/2023
-									</p>
-
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-class="file-size"
-									>
-										340 kB
-									</p>
-								</div>
-							</div>
-						</div>
-						<div
-							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
-							data-class="file"
-						>
-							<div
-								class="flex grow flex-col justify-between p-[0.625rem]"
-							>
-								<div class="flex flex-row justify-between">
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-class="file-name"
-									>
-										File name.jpg
-									</p>
-									<input
-										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
-										type="checkbox"
-										data-role="filesbox"
+										name="checkbox"
 									/>
 								</div>
 								<div class="text-center">
@@ -4179,6 +4165,7 @@
 										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
+										name="checkbox"
 									/>
 								</div>
 								<div class="text-center">
@@ -4224,52 +4211,7 @@
 										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
-									/>
-								</div>
-								<div class="text-center">
-									<p
-										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
-										data-class="file-format"
-									>
-										wav
-									</p>
-								</div>
-								<div class="flex justify-between">
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-class="file-datum"
-									>
-										06/10/2023
-									</p>
-
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-class="file-size"
-									>
-										340 kB
-									</p>
-								</div>
-							</div>
-						</div>
-
-						<div
-							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
-							data-class="file"
-						>
-							<div
-								class="flex grow flex-col justify-between p-[0.625rem]"
-							>
-								<div class="flex flex-row justify-between">
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-class="file-name"
-									>
-										File name.jpg
-									</p>
-									<input
-										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
-										type="checkbox"
-										data-role="filesbox"
+										name="checkbox"
 									/>
 								</div>
 								<div class="text-center">
@@ -4316,6 +4258,53 @@
 										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
+										name="checkbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+										data-class="file-format"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-class="file-datum"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-class="file-size"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+						<div
+							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							data-class="file"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-class="file-name"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+										name="checkbox"
 									/>
 								</div>
 								<div class="text-center">
@@ -4362,6 +4351,7 @@
 										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
+										name="checkbox"
 									/>
 								</div>
 								<div class="text-center">
@@ -4408,6 +4398,101 @@
 										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
 										type="checkbox"
 										data-role="filesbox"
+										name="checkbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+										data-class="file-format"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-class="file-datum"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-class="file-size"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							data-class="file"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-class="file-name"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+										name="checkbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+										data-class="file-format"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-class="file-datum"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-class="file-size"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							data-class="file"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-class="file-name"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+										name="checkbox"
 									/>
 								</div>
 								<div class="text-center">
@@ -4446,7 +4531,7 @@
 					class="grid grid-flow-row grid-cols-4 grid-rows-1 mdd:grid-cols-2 mdd:grid-rows-1"
 				>
 					<div
-						class="col-start-1 col-end-1 ml-7 self-start justify-self-start pb-6 pt-6 mdd:hidden"
+						class="col-start-1 col-end-1 ml-7 self-start justify-self-start pr-6 pb-6 pt-6 mdd:hidden"
 					>
 						<div class="flex items-center">
 							<p
