@@ -35,7 +35,7 @@ const Engine = {
 			//files.forEach((file) => {
 			//	file.addEventListener("click", fileInfoDisplay);
 			//});
-//
+			//
 			//function fileInfoDisplay() {
 			//	const fileName = "";
 			//}
@@ -152,6 +152,27 @@ const Engine = {
 				sendSubmenu.classList.add("flex");
 				sendSubmenu.classList.remove("hidden");
 			});
+
+			/////// DELETING FILES FOR SENDING THROUGH X BUTTON ///// nefunguje
+
+			const eraseBttn = document.querySelectorAll(
+				"[data-class='erase-file']",
+			);
+
+
+			eraseBttn.forEach((bttn) => {
+				bttn.addEventListener("click", eraseFile);
+			});
+
+			function eraseFile(bttn) {
+				console.log(typeof bttn)
+				const fileToErase = bttn.closest(
+					"[data-class='uploaded-file']",
+				);
+
+				fileToErase.classList.remove("flex");
+				fileToErase.classList.add("hidden");
+			}
 
 			/////// SWITCHING TABS INSIDE SEND SUBMENU /////
 

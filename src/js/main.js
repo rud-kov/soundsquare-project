@@ -58,7 +58,7 @@ const Engine = {
 				slides[slideIndex - 1].classList.replace("hidden", "flex");
 				slideDescription[slideIndex - 1].classList.replace("hidden", "flex");
 
-				setTimeout(showSlides, 5000);
+				setTimeout(showSlides, 8000);
 			}
 
 			showSlides();
