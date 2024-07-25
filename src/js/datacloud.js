@@ -17,6 +17,8 @@ const uploadResultScreen = document.getElementById("upload__bar--result");
 
 const metadataContainer = document.getElementById("metadata__container");
 
+const files = document.querySelectorAll("[data-class='file']");
+
 const Engine = {
 	ui: {
 		init: function () {
@@ -159,13 +161,12 @@ const Engine = {
 				"[data-class='erase-file']",
 			);
 
-
 			eraseBttn.forEach((bttn) => {
 				bttn.addEventListener("click", eraseFile);
 			});
 
 			function eraseFile(bttn) {
-				console.log(typeof bttn)
+				console.log(typeof bttn);
 				const fileToErase = bttn.closest(
 					"[data-class='uploaded-file']",
 				);
@@ -249,6 +250,57 @@ const Engine = {
 					}
 				});
 			});
+
+			///// ZOOM IN ZOOM OUT
+
+			const zoomInBttn = document.getElementById("zoomin");
+
+			const zoomOutBttn = document.getElementById("zoomout");
+
+			const fileDescription = document.querySelectorAll(
+				"[data-class='file__description']",
+			);
+
+			function zoomIn() {
+				files.forEach((file) => {
+					let width = file.clientWidth;
+					let height = file.clientHeight;
+
+					file.style.width = width + 50 + "px";
+					file.style.height = width + 50 + "px";
+				});
+
+				fileDescription.forEach((file) => {
+					const fontSize =
+						parseFloat(window.getComputedStyle(file).fontSize) / 16;
+					file.style.fontSize = fontSize + 0.125 + "rem";
+				});
+			}
+
+			function zoomOut() {
+				files.forEach((file) => {
+					let width = file.clientWidth;
+					let height = file.clientHeight;
+
+					file.style.width = width - 50 + "px";
+					file.style.height = width - 50 + "px";
+				});
+
+				fileDescription.forEach((file) => {
+					const fontSize =
+						parseFloat(window.getComputedStyle(file).fontSize) / 16;
+
+					if (fontSize < 1.125) {
+						file.style.fontSize = 1 + "rem";
+					} else {
+						file.style.fontSize = fontSize - 0.125 + "rem";
+					}
+				});
+			}
+
+			zoomInBttn.addEventListener("click", zoomIn);
+
+			zoomOutBttn.addEventListener("click", zoomOut);
 
 			///// SWITCHING TABLE / TILE DISPLAY OF FILES
 

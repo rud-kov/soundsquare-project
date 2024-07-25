@@ -1976,37 +1976,35 @@
 						class="col-start-4 mr-[1.875rem] flex flex-row items-center gap-7 self-center justify-self-end lgd:col-start-2 lgd:row-start-1 lgd:flex-col-reverse"
 					>
 						<div class="flex flex-row items-center gap-7">
-							<svg
-								class="block h-[0.241rem] w-6 hover:cursor-pointer dark:hidden"
-							>
-								<use
-									xlink:href="icons__sprite.svg#zoomout__icon--light"
-								></use>
-							</svg>
+							<div class="grow" id="zoomout">
+								<svg
+									class="block h-[0.241rem] w-6 hover:cursor-pointer"
+								>
+									<use
+										xlink:href="icons__sprite.svg#zoomout__icon--light"
+										class="block dark:hidden"
+									></use>
+									<use
+										xlink:href="icons__sprite.svg#zoomout__icon--dark"
+										class="hidden dark:block"
+									></use>
+								</svg>
+							</div>
 
-							<svg
-								class="hidden h-[0.241rem] w-6 hover:cursor-pointer dark:block"
-							>
-								<use
-									xlink:href="icons__sprite.svg#zoomout__icon--dark"
-								></use>
-							</svg>
-
-							<svg
-								class="block h-[1.438rem] w-6 hover:cursor-pointer dark:hidden"
-							>
-								<use
-									xlink:href="icons__sprite.svg#zoomin__icon--light"
-								></use>
-							</svg>
-
-							<svg
-								class="hidden h-[1.438rem] w-6 hover:cursor-pointer dark:block"
-							>
-								<use
-									xlink:href="icons__sprite.svg#zoomin__icon--dark"
-								></use>
-							</svg>
+							<div class="grow" id="zoomin">
+								<svg
+									class="block h-[1.438rem] w-6 hover:cursor-pointer"
+								>
+									<use
+										xlink:href="icons__sprite.svg#zoomin__icon--light"
+										class="block dark:hidden"
+									></use>
+									<use
+										xlink:href="icons__sprite.svg#zoomin__icon--dark"
+										class="hidden dark:block"
+									></use>
+								</svg>
+							</div>
 						</div>
 
 						<div class="flex flex-row gap-2">
@@ -2228,6 +2226,7 @@
 							/>
 							<p
 								class="text-nowrap font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								File name.jpg
 							</p>
@@ -2238,6 +2237,7 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								Jpg image
 							</p>
@@ -2248,6 +2248,7 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								03/11/2023
 							</p>
@@ -2258,6 +2259,7 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								340 kB
 							</p>
@@ -2268,7 +2270,7 @@
 						class="ml-7 mr-7 grid h-10 min-w-[40.625rem] grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
 					>
 						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start overflow-x-hidden"
 						>
 							<input
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
@@ -2277,7 +2279,8 @@
 								name="checkbox"
 							/>
 							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
+								class="text-nowrap font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								File name.jpg
 							</p>
@@ -2288,6 +2291,7 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								Jpg image
 							</p>
@@ -2298,8 +2302,9 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
-								05/04/2023
+								03/11/2023
 							</p>
 						</div>
 
@@ -2308,6 +2313,7 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								340 kB
 							</p>
@@ -2318,7 +2324,7 @@
 						class="ml-7 mr-7 grid h-10 min-w-[40.625rem] grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
 					>
 						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start overflow-x-hidden"
 						>
 							<input
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
@@ -2327,7 +2333,8 @@
 								name="checkbox"
 							/>
 							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
+								class="text-nowrap font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								File name.jpg
 							</p>
@@ -2338,6 +2345,7 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								Jpg image
 							</p>
@@ -2348,8 +2356,9 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
-								06/10/2023
+								03/11/2023
 							</p>
 						</div>
 
@@ -2358,6 +2367,7 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								340 kB
 							</p>
@@ -2367,7 +2377,7 @@
 						class="ml-7 mr-7 grid h-10 min-w-[40.625rem] grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
 					>
 						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start overflow-x-hidden"
 						>
 							<input
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
@@ -2376,7 +2386,8 @@
 								name="checkbox"
 							/>
 							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
+								class="text-nowrap font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								File name.jpg
 							</p>
@@ -2387,6 +2398,7 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								Jpg image
 							</p>
@@ -2397,8 +2409,9 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
-								06/10/2023
+								03/11/2023
 							</p>
 						</div>
 
@@ -2407,6 +2420,7 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								340 kB
 							</p>
@@ -2417,7 +2431,7 @@
 						class="ml-7 mr-7 grid h-10 min-w-[40.625rem] grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
 					>
 						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start overflow-x-hidden"
 						>
 							<input
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
@@ -2426,7 +2440,8 @@
 								name="checkbox"
 							/>
 							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
+								class="text-nowrap font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								File name.jpg
 							</p>
@@ -2437,6 +2452,7 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								Jpg image
 							</p>
@@ -2447,8 +2463,9 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
-								06/10/2023
+								03/11/2023
 							</p>
 						</div>
 
@@ -2457,16 +2474,18 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								340 kB
 							</p>
 						</div>
 					</div>
+
 					<div
 						class="ml-7 mr-7 grid h-10 min-w-[40.625rem] grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
 					>
 						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start overflow-x-hidden"
 						>
 							<input
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
@@ -2475,7 +2494,8 @@
 								name="checkbox"
 							/>
 							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
+								class="text-nowrap font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								File name.jpg
 							</p>
@@ -2486,6 +2506,7 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								Jpg image
 							</p>
@@ -2496,8 +2517,9 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
-								06/10/2023
+								03/11/2023
 							</p>
 						</div>
 
@@ -2506,16 +2528,18 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								340 kB
 							</p>
 						</div>
 					</div>
+
 					<div
 						class="ml-7 mr-7 grid h-10 min-w-[40.625rem] grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
 					>
 						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start overflow-x-hidden"
 						>
 							<input
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
@@ -2524,7 +2548,8 @@
 								name="checkbox"
 							/>
 							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
+								class="text-nowrap font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								File name.jpg
 							</p>
@@ -2535,6 +2560,7 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								Jpg image
 							</p>
@@ -2545,8 +2571,9 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
-								06/10/2023
+								03/11/2023
 							</p>
 						</div>
 
@@ -2555,16 +2582,18 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								340 kB
 							</p>
 						</div>
 					</div>
+
 					<div
 						class="ml-7 mr-7 grid h-10 min-w-[40.625rem] grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
 					>
 						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start overflow-x-hidden"
 						>
 							<input
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
@@ -2573,7 +2602,8 @@
 								name="checkbox"
 							/>
 							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
+								class="text-nowrap font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								File name.jpg
 							</p>
@@ -2584,6 +2614,7 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								Jpg image
 							</p>
@@ -2594,8 +2625,9 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
-								06/10/2023
+								03/11/2023
 							</p>
 						</div>
 
@@ -2604,16 +2636,18 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								340 kB
 							</p>
 						</div>
 					</div>
+
 					<div
 						class="ml-7 mr-7 grid h-10 min-w-[40.625rem] grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
 					>
 						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start overflow-x-hidden"
 						>
 							<input
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
@@ -2622,7 +2656,8 @@
 								name="checkbox"
 							/>
 							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
+								class="text-nowrap font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								File name.jpg
 							</p>
@@ -2633,6 +2668,7 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								Jpg image
 							</p>
@@ -2643,8 +2679,9 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
-								06/10/2023
+								03/11/2023
 							</p>
 						</div>
 
@@ -2653,16 +2690,18 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								340 kB
 							</p>
 						</div>
 					</div>
+
 					<div
 						class="ml-7 mr-7 grid h-10 min-w-[40.625rem] grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
 					>
 						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start overflow-x-hidden"
 						>
 							<input
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
@@ -2671,7 +2710,8 @@
 								name="checkbox"
 							/>
 							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
+								class="text-nowrap font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								File name.jpg
 							</p>
@@ -2682,6 +2722,7 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								Jpg image
 							</p>
@@ -2692,8 +2733,9 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
-								06/10/2023
+								03/11/2023
 							</p>
 						</div>
 
@@ -2702,16 +2744,18 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								340 kB
 							</p>
 						</div>
 					</div>
+
 					<div
 						class="ml-7 mr-7 grid h-10 min-w-[40.625rem] grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
 					>
 						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start overflow-x-hidden"
 						>
 							<input
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
@@ -2720,7 +2764,8 @@
 								name="checkbox"
 							/>
 							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
+								class="text-nowrap font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								File name.jpg
 							</p>
@@ -2731,6 +2776,7 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								Jpg image
 							</p>
@@ -2741,8 +2787,9 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
-								06/10/2023
+								03/11/2023
 							</p>
 						</div>
 
@@ -2751,16 +2798,18 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								340 kB
 							</p>
 						</div>
 					</div>
+
 					<div
 						class="ml-7 mr-7 grid h-10 min-w-[40.625rem] grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
 					>
 						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start overflow-x-hidden"
 						>
 							<input
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
@@ -2769,7 +2818,8 @@
 								name="checkbox"
 							/>
 							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
+								class="text-nowrap font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								File name.jpg
 							</p>
@@ -2780,6 +2830,7 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								Jpg image
 							</p>
@@ -2790,8 +2841,9 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
-								06/10/2023
+								03/11/2023
 							</p>
 						</div>
 
@@ -2800,16 +2852,18 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								340 kB
 							</p>
 						</div>
 					</div>
+
 					<div
 						class="ml-7 mr-7 grid h-10 min-w-[40.625rem] grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
 					>
 						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start overflow-x-hidden"
 						>
 							<input
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
@@ -2818,7 +2872,8 @@
 								name="checkbox"
 							/>
 							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
+								class="text-nowrap font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								File name.jpg
 							</p>
@@ -2829,6 +2884,7 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								Jpg image
 							</p>
@@ -2839,8 +2895,9 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
-								06/10/2023
+								03/11/2023
 							</p>
 						</div>
 
@@ -2849,16 +2906,18 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								340 kB
 							</p>
 						</div>
 					</div>
+
 					<div
 						class="ml-7 mr-7 grid h-10 min-w-[40.625rem] grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
 					>
 						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start overflow-x-hidden"
 						>
 							<input
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
@@ -2867,7 +2926,8 @@
 								name="checkbox"
 							/>
 							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
+								class="text-nowrap font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								File name.jpg
 							</p>
@@ -2878,6 +2938,7 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								Jpg image
 							</p>
@@ -2888,8 +2949,9 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
-								06/10/2023
+								03/11/2023
 							</p>
 						</div>
 
@@ -2898,16 +2960,18 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								340 kB
 							</p>
 						</div>
 					</div>
+
 					<div
 						class="ml-7 mr-7 grid h-10 min-w-[40.625rem] grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
 					>
 						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start overflow-x-hidden"
 						>
 							<input
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
@@ -2916,7 +2980,8 @@
 								name="checkbox"
 							/>
 							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
+								class="text-nowrap font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								File name.jpg
 							</p>
@@ -2927,6 +2992,7 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								Jpg image
 							</p>
@@ -2937,8 +3003,9 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
-								06/10/2023
+								03/11/2023
 							</p>
 						</div>
 
@@ -2947,16 +3014,18 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								340 kB
 							</p>
 						</div>
 					</div>
+
 					<div
 						class="ml-7 mr-7 grid h-10 min-w-[40.625rem] grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
 					>
 						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start overflow-x-hidden"
 						>
 							<input
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
@@ -2965,7 +3034,8 @@
 								name="checkbox"
 							/>
 							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
+								class="text-nowrap font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								File name.jpg
 							</p>
@@ -2976,6 +3046,7 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								Jpg image
 							</p>
@@ -2986,8 +3057,9 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
-								06/10/2023
+								03/11/2023
 							</p>
 						</div>
 
@@ -2996,16 +3068,18 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								340 kB
 							</p>
 						</div>
 					</div>
+
 					<div
 						class="ml-7 mr-7 grid h-10 min-w-[40.625rem] grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
 					>
 						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start overflow-x-hidden"
 						>
 							<input
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
@@ -3014,7 +3088,8 @@
 								name="checkbox"
 							/>
 							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
+								class="text-nowrap font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								File name.jpg
 							</p>
@@ -3025,6 +3100,7 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								Jpg image
 							</p>
@@ -3035,8 +3111,9 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
-								06/10/2023
+								03/11/2023
 							</p>
 						</div>
 
@@ -3045,16 +3122,18 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								340 kB
 							</p>
 						</div>
 					</div>
+
 					<div
 						class="ml-7 mr-7 grid h-10 min-w-[40.625rem] grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
 					>
 						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start overflow-x-hidden"
 						>
 							<input
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
@@ -3063,7 +3142,8 @@
 								name="checkbox"
 							/>
 							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
+								class="text-nowrap font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								File name.jpg
 							</p>
@@ -3074,6 +3154,7 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								Jpg image
 							</p>
@@ -3084,8 +3165,9 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
-								06/10/2023
+								03/11/2023
 							</p>
 						</div>
 
@@ -3094,16 +3176,18 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								340 kB
 							</p>
 						</div>
 					</div>
+
 					<div
 						class="ml-7 mr-7 grid h-10 min-w-[40.625rem] grid-flow-row grid-cols-4 grid-rows-1 border-b border-lightBorder dark:border-darkBorder"
 					>
 						<div
-							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start"
+							class="col-start-1 col-end-1 flex flex-row items-center gap-5 self-center justify-self-start overflow-x-hidden"
 						>
 							<input
 								class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
@@ -3112,7 +3196,8 @@
 								name="checkbox"
 							/>
 							<p
-								class="font-public text-16 text-lightFont dark:text-darkFont"
+								class="text-nowrap font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								File name.jpg
 							</p>
@@ -3123,6 +3208,7 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								Jpg image
 							</p>
@@ -3133,8 +3219,9 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
-								06/10/2023
+								03/11/2023
 							</p>
 						</div>
 
@@ -3143,6 +3230,7 @@
 						>
 							<p
 								class="font-public text-16 text-lightFont dark:text-darkFont"
+								data-class="file__description"
 							>
 								340 kB
 							</p>
@@ -3150,12 +3238,12 @@
 					</div>
 				</div>
 
-				<div id="mainfiles__wrapper--tiles">
+				<div id="mainfiles__wrapper--tiles" data-class="main-wrapper">
 					<div
 						class="ml-7 mr-7 mt-5 flex flex-wrap gap-[1.125rem] pb-60 mdd:pb-72"
 					>
 						<div
-							class="relative flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							class="relative flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
 							data-class="file"
 						>
 							<img
@@ -3199,7 +3287,7 @@
 						</div>
 
 						<div
-							class="relative flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							class="relative flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
 							data-class="file"
 						>
 							<img
@@ -3242,7 +3330,7 @@
 						</div>
 
 						<div
-							class="relative flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							class="relative flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
 							data-class="file"
 						>
 							<img
@@ -3285,7 +3373,7 @@
 						</div>
 
 						<div
-							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
 							data-class="file"
 						>
 							<div
@@ -3332,7 +3420,7 @@
 						</div>
 
 						<div
-							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
 							data-class="file"
 						>
 							<div
@@ -3379,7 +3467,7 @@
 						</div>
 
 						<div
-							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
 							data-class="file"
 						>
 							<div
@@ -3426,7 +3514,7 @@
 						</div>
 
 						<div
-							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
 							data-class="file"
 						>
 							<div
@@ -3473,7 +3561,7 @@
 						</div>
 
 						<div
-							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
 							data-class="file"
 						>
 							<div
@@ -3520,7 +3608,7 @@
 						</div>
 
 						<div
-							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
 							data-class="file"
 						>
 							<div
@@ -3566,54 +3654,7 @@
 							</div>
 						</div>
 						<div
-							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
-							data-class="file"
-						>
-							<div
-								class="flex grow flex-col justify-between p-[0.625rem]"
-							>
-								<div class="flex flex-row justify-between">
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-class="file-name"
-									>
-										File name.jpg
-									</p>
-									<input
-										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
-										type="checkbox"
-										data-role="filesbox"
-										name="checkbox"
-									/>
-								</div>
-								<div class="text-center">
-									<p
-										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
-										data-class="file-format"
-									>
-										wav
-									</p>
-								</div>
-								<div class="flex justify-between">
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-class="file-datum"
-									>
-										06/10/2023
-									</p>
-
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-class="file-size"
-									>
-										340 kB
-									</p>
-								</div>
-							</div>
-						</div>
-
-						<div
-							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
 							data-class="file"
 						>
 							<div
@@ -3660,7 +3701,7 @@
 						</div>
 
 						<div
-							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
 							data-class="file"
 						>
 							<div
@@ -3707,7 +3748,7 @@
 						</div>
 
 						<div
-							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
 							data-class="file"
 						>
 							<div
@@ -3754,7 +3795,7 @@
 						</div>
 
 						<div
-							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
 							data-class="file"
 						>
 							<div
@@ -3801,7 +3842,7 @@
 						</div>
 
 						<div
-							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
 							data-class="file"
 						>
 							<div
@@ -3848,7 +3889,7 @@
 						</div>
 
 						<div
-							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
 							data-class="file"
 						>
 							<div
@@ -3895,7 +3936,7 @@
 						</div>
 
 						<div
-							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
 							data-class="file"
 						>
 							<div
@@ -3942,7 +3983,7 @@
 						</div>
 
 						<div
-							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
 							data-class="file"
 						>
 							<div
@@ -3989,7 +4030,7 @@
 						</div>
 
 						<div
-							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
 							data-class="file"
 						>
 							<div
@@ -4036,7 +4077,7 @@
 						</div>
 
 						<div
-							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
 							data-class="file"
 						>
 							<div
@@ -4083,7 +4124,7 @@
 						</div>
 
 						<div
-							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
 							data-class="file"
 						>
 							<div
@@ -4130,53 +4171,7 @@
 						</div>
 
 						<div
-							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
-							data-class="file"
-						>
-							<div
-								class="flex grow flex-col justify-between p-[0.625rem]"
-							>
-								<div class="flex flex-row justify-between">
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-class="file-name"
-									>
-										File name.jpg
-									</p>
-									<input
-										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
-										type="checkbox"
-										data-role="filesbox"
-										name="checkbox"
-									/>
-								</div>
-								<div class="text-center">
-									<p
-										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
-										data-class="file-format"
-									>
-										wav
-									</p>
-								</div>
-								<div class="flex justify-between">
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-class="file-datum"
-									>
-										06/10/2023
-									</p>
-
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-class="file-size"
-									>
-										340 kB
-									</p>
-								</div>
-							</div>
-						</div>
-						<div
-							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
 							data-class="file"
 						>
 							<div
@@ -4223,7 +4218,7 @@
 						</div>
 
 						<div
-							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
 							data-class="file"
 						>
 							<div
@@ -4269,54 +4264,7 @@
 							</div>
 						</div>
 						<div
-							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
-							data-class="file"
-						>
-							<div
-								class="flex grow flex-col justify-between p-[0.625rem]"
-							>
-								<div class="flex flex-row justify-between">
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-class="file-name"
-									>
-										File name.jpg
-									</p>
-									<input
-										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
-										type="checkbox"
-										data-role="filesbox"
-										name="checkbox"
-									/>
-								</div>
-								<div class="text-center">
-									<p
-										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
-										data-class="file-format"
-									>
-										wav
-									</p>
-								</div>
-								<div class="flex justify-between">
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-class="file-datum"
-									>
-										06/10/2023
-									</p>
-
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-class="file-size"
-									>
-										340 kB
-									</p>
-								</div>
-							</div>
-						</div>
-
-						<div
-							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
 							data-class="file"
 						>
 							<div
@@ -4363,7 +4311,53 @@
 						</div>
 
 						<div
-							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							data-class="file"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-class="file-name"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+										name="checkbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+										data-class="file-format"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-class="file-datum"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-class="file-size"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+						<div
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
 							data-class="file"
 						>
 							<div
@@ -4410,7 +4404,7 @@
 						</div>
 
 						<div
-							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
 							data-class="file"
 						>
 							<div
@@ -4457,7 +4451,101 @@
 						</div>
 
 						<div
-							class="flex h-[10.25rem] w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							data-class="file"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-class="file-name"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+										name="checkbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+										data-class="file-format"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-class="file-datum"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-class="file-size"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							data-class="file"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-class="file-name"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 h-[0.875rem] w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+										name="checkbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+										data-class="file-format"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-class="file-datum"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-class="file-size"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
 							data-class="file"
 						>
 							<div
