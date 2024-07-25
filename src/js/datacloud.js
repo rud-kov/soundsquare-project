@@ -251,57 +251,6 @@ const Engine = {
 				});
 			});
 
-			///// ZOOM IN ZOOM OUT
-
-			const zoomInBttn = document.getElementById("zoomin");
-
-			const zoomOutBttn = document.getElementById("zoomout");
-
-			const fileDescription = document.querySelectorAll(
-				"[data-class='file__description']",
-			);
-
-			function zoomIn() {
-				files.forEach((file) => {
-					let width = file.clientWidth;
-					let height = file.clientHeight;
-
-					file.style.width = width + 50 + "px";
-					file.style.height = width + 50 + "px";
-				});
-
-				fileDescription.forEach((file) => {
-					const fontSize =
-						parseFloat(window.getComputedStyle(file).fontSize) / 16;
-					file.style.fontSize = fontSize + 0.125 + "rem";
-				});
-			}
-
-			function zoomOut() {
-				files.forEach((file) => {
-					let width = file.clientWidth;
-					let height = file.clientHeight;
-
-					file.style.width = width - 50 + "px";
-					file.style.height = width - 50 + "px";
-				});
-
-				fileDescription.forEach((file) => {
-					const fontSize =
-						parseFloat(window.getComputedStyle(file).fontSize) / 16;
-
-					if (fontSize < 1.125) {
-						file.style.fontSize = 1 + "rem";
-					} else {
-						file.style.fontSize = fontSize - 0.125 + "rem";
-					}
-				});
-			}
-
-			zoomInBttn.addEventListener("click", zoomIn);
-
-			zoomOutBttn.addEventListener("click", zoomOut);
-
 			///// SWITCHING TABLE / TILE DISPLAY OF FILES
 
 			const filesWrapperTiles = document.getElementById(
@@ -319,11 +268,116 @@ const Engine = {
 			function filesDisplaySwitch() {
 				filesWrapperTable.classList.toggle("hidden");
 				filesWrapperTiles.classList.toggle("hidden");
+				zoomInTilesBttn.classList.toggle("hidden");
+				zoomOutTilesBttn.classList.toggle("hidden");
+				zoomInTableBttn.classList.toggle("hidden");
+				zoomOutTableBttn.classList.toggle("hidden");
 			}
 
 			tableSwitch.addEventListener("click", filesDisplaySwitch);
 
 			tileSwitch.addEventListener("click", filesDisplaySwitch);
+
+			///// ZOOM IN ZOOM OUT
+
+			const zoomInTilesBttn = document.getElementById("zoomin--tiles");
+
+			const zoomOutTilesBttn = document.getElementById("zoomout--tiles");
+
+			const zoomInTableBttn = document.getElementById("zoomin--table");
+
+			const zoomOutTableBttn = document.getElementById("zoomout--table");
+
+			const fileDescription = document.querySelectorAll(
+				"[data-class='file__description']",
+			);
+
+			function zoomInTile() {
+				files.forEach((file) => {
+					let width = file.clientWidth;
+					let height = file.clientHeight;
+
+					file.style.width = width + 50 + "px";
+					file.style.height = width + 50 + "px";
+				});
+
+				const fontSize =
+					parseFloat(window.getComputedStyle(file).fontSize) / 16;
+
+				const lineHeight =
+					parseFloat(window.getComputedStyle(file).lineHeight) / 16;
+
+				file.style.fontSize = fontSize + 0.125 + "rem";
+				file.style.lineHeight = lineHeight + 0.125 + "rem";
+			}
+
+			function zoomOutTile() {
+				files.forEach((file) => {
+					let width = file.clientWidth;
+					let height = file.clientHeight;
+
+					file.style.width = width - 50 + "px";
+					file.style.height = width - 50 + "px";
+				});
+
+				fileDescription.forEach((file) => {
+					const fontSize =
+						parseFloat(window.getComputedStyle(file).fontSize) / 16;
+
+					const lineHeight =
+						parseFloat(window.getComputedStyle(file).lineHeight) /
+						16;
+
+					if (fontSize < 1.125) {
+						file.style.fontSize = 1 + "rem";
+						file.style.lineHeight = 1.175 + "rem";
+					} else {
+						file.style.fontSize = fontSize - 0.125 + "rem";
+						file.style.lineHeight = lineHeight - 0.125 + "rem";
+					}
+				});
+			}
+
+			function zoomIn() {
+				fileDescription.forEach((file) => {
+					const fontSize =
+						parseFloat(window.getComputedStyle(file).fontSize) / 16;
+
+					const lineHeight =
+						parseFloat(window.getComputedStyle(file).lineHeight) /
+						16;
+
+					file.style.fontSize = fontSize + 0.125 + "rem";
+					file.style.lineHeight = lineHeight + 0.125 + "rem";
+				});
+			}
+
+			function zoomOut() {
+				fileDescription.forEach((file) => {
+					const fontSize =
+						parseFloat(window.getComputedStyle(file).fontSize) / 16;
+
+					const lineHeight =
+						parseFloat(window.getComputedStyle(file).lineHeight) /
+						16;
+
+					if (fontSize < 1.125) {
+						file.style.fontSize = 1 + "rem";
+						file.style.lineHeight = 1.175 + "rem";
+					} else {
+						file.style.fontSize = fontSize - 0.125 + "rem";
+						file.style.lineHeight = lineHeight - 0.125 + "rem";
+					}
+				});
+			}
+
+			zoomInTableBttn.addEventListener("click", zoomIn);
+
+			zoomOutTableBttn.addEventListener("click", zoomOut);
+
+			zoomInTilesBttn.addEventListener("click", zoomInTile);
+
+			zoomOutTilesBttn.addEventListener("click", zoomOutTile);
 
 			//////////////// SIDEBAR
 
