@@ -19,6 +19,8 @@ const metadataContainer = document.getElementById("metadata__container");
 
 const files = document.querySelectorAll("[data-class='file']");
 
+//const filesTiles = document.querySelectorAll("")
+
 const Engine = {
 	ui: {
 		init: function () {
@@ -292,23 +294,32 @@ const Engine = {
 				"[data-class='file__description']",
 			);
 
+			const fileDescriptionTile = document.querySelectorAll(
+				"[data-class='file__description--tile']",
+			);
+
 			function zoomInTile() {
 				files.forEach((file) => {
 					let width = file.clientWidth;
 					let height = file.clientHeight;
 
 					file.style.width = width + 50 + "px";
-					file.style.height = width + 50 + "px";
+					file.style.height = height + 50 + "px";
 				});
 
-				const fontSize =
-					parseFloat(window.getComputedStyle(file).fontSize) / 16;
+				fileDescriptionTile.forEach((dscrptn) => {
+					const fontSize =
+						parseFloat(window.getComputedStyle(dscrptn).fontSize) /
+						16;
 
-				const lineHeight =
-					parseFloat(window.getComputedStyle(file).lineHeight) / 16;
+					const lineHeight =
+						parseFloat(
+							window.getComputedStyle(dscrptn).lineHeight,
+						) / 16;
 
-				file.style.fontSize = fontSize + 0.125 + "rem";
-				file.style.lineHeight = lineHeight + 0.125 + "rem";
+					dscrptn.style.fontSize = fontSize + 0.125 + "rem";
+					dscrptn.style.lineHeight = lineHeight + 0.125 + "rem";
+				});
 			}
 
 			function zoomOutTile() {
@@ -320,20 +331,22 @@ const Engine = {
 					file.style.height = width - 50 + "px";
 				});
 
-				fileDescription.forEach((file) => {
+				fileDescriptionTile.forEach((dscrptn) => {
 					const fontSize =
-						parseFloat(window.getComputedStyle(file).fontSize) / 16;
-
-					const lineHeight =
-						parseFloat(window.getComputedStyle(file).lineHeight) /
+						parseFloat(window.getComputedStyle(dscrptn).fontSize) /
 						16;
 
-					if (fontSize < 1.125) {
-						file.style.fontSize = 1 + "rem";
-						file.style.lineHeight = 1.175 + "rem";
+					const lineHeight =
+						parseFloat(
+							window.getComputedStyle(dscrptn).lineHeight,
+						) / 16;
+
+					if (fontSize < 0.875) {
+						dscrptn.style.fontSize = 0.75 + "rem";
+						dscrptn.style.lineHeight = 0.875 + "rem";
 					} else {
-						file.style.fontSize = fontSize - 0.125 + "rem";
-						file.style.lineHeight = lineHeight - 0.125 + "rem";
+						dscrptn.style.fontSize = fontSize - 0.125 + "rem";
+						dscrptn.style.lineHeight = lineHeight - 0.125 + "rem";
 					}
 				});
 			}
