@@ -19,6 +19,8 @@ const metadataContainer = document.getElementById("metadata__container");
 
 const files = document.querySelectorAll("[data-class='file']");
 
+const inputs = document.querySelectorAll("[data-role='filesbox']");
+
 //const filesTiles = document.querySelectorAll("")
 
 const Engine = {
@@ -31,63 +33,6 @@ const Engine = {
 		},
 		events: function () {
 			console.log("Events are running");
-
-			////////////// DISPLAYING CLICKED FILE INFORMATION
-
-			//const files = document.querySelectorAll("[data-class='file']");
-
-			//files.forEach((file) => {
-			//	file.addEventListener("click", fileInfoDisplay);
-			//});
-			//
-			//function fileInfoDisplay() {
-			//	const fileName = "";
-			//}
-
-			////////////// LISTING FILES BY LAST MODIFIED
-
-			//const modLastBttn = document.querySelector(
-			//	"[data-class='modified__latest']",
-			//);
-			//
-			//const modEarliestBttn = document.querySelector(
-			//	"[data-class='modified__earliest']",
-			//);
-			//
-			//function lineUp() {
-			//	let files = Array.from(
-			//		document.querySelectorAll("[data-class='file']"),
-			//	);
-			//
-			//	files.sort((a, b) => {
-			//		let dateA = new Date(
-			//			a.querySelector(
-			//				"[data-class='file-datum']",
-			//			).textContent,
-			//		);
-			//		let dateB = new Date(
-			//			b.querySelector(
-			//				"[data-class='file-datum']",
-			//			).textContent,
-			//		);
-			//		return dateA - dateB;
-			//	});
-			//
-			//	return files;
-			//}
-			//
-			//function listLast() {
-			//	let files = lineUp();
-			//
-			//	filesWrapperTiles.innerHTML = "";
-			//	files.forEach((file) => {
-			//		filesWrapperTiles.appendChild(file);
-			//	});
-			//}
-			//
-			//modLastBttn.addEventListener("click", listLast);
-
-			////////////// LISTING FILES BY SIZE
 
 			///////////// MY DRIVE MOBILE MENU SWITCH
 
@@ -241,7 +186,6 @@ const Engine = {
 
 			const checkAll = document.getElementById("check__all");
 
-			const inputs = document.querySelectorAll("[data-role='filesbox']");
 
 			checkAll.addEventListener("change", () => {
 				inputs.forEach((input) => {
@@ -267,18 +211,27 @@ const Engine = {
 
 			const tileSwitch = document.getElementById("tile__switch");
 
-			function filesDisplaySwitch() {
-				filesWrapperTable.classList.toggle("hidden");
-				filesWrapperTiles.classList.toggle("hidden");
-				zoomInTilesBttn.classList.toggle("hidden");
-				zoomOutTilesBttn.classList.toggle("hidden");
-				zoomInTableBttn.classList.toggle("hidden");
-				zoomOutTableBttn.classList.toggle("hidden");
+			function displayTiles() {
+				filesWrapperTable.classList.replace("block", "hidden");
+				filesWrapperTiles.classList.replace("hidden", "block");
+				zoomInTilesBttn.classList.replace("hidden", "flex");
+				zoomOutTilesBttn.classList.replace("hidden", "flex");
+				zoomInTableBttn.classList.replace("flex", "hidden");
+				zoomOutTableBttn.classList.replace("flex", "hidden");
 			}
 
-			tableSwitch.addEventListener("click", filesDisplaySwitch);
+			function displayTable() {
+				filesWrapperTable.classList.replace("hidden", "block");
+				filesWrapperTiles.classList.replace("block", "hidden");
+				zoomInTilesBttn.classList.replace("flex", "hidden");
+				zoomOutTilesBttn.classList.replace("flex", "hidden");
+				zoomInTableBttn.classList.replace("hidden", "flex");
+				zoomOutTableBttn.classList.replace("hidden", "flex");
+			}
 
-			tileSwitch.addEventListener("click", filesDisplaySwitch);
+			tableSwitch.addEventListener("click", displayTable);
+
+			tileSwitch.addEventListener("click", displayTiles);
 
 			///// ZOOM IN ZOOM OUT
 
@@ -300,11 +253,11 @@ const Engine = {
 
 			function zoomInTile() {
 				files.forEach((file) => {
-					let width = file.clientWidth;
-					let height = file.clientHeight;
+					let width = file.clientWidth / 16;
+					let height = file.clientHeight / 16;
 
-					file.style.width = width + 50 + "px";
-					file.style.height = height + 50 + "px";
+					file.style.width = width + 3.125 + "rem";
+					file.style.height = height + 3.125 + "rem";
 				});
 
 				fileDescriptionTile.forEach((dscrptn) => {
@@ -320,15 +273,26 @@ const Engine = {
 					dscrptn.style.fontSize = fontSize + 0.125 + "rem";
 					dscrptn.style.lineHeight = lineHeight + 0.125 + "rem";
 				});
+
+				inputs.forEach((input) => {
+
+					let width = input.clientWidth / 16;
+					let height = input.clientHeight / 16;
+
+					console.log(width, height);
+
+					input.style.width = width + 0.313 + "rem";
+					input.style.height = height + 0.313 + "rem";
+				})
 			}
 
 			function zoomOutTile() {
 				files.forEach((file) => {
-					let width = file.clientWidth;
-					let height = file.clientHeight;
+					let width = file.clientWidth / 16;
+					let height = file.clientHeight / 16;
 
-					file.style.width = width - 50 + "px";
-					file.style.height = width - 50 + "px";
+					file.style.width = width - 3.125 + "rem";
+					file.style.height = width - 3.125 + "rem";
 				});
 
 				fileDescriptionTile.forEach((dscrptn) => {
@@ -347,6 +311,19 @@ const Engine = {
 					} else {
 						dscrptn.style.fontSize = fontSize - 0.125 + "rem";
 						dscrptn.style.lineHeight = lineHeight - 0.125 + "rem";
+					}
+				});
+
+				inputs.forEach((input) => {
+					let width = input.clientWidth / 16;
+					let height = input.clientHeight / 16;
+
+					if (width < 0.875 && height < 0.875) {
+						input.style.width =  0.875 + "rem";
+						input.style.height = 0.875 + "rem";
+					} else {
+						input.style.width = width - 0.313 + "rem";
+						input.style.height = height - 0.313 + "rem";
 					}
 				});
 			}
