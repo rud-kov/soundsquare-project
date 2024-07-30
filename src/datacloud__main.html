@@ -592,11 +592,11 @@
 										>
 											<div class="relative flex grow">
 												<div
-													class="absolute right-5 top-5 mdd:right-2 mdd:top-2"
+													class="absolute right-5 top-5 cursor-pointer pb-4 pl-4 mdd:right-2 mdd:top-2"
+													data-class="closer"
 												>
 													<svg
 														class="block h-3 w-3 dark:hidden"
-														data-class="closer"
 													>
 														<use
 															xlink:href="icons__sprite.svg#closer--light"
@@ -606,7 +606,6 @@
 													</svg>
 													<svg
 														class="hidden h-3 w-3 dark:block"
-														data-class="closer"
 													>
 														<use
 															xlink:href="icons__sprite.svg#closer--dark"
@@ -1006,10 +1005,10 @@
 							</div>
 
 							<div
-								class="flex h-8 w-8 items-center justify-center hover:cursor-pointer"
+								class="flex h-8 w-8 items-center justify-center"
 							>
 								<svg
-									class="mx-auto block h-8 w-8 dark:hidden"
+									class="mx-auto block h-8 w-8 hover:cursor-pointer dark:hidden"
 									data-class="send-bttn"
 								>
 									<use
@@ -1017,7 +1016,7 @@
 									></use>
 								</svg>
 								<svg
-									class="mx-auto hidden h-8 w-8 dark:block"
+									class="mx-auto hidden h-8 w-8 hover:cursor-pointer dark:block"
 									data-class="send-bttn"
 								>
 									<use
@@ -1035,11 +1034,11 @@
 									>
 										<div class="relative flex grow">
 											<div
-												class="absolute right-5 top-5 mdd:right-2 mdd:top-2"
+												class="absolute right-5 top-5 cursor-pointer pb-4 pl-4 mdd:right-2 mdd:top-2"
+												data-class="closer"
 											>
 												<svg
 													class="block h-3 w-3 dark:hidden"
-													data-class="closer"
 												>
 													<use
 														xlink:href="icons__sprite.svg#closer--light"
@@ -1049,7 +1048,6 @@
 												</svg>
 												<svg
 													class="hidden h-3 w-3 dark:block"
-													data-class="closer"
 												>
 													<use
 														xlink:href="icons__sprite.svg#closer--dark"
@@ -1093,7 +1091,8 @@
 														>
 															<div
 																data-role="fileForUpload"
-																class="flex flex-row items-center gap-[0.625rem]"
+																class="flex flex-row items-center"
+																data-class="uploaded-file"
 															>
 																<p
 																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
@@ -1105,7 +1104,7 @@
 																</p>
 																<div
 																	data-class="erase-file"
-																	class="cursor-pointer"
+																	class="flex cursor-pointer items-center self-stretch px-[0.625rem]"
 																>
 																	<svg
 																		class="block h-[0.688rem] w-[0.688rem]"
@@ -1122,8 +1121,9 @@
 																</div>
 															</div>
 															<div
+																data-role="fileForUpload"
+																class="flex flex-row items-center"
 																data-class="uploaded-file"
-																class="flex flex-row items-center gap-[0.625rem]"
 															>
 																<p
 																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
@@ -1135,7 +1135,7 @@
 																</p>
 																<div
 																	data-class="erase-file"
-																	class="cursor-pointer"
+																	class="flex cursor-pointer items-center self-stretch px-[0.625rem]"
 																>
 																	<svg
 																		class="block h-[0.688rem] w-[0.688rem]"
@@ -1152,8 +1152,9 @@
 																</div>
 															</div>
 															<div
+																data-role="fileForUpload"
+																class="flex flex-row items-center"
 																data-class="uploaded-file"
-																class="flex flex-row items-center gap-[0.625rem]"
 															>
 																<p
 																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
@@ -1165,7 +1166,7 @@
 																</p>
 																<div
 																	data-class="erase-file"
-																	class="cursor-pointer"
+																	class="flex cursor-pointer items-center self-stretch px-[0.625rem]"
 																>
 																	<svg
 																		class="block h-[0.688rem] w-[0.688rem]"
@@ -1182,8 +1183,9 @@
 																</div>
 															</div>
 															<div
+																data-role="fileForUpload"
+																class="flex flex-row items-center"
 																data-class="uploaded-file"
-																class="flex flex-row items-center gap-[0.625rem]"
 															>
 																<p
 																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
@@ -1195,7 +1197,7 @@
 																</p>
 																<div
 																	data-class="erase-file"
-																	class="cursor-pointer"
+																	class="flex cursor-pointer items-center self-stretch px-[0.625rem]"
 																>
 																	<svg
 																		class="block h-[0.688rem] w-[0.688rem]"
@@ -1212,8 +1214,9 @@
 																</div>
 															</div>
 															<div
+																data-role="fileForUpload"
+																class="flex flex-row items-center"
 																data-class="uploaded-file"
-																class="flex flex-row items-center gap-[0.625rem]"
 															>
 																<p
 																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
@@ -1225,7 +1228,7 @@
 																</p>
 																<div
 																	data-class="erase-file"
-																	class="cursor-pointer"
+																	class="flex cursor-pointer items-center self-stretch px-[0.625rem]"
 																>
 																	<svg
 																		class="block h-[0.688rem] w-[0.688rem]"
@@ -1242,8 +1245,9 @@
 																</div>
 															</div>
 															<div
+																data-role="fileForUpload"
+																class="flex flex-row items-center"
 																data-class="uploaded-file"
-																class="flex flex-row items-center gap-[0.625rem]"
 															>
 																<p
 																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
@@ -1255,7 +1259,7 @@
 																</p>
 																<div
 																	data-class="erase-file"
-																	class="cursor-pointer"
+																	class="flex cursor-pointer items-center self-stretch px-[0.625rem]"
 																>
 																	<svg
 																		class="block h-[0.688rem] w-[0.688rem]"
@@ -1272,8 +1276,9 @@
 																</div>
 															</div>
 															<div
+																data-role="fileForUpload"
+																class="flex flex-row items-center"
 																data-class="uploaded-file"
-																class="flex flex-row items-center gap-[0.625rem]"
 															>
 																<p
 																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
@@ -1285,7 +1290,7 @@
 																</p>
 																<div
 																	data-class="erase-file"
-																	class="cursor-pointer"
+																	class="flex cursor-pointer items-center self-stretch px-[0.625rem]"
 																>
 																	<svg
 																		class="block h-[0.688rem] w-[0.688rem]"
@@ -1302,8 +1307,9 @@
 																</div>
 															</div>
 															<div
+																data-role="fileForUpload"
+																class="flex flex-row items-center"
 																data-class="uploaded-file"
-																class="flex flex-row items-center gap-[0.625rem]"
 															>
 																<p
 																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
@@ -1315,7 +1321,7 @@
 																</p>
 																<div
 																	data-class="erase-file"
-																	class="cursor-pointer"
+																	class="flex cursor-pointer items-center self-stretch px-[0.625rem]"
 																>
 																	<svg
 																		class="block h-[0.688rem] w-[0.688rem]"
@@ -1332,8 +1338,9 @@
 																</div>
 															</div>
 															<div
+																data-role="fileForUpload"
+																class="flex flex-row items-center"
 																data-class="uploaded-file"
-																class="flex flex-row items-center gap-[0.625rem]"
 															>
 																<p
 																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
@@ -1345,7 +1352,7 @@
 																</p>
 																<div
 																	data-class="erase-file"
-																	class="cursor-pointer"
+																	class="flex cursor-pointer items-center self-stretch px-[0.625rem]"
 																>
 																	<svg
 																		class="block h-[0.688rem] w-[0.688rem]"
@@ -1362,8 +1369,9 @@
 																</div>
 															</div>
 															<div
+																data-role="fileForUpload"
+																class="flex flex-row items-center"
 																data-class="uploaded-file"
-																class="flex flex-row items-center gap-[0.625rem]"
 															>
 																<p
 																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
@@ -1375,7 +1383,7 @@
 																</p>
 																<div
 																	data-class="erase-file"
-																	class="cursor-pointer"
+																	class="flex cursor-pointer items-center self-stretch px-[0.625rem]"
 																>
 																	<svg
 																		class="block h-[0.688rem] w-[0.688rem]"
@@ -1392,8 +1400,9 @@
 																</div>
 															</div>
 															<div
+																data-role="fileForUpload"
+																class="flex flex-row items-center"
 																data-class="uploaded-file"
-																class="flex flex-row items-center gap-[0.625rem]"
 															>
 																<p
 																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
@@ -1405,7 +1414,7 @@
 																</p>
 																<div
 																	data-class="erase-file"
-																	class="cursor-pointer"
+																	class="flex cursor-pointer items-center self-stretch px-[0.625rem]"
 																>
 																	<svg
 																		class="block h-[0.688rem] w-[0.688rem]"
@@ -1422,8 +1431,9 @@
 																</div>
 															</div>
 															<div
+																data-role="fileForUpload"
+																class="flex flex-row items-center"
 																data-class="uploaded-file"
-																class="flex flex-row items-center gap-[0.625rem]"
 															>
 																<p
 																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
@@ -1435,7 +1445,7 @@
 																</p>
 																<div
 																	data-class="erase-file"
-																	class="cursor-pointer"
+																	class="flex cursor-pointer items-center self-stretch px-[0.625rem]"
 																>
 																	<svg
 																		class="block h-[0.688rem] w-[0.688rem]"
@@ -1452,8 +1462,9 @@
 																</div>
 															</div>
 															<div
+																data-role="fileForUpload"
+																class="flex flex-row items-center"
 																data-class="uploaded-file"
-																class="flex flex-row items-center gap-[0.625rem]"
 															>
 																<p
 																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
@@ -1465,7 +1476,7 @@
 																</p>
 																<div
 																	data-class="erase-file"
-																	class="cursor-pointer"
+																	class="flex cursor-pointer items-center self-stretch px-[0.625rem]"
 																>
 																	<svg
 																		class="block h-[0.688rem] w-[0.688rem]"
@@ -1907,16 +1918,12 @@
 								id="play__bttn"
 								class="flex h-8 w-8 items-center justify-center hover:cursor-pointer"
 							>
-								<svg
-									class="mx-auto block h-8 w-8 dark:hidden"
-								>
+								<svg class="mx-auto block h-8 w-8 dark:hidden">
 									<use
 										xlink:href="icons__sprite.svg#play__icon"
 									></use>
 								</svg>
-								<svg
-									class="mx-auto hidden h-8 w-8 dark:block"
-								>
+								<svg class="mx-auto hidden h-8 w-8 dark:block">
 									<use
 										xlink:href="icons__sprite.svg#play__icon--dark"
 									></use>
@@ -1927,16 +1934,12 @@
 								id="arrow__bttn"
 								class="flex h-8 w-8 items-center justify-center hover:cursor-pointer"
 							>
-								<svg
-									class="mx-auto block h-8 w-8 dark:hidden"
-								>
+								<svg class="mx-auto block h-8 w-8 dark:hidden">
 									<use
 										xlink:href="icons__sprite.svg#downarrow__icon"
 									></use>
 								</svg>
-								<svg
-									class="mx-auto hidden h-8 w-8 dark:block"
-								>
+								<svg class="mx-auto hidden h-8 w-8 dark:block">
 									<use
 										xlink:href="icons__sprite.svg#downarrow__icon--dark"
 									></use>

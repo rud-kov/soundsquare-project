@@ -6,8 +6,6 @@
 
 /// GLOBAL VARIABLES USED IN MULTIPLE FUNCTIONS
 
-const html = document.querySelector("html");
-const body = document.querySelector("body");
 
 const mainRight = document.getElementById("main__right");
 
@@ -100,6 +98,7 @@ const Engine = {
 			function getRow(pos) {
 				return Math.ceil(pos / size);
 			}
+			
 			function getCol(pos) {
 				const col = pos % size;
 				if (col === 0) {

@@ -21,7 +21,6 @@ const files = document.querySelectorAll("[data-class='file']");
 
 const inputs = document.querySelectorAll("[data-role='filesbox']");
 
-
 const Engine = {
 	ui: {
 		init: function () {
@@ -101,25 +100,22 @@ const Engine = {
 				sendSubmenu.classList.remove("hidden");
 			});
 
-			/////// DELETING FILES FOR SENDING THROUGH X BUTTON ///// nefunguje
+			/////// DELETING FILES FOR SENDING THROUGH X BUTTON /////
 
 			const eraseBttn = document.querySelectorAll(
 				"[data-class='erase-file']",
 			);
 
 			eraseBttn.forEach((bttn) => {
-				bttn.addEventListener("click", eraseFile);
+				bttn.addEventListener("click", () => {
+					const fileToErase = bttn.closest(
+						"[data-class='uploaded-file']",
+					);
+
+					fileToErase.classList.remove("flex");
+					fileToErase.classList.add("hidden");
+				});
 			});
-
-			function eraseFile(bttn) {
-				console.log(typeof bttn);
-				const fileToErase = bttn.closest(
-					"[data-class='uploaded-file']",
-				);
-
-				fileToErase.classList.remove("flex");
-				fileToErase.classList.add("hidden");
-			}
 
 			/////// SWITCHING TABS INSIDE SEND SUBMENU /////
 
@@ -177,14 +173,12 @@ const Engine = {
 					);
 					overlayMenu.classList.remove("flex");
 					overlayMenu.classList.add("hidden");
-					console.log("lalala");
 				}
 			});
 
 			////// CHECK ALL FILES
 
 			const checkAll = document.getElementById("check__all");
-
 
 			checkAll.addEventListener("change", () => {
 				inputs.forEach((input) => {
@@ -274,15 +268,12 @@ const Engine = {
 				});
 
 				inputs.forEach((input) => {
-
 					let width = input.clientWidth / 16;
 					let height = input.clientHeight / 16;
 
-					console.log(width, height);
-
 					input.style.width = width + 0.313 + "rem";
 					input.style.height = height + 0.313 + "rem";
-				})
+				});
 			}
 
 			function zoomOutTile() {
@@ -318,7 +309,7 @@ const Engine = {
 					let height = input.clientHeight / 16;
 
 					if (width < 0.875 && height < 0.875) {
-						input.style.width =  0.875 + "rem";
+						input.style.width = 0.875 + "rem";
 						input.style.height = 0.875 + "rem";
 					} else {
 						input.style.width = width - 0.313 + "rem";
