@@ -58,7 +58,7 @@ const Engine = {
 				slides[slideIndex - 1].classList.replace("hidden", "flex");
 				slideDescription[slideIndex - 1].classList.replace("hidden", "flex");
 
-				setTimeout(showSlides, 8000);
+				setTimeout(showSlides, 7000);
 			}
 
 			showSlides();
@@ -397,7 +397,7 @@ const Engine = {
 			/// MAIN UPLOADING FUNCTION (XLMHTTP REQUEST)
 
 			function uploadFiles(files) {
-				const url = "https://httpbin.org/post"; // SWITCH TO REAL URL ADDRESS
+				const url = "https://httpbin.org/post";
 				const method = "post";
 
 				const xhr = new XMLHttpRequest();

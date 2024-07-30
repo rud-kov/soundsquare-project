@@ -21,7 +21,6 @@ const files = document.querySelectorAll("[data-class='file']");
 
 const inputs = document.querySelectorAll("[data-role='filesbox']");
 
-//const filesTiles = document.querySelectorAll("")
 
 const Engine = {
 	ui: {
