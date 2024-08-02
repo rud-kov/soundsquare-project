@@ -55,31 +55,28 @@
 								My drive
 							</p>
 						</div>
-						<div
-							class="mt-3 flex flex-col gap-3 self-stretch"
-							id="menubar__linkwrapper"
-						>
+						<div class="mt-3 flex flex-col gap-3 self-stretch">
 							<a
 								data-role="menulink"
-								class="before-h-5 text-black before:absolute before:left-0 before:hidden before:h-5 before:w-4 before:bg-black before:content-[''] hover:before:block dark:text-white dark:before:bg-white"
+								class="before-h-5 font-public text-black before:absolute before:left-0 before:hidden before:h-5 before:w-4 before:bg-black before:content-[''] hover:before:block dark:text-white dark:before:bg-white"
 								href="#"
 								>My files</a
 							>
 							<a
 								data-role="menulink"
-								class="before-h-5 text-black before:absolute before:left-0 before:hidden before:h-5 before:w-4 before:bg-black before:content-[''] hover:before:block dark:text-white dark:before:bg-white"
+								class="before-h-5 font-public text-black before:absolute before:left-0 before:hidden before:h-5 before:w-4 before:bg-black before:content-[''] hover:before:block dark:text-white dark:before:bg-white"
 								href="#"
 								>Received</a
 							>
 							<a
 								data-role="menulink"
-								class="before-h-5 text-black before:absolute before:left-0 before:hidden before:h-5 before:w-4 before:bg-black before:content-[''] hover:before:block dark:text-white dark:before:bg-white"
+								class="before-h-5 font-public text-black before:absolute before:left-0 before:hidden before:h-5 before:w-4 before:bg-black before:content-[''] hover:before:block dark:text-white dark:before:bg-white"
 								href="#"
 								>Sent</a
 							>
 							<a
 								data-role="menulink"
-								class="before-h-5 text-black before:absolute before:left-0 before:hidden before:h-5 before:w-4 before:bg-black before:content-[''] hover:before:block dark:text-white dark:before:bg-white"
+								class="before-h-5 font-public text-black before:absolute before:left-0 before:hidden before:h-5 before:w-4 before:bg-black before:content-[''] hover:before:block dark:text-white dark:before:bg-white"
 								href="#"
 								>Trash</a
 							>
@@ -481,7 +478,7 @@
 					</div>
 
 					<div
-						class="flex items-center justify-self-center lgd:col-start-2 lgd:col-end-2 lgd:row-start-2 lgd:row-end-2 lgd:mr-7 lgd:justify-self-end"
+						class="flex items-center gap-1 justify-self-center lgd:col-start-2 lgd:col-end-2 lgd:row-start-2 lgd:row-end-2 lgd:mr-7 lgd:justify-self-end"
 					>
 						<div
 							class="flex self-stretch hover:font-bold"
@@ -493,7 +490,9 @@
 								☾ Dark
 							</button>
 						</div>
-						<span class="font-public dark:text-darkFont">/</span>
+						<span class="select-none font-public dark:text-darkFont"
+							>/</span
+						>
 						<div
 							class="flex self-stretch hover:font-bold"
 							id="light__switch"
@@ -511,7 +510,7 @@
 					>
 						<div>
 							<p
-								class="m-0 font-public text-2xl font-normal tracking-tighter text-[#161616] mdd:text-lg lgd:hidden dark:text-darkFont"
+								class="m-0 select-none font-public text-2xl font-normal tracking-tighter text-[#161616] mdd:text-lg lgd:hidden dark:text-darkFont"
 							>
 								Welcome,
 								<span
@@ -521,7 +520,7 @@
 								>
 							</p>
 							<p
-								class="m-0 hidden font-public text-lg font-bold tracking-tighter text-[#161616] lgd:block dark:text-darkFont"
+								class="m-0 hidden select-none font-public text-lg font-bold tracking-tighter text-[#161616] lgd:block dark:text-darkFont"
 							>
 								Settings
 							</p>
@@ -529,16 +528,16 @@
 						<div id="ham__wrapper">
 							<div
 								id="ham__switch"
-								class="static flex min-h-8 min-w-8 cursor-pointer flex-col items-center justify-center gap-1 bg-black dark:bg-darkFourth"
+								class="static flex min-h-8 min-w-8 flex-col items-center justify-center gap-1 bg-black dark:bg-darkFourth"
 							>
 								<div
-									class="h-[0.094rem] w-5 bg-lightSecondary dark:bg-black"
+									class="h-[0.094rem] w-5 cursor-pointer bg-lightSecondary dark:bg-black"
 								></div>
 								<div
-									class="h-[0.094rem] w-5 bg-lightSecondary dark:bg-black"
+									class="h-[0.094rem] w-5 cursor-pointer bg-lightSecondary dark:bg-black"
 								></div>
 								<div
-									class="h-[0.094rem] w-5 bg-lightSecondary dark:bg-black"
+									class="h-[0.094rem] w-5 cursor-pointer bg-lightSecondary dark:bg-black"
 								></div>
 
 								<div
@@ -551,12 +550,12 @@
 										<div>
 											<div>
 												<p
-													class="public m-0 select-none text-16 font-bold text-lightFont dark:text-darkFont"
+													class="m-0 select-none font-public text-16 font-bold text-lightFont dark:text-darkFont"
 												>
 													Adam Zanka
 												</p>
 												<p
-													class="public m-0 text-16 font-normal text-lightFont dark:text-darkFont"
+													class="m-0 select-none font-public text-16 font-normal text-lightFont dark:text-darkFont"
 												>
 													adam.zanka@gmail.com
 												</p>
@@ -569,13 +568,13 @@
 										<div class="flex flex-col">
 											<a
 												id="settings__bttn"
-												class="public m-0 text-16 font-normal text-lightFont hover:font-semibold dark:text-darkFont"
+												class="m-0 font-public text-16 font-normal text-lightFont hover:font-semibold dark:text-darkFont"
 												href="#"
 												>Settings</a
 											>
 											<a
 												id="signout__bttn"
-												class="public mb-0 mt-1 text-16 font-normal text-lightFont hover:font-semibold dark:text-darkFont"
+												class="mb-0 mt-1 font-public text-16 font-normal text-lightFont hover:font-semibold dark:text-darkFont"
 												href="#"
 												>Sign Out</a
 											>
@@ -583,7 +582,7 @@
 									</div>
 
 									<div
-										class="min-w-[46.25rem]] fixed left-1/2 top-1/2 z-50 hidden min-h-[40rem] w-full max-w-[60rem] -translate-x-1/2 -translate-y-1/2 mdd:min-h-fit lgd:left-0 lgd:right-0 lgd:translate-x-0"
+										class="min-w-[46.25rem] fixed left-1/2 top-1/2 z-50 hidden min-h-[40rem] w-full max-w-[60rem] -translate-x-1/2 -translate-y-1/2 mdd:min-h-fit lgd:left-0 lgd:right-0 lgd:translate-x-0"
 										id="settings__overlay"
 										data-class="overlay-container"
 									>
@@ -622,7 +621,7 @@
 													>
 														<div class="mdd:hidden">
 															<p
-																class="public m-0 text-24 font-bold text-lightFont dark:text-white"
+																class="m-0 font-public text-24 font-bold text-lightFont dark:text-white"
 															>
 																User Settings
 															</p>
@@ -633,12 +632,12 @@
 														>
 															<a
 																id="user__settings"
-																class="public w-[4.932rem] cursor-pointer text-xl font-bold leading-6 text-lightFont hover:font-semibold dark:text-white"
+																class="w-[4.932rem] cursor-pointer font-public text-xl font-bold leading-6 text-lightFont hover:font-semibold dark:text-white"
 																>Settings</a
 															>
 															<a
 																id="password__change"
-																class="public w-[11.25rem] cursor-pointer whitespace-nowrap text-xl font-medium leading-6 text-lightFont hover:font-semibold dark:text-white"
+																class="w-[11.25rem] cursor-pointer whitespace-nowrap font-public text-xl font-medium leading-6 text-lightFont hover:font-semibold dark:text-white"
 																>Change
 																Password</a
 															>
@@ -669,7 +668,7 @@
 																		class="w-fixedBttn text-white mdd:w-auto"
 																	>
 																		<label
-																			class="text-16 font-normal leading-5 text-black dark:text-white"
+																			class="font-public text-16 font-normal leading-5 text-black dark:text-white"
 																			for="current__password"
 																			>Current
 																			password</label
@@ -744,7 +743,7 @@
 																		class="w-fixedBttn text-white mdd:w-auto"
 																	>
 																		<label
-																			class="text-16 font-normal leading-5 text-black dark:text-white"
+																			class="font-public text-16 font-normal leading-5 text-black dark:text-white"
 																			for="new__password"
 																			>New
 																			password</label
@@ -814,7 +813,7 @@
 																		class="w-fixedBttn text-white mdd:w-auto"
 																	>
 																		<label
-																			class="text-16 font-normal leading-5 text-black dark:text-white"
+																			class="font-public text-16 font-normal leading-5 text-black dark:text-white"
 																			for="confirm__password"
 																			>Confirm
 																			password</label
@@ -920,7 +919,7 @@
 																		class="flex flex-row gap-9"
 																	>
 																		<p
-																			class="m-0 text-16 font-normal leading-5 text-black dark:text-white"
+																			class="m-0 font-public text-16 font-normal leading-5 text-black dark:text-white"
 																		>
 																			Set
 																			thumbnail
@@ -980,7 +979,9 @@
 						class="col-span-1 flex flex-row items-center justify-start justify-self-start lgd:ml-7 lgd:flex-col lgd:items-start"
 					>
 						<div class="ml-7 lgd:ml-0">
-							<p class="text-lightFont dark:text-darkFont">
+							<p
+								class="font-public text-lightFont dark:text-darkFont"
+							>
 								Files
 							</p>
 						</div>
@@ -1065,7 +1066,7 @@
 													<div class="flex-col">
 														<div>
 															<p
-																class="public m-0 text-24 font-bold text-lightFont mdd:p-2 dark:text-white"
+																class="m-0 font-public text-24 font-bold text-lightFont mdd:p-2 dark:text-white"
 															>
 																Upload or Send
 																selected files
@@ -1076,7 +1077,7 @@
 															class="mt-10 border-b border-black pb-[0.625rem] dark:border-white"
 														>
 															<p
-																class="public m-0 text-16 font-normal text-lightFont dark:text-white"
+																class="m-0 font-public text-16 font-normal text-lightFont dark:text-white"
 															>
 																List of files
 															</p>
@@ -1095,7 +1096,7 @@
 																data-class="uploaded-file"
 															>
 																<p
-																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+																	class="m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 font-public text-[0.813rem] font-normal text-white dark:text-[#979797]"
 																>
 																	File name0
 																	name0
@@ -1126,7 +1127,7 @@
 																data-class="uploaded-file"
 															>
 																<p
-																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+																	class="m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 font-public text-[0.813rem] font-normal text-white dark:text-[#979797]"
 																>
 																	File name0
 																	name0
@@ -1157,7 +1158,7 @@
 																data-class="uploaded-file"
 															>
 																<p
-																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+																	class="m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 font-public text-[0.813rem] font-normal text-white dark:text-[#979797]"
 																>
 																	File name0
 																	name0
@@ -1188,7 +1189,7 @@
 																data-class="uploaded-file"
 															>
 																<p
-																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+																	class="m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 font-public text-[0.813rem] font-normal text-white dark:text-[#979797]"
 																>
 																	File name0
 																	name0
@@ -1219,7 +1220,7 @@
 																data-class="uploaded-file"
 															>
 																<p
-																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+																	class="m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 font-public text-[0.813rem] font-normal text-white dark:text-[#979797]"
 																>
 																	File name0
 																	name0
@@ -1250,7 +1251,7 @@
 																data-class="uploaded-file"
 															>
 																<p
-																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+																	class="m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 font-public text-[0.813rem] font-normal text-white dark:text-[#979797]"
 																>
 																	File name0
 																	name0
@@ -1281,7 +1282,7 @@
 																data-class="uploaded-file"
 															>
 																<p
-																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+																	class="m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 font-public text-[0.813rem] font-normal text-white dark:text-[#979797]"
 																>
 																	File name0
 																	name0
@@ -1312,7 +1313,7 @@
 																data-class="uploaded-file"
 															>
 																<p
-																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+																	class="m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 font-public text-[0.813rem] font-normal text-white dark:text-[#979797]"
 																>
 																	File name0
 																	name0
@@ -1343,7 +1344,7 @@
 																data-class="uploaded-file"
 															>
 																<p
-																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+																	class="m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 font-public text-[0.813rem] font-normal text-white dark:text-[#979797]"
 																>
 																	File name0
 																	name0
@@ -1374,7 +1375,7 @@
 																data-class="uploaded-file"
 															>
 																<p
-																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+																	class="m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 font-public text-[0.813rem] font-normal text-white dark:text-[#979797]"
 																>
 																	File name0
 																	name0
@@ -1405,7 +1406,7 @@
 																data-class="uploaded-file"
 															>
 																<p
-																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+																	class="m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 font-public text-[0.813rem] font-normal text-white dark:text-[#979797]"
 																>
 																	File name0
 																	name0
@@ -1436,7 +1437,7 @@
 																data-class="uploaded-file"
 															>
 																<p
-																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+																	class="m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 font-public text-[0.813rem] font-normal text-white dark:text-[#979797]"
 																>
 																	File name0
 																	name0
@@ -1467,7 +1468,7 @@
 																data-class="uploaded-file"
 															>
 																<p
-																	class="public m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 text-[0.813rem] font-normal text-white dark:text-[#979797]"
+																	class="m-0 whitespace-nowrap bg-[#444444] px-[0.625rem] py-1 font-public text-[0.813rem] font-normal text-white dark:text-[#979797]"
 																>
 																	File name0
 																	name0
@@ -1694,7 +1695,6 @@
 																	for="text__area"
 																	>Recipient</label
 																>
-
 																<textarea
 																	class="mt-5 grow border border-black p-2 px-2 dark:border-white dark:bg-black dark:text-white"
 																	role="textbox"
@@ -3434,7 +3434,7 @@
 								</div>
 								<div class="text-center">
 									<p
-										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+										class="m-0 font-public text-2xl font-bold uppercase text-[#C5C5C5]"
 										data-ordering="file-format"
 									>
 										wav
@@ -3483,7 +3483,7 @@
 								</div>
 								<div class="text-center">
 									<p
-										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+										class="m-0 font-public text-2xl font-bold uppercase text-[#C5C5C5]"
 										data-ordering="file-format"
 									>
 										wav
@@ -3532,7 +3532,7 @@
 								</div>
 								<div class="text-center">
 									<p
-										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+										class="m-0 font-public text-2xl font-bold uppercase text-[#C5C5C5]"
 										data-ordering="file-format"
 									>
 										wav
@@ -3581,7 +3581,7 @@
 								</div>
 								<div class="text-center">
 									<p
-										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+										class="m-0 font-public text-2xl font-bold uppercase text-[#C5C5C5]"
 										data-ordering="file-format"
 									>
 										wav
@@ -3630,7 +3630,7 @@
 								</div>
 								<div class="text-center">
 									<p
-										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+										class="m-0 font-public text-2xl font-bold uppercase text-[#C5C5C5]"
 										data-ordering="file-format"
 									>
 										wav
@@ -3679,7 +3679,7 @@
 								</div>
 								<div class="text-center">
 									<p
-										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+										class="m-0 font-public text-2xl font-bold uppercase text-[#C5C5C5]"
 										data-ordering="file-format"
 									>
 										wav
@@ -3727,56 +3727,7 @@
 								</div>
 								<div class="text-center">
 									<p
-										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
-										data-ordering="file-format"
-									>
-										wav
-									</p>
-								</div>
-								<div class="flex justify-between">
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-ordering="file-datum"
-										data-class="file__description--tile"
-									>
-										06/10/2023
-									</p>
-
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-ordering="file-size"
-										data-class="file__description--tile"
-									>
-										340 kB
-									</p>
-								</div>
-							</div>
-						</div>
-
-						<div
-							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
-							data-class="file"
-						>
-							<div
-								class="flex grow flex-col justify-between p-[0.625rem]"
-							>
-								<div class="flex flex-row justify-between">
-									<p
-										class="m-0 max-h-[7rem] overflow-scroll text-ellipsis text-wrap break-all font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-class="file__description--tile"
-									>
-										File name.jpg
-									</p>
-									<input
-										class="ml-3 h-[0.875rem] w-[0.875rem] min-w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
-										type="checkbox"
-										data-role="filesbox"
-										name="checkbox"
-									/>
-								</div>
-								<div class="text-center">
-									<p
-										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+										class="m-0 font-public text-2xl font-bold uppercase text-[#C5C5C5]"
 										data-ordering="file-format"
 									>
 										wav
@@ -3825,57 +3776,7 @@
 								</div>
 								<div class="text-center">
 									<p
-										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
-										data-ordering="file-format"
-										data-class="file__description--tile"
-									>
-										wav
-									</p>
-								</div>
-								<div class="flex justify-between">
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-ordering="file-datum"
-										data-class="file__description--tile"
-									>
-										06/10/2023
-									</p>
-
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-ordering="file-size"
-										data-class="file__description--tile"
-									>
-										340 kB
-									</p>
-								</div>
-							</div>
-						</div>
-
-						<div
-							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
-							data-class="file"
-						>
-							<div
-								class="flex grow flex-col justify-between p-[0.625rem]"
-							>
-								<div class="flex flex-row justify-between">
-									<p
-										class="m-0 max-h-[7rem] overflow-scroll text-ellipsis text-wrap break-all font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-class="file__description--tile"
-									>
-										File name.jpg
-									</p>
-									<input
-										class="ml-3 h-[0.875rem] w-[0.875rem] min-w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
-										type="checkbox"
-										data-role="filesbox"
-										name="checkbox"
-									/>
-								</div>
-								<div class="text-center">
-									<p
-										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+										class="m-0 font-public text-2xl font-bold uppercase text-[#C5C5C5]"
 										data-ordering="file-format"
 									>
 										wav
@@ -3924,203 +3825,7 @@
 								</div>
 								<div class="text-center">
 									<p
-										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
-										data-ordering="file-format"
-									>
-										wav
-									</p>
-								</div>
-								<div class="flex justify-between">
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-ordering="file-datum"
-										data-class="file__description--tile"
-									>
-										06/10/2023
-									</p>
-
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-ordering="file-size"
-										data-class="file__description--tile"
-									>
-										340 kB
-									</p>
-								</div>
-							</div>
-						</div>
-
-						<div
-							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
-							data-class="file"
-						>
-							<div
-								class="flex grow flex-col justify-between p-[0.625rem]"
-							>
-								<div class="flex flex-row justify-between">
-									<p
-										class="m-0 max-h-[7rem] overflow-scroll text-ellipsis text-wrap break-all font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-class="file__description--tile"
-									>
-										File name.jpg
-									</p>
-									<input
-										class="ml-3 h-[0.875rem] w-[0.875rem] min-w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
-										type="checkbox"
-										data-role="filesbox"
-										name="checkbox"
-									/>
-								</div>
-								<div class="text-center">
-									<p
-										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
-										data-ordering="file-format"
-									>
-										wav
-									</p>
-								</div>
-								<div class="flex justify-between">
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-ordering="file-datum"
-										data-class="file__description--tile"
-									>
-										06/10/2023
-									</p>
-
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-ordering="file-size"
-										data-class="file__description--tile"
-									>
-										340 kB
-									</p>
-								</div>
-							</div>
-						</div>
-
-						<div
-							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
-							data-class="file"
-						>
-							<div
-								class="flex grow flex-col justify-between p-[0.625rem]"
-							>
-								<div class="flex flex-row justify-between">
-									<p
-										class="m-0 max-h-[7rem] overflow-scroll text-ellipsis text-wrap break-all font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-class="file__description--tile"
-									>
-										File name.jpg
-									</p>
-									<input
-										class="ml-3 h-[0.875rem] w-[0.875rem] min-w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
-										type="checkbox"
-										data-role="filesbox"
-										name="checkbox"
-									/>
-								</div>
-								<div class="text-center">
-									<p
-										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
-										data-ordering="file-format"
-									>
-										wav
-									</p>
-								</div>
-								<div class="flex justify-between">
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-ordering="file-datum"
-										data-class="file__description--tile"
-									>
-										06/10/2023
-									</p>
-
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-ordering="file-size"
-										data-class="file__description--tile"
-									>
-										340 kB
-									</p>
-								</div>
-							</div>
-						</div>
-
-						<div
-							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
-							data-class="file"
-						>
-							<div
-								class="flex grow flex-col justify-between p-[0.625rem]"
-							>
-								<div class="flex flex-row justify-between">
-									<p
-										class="m-0 max-h-[7rem] overflow-scroll text-ellipsis text-wrap break-all font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-class="file__description--tile"
-									>
-										File name.jpg
-									</p>
-									<input
-										class="ml-3 h-[0.875rem] w-[0.875rem] min-w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
-										type="checkbox"
-										data-role="filesbox"
-										name="checkbox"
-									/>
-								</div>
-								<div class="text-center">
-									<p
-										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
-										data-ordering="file-format"
-									>
-										wav
-									</p>
-								</div>
-								<div class="flex justify-between">
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-ordering="file-datum"
-										data-class="file__description--tile"
-									>
-										06/10/2023
-									</p>
-
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-ordering="file-size"
-										data-class="file__description--tile"
-									>
-										340 kB
-									</p>
-								</div>
-							</div>
-						</div>
-
-						<div
-							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
-							data-class="file"
-						>
-							<div
-								class="flex grow flex-col justify-between p-[0.625rem]"
-							>
-								<div class="flex flex-row justify-between">
-									<p
-										class="m-0 max-h-[7rem] overflow-scroll text-ellipsis text-wrap break-all font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-class="file__description--tile"
-									>
-										File name.jpg
-									</p>
-									<input
-										class="ml-3 h-[0.875rem] w-[0.875rem] min-w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
-										type="checkbox"
-										data-role="filesbox"
-										name="checkbox"
-									/>
-								</div>
-								<div class="text-center">
-									<p
-										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+										class="m-0 font-public text-2xl font-bold uppercase text-[#C5C5C5]"
 										data-ordering="file-format"
 										data-class="file__description--tile"
 									>
@@ -4170,7 +3875,7 @@
 								</div>
 								<div class="text-center">
 									<p
-										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+										class="m-0 font-public text-2xl font-bold uppercase text-[#C5C5C5]"
 										data-ordering="file-format"
 									>
 										wav
@@ -4219,7 +3924,7 @@
 								</div>
 								<div class="text-center">
 									<p
-										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+										class="m-0 font-public text-2xl font-bold uppercase text-[#C5C5C5]"
 										data-ordering="file-format"
 									>
 										wav
@@ -4268,7 +3973,7 @@
 								</div>
 								<div class="text-center">
 									<p
-										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+										class="m-0 font-public text-2xl font-bold uppercase text-[#C5C5C5]"
 										data-ordering="file-format"
 									>
 										wav
@@ -4317,55 +4022,7 @@
 								</div>
 								<div class="text-center">
 									<p
-										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
-										data-ordering="file-format"
-									>
-										wav
-									</p>
-								</div>
-								<div class="flex justify-between">
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-ordering="file-datum"
-										data-class="file__description--tile"
-									>
-										06/10/2023
-									</p>
-
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-ordering="file-size"
-										data-class="file__description--tile"
-									>
-										340 kB
-									</p>
-								</div>
-							</div>
-						</div>
-						<div
-							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
-							data-class="file"
-						>
-							<div
-								class="flex grow flex-col justify-between p-[0.625rem]"
-							>
-								<div class="flex flex-row justify-between">
-									<p
-										class="m-0 max-h-[7rem] overflow-scroll text-ellipsis text-wrap break-all font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-class="file__description--tile"
-									>
-										File name.jpg
-									</p>
-									<input
-										class="ml-3 h-[0.875rem] w-[0.875rem] min-w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
-										type="checkbox"
-										data-role="filesbox"
-										name="checkbox"
-									/>
-								</div>
-								<div class="text-center">
-									<p
-										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+										class="m-0 font-public text-2xl font-bold uppercase text-[#C5C5C5]"
 										data-ordering="file-format"
 									>
 										wav
@@ -4414,56 +4071,7 @@
 								</div>
 								<div class="text-center">
 									<p
-										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
-										data-ordering="file-format"
-										data-class="file__description--tile"
-									>
-										wav
-									</p>
-								</div>
-								<div class="flex justify-between">
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-ordering="file-datum"
-										data-class="file__description--tile"
-									>
-										06/10/2023
-									</p>
-
-									<p
-										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-ordering="file-size"
-										data-class="file__description--tile"
-									>
-										340 kB
-									</p>
-								</div>
-							</div>
-						</div>
-						<div
-							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
-							data-class="file"
-						>
-							<div
-								class="flex grow flex-col justify-between p-[0.625rem]"
-							>
-								<div class="flex flex-row justify-between">
-									<p
-										class="m-0 max-h-[7rem] overflow-scroll text-ellipsis text-wrap break-all font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
-										data-class="file__description--tile"
-									>
-										File name.jpg
-									</p>
-									<input
-										class="ml-3 h-[0.875rem] w-[0.875rem] min-w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
-										type="checkbox"
-										data-role="filesbox"
-										name="checkbox"
-									/>
-								</div>
-								<div class="text-center">
-									<p
-										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+										class="m-0 font-public text-2xl font-bold uppercase text-[#C5C5C5]"
 										data-ordering="file-format"
 									>
 										wav
@@ -4512,7 +4120,57 @@
 								</div>
 								<div class="text-center">
 									<p
-										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+										class="m-0 font-public text-2xl font-bold uppercase text-[#C5C5C5]"
+										data-ordering="file-format"
+										data-class="file__description--tile"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-ordering="file-datum"
+										data-class="file__description--tile"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-ordering="file-size"
+										data-class="file__description--tile"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							data-class="file"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 max-h-[7rem] overflow-scroll text-ellipsis text-wrap break-all font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-class="file__description--tile"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 h-[0.875rem] w-[0.875rem] min-w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+										name="checkbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="m-0 font-public text-2xl font-bold uppercase text-[#C5C5C5]"
 										data-ordering="file-format"
 									>
 										wav
@@ -4561,7 +4219,7 @@
 								</div>
 								<div class="text-center">
 									<p
-										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+										class="m-0 font-public text-2xl font-bold uppercase text-[#C5C5C5]"
 										data-ordering="file-format"
 									>
 										wav
@@ -4610,7 +4268,7 @@
 								</div>
 								<div class="text-center">
 									<p
-										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+										class="m-0 font-public text-2xl font-bold uppercase text-[#C5C5C5]"
 										data-ordering="file-format"
 									>
 										wav
@@ -4659,7 +4317,349 @@
 								</div>
 								<div class="text-center">
 									<p
-										class="public m-0 text-2xl font-bold uppercase text-[#C5C5C5]"
+										class="m-0 font-public text-2xl font-bold uppercase text-[#C5C5C5]"
+										data-ordering="file-format"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-ordering="file-datum"
+										data-class="file__description--tile"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-ordering="file-size"
+										data-class="file__description--tile"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+						<div
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							data-class="file"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 max-h-[7rem] overflow-scroll text-ellipsis text-wrap break-all font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-class="file__description--tile"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 h-[0.875rem] w-[0.875rem] min-w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+										name="checkbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="m-0 font-public text-2xl font-bold uppercase text-[#C5C5C5]"
+										data-ordering="file-format"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-ordering="file-datum"
+										data-class="file__description--tile"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-ordering="file-size"
+										data-class="file__description--tile"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							data-class="file"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 max-h-[7rem] overflow-scroll text-ellipsis text-wrap break-all font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-class="file__description--tile"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 h-[0.875rem] w-[0.875rem] min-w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+										name="checkbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="m-0 font-public text-2xl font-bold uppercase text-[#C5C5C5]"
+										data-ordering="file-format"
+										data-class="file__description--tile"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-ordering="file-datum"
+										data-class="file__description--tile"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-ordering="file-size"
+										data-class="file__description--tile"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+						<div
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							data-class="file"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 max-h-[7rem] overflow-scroll text-ellipsis text-wrap break-all font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-class="file__description--tile"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 h-[0.875rem] w-[0.875rem] min-w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+										name="checkbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="m-0 font-public text-2xl font-bold uppercase text-[#C5C5C5]"
+										data-ordering="file-format"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-ordering="file-datum"
+										data-class="file__description--tile"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-ordering="file-size"
+										data-class="file__description--tile"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							data-class="file"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 max-h-[7rem] overflow-scroll text-ellipsis text-wrap break-all font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-class="file__description--tile"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 h-[0.875rem] w-[0.875rem] min-w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+										name="checkbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="m-0 font-public text-2xl font-bold uppercase text-[#C5C5C5]"
+										data-ordering="file-format"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-ordering="file-datum"
+										data-class="file__description--tile"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-ordering="file-size"
+										data-class="file__description--tile"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							data-class="file"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 max-h-[7rem] overflow-scroll text-ellipsis text-wrap break-all font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-class="file__description--tile"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 h-[0.875rem] w-[0.875rem] min-w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+										name="checkbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="m-0 font-public text-2xl font-bold uppercase text-[#C5C5C5]"
+										data-ordering="file-format"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-ordering="file-datum"
+										data-class="file__description--tile"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-ordering="file-size"
+										data-class="file__description--tile"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							data-class="file"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 max-h-[7rem] overflow-scroll text-ellipsis text-wrap break-all font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-class="file__description--tile"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 h-[0.875rem] w-[0.875rem] min-w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+										name="checkbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="m-0 font-public text-2xl font-bold uppercase text-[#C5C5C5]"
+										data-ordering="file-format"
+									>
+										wav
+									</p>
+								</div>
+								<div class="flex justify-between">
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-ordering="file-datum"
+										data-class="file__description--tile"
+									>
+										06/10/2023
+									</p>
+
+									<p
+										class="m-0 font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-ordering="file-size"
+										data-class="file__description--tile"
+									>
+										340 kB
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="flex h-[10.25rem] min-h-[10.25rem] w-[10.25rem] min-w-[10.25rem] bg-lightThird dark:bg-[#666666]"
+							data-class="file"
+						>
+							<div
+								class="flex grow flex-col justify-between p-[0.625rem]"
+							>
+								<div class="flex flex-row justify-between">
+									<p
+										class="m-0 max-h-[7rem] overflow-scroll text-ellipsis text-wrap break-all font-public text-xs leading-[0.875rem] text-black dark:text-darkFont"
+										data-class="file__description--tile"
+									>
+										File name.jpg
+									</p>
+									<input
+										class="ml-3 h-[0.875rem] w-[0.875rem] min-w-[0.875rem] cursor-pointer appearance-none border border-[#989898] bg-transparent accent-black checked:appearance-auto dark:accent-darkInput"
+										type="checkbox"
+										data-role="filesbox"
+										name="checkbox"
+									/>
+								</div>
+								<div class="text-center">
+									<p
+										class="m-0 font-public text-2xl font-bold uppercase text-[#C5C5C5]"
 										data-ordering="file-format"
 									>
 										wav

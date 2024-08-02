@@ -6,9 +6,6 @@
 
 /// GLOBAL VARIABLES USED IN MULTIPLE FUNCTIONS
 
-const html = document.querySelector("html");
-const body = document.querySelector("body");
-
 const uploadBar = document.getElementById("upload__bar");
 
 const uploadScreen = document.getElementById("upload__bar--progress");
@@ -44,7 +41,6 @@ const Engine = {
 
 			document.body.addEventListener("click", (event) => {
 				const clickedElement = event.target;
-
 				if (
 					driveMenu.contains(clickedElement) ||
 					driveSwitch.contains(clickedElement)
@@ -96,8 +92,7 @@ const Engine = {
 
 			sendSubmenuBttn.addEventListener("click", (event) => {
 				event.preventDefault();
-				sendSubmenu.classList.add("flex");
-				sendSubmenu.classList.remove("hidden");
+				sendSubmenu.classList.replace("hidden", "flex");
 			});
 
 			/////// DELETING FILES FOR SENDING THROUGH X BUTTON /////
@@ -111,9 +106,7 @@ const Engine = {
 					const fileToErase = bttn.closest(
 						"[data-class='uploaded-file']",
 					);
-
-					fileToErase.classList.remove("flex");
-					fileToErase.classList.add("hidden");
+					fileToErase.classList.replace("flex", "hidden");
 				});
 			});
 
@@ -171,8 +164,7 @@ const Engine = {
 					const overlayMenu = closer.closest(
 						"[data-class='overlay-container']",
 					);
-					overlayMenu.classList.remove("flex");
-					overlayMenu.classList.add("hidden");
+					overlayMenu.classList.replace("flex", "hidden");
 				}
 			});
 
