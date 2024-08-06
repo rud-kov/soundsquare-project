@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+p,
+ul {
+  margin: 1em 0;
+}
+p.mb-0,
+ul.mb-0 {
+  margin-bottom: 0;
+}
+
+p,
+li {
+  @apply text-16;
+}
+
+strong,
+b {
+  @apply font-bold;
+}
+
+h1 br,
+.h1 br,
+h2 br,
+.h2 br,
+h3 br,
+.h3 br,
+h4 br,
+.h4 br,
+h5 br,
+.h5 br {
+  display: none;
+}
+@screen md {
+  h1 br,
+  .h1 br,
+  h2 br,
+  .h2 br,
+  h3 br,
+  .h3 br,
+  h4 br,
+  .h4 br,
+  h5 br,
+  .h5 br {
+    display: block;
+  }
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+  @apply font-bold;
+}
+
+h1,
+.h1 {
+  @apply text-16 leading-none;
+}
+@screen lg {
+  h1,
+  .h1 {
+    @apply text-32;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @apply font-sans;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+video,
+img,
+.wp-video {
+  max-width: 100%;
+}
+
+.cm > *:not(.margin-exception):first-child {
+  margin-top: 0;
+}
+.cm > *:not(.margin-exception):last-child {
+  margin-bottom: 0;
+}
+
+.l-header--fixed {
+  @apply fixed inset-0;
+}
+
+/* NORMAL BUTTON */
+.btn,
+.button {
+  @apply block bg-black p-4 tracking-widest text-white;
+}
+
+.btn--white {
+  @apply bg-white;
+  @apply p-4;
+}
+
+.b-table tr {
+  @apply border-b border-black;
+}
+
+input[type=email],
+input[type=text],
+input[type=number],
+input[type=tel],
+input[type=password],
+textarea,
+select {
+  @apply block w-full;
+}
+input[type=email]::-moz-placeholder, input[type=text]::-moz-placeholder, input[type=number]::-moz-placeholder, input[type=tel]::-moz-placeholder, input[type=password]::-moz-placeholder, textarea::-moz-placeholder, select::-moz-placeholder {
+  @apply text-black/50;
+}
+input[type=email]::placeholder,
+input[type=text]::placeholder,
+input[type=number]::placeholder,
+input[type=tel]::placeholder,
+input[type=password]::placeholder,
+textarea::placeholder,
+select::placeholder {
+  @apply text-black/50;
+}
+
+
+textarea {
+  resize: vertical;
+}
+
+label {
+  @apply block;
+}
+
+/*
+BLOCKS
+-----------------
+*/
+.b-test h1 {
+  @apply text-amber-500 text-6xl;
+}
+
+.b-grid__item {
+  @apply bg-gray-400 p-4;
+}
+
+/* (>'-')>
+
+SHARED BEM
+-----------------
+ */
+.list {
+  @apply pl-0;
+  list-style: none;
+}
+
+.responsive-wrap {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+.responsive-wrap iframe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}/*# sourceMappingURL=main.css.map */
